@@ -1,0 +1,11 @@
+{
+  "version": "0.0.001",
+  "url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/OTA_Update.bin",
+  "description": "Phiên bản khởi động chính thức - Master OS với Camera MJPEG, SoftAP Captive Portal, Cloud App Store và Dual-OTA.",
+  "release_date": "22/09/2026",
+  "mandatory": false,
+  "changelog": "Bootstrap release: MJPEG Triple-Buffer Stream, SoftAP Wi-Fi Manager, Cloud App Store from GitHub Releases, Dual-OTA 6MB with rollback partition.",
+  "binary_url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/OTA_Update.bin",
+  "full_flash_url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/Full_Flash.bin",
+  "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/github/changelog.json"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ESP32-S3-cam-platform Master OS",
+  "version": "0.0.001",
+  "funding_url": "https://github.com/thanhlqsap/esp32-s3-cam-platform",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/Full_Flash.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

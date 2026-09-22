@@ -1,0 +1,107 @@
+[
+  {
+    "version": "v0.0.001",
+    "date": "2026-09-22",
+    "tag": "Latest Release",
+    "title": {
+      "vi": "Phiên bản khởi động chính thức - ESP32-S3-cam-platform",
+      "en": "Official Bootstrap Release - ESP32-S3-cam-platform",
+      "zh": "官方初始版本 - ESP32-S3-cam-platform",
+      "es": "Versión de arranque oficial - ESP32-S3-cam-platform",
+      "fr": "Version de démarrage officielle - ESP32-S3-cam-platform",
+      "de": "Offizieller Start-Release - ESP32-S3-cam-platform",
+      "ja": "公式ブートストラップリリース - ESP32-S3-cam-platform",
+      "ko": "공식 부트스트랩 릴리스 - ESP32-S3-cam-platform",
+      "ru": "Официальный стартовый релиз - ESP32-S3-cam-platform",
+      "ar": "الإصدار الرسمي الأولي - ESP32-S3-cam-platform"
+    },
+    "description": "Master OS: MJPEG Triple-Buffer Camera Stream, SoftAP Captive Portal Wi-Fi manager, Cloud App Store from GitHub Releases, Dual-OTA 6MB with rollback partition.",
+    "details": {
+      "vi": "🚀 Master OS: Camera MJPEG Triple-Buffer 25FPS, SoftAP Captive Portal quản lý Wi-Fi, Cloud App Store tải trực tiếp từ GitHub Releases, Dual-OTA 6MB với phân vùng rollback bảo vệ.",
+      "en": "🚀 Master OS: MJPEG Triple-Buffer 25FPS Camera Stream, SoftAP Captive Portal Wi-Fi manager, Cloud App Store streaming from GitHub Releases, Dual-OTA 6MB with rollback partition protection.",
+      "zh": "🚀 Master OS: 三重缓冲 MJPEG 25FPS 摄像头直播、SoftAP 强制配网门户管理 Wi-Fi、直连 GitHub Releases 的云端应用商店、支持回滚保护的双分区 OTA 6MB 升级。",
+      "es": "🚀 Master OS: Cámara MJPEG Triple-Buffer 25FPS, Portal Captivo SoftAP gestión Wi-Fi, App Store en la nube desde GitHub Releases, OTA Dual 6MB con protección de partición de rollback.",
+      "fr": "🚀 Master OS : Flux caméra MJPEG Triple-Buffer 25FPS, portail captif SoftAP gestion Wi-Fi, App Store cloud depuis GitHub Releases, OTA Dual 6 Mo avec protection de partition de rollback.",
+      "de": "🚀 Master OS: MJPEG Triple-Buffer 25FPS Kamera-Stream, SoftAP Captive Portal Wi-Fi-Verwaltung, Cloud App Store von GitHub Releases, Dual-OTA 6MB mit Rollback-Partitionsschutz.",
+      "ja": "🚀 Master OS: MJPEG トリプルバッファ 25FPS カメラ配信、SoftAP キャプティブポータル Wi-Fi 管理、GitHub Releases からのクラウド App Store、ロールバック保護付きデュアル OTA 6MB。",
+      "ko": "🚀 Master OS: MJPEG 트리플 버퍼 25FPS 카메라 스트림, SoftAP 캡티브 포털 Wi-Fi 관리, GitHub Releases 기반 클라우드 앱 스토어, 롤백 파티션 보호 듀얼 OTA 6MB.",
+      "ru": "🚀 Master OS: MJPEG Triple-Buffer 25FPS видеопоток с камеры, SoftAP Captive Portal управление Wi-Fi, облачный App Store с GitHub Releases, Dual-OTA 6MB с защитой раздела отката.",
+      "ar": "🚀 Master OS: بث كاميرا MJPEG ثلاثي المخزن المؤقت 25FPS، بوابة SoftAP Captive Portal لإدارة Wi-Fi، متجر تطبيقات سحابي من GitHub Releases، OTA مزدوج 6MB مع حماية قسم الاسترداد."
+    },
+    "changes": {
+      "vi": [
+        "🎥 Camera MJPEG Triple-Buffer 25FPS - hỗ trợ OV2640 / OV5640",
+        "📡 SoftAP Captive Portal: quét Wi-Fi, kết nối STA và lưu thông tin",
+        "🏪 Cloud App Store: tải và cập nhật firmware trực tiếp từ GitHub Releases qua HTTPS Streaming OTA",
+        "🔄 Dual-OTA 6MB: phân vùng ota_0 / ota_1 với cơ chế rollback tự động",
+        "📊 Dashboard đa ngôn ngữ (10 ngôn ngữ) với giao diện glassmorphism",
+        "🔐 Basic Auth bảo vệ dashboard",
+        "📷 Hỗ trợ thẻ nhớ MicroSD (SDMMC/SPI) ghi hình Dashcam / Timelapse",
+        "🌐 Web Flasher 1-Click tích hợp (index.html) với esptool-js"
+      ],
+      "en": [
+        "🎥 MJPEG Triple-Buffer 25FPS Camera - OV2640 / OV5640 support",
+        "📡 SoftAP Captive Portal: Wi-Fi scan, STA connect and save credentials",
+        "🏪 Cloud App Store: download & update firmware directly from GitHub Releases via HTTPS Streaming OTA",
+        "🔄 Dual-OTA 6MB: ota_0 / ota_1 partitions with automatic rollback",
+        "📊 Multi-language Dashboard (10 langs) with glassmorphism UI",
+        "🔐 Basic Auth dashboard protection",
+        "📷 MicroSD card support (SDMMC/SPI) for Dashcam / Timelapse recording",
+        "🌐 Integrated 1-Click Web Flasher (index.html) using esptool-js"
+      ],
+      "zh": [
+        "🎥 MJPEG 三重缓冲 25FPS 摄像头 - 支持 OV2640 / OV5640",
+        "📡 SoftAP 强制配网门户：Wi-Fi 扫描、STA 连接并保存凭据",
+        "🏪 云端应用商店：通过 HTTPS 流式 OTA 直接从 GitHub Releases 下载并更新固件",
+        "🔄 双分区 OTA 6MB：ota_0 / ota_1 分区，支持自动回滚",
+        "📊 10 语言 Dashboard，玻璃拟态 UI 设计",
+        "🔐 Basic Auth 密码保护 Dashboard",
+        "📷 MicroSD 卡支持（SDMMC/SPI），用于行车记录仪/延时摄影录制",
+        "🌐 集成一键式网页烧录工具（index.html），基于 esptool-js"
+      ],
+      "ja": [
+        "🎥 MJPEG トリプルバッファ 25FPS カメラ - OV2640 / OV5640 対応",
+        "📡 SoftAP キャプティブポータル: Wi-Fi スキャン、STA 接続・認証情報保存",
+        "🏪 クラウド App Store: HTTPS ストリーミング OTA で GitHub Releases から直接ダウンロード・更新",
+        "🔄 デュアル OTA 6MB: ota_0 / ota_1 パーティション・自動ロールバック",
+        "📊 10言語対応 Dashboard・グラスモーフィズム UI",
+        "🔐 Basic Auth による Dashboard 保護",
+        "📷 MicroSD カード対応（SDMMC/SPI）ドライブレコーダー / タイムラプス録画",
+        "🌐 esptool-js 搭載 1クリック Web フラッシャー（index.html）"
+      ],
+      "ko": [
+        "🎥 MJPEG 트리플 버퍼 25FPS 카메라 - OV2640 / OV5640 지원",
+        "📡 SoftAP 캡티브 포털: Wi-Fi 스캔, STA 연결 및 자격증명 저장",
+        "🏪 클라우드 앱 스토어: HTTPS 스트리밍 OTA로 GitHub Releases에서 직접 다운로드 및 업데이트",
+        "🔄 듀얼 OTA 6MB: ota_0 / ota_1 파티션 및 자동 롤백",
+        "📊 10개 언어 대시보드 및 글래스모피즘 UI",
+        "🔐 Basic Auth 대시보드 보호",
+        "📷 MicroSD 카드 지원(SDMMC/SPI) 블랙박스 / 타임랩스 녹화",
+        "🌐 esptool-js 기반 1클릭 웹 플래셔(index.html) 통합"
+      ],
+      "ru": [
+        "🎥 MJPEG Triple-Buffer 25FPS камера - поддержка OV2640 / OV5640",
+        "📡 SoftAP Captive Portal: сканирование Wi-Fi, подключение STA и сохранение учётных данных",
+        "🏪 Облачный App Store: загрузка и обновление прошивки напрямую с GitHub Releases через HTTPS Streaming OTA",
+        "🔄 Dual-OTA 6MB: разделы ota_0 / ota_1 с автоматическим откатом",
+        "📊 Панель управления с 10 языками и интерфейсом glassmorphism",
+        "🔐 Basic Auth защита панели управления",
+        "📷 Поддержка карты MicroSD (SDMMC/SPI) для записи видеорегистратора / таймлапса",
+        "🌐 Встроенный 1-кликовый веб-прошивальщик (index.html) на esptool-js"
+      ],
+      "ar": [
+        "🎥 كاميرا MJPEG ثلاثية المخازن المؤقتة 25FPS - دعم OV2640 / OV5640",
+        "📡 بوابة SoftAP Captive Portal: فحص Wi-Fi والاتصال بـ STA وحفظ بيانات الاعتماد",
+        "🏪 متجر تطبيقات سحابي: تنزيل الفيرموير وتحديثه مباشرةً من GitHub Releases عبر HTTPS Streaming OTA",
+        "🔄 OTA مزدوج 6MB: أقسام ota_0 / ota_1 مع الاسترداد التلقائي",
+        "📊 لوحة تحكم بـ 10 لغات وواجهة glassmorphism",
+        "🔐 حماية لوحة التحكم بـ Basic Auth",
+        "📷 دعم بطاقة MicroSD (SDMMC/SPI) لتسجيل كاميرا المراقبة / الفاصل الزمني",
+        "🌐 مُثبِّت ويب 1-نقرة متكامل (index.html) باستخدام esptool-js"
+      ]
+    },
+    "url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/tag/v0.0.001",
+    "urlFull": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/Full_Flash.bin",
+    "urlOta": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/OTA_Update.bin"
+  }
+]
