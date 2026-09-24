@@ -1,11 +1,11 @@
 {
-  "version": "0.0.001",
-  "url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/OTA_Update.bin",
-  "description": "Phiên bản khởi động chính thức - Master OS với Camera MJPEG, SoftAP Captive Portal, Cloud App Store và Dual-OTA.",
-  "release_date": "22/09/2026",
+  "version": "0.0.002",
+  "url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.002/OTA_Update.bin",
+  "description": "Phiên bản v0.0.002: Tối ưu hóa Web Assets Flash nhúng (~68KB), chuẩn hóa toàn diện 10 ngôn ngữ i18n, sửa lỗi giao diện Web Flasher và tự động hóa dọn dẹp thư mục build.",
+  "release_date": "24/09/2026",
   "mandatory": false,
-  "changelog": "Bootstrap release: MJPEG Triple-Buffer Stream, SoftAP Wi-Fi Manager, Cloud App Store from GitHub Releases, Dual-OTA 6MB with rollback partition.",
-  "binary_url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/OTA_Update.bin",
-  "full_flash_url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.001/Full_Flash.bin",
+  "changelog": "v0.0.002: Flash Web Assets footprint optimization (~68KB), full 10-language i18n standardization, Web Flasher UI fixes & automated build clean-up.",
+  "binary_url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.002/OTA_Update.bin",
+  "full_flash_url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.002/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/github/changelog.json"
 }

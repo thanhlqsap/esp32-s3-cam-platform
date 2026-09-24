@@ -1,8 +1,92 @@
 [
   {
+    "version": "v0.0.002",
+    "date": "2026-09-24",
+    "tag": "Latest Release",
+    "title": {
+      "vi": "Phiên bản v0.0.002 - Tối ưu hóa Web Assets & Chuẩn hóa Đa ngôn ngữ",
+      "en": "Release v0.0.002 - Web Assets Optimization & i18n Standardization",
+      "zh": "v0.0.002 版本 - 网页资源优化与国际化标准化",
+      "es": "Versión v0.0.002 - Optimización de Recursos Web e i18n",
+      "fr": "Version v0.0.002 - Optimisation des Ressources Web & i18n",
+      "de": "Release v0.0.002 - Web-Asset-Optimierung & i18n-Standardisierung",
+      "ja": "v0.0.002 リリース - Webリソースの最適化と多言語標準化",
+      "ko": "v0.0.002 릴리스 - 웹 리소스 최적화 및 다국어 표준화",
+      "ru": "Релиз v0.0.002 - Оптимизация Web-ресурсов и стандартизация i18n",
+      "ar": "الإصدار v0.0.002 - تحسين موارد الويب وتوحيد الترجمة متعددة اللغات"
+    },
+    "description": "Flash Web Assets footprint optimization (~68KB), full 10-language i18n standardization, Web Flasher UI fixes & automated build clean-up.",
+    "details": {
+      "vi": "⚡ Phiên bản v0.0.002 tối ưu hóa bộ nhớ Flash nhúng PROGMEM chỉ còn ~68KB, đồng bộ toàn diện 10 ngôn ngữ (Tiếng Việt mặc định), khắc phục lỗi giao diện Web Flasher và tự động hóa dọn dẹp thư mục build.",
+      "en": "⚡ Release v0.0.002 reduces embedded Flash Web Assets to ~68KB, standardizes 10-language i18n engine, resolves Web Flasher UI glitches, and automates build clean-up.",
+      "zh": "⚡ v0.0.002 版本将 Flash PROGMEM 内置网页资源精简至 ~68KB，全面标准化 10 种语言国际化引擎，修复 Web Flasher 界面问题并实现构建自动清理。",
+      "es": "⚡ La versión v0.0.002 reduce los recursos Flash a ~68KB, estandariza el motor i18n en 10 idiomas, corrige la UI de Web Flasher y limpia carpetas temporales.",
+      "fr": "⚡ La version v0.0.002 optimise les ressources Flash à ~68Ko, standardise l'i18n en 10 langues, corrige l'interface Web Flasher et automatise le nettoyage.",
+      "de": "⚡ Release v0.0.002 optimiert Flash-Web-Assets auf ~68KB, standardisiert die 10-Sprachen-i18n-Engine, behebt UI-Fehler im Web Flasher und bereinigt Build-Ordner.",
+      "ja": "⚡ v0.0.002 では Flash 内蔵 Web リソースを ~68KB に削減、10 言語 i18n 標準化、Web フラッシャー UI 修正、ビルド自動クリーンアップを実装。",
+      "ko": "⚡ v0.0.002 릴리스는 Flash 임베디드 웹 리소스를 ~68KB로 최적화하고, 10개 국어 i18n 표준화, 웹 플래셔 UI 오류 수정 및 빌드 정리 자동화를 적용했습니다.",
+      "ru": "⚡ Релиз v0.0.002 оптимизирует встроенные Web-ресурсы Flash до ~68 КБ, стандартизирует 10 языков i18n, исправляет Web Flasher и очищает временные файлы сборки.",
+      "ar": "⚡ يعمل الإصدار v0.0.002 على تحسين موارد فلاش المضمنة لتصبح ~68 كيلوبايت، وتوحيد محرك الترجمة بـ 10 لغات، وإصلاح واجهة Web Flasher وتنظيف مجلدات البناء تلقائياً."
+    },
+    "changes": {
+      "vi": [
+        "📦 Tối ưu hóa Flash PROGMEM: Chỉ nhúng 5 asset cốt lõi (~68KB GZIP tổng cộng)",
+        "🌐 Chuẩn hóa cơ chế đa ngôn ngữ 10 quốc gia với i18n.js & data-i18n, xóa bỏ từ điển trùng lặp",
+        "🎨 Sửa lỗi hiển thị text và đường dẫn logo trên giao diện Web Flasher",
+        "🧹 Tự động dọn dẹp sạch sẽ toàn bộ thư mục tạm và file rác sau khi build",
+        "⚡ Nâng cấp pipeline đóng gói nhị phân tự động Full_Flash.bin & OTA_Update.bin"
+      ],
+      "en": [
+        "📦 Flash PROGMEM Optimization: Embedded only 5 core assets (~68KB GZIP total)",
+        "🌐 10-Language i18n standardization with i18n.js & data-i18n, zero redundant dictionaries",
+        "🎨 Fixed text rendering and logo path on Web Flasher interface",
+        "🧹 Automated workspace clean-up of temporary build directories",
+        "⚡ Enhanced automated packaging pipeline for Full_Flash.bin & OTA_Update.bin"
+      ],
+      "zh": [
+        "📦 Flash PROGMEM 优化：仅内置 5 个核心资源（GZIP 压缩共 ~68KB）",
+        "🌐 采用 i18n.js 与 data-i18n 全面标准化 10 国语言机制，清除重复字典",
+        "🎨 修复 Web Flasher 界面文字渲染及 Logo 相对路径问题",
+        "🧹 构建完成后自动彻底清理所有临时文件夹与垃圾文件",
+        "⚡ 升级 Full_Flash.bin 与 OTA_Update.bin 自动化打包流水线"
+      ],
+      "ja": [
+        "📦 Flash PROGMEM 最適化: コア 5 アセットのみ内蔵（GZIP 合計約 68KB）",
+        "🌐 i18n.js と data-i18n による 10 言語メカニズムの標準化、重複辞書の削除",
+        "🎨 Web フラッシャー画面のテキスト表示およびロゴパスの修正",
+        "🧹 ビルド完了後に一時ディレクトリを自動クリーンアップ",
+        "⚡ Full_Flash.bin および OTA_Update.bin 自動パッケージングの強化"
+      ],
+      "ko": [
+        "📦 Flash PROGMEM 최적화: 5개 핵심 에셋만 내장 (GZIP 합계 약 68KB)",
+        "🌐 i18n.js 및 data-i18n 기반 10개 국어 표준화, 중복 사전 완전 제거",
+        "🎨 Web Flasher 인터페이스 텍스트 렌더링 및 로고 경로 수정",
+        "🧹 빌드 완료 후 임시 디렉터리 및 불필요한 파일 자동 정리",
+        "⚡ Full_Flash.bin 및 OTA_Update.bin 자동 패키징 파이프라인 업그레이드"
+      ],
+      "ru": [
+        "📦 Оптимизация Flash PROGMEM: Встроено только 5 ключевых ассетов (~68 КБ GZIP)",
+        "🌐 Стандартизация 10 языков через i18n.js и data-i18n, удаление дублирующихся словарей",
+        "🎨 Исправление отображения текста и путей к логотипу в Web Flasher",
+        "🧹 Автоматическая очистка временных папок после сборки",
+        "⚡ Улучшенный пайплайн сборки Full_Flash.bin и OTA_Update.bin"
+      ],
+      "ar": [
+        "📦 تحسين ذاكرة الفلاش PROGMEM: تضمين 5 موارد أساسية فقط (~68 كيلوبايت GZIP)",
+        "🌐 توحيد آلية 10 لغات باستخدام i18n.js و data-i18n وإزالة القواميس المكررة",
+        "🎨 إصلاح عرض النصوص ومسار الشعار في واجهة Web Flasher",
+        "🧹 تنظيف تلقائي لمجلدات البناء المؤقتة بعد الانتهاء",
+        "⚡ ترقية خط تجميع وتغليف ملفات Full_Flash.bin و OTA_Update.bin تلقائياً"
+      ]
+    },
+    "url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/tag/v0.0.002",
+    "urlFull": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.002/Full_Flash.bin",
+    "urlOta": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.002/OTA_Update.bin"
+  },
+  {
     "version": "v0.0.001",
     "date": "2026-09-22",
-    "tag": "Latest Release",
+    "tag": "Previous Release",
     "title": {
       "vi": "Phiên bản khởi động chính thức - ESP32-S3-cam-platform",
       "en": "Official Bootstrap Release - ESP32-S3-cam-platform",

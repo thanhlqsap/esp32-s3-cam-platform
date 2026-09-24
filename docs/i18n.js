@@ -225,8 +225,31 @@
         },
 
         // --- B3. TỪ VỰNG WEB FLASHER & NẠP FIRMWARE USB (FLASHER) ---
-        flasher: {
             changelog: {
+                v0_0_002_title: {
+                    vi: "Phiên bản v0.0.002 - Tối ưu hóa Web Assets & Chuẩn hóa Đa ngôn ngữ",
+                    en: "Release v0.0.002 - Web Assets Optimization & i18n Standardization",
+                    zh: "v0.0.002 版本 - 网页资源优化与国际化标准化",
+                    es: "Versión v0.0.002 - Optimización de Recursos Web e i18n",
+                    fr: "Version v0.0.002 - Optimisation des Ressources Web & i18n",
+                    de: "Release v0.0.002 - Web-Asset-Optimierung & i18n-Standardisierung",
+                    ja: "v0.0.002 リリース - Webリソースの最適化と多言語標準化",
+                    ko: "v0.0.002 릴리스 - 웹 리소스 최적화 및 다국어 표준화",
+                    ru: "Релиз v0.0.002 - Оптимизация Web-ресурсов и стандартизация i18n",
+                    ar: "الإصدار v0.0.002 - تحسين موارد الويب وتوحيد الترجمة"
+                },
+                v0_0_002_desc: {
+                    vi: "⚡ Tối ưu Flash PROGMEM (~68KB), chuẩn hóa 10 ngôn ngữ với i18n.js, sửa giao diện Web Flasher và tự động dọn dẹp thư mục build.",
+                    en: "⚡ Flash PROGMEM optimization (~68KB), 10-language i18n standardization, Web Flasher UI fixes & automated build clean-up.",
+                    zh: "⚡ 精简 Flash PROGMEM (~68KB)，10 语言全面标准化，修复 Web Flasher 界面并实现构建自动清理。",
+                    es: "⚡ Optimización Flash PROGMEM (~68KB), estandarización i18n en 10 idiomas, corrección de UI en Web Flasher y limpieza automática.",
+                    fr: "⚡ Optimisation Flash PROGMEM (~68Ko), standardisation i18n en 10 langues, correction de l'UI Web Flasher et nettoyage automatique.",
+                    de: "⚡ Flash PROGMEM Optimierung (~68KB), 10-Sprachen-i18n-Standardisierung, Web Flasher UI-Fixes & automatische Build-Bereinigung.",
+                    ja: "⚡ Flash PROGMEM 最適化 (~68KB)、10言語 i18n 標準化、Web フラッシャー UI 修正、ビルド自動クリーンアップ。",
+                    ko: "⚡ Flash PROGMEM 최적화 (~68KB), 10개 국어 i18n 표준화, Web Flasher UI 수정 및 빌드 자동 정리.",
+                    ru: "⚡ Оптимизация Flash PROGMEM (~68 КБ), стандартизация 10 языков i18n, исправление UI Web Flasher и автоочистка сборки.",
+                    ar: "⚡ تحسين ذاكرة الفلاش PROGMEM (~68 كيلوبايت)، وتوحيد الترجمة بـ 10 لغات، وإصلاح واجهة Web Flasher وتنظيف مجلدات البناء."
+                },
                 v0_0_001_title: {
                     vi: "Phiên bản khởi động chính thức - ESP32-S3-cam-platform",
                     en: "Official Bootstrap Release - ESP32-S3-cam-platform",
@@ -837,13 +860,13 @@
         url: 'https://www.bumbontechlab.com',
         youtubeUrl: 'https://www.youtube.com/@BumBon_Tech_Lab',
         name: 'BumBonTechLab',
-        logoUrl: '/logo.png',
+        logoUrl: 'logo.png',
         renderHeaderLogo: function(containerId = 'brandLogoContainer') {
             const el = document.getElementById(containerId);
             if (!el) return;
             el.innerHTML = `
                 <a href="${this.url}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:inherit;" title="Visit ${this.name} (www.bumbontechlab.com)">
-                    <img src="${this.logoUrl}" alt="${this.name}" style="width:36px; height:36px; border-radius:50%; object-fit:cover; box-shadow:0 0 10px rgba(6,182,212,0.5); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+                    <img src="${this.logoUrl}" onerror="this.src='logo_96.png'" alt="${this.name}" style="width:36px; height:36px; border-radius:50%; object-fit:cover; box-shadow:0 0 10px rgba(6,182,212,0.5); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
                 </a>
             `;
         },
