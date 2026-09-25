@@ -640,18 +640,46 @@
           buffer = localFileBuffer;
           log(`[1/3] File: ${localFileName} (${Math.round(buffer.byteLength / 1024)} KB)`);
         } else {
-          // Build GitHub URL based on selected version + offset
+          // Download online firmware with Multi-Source Fallback (jsDelivr / Raw GitHub / Releases)
           const selVer = document.getElementById('versionSelect');
           const ver = selVer ? selVer.value : changelogData[0].version;
-          const item = changelogData.find(c => c.version === ver) || changelogData[0];
-          const url = item.urlFull; // Always Full_Flash for online mode
+          const isFull = (flashAddress === 0x0000);
+          const filename = isFull ? 'Full_Flash.bin' : 'OTA_Update.bin';
 
           statusLabel.innerText = window.I18N ? window.I18N.t('flasher.downloading') : 'Downloading...';
-          log(`[1/3] GET: ${url}`);
-          const resp = await fetch(url, { mode: 'cors', cache: 'no-cache' });
-          if (!resp.ok) throw new Error(`HTTP ${resp.status} — Download failed: ${url}`);
-          buffer = await resp.arrayBuffer();
-          log(`[1/3] Download OK: ${Math.round(buffer.byteLength / 1024)} KB`);
+          
+          const urls = [
+            `https://cdn.jsdelivr.net/gh/thanhlqsap/esp32-s3-cam-platform@main/github/build/${filename}`,
+            `https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/github/build/${filename}`,
+            `https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/${ver}/${filename}`,
+            `https://cdn.jsdelivr.net/gh/thanhlqsap/esp32-s3-cam-platform@${ver}/github/build/${filename}`
+          ];
+
+          let downloadOk = false;
+          let lastErr = null;
+
+          for (const u of urls) {
+            try {
+              log(`[1/3] GET: ${u}`);
+              const resp = await fetch(u, { mode: 'cors', cache: 'no-cache' });
+              if (resp.ok) {
+                const buf = await resp.arrayBuffer();
+                if (buf && buf.byteLength > 10000) {
+                  buffer = buf;
+                  downloadOk = true;
+                  log(`[1/3] Download OK: ${Math.round(buffer.byteLength / 1024)} KB`);
+                  break;
+                }
+              }
+            } catch(e) {
+              lastErr = e;
+              log(`⚠️ Fetch fail (${e.message || 'CORS/404'}), trying next source...`);
+            }
+          }
+
+          if (!downloadOk || !buffer) {
+            throw new Error(`Failed to download firmware (${lastErr ? lastErr.message : 'File not found on GitHub'}). Please use Local File mode or create Release ${ver}!`);
+          }
         }
 
         // Step 2: Connect to ESP32-S3
