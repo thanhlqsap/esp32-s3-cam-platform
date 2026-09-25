@@ -1,10 +1,10 @@
 {
-  "version": "0.0.002",
+  "version": "0.0.003",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
-  "description": "Phiên bản v0.0.002: Tối ưu hóa Web Assets Flash nhúng (~68KB), chuẩn hóa toàn diện 10 ngôn ngữ i18n, sửa lỗi giao diện Web Flasher và tự động hóa dọn dẹp thư mục build.",
-  "release_date": "24/09/2026",
+  "description": "Phiên bản v0.0.003: Thêm thẻ OTA Update trên Dashboard (Online Cloud OTA & Offline File OTA), kiến trúc Dual-Core bất biến (Core 0 Port 81 MJPEG Stream, Core 1 Port 80 WebServer), tối ưu độ mượt và đa ngôn ngữ.",
+  "release_date": "25/09/2026",
   "mandatory": false,
-  "changelog": "v0.0.002: Flash Web Assets footprint optimization (~68KB), full 10-language i18n standardization, Web Flasher UI fixes & automated build clean-up.",
+  "changelog": "v0.0.003: Added OTA Update tab on Dashboard (Online Cloud OTA & Offline File OTA), Immutable Dual-Core Architecture (Core 0 Port 81 MJPEG Stream, Core 1 Port 80 WebServer), UI smoothness & i18n fixes.",
   "binary_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json"

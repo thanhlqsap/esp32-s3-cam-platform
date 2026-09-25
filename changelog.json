@@ -1,8 +1,92 @@
 [
   {
+    "version": "v0.0.003",
+    "date": "2026-09-25",
+    "tag": "Latest Release",
+    "title": {
+      "vi": "Phiên bản v0.0.003 - Thẻ Cập Nhật OTA trên Dashboard & Kiến trúc Dual-Core bất biến",
+      "en": "Release v0.0.003 - Dashboard OTA Update Tab & Immutable Dual-Core Architecture",
+      "zh": "v0.0.003 版本 - 仪表板 OTA 升级选项卡与不可变双核架构",
+      "es": "Versión v0.0.003 - Pestaña de Actualización OTA en Dashboard y Arquitectura Dual-Core",
+      "fr": "Version v0.0.003 - Onglet de Mise à Jour OTA sur Dashboard & Architecture Dual-Core",
+      "de": "Release v0.0.003 - Dashboard OTA-Update-Tab & Unveränderliche Dual-Core-Architektur",
+      "ja": "v0.0.003 リリース - Dashboard OTA 更新タブと不変デュアルコアアーキテクチャ",
+      "ko": "v0.0.003 릴리스 - 대시보드 OTA 업데이트 탭 및 불변 듀얼코어 아키텍처",
+      "ru": "Релиз v0.0.003 - Вкладка OTA обновления в панели управления и неизменяемая двухъядерная архитектура",
+      "ar": "الإصدار v0.0.003 - علامة تبويب تحديث OTA في لوحة التحكم وبنية ثنائية النواة غير قابلة للتغيير"
+    },
+    "description": "Added OTA Update tab on Dashboard (Online Cloud OTA & Offline File OTA), Immutable Dual-Core Architecture (Core 0 Port 81 MJPEG Stream, Core 1 Port 80 WebServer), UI smoothness & i18n fixes.",
+    "details": {
+      "vi": "⚡ Phiên bản v0.0.003 bổ sung Tab Cập Nhật OTA (Online Cloud OTA từ GitHub Releases và Offline File OTA), phân bổ kiến trúc Dual-Core bất biến (Core 0 Cổng 81 cho Camera Stream, Core 1 Cổng 80 cho Dashboard & REST APIs) giúp xử lý triệt để hiện tượng nghẽn mạng.",
+      "en": "⚡ Release v0.0.003 introduces the Dashboard OTA Update Tab (Online Cloud OTA from GitHub Releases & Offline File OTA) and immutable Dual-Core allocation (Core 0 Port 81 for Camera Stream, Core 1 Port 80 for Dashboard & REST APIs) completely eliminating web congestion.",
+      "zh": "⚡ v0.0.003 版本在控制台新增了 OTA 更新选项卡（支持 GitHub Releases 在线云端 OTA 与本地离线文件 OTA），并固定双核分配架构（Core 0 端口 81 用于相机流，Core 1 端口 80 用于 Web 与 API），彻底解决网络阻塞。",
+      "es": "⚡ La versión v0.0.003 añade la pestaña de actualización OTA en el Dashboard y la arquitectura Dual-Core inmutable (Core 0 Puerto 81 para streaming de cámara, Core 1 Puerto 80 para Dashboard y APIs).",
+      "fr": "⚡ La version v0.0.003 ajoute l'onglet de mise à jour OTA sur le Dashboard et l'architecture Dual-Core immuable (Core 0 Port 81 pour le flux caméra, Core 1 Port 80 pour le Dashboard et les API).",
+      "de": "⚡ Release v0.0.003 führt das OTA-Update-Tab im Dashboard ein und implementiert die unveränderliche Dual-Core-Architektur (Core 0 Port 81 für Kamera-Stream, Core 1 Port 80 für Dashboard & APIs).",
+      "ja": "⚡ v0.0.003 では Dashboard に OTA 更新タブを追加し、不変のデュアルコア分離（Core 0 ポート 81: カメラ配信、Core 1 ポート 80: Dashboard/API）により Web 輻輳を完全解消しました。",
+      "ko": "⚡ v0.0.003 릴리스는 대시보드에 OTA 업데이트 탭을 추가하고 불변 듀얼코어 분리(Core 0 포트 81: 카메라 스트림, Core 1 포트 80: 대시보드/API)를 적용하여 웹 병목을 완벽 해결했습니다.",
+      "ru": "⚡ Релиз v0.0.003 добавляет вкладку OTA-обновления в панель управления и неизменяемое разделение ядер (Core 0 Порт 81 для камеры, Core 1 Порт 80 для панели и API), устраняя зависания веб-сервера.",
+      "ar": "⚡ يضيف الإصدار v0.0.003 علامة تبويب تحديث OTA في لوحة التحكم وتوزيع النواة المزدوجة غير القابل للتغيير (Core 0 المنفذ 81 لبث الكاميرا، Core 1 المنفذ 80 للوحة التحكم والـ APIs)."
+    },
+    "changes": {
+      "vi": [
+        "🔄 Bổ sung Thẻ Cập Nhật OTA trực tiếp trên Web Dashboard (Hỗ trợ Cloud OTA & Offline OTA)",
+        "⚡ Phân bổ kiến trúc Dual-Core bất biến: Core 0 (Port 81) cho Video Stream, Core 1 (Port 80) cho Web Dashboard",
+        "🚀 Khắc phục triệt để lỗi nghẽn Dashboard / mất kết nối khi Live Stream Camera",
+        "🌐 Tối ưu hóa đa ngôn ngữ 10 quốc gia trên tất cả các tab điều khiển",
+        "🛡️ Cải thiện cơ chế lưu trạng thái ngôn ngữ an toàn trên Safari/iOS sandbox"
+      ],
+      "en": [
+        "🔄 Added direct OTA Update tab on Web Dashboard (Cloud OTA & Offline OTA support)",
+        "⚡ Immutable Dual-Core allocation: Core 0 (Port 81) for Video Stream, Core 1 (Port 80) for Web Dashboard",
+        "🚀 Completely resolved Dashboard congestion / disconnection while live streaming camera",
+        "🌐 Optimized 10-language i18n support across all control tabs",
+        "🛡️ Enhanced safe language state storage on Safari/iOS sandbox"
+      ],
+      "zh": [
+        "🔄 控制面板新增直接 OTA 升级选项卡（支持云端在线 OTA 与本地离线 OTA）",
+        "⚡ 不可变双核架构：Core 0（81端口）负责视频流，Core 1（80端口）负责 Web 控制台",
+        "🚀 彻底解决摄像头直播时导致 Web 控制台阻塞/掉线的问题",
+        "🌐 优化所有控制选项卡的 10 国语言国际化支持",
+        "🛡️ 增强 Safari/iOS 沙箱环境下的多语言安全存储机制"
+      ],
+      "ja": [
+        "🔄 Web Dashboard に直接 OTA 更新タブを追加（クラウド OTA およびオフライン OTA 対応）",
+        "⚡ 不変デュアルコア分離: Core 0 (Port 81) 動画ストリーム、Core 1 (Port 80) Web Dashboard",
+        "🚀 カメラライブ配信時の Web 画面フリーズ・切断問題を完全解消",
+        "🌐 全コントロールタブにおける 10 言語多言語対応の最適化",
+        "🛡️ Safari/iOS サンドボックスでの言語安全ストレージを改善"
+      ],
+      "ko": [
+        "🔄 웹 대시보드에 직접 OTA 업데이트 탭 추가 (클라우드 OTA 및 오프라인 OTA 지원)",
+        "⚡ 불변 듀얼코어 아키텍처: Core 0 (Port 81) 비디오 스트림, Core 1 (Port 80) 웹 대시보드",
+        "🚀 카메라 라이브 스트리밍 중 웹 대시보드 멈춤/연결 끊김 완벽 해결",
+        "🌐 모든 제어 탭에서 10개 국어 i18n 지원 최적화",
+        "🛡️ Safari/iOS 샌드박스 환경에서의 안전한 언어 저장소 개선"
+      ],
+      "ru": [
+        "🔄 Добавлена вкладка OTA обновления прямо в Dashboard (Cloud OTA и оффлайн OTA)",
+        "⚡ Неизменяемое разделение двух ядер: Core 0 (Порт 81) для видеопотока, Core 1 (Порт 80) для Dashboard",
+        "🚀 Полностью решена проблема зависания/отключения панели при трансляции видео",
+        "🌐 Оптимизирована поддержка 10 языков на всех вкладках управления",
+        "🛡️ Улучшено безопасное сохранение языка в песочнице Safari/iOS"
+      ],
+      "ar": [
+        "🔄 إضافة علامة تبويب تحديث OTA مباشرة في لوحة التحكم (دعم Cloud OTA و OTA غير المتصل)",
+        "⚡ تخصيص النواة المزدوجة غير القابل للتغيير: Core 0 (المنفذ 81) لبث الفيديو، Core 1 (المنفذ 80) للوحة التحكم",
+        "🚀 حل مشكلة بطء أو انقطاع لوحة التحكم تماماً أثناء البث المباشر للكاميرا",
+        "🌐 تحسين دعم 10 لغات عبر جميع علامات تبويب التحكم",
+        "🛡️ تعزيز التخزين الآمن لحالة اللغة على متصفحات Safari/iOS"
+      ]
+    },
+    "url": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/tag/v0.0.003",
+    "urlFull": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.003/Full_Flash.bin",
+    "urlOta": "https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/v0.0.003/OTA_Update.bin"
+  },
+  {
     "version": "v0.0.002",
     "date": "2026-09-24",
-    "tag": "Latest Release",
+    "tag": "Previous Release",
     "title": {
       "vi": "Phiên bản v0.0.002 - Tối ưu hóa Web Assets & Chuẩn hóa Đa ngôn ngữ",
       "en": "Release v0.0.002 - Web Assets Optimization & i18n Standardization",
