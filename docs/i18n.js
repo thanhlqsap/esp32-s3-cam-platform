@@ -117,6 +117,125 @@
             }
         },
 
+        // --- 1.1 CAMERA (ĐIỀU KHIỂN & STREAM CAMERA) ---
+        camera: {
+            live_stream: {
+                vi: "Truyền Trực Tiếp (Triple-Buffer OPI)", en: "Live Stream (Triple-Buffer OPI)", zh: "实时视频流 (Triple-Buffer OPI)",
+                es: "Transmisión en Vivo (OPI)", fr: "Flux en Direct (OPI)", de: "Live-Stream (OPI)",
+                ja: "ライブストリーム (OPI)", ko: "라이브 스트림 (OPI)", ru: "Прямой Эфир (OPI)", ar: "البث المباشر (OPI)"
+            },
+            snap_btn: {
+                vi: "Chụp Ảnh", en: "Snapshot", zh: "拍照",
+                es: "Capturar", fr: "Capturer", de: "Foto Aufnehmen",
+                ja: "スナップショット", ko: "사진 촬영", ru: "Снимок", ar: "التقاط صورة"
+            },
+            toggle_stream: {
+                vi: "Tạm Dừng Stream", en: "Pause Stream", zh: "暂停串流",
+                es: "Pausar Stream", fr: "Mettre en Pause", de: "Stream Pausieren",
+                ja: "ストリーム一時停止", ko: "스트림 일시 중지", ru: "Пауза Потока", ar: "إيقاف مؤقت للبث"
+            },
+            start_stream: {
+                vi: "Bật Live Stream", en: "Start Stream", zh: "开始串流",
+                es: "Iniciar Stream", fr: "Démarrer Flux", de: "Stream Starten",
+                ja: "ストリーム開始", ko: "스트림 시작", ru: "Запуск Потока", ar: "بدء البث"
+            },
+            pause_stream: {
+                vi: "Tạm Dừng Stream", en: "Pause Stream", zh: "暂停串流",
+                es: "Pausar Stream", fr: "Mettre en Pause", de: "Stream Pausieren",
+                ja: "ストリーム一時停止", ko: "스트림 일시 중지", ru: "Пауза Потока", ar: "إيقاف مؤقت للبث"
+            },
+            controls_title: {
+                vi: "Điều Khiển Camera", en: "Camera Controls", zh: "相机参数控制",
+                es: "Controles de Cámara", fr: "Contrôles Caméra", de: "Kamerasteuerung",
+                ja: "カメラ設定・調整", ko: "카메라 설정 제어", ru: "Управление Камерой", ar: "تحكم الكاميرا"
+            },
+            resolution: {
+                vi: "Độ Phân Giải (Resolution)", en: "Resolution", zh: "分辨率 (Resolution)",
+                es: "Resolución", fr: "Résolution", de: "Auflösung",
+                ja: "解像度", ko: "해상도", ru: "Разрешение", ar: "الدقة"
+            },
+            jpeg_quality: {
+                vi: "Chất Lượng JPEG (Quality)", en: "JPEG Quality", zh: "JPEG 图像质量",
+                es: "Calidad JPEG", fr: "Qualité JPEG", de: "JPEG-Qualität",
+                ja: "JPEG 画質", ko: "JPEG 화질", ru: "Качество JPEG", ar: "جودة JPEG"
+            },
+            brightness: {
+                vi: "Độ Sáng (Brightness)", en: "Brightness", zh: "亮度 (Brightness)",
+                es: "Brillo", fr: "Luminosité", de: "Helligkeit",
+                ja: "明るさ", ko: "밝기", ru: "Яркость", ar: "السطوع"
+            },
+            contrast: {
+                vi: "Độ Tương Phản (Contrast)", en: "Contrast", zh: "对比度 (Contrast)",
+                es: "Contraste", fr: "Contraste", de: "Kontrast",
+                ja: "コントラスト", ko: "대비", ru: "Контрастность", ar: "التباين"
+            },
+            saturation: {
+                vi: "Độ Bão Hòa Màu (Saturation)", en: "Saturation", zh: "色彩饱和度 (Saturation)",
+                es: "Saturación", fr: "Saturation", de: "Farbsättigung",
+                ja: "彩度", ko: "채도", ru: "Насыщенность", ar: "التشبع"
+            },
+            special_effect: {
+                vi: "Hiệu Ứng Màu (Special Effect)", en: "Special Effect", zh: "色彩滤镜特效",
+                es: "Efecto Especial", fr: "Effet Spécial", de: "Spezialeffekt",
+                ja: "特殊効果", ko: "특수 효과", ru: "Спецэффект", ar: "تأثير خاص"
+            },
+            effect_normal: {
+                vi: "Bình Thường (Normal)", en: "Normal", zh: "标准模式 (Normal)",
+                es: "Normal", fr: "Normal", de: "Normal",
+                ja: "標準", ko: "일반", ru: "Обычный", ar: "عادي"
+            },
+            effect_negative: {
+                vi: "Âm Bản (Negative)", en: "Negative", zh: "负片模式 (Negative)",
+                es: "Negativo", fr: "Négatif", de: "Negativ",
+                ja: "ネガ", ko: "반전", ru: "Негатив", ar: "سلبي"
+            },
+            effect_grayscale: {
+                vi: "Trắng Đen (Grayscale)", en: "Grayscale", zh: "黑白灰度 (Grayscale)",
+                es: "Escala de Grises", fr: "Niveaux de Gris", de: "Graustufen",
+                ja: "グレースケール", ko: "흑백", ru: "Оттенки Серого", ar: "تدرج رمادي"
+            },
+            effect_red: {
+                vi: "Ám Đỏ (Red Tint)", en: "Red Tint", zh: "偏红滤镜 (Red Tint)",
+                es: "Tinte Rojo", fr: "Teinte Rouge", de: "Rotstich",
+                ja: "赤みがかり", ko: "붉은 색조", ru: "Красный Оттенок", ar: "صبغة حمراء"
+            },
+            effect_green: {
+                vi: "Ám Xanh Lá (Green Tint)", en: "Green Tint", zh: "偏绿滤镜 (Green Tint)",
+                es: "Tinte Verde", fr: "Teinte Verte", de: "Grünstich",
+                ja: "緑がかり", ko: "녹색 색조", ru: "Зеленый Оттенок", ar: "صبغة خضراء"
+            },
+            effect_blue: {
+                vi: "Ám Xanh Dương (Blue Tint)", en: "Blue Tint", zh: "偏蓝滤镜 (Blue Tint)",
+                es: "Tinte Azul", fr: "Teinte Bleue", de: "Blaustich",
+                ja: "青みがかり", ko: "푸른 색조", ru: "Синий Оттенок", ar: "صبغة زرقاء"
+            },
+            effect_sepia: {
+                vi: "Cổ Điển (Sepia)", en: "Sepia", zh: "复古怀旧 (Sepia)",
+                es: "Sepia", fr: "Sépia", de: "Sepia",
+                ja: "セピア", ko: "세피아", ru: "Сепия", ar: "سيبيا"
+            },
+            awb: {
+                vi: "Cân Bằng AWB", en: "Auto White Balance (AWB)", zh: "自动白平衡 (AWB)",
+                es: "Balance Blancos (AWB)", fr: "Balance Blancs (AWB)", de: "Autom. Weißabgleich (AWB)",
+                ja: "自動ホワイトバランス (AWB)", ko: "자동 화이트 밸런스 (AWB)", ru: "Автобаланс Белого (AWB)", ar: "توازن اللون الأبيض التلقائي"
+            },
+            hmirror: {
+                vi: "Lật Ngang", en: "Horizontal Mirror", zh: "水平镜像翻转",
+                es: "Espejo Horizontal", fr: "Miroir Horizontal", de: "Horizontal Spiegeln",
+                ja: "左右反転", ko: "좌우 반전", ru: "Отражение по горизонтали", ar: "مرآة أفقية"
+            },
+            vflip: {
+                vi: "Lật Dọc", en: "Vertical Flip", zh: "垂直翻转",
+                es: "Volteo Vertical", fr: "Retournement Vertical", de: "Vertikal Spiegeln",
+                ja: "上下反転", ko: "상하 반전", ru: "Отражение по вертикали", ar: "قلب عمودي"
+            },
+            flash_led: {
+                vi: "Đèn Flash LED (Brightness)", en: "Flash LED Brightness", zh: "补光灯亮度 (Flash LED)",
+                es: "Brillo del Flash LED", fr: "Luminosité Flash LED", de: "Flash-LED Helligkeit",
+                ja: "フラッシュ LED 輝度", ko: "플래시 LED 밝기", ru: "Яркость Flash LED", ar: "سطوع فلاش LED"
+            }
+        },
+
         // --- B. TỪ VỰNG DASHBOARD & APP STORE (STORE) ---,
 
         // --- 2. DASHBOARD (GIAO DIỆN TRUNG TÂM MASTER OS) ---
