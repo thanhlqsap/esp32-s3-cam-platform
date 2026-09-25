@@ -988,6 +988,76 @@
                 es: "Brillo de Flash LED", fr: "Luminosité Flash LED", de: "Blitz-LED Helligkeit",
                 ja: "フラッシュLED輝度", ko: "플래시 LED 밝기", ru: "Яркость Вспышки", ar: "سطوع فلاش LED"
             },
+            brightness: {
+                vi: "Độ Sáng (Brightness)", en: "Brightness", zh: "亮度",
+                es: "Brillo", fr: "Luminosité", de: "Helligkeit",
+                ja: "明るさ", ko: "밝기", ru: "Яркость", ar: "السطوع"
+            },
+            contrast: {
+                vi: "Độ Tương Phản (Contrast)", en: "Contrast", zh: "对比度",
+                es: "Contraste", fr: "Contraste", de: "Kontrast",
+                ja: "コントラスト", ko: "대비", ru: "Контраст", ar: "التباين"
+            },
+            saturation: {
+                vi: "Độ Bão Hòa Màu (Saturation)", en: "Saturation", zh: "饱和度",
+                es: "Saturación", fr: "Saturation", de: "Sättigung",
+                ja: "彩度", ko: "채도", ru: "Насыщенность", ar: "التشبع"
+            },
+            special_effect: {
+                vi: "Hiệu Ứng Màu (Special Effect)", en: "Special Effect", zh: "特殊色彩效果",
+                es: "Efecto Especial", fr: "Effet Spécial", de: "Spezialeffekt",
+                ja: "特殊効果", ko: "특수 효과", ru: "Спецэффект", ar: "تأثير خاص"
+            },
+            awb: {
+                vi: "Cân Bằng Trắng Tự Động (AWB)", en: "Auto White Balance (AWB)", zh: "自动白平衡 (AWB)",
+                es: "Balance de Blancos Auto (AWB)", fr: "Balance des Blancs Auto (AWB)", de: "Automatischer Weißabgleich (AWB)",
+                ja: "自動ホワイトバランス (AWB)", ko: "자동 화이트 밸런스 (AWB)", ru: "Автобаланс Белого (AWB)", ar: "توازن اللون الأبيض التلقائي (AWB)"
+            },
+            hmirror: {
+                vi: "Lật Ảnh Ngang (H-Mirror)", en: "Horizontal Mirror (H-Mirror)", zh: "水平镜像",
+                es: "Espejo Horizontal", fr: "Miroir Horizontal", de: "Horizontal Spiegeln",
+                ja: "左右反転 (H-Mirror)", ko: "수평 반전 (H-Mirror)", ru: "Зеркало по горизонтали", ar: "مرآة أفقية"
+            },
+            vflip: {
+                vi: "Lật Ảnh Dọc (V-Flip)", en: "Vertical Flip (V-Flip)", zh: "垂直翻转",
+                es: "Volteo Vertical", fr: "Retournement Vertical", de: "Vertikal Spiegeln",
+                ja: "上下反転 (V-Flip)", ko: "수직 반전 (V-Flip)", ru: "Переворот по вертикали", ar: "قلب رأسي"
+            },
+            effect_normal: {
+                vi: "Bình Thường (Normal)", en: "Normal", zh: "正常",
+                es: "Normal", fr: "Normal", de: "Normal",
+                ja: "標準", ko: "표준", ru: "Обычный", ar: "عادي"
+            },
+            effect_negative: {
+                vi: "Âm Bản (Negative)", en: "Negative", zh: "负片",
+                es: "Negativo", fr: "Négatif", de: "Negativ",
+                ja: "ネガ", ko: "반전 (네거티브)", ru: "Негатив", ar: "سلبي"
+            },
+            effect_grayscale: {
+                vi: "Trắng Đen (Grayscale)", en: "Grayscale", zh: "黑白灰度",
+                es: "Escala de Grises", fr: "Niveaux de Gris", de: "Graustufen",
+                ja: "グレースケール", ko: "흑백", ru: "Оттенки Серого", ar: "تدرج رمادي"
+            },
+            effect_red: {
+                vi: "Ám Đỏ (Red Tint)", en: "Red Tint", zh: "红调",
+                es: "Tono Rojo", fr: "Teinte Rouge", de: "Rotstich",
+                ja: "赤色トーン", ko: "붉은 톤", ru: "Красный оттенок", ar: "مسحة حمراء"
+            },
+            effect_green: {
+                vi: "Ám Xanh Lá (Green Tint)", en: "Green Tint", zh: "绿调",
+                es: "Tono Verde", fr: "Teinte Verte", de: "Grünstich",
+                ja: "緑色トーン", ko: "초록 톤", ru: "Зеленый оттенок", ar: "مسحة خضراء"
+            },
+            effect_blue: {
+                vi: "Ám Xanh Dương (Blue Tint)", en: "Blue Tint", zh: "蓝调",
+                es: "Tono Azul", fr: "Teinte Bleue", de: "Blaustich",
+                ja: "青色トーン", ko: "파란 톤", ru: "Синий оттенок", ar: "مسحة زرقاء"
+            },
+            effect_sepia: {
+                vi: "Cổ Điển (Sepia)", en: "Sepia", zh: "复古褐色",
+                es: "Sepia", fr: "Sépia", de: "Sepia",
+                ja: "セピア", ko: "세피아", ru: "Сепия", ar: "سيبيا"
+            },
             enroll_face: {
                 vi: "Đăng Ký Khuôn Mặt", en: "Enroll Face ID", zh: "注册人脸",
                 es: "Registrar Rostro", fr: "Enregistrer Visage", de: "Gesicht registrieren",
