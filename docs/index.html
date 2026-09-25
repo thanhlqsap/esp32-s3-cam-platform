@@ -10,15 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   
   <script src="i18n.js"></script>
-
+  <script src="esptool-bundle.js"></script>
   <script src="https://unpkg.com/esptool-js@0.5.4/bundle.js"></script>
-  <script>
-    if (typeof ESPLoader === 'undefined' && (typeof esptooljs === 'undefined' || !esptooljs.ESPLoader)) {
-      const cdn = document.createElement('script');
-      cdn.src = 'https://unpkg.com/esptool-js@0.5.4/bundle.js';
-      document.head.appendChild(cdn);
-    }
-  </script>
 
   <style>
     :root {
@@ -569,6 +562,42 @@
       return binary;
     }
 
+    // ================================================================
+    // DYNAMIC SCRIPT LOADER (Fallback for local / offline / multi-CDN)
+    // ================================================================
+    async function ensureEsptoolLoaded() {
+      if ((window.ESPLoader || (window.esptooljs && window.esptooljs.ESPLoader)) &&
+          (window.Transport || (window.esptooljs && window.esptooljs.Transport))) {
+        return true;
+      }
+
+      const sources = [
+        'esptool-bundle.js',
+        'https://unpkg.com/esptool-js@0.5.4/bundle.js',
+        'https://cdn.jsdelivr.net/npm/esptool-js@0.5.4/bundle.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/esptool-js/0.5.4/bundle.js'
+      ];
+
+      for (const src of sources) {
+        try {
+          await new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error('Failed: ' + src));
+            document.head.appendChild(script);
+          });
+          if ((window.ESPLoader || (window.esptooljs && window.esptooljs.ESPLoader)) &&
+              (window.Transport || (window.esptooljs && window.esptooljs.Transport))) {
+            return true;
+          }
+        } catch (e) {
+          // Try next source
+        }
+      }
+      return false;
+    }
+
     async function startSimpleFlash() {
       const btn = document.getElementById('flashBtn');
       const statusAlert = document.getElementById('statusAlert');
@@ -615,6 +644,7 @@
         }
 
         // Step 2: Connect to ESP32-S3
+        await ensureEsptoolLoaded();
         const ESPLoaderClass = window.ESPLoader || (window.esptooljs && window.esptooljs.ESPLoader);
         const TransportClass = window.Transport || (window.esptooljs && window.esptooljs.Transport);
         if (!ESPLoaderClass || !TransportClass) {
