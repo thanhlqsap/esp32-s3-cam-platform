@@ -26,6 +26,93 @@
 
     // 2. BẢNG TỪ ĐIỂN ĐA NGÔN NGỮ PHÂN TẦNG THEO NAMESPACE (10 NGÔN NGỮ)
     const DICTIONARY = {
+        // --- WIFI CAPTIVE PORTAL (10 NGÔN NGỮ) ---
+        wifi: {
+            setup_title: {
+                vi: "Cấu Hình Mạng Wi-Fi", en: "Wi-Fi Network Setup", zh: "Wi-Fi 网络配置",
+                es: "Configuración de Red Wi-Fi", fr: "Configuration du Réseau Wi-Fi", de: "WLAN-Netzwerk-Konfiguration",
+                ja: "Wi-Fi ネットワーク設定", ko: "Wi-Fi 네트워크 구성", ru: "Настройка сети Wi-Fi", ar: "إعداد شبكة Wi-Fi"
+            },
+            setup_desc: {
+                vi: "Chọn mạng Wi-Fi khả dụng hoặc nhập thủ công SSID và mật khẩu để kết nối thiết bị.",
+                en: "Select an available Wi-Fi network or manually enter the SSID and password to connect.",
+                zh: "选择可用 Wi-Fi 网络或手动输入 SSID 和密码以连接设备。",
+                es: "Seleccione una red Wi-Fi disponible o ingrese manualmente el SSID y la contraseña para conectar el dispositivo.",
+                fr: "Sélectionnez un réseau Wi-Fi disponible ou saisissez manuellement le SSID et le mot de passe pour connecter l'appareil.",
+                de: "Wählen Sie ein verfügbares WLAN-Netzwerk aus oder geben Sie SSID und Passwort manuell ein, um das Gerät zu verbinden.",
+                ja: "利用可能な Wi-Fi ネットワークを選択するか、SSID とパスワードを手動で入力してデバイスを接続します。",
+                ko: "사용 가능한 Wi-Fi 네트워크를 선택하거나 SSID와 비밀번호를 수동으로 입력하여 장치를 연결하십시오.",
+                ru: "Выберите доступную сеть Wi-Fi hoặc вручную введите SSID và пароль для подключения устройства.",
+                ar: "حدد شبكة Wi-Fi متوفرة أو أدخل SSID وكلمة المرور يدويًا لتوصيل الجهاز."
+            },
+            scan_networks: {
+                vi: "Quét Mạng Wi-Fi", en: "Scan Wi-Fi Networks", zh: "扫描 Wi-Fi 网络",
+                es: "Escanear Redes Wi-Fi", fr: "Scanner les Réseaux Wi-Fi", de: "WLAN-Netzwerke scannen",
+                ja: "Wi-Fi ネットワークをスキャン", ko: "Wi-Fi 네트워크 스캔", ru: "Сканировать сети Wi-Fi", ar: "مسح شبكات Wi-Fi"
+            },
+            refresh: {
+                vi: "Làm mới", en: "Refresh", zh: "刷新",
+                es: "Actualizar", fr: "Actualiser", de: "Aktualisieren",
+                ja: "更新", ko: "새로고침", ru: "Обновить", ar: "تحديث"
+            },
+            scanning: {
+                vi: "Đang quét mạng...", en: "Scanning networks...", zh: "正在扫描网络...",
+                es: "Escaneando redes...", fr: "Scan des réseaux...", de: "Netzwerke werden gescannt...",
+                ja: "ネットワークをスキャン中...", ko: "네트워크 검색 중...", ru: "Сканирование сетей...", ar: "جارٍ مسح الشبكات..."
+            },
+            not_found: {
+                vi: "Không tìm thấy mạng", en: "No networks found", zh: "未找到网络",
+                es: "No se encontraron redes", fr: "Aucun réseau trouvé", de: "Keine Netzwerke gefunden",
+                ja: "ネットワークが見つかりません", ko: "네트워크를 찾을 수 없음", ru: "Сети не найдены", ar: "لم يتم العثور على شبكات"
+            },
+            scan_error: {
+                vi: "Lỗi quét mạng", en: "Network scan error", zh: "扫描网络出错",
+                es: "Error de escaneo de red", fr: "Erreur de scan du réseau", de: "Netzwerk-Scan-Fehler",
+                ja: "ネットワークスキャンエラー", ko: "네트워크 검색 오류", ru: "Ошибка сканирования сети", ar: "خطأ في مسح الشبكة"
+            },
+            ssid_label: {
+                vi: "Tên Mạng Wi-Fi (SSID)", en: "Wi-Fi Name (SSID)", zh: "Wi-Fi 名称 (SSID)",
+                es: "Nombre de Wi-Fi (SSID)", fr: "Nom du Wi-Fi (SSID)", de: "WLAN-Name (SSID)",
+                ja: "Wi-Fi 名 (SSID)", ko: "Wi-Fi 이름 (SSID)", ru: "Имя Wi-Fi (SSID)", ar: "اسم شبكة Wi-Fi (SSID)"
+            },
+            ssid_placeholder: {
+                vi: "Nhập tên mạng...", en: "Enter network name...", zh: "输入网络名称...",
+                es: "Ingrese el nombre de la red...", fr: "Entrez le nom du réseau...", de: "Netzwerkname eingeben...",
+                ja: "ネットワーク名を入力...", ko: "네트워크 이름 입력...", ru: "Введите имя сети...", ar: "أدخل اسم الشبكة..."
+            },
+            password_label: {
+                vi: "Mật Khẩu Wi-Fi", en: "Wi-Fi Password", zh: "Wi-Fi 密码",
+                es: "Contraseña de Wi-Fi", fr: "Mot de passe Wi-Fi", de: "WLAN-Passwort",
+                ja: "Wi-Fi パスワード", ko: "Wi-Fi 비밀번호", ru: "Пароль Wi-Fi", ar: "كلمة مرور Wi-Fi"
+            },
+            password_placeholder: {
+                vi: "Nhập mật khẩu (nếu có)...", en: "Enter password (if any)...", zh: "输入密码（如有）...",
+                es: "Ingrese contraseña (si la hay)...", fr: "Entrez le mot de passe (si existant)...", de: "Passwort eingeben (falls vorhanden)...",
+                ja: "パスワードを入力（ある場合）...", ko: "비밀번호 입력 (있는 경우)...", ru: "Введите пароль (при наличии)...", ar: "أدخل كلمة المرور (إن وجدت)..."
+            },
+            connect_btn: {
+                vi: "Lưu & Kết Nối", en: "Save & Connect", zh: "保存并连接",
+                es: "Guardar y Conectar", fr: "Enregistrer et Connecter", de: "Speichern & Verbinden",
+                ja: "保存して接続", ko: "저장 및 연결", ru: "Сохранить и подключить", ar: "حفظ وتوصيل"
+            },
+            saving: {
+                vi: "Đang lưu...", en: "Saving...", zh: "正在保存...",
+                es: "Guardando...", fr: "Enregistrement...", de: "Wird gespeichert...",
+                ja: "保存中...", ko: "저장 중...", ru: "Сохранение...", ar: "جارٍ الحفظ..."
+            },
+            success_msg: {
+                vi: "Lưu cấu hình thành công! Thiết bị đang kết nối lại...",
+                en: "Settings saved successfully! Device is reconnecting...",
+                zh: "配置保存成功！设备正在重新连接...",
+                es: "¡Configuración guardada! El dispositivo se está reconectando...",
+                fr: "Configuration enregistrée ! L'appareil se reconnecte...",
+                de: "Konfiguration erfolgreich gespeichert! Gerät verbindet sich neu...",
+                ja: "設定が正常に保存されました！デバイスが再接続中です...",
+                ko: "구성이 성공적으로 저장되었습니다! 장치가 다시 연결 중입니다...",
+                ru: "Настройки успешно сохранены! Устройство переподключается...",
+                ar: "تم حفظ الإعدادات بنجاح! تتم إعادة اتصال الجهاز..."
+            }
+        },
         // --- WEB FLASHER (TRANG NẠP FIRMWARE TRỰC TUYẾN 10 NGÔN NGỮ) ---
         flasher: {
             page_title: {
