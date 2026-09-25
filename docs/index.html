@@ -649,10 +649,10 @@
           statusLabel.innerText = window.I18N ? window.I18N.t('flasher.downloading') : 'Downloading...';
           
           const urls = [
-            `https://cdn.jsdelivr.net/gh/thanhlqsap/esp32-s3-cam-platform@main/github/build/${filename}`,
-            `https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/github/build/${filename}`,
-            `https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/${ver}/${filename}`,
-            `https://cdn.jsdelivr.net/gh/thanhlqsap/esp32-s3-cam-platform@${ver}/github/build/${filename}`
+            `https://cdn.jsdelivr.net/gh/thanhlqsap/esp32-s3-cam-platform@main/build/${filename}`,
+            `https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/${filename}`,
+            `https://cdn.jsdelivr.net/gh/thanhlqsap/esp32-s3-cam-platform@${ver}/build/${filename}`,
+            `https://github.com/thanhlqsap/esp32-s3-cam-platform/releases/download/${ver}/${filename}`
           ];
 
           let downloadOk = false;
