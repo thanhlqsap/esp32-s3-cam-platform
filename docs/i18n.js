@@ -26,6 +26,299 @@
 
     // 2. BẢNG TỪ ĐIỂN ĐA NGÔN NGỮ PHÂN TẦNG THEO NAMESPACE (10 NGÔN NGỮ)
     const DICTIONARY = {
+        // --- WEB FLASHER (TRANG NẠP FIRMWARE TRỰC TUYẾN 10 NGÔN NGỮ) ---
+        flasher: {
+            page_title: {
+                vi: "ESP32-S3-cam-platform | Web Flasher", en: "ESP32-S3-cam-platform | Web Flasher", zh: "ESP32-S3-cam-platform | 网页固件烧录器",
+                es: "ESP32-S3-cam-platform | Web Flasher", fr: "ESP32-S3-cam-platform | Web Flasher", de: "ESP32-S3-cam-platform | Web Flasher",
+                ja: "ESP32-S3-cam-platform | Web フラッシャー", ko: "ESP32-S3-cam-platform | 웹 플래셔", ru: "ESP32-S3-cam-platform | Web Flasher", ar: "ESP32-S3-cam-platform | أداة تثبيت الويب"
+            },
+            browser_unsupported_title: {
+                vi: "Trình duyệt chưa hỗ trợ nạp qua USB!", en: "Browser does not support WebSerial USB flashing!", zh: "浏览器不支持 WebSerial USB 烧录！",
+                es: "¡El navegador no admite la grabación USB WebSerial!", fr: "Le navigateur ne prend pas en charge le flash USB WebSerial !", de: "Browser unterstützt kein WebSerial USB-Flashen!",
+                ja: "ブラウザが WebSerial USB 書き込みに対応していません！", ko: "브라우저가 WebSerial USB 플래시를 지원하지 않습니다!", ru: "Браузер не поддерживает прошивку через WebSerial USB!", ar: "المتصفح لا يدعم التثبيت عبر WebSerial USB!"
+            },
+            browser_unsupported_desc: {
+                vi: "Vui lòng mở trang này bằng <b>Google Chrome</b> hoặc <b>MS Edge</b> (trên máy tính/laptop).",
+                en: "Please open this page using <b>Google Chrome</b> or <b>Microsoft Edge</b> on PC/laptop.",
+                zh: "请在电脑端使用 <b>Google Chrome</b> 或 <b>Microsoft Edge</b> 浏览器打开。",
+                es: "Abra esta página con <b>Google Chrome</b> o <b>MS Edge</b> en una computadora.",
+                fr: "Veuillez ouvrir cette page avec <b>Google Chrome</b> ou <b>MS Edge</b> sur ordinateur.",
+                de: "Bitte öffnen Sie diese Seite mit <b>Google Chrome</b> oder <b>MS Edge</b> am PC.",
+                ja: "PC の <b>Google Chrome</b> または <b>Microsoft Edge</b> で開いてください。",
+                ko: "PC/노트북에서 <b>Google Chrome</b> 또는 <b>MS Edge</b>로 열어주세요.",
+                ru: "Пожалуйста, откройте эту страницу в <b>Google Chrome</b> или <b>MS Edge</b> на ПК.",
+                ar: "يرجى فتح هذه الصفحة باستخدام <b>Google Chrome</b> أو <b>Microsoft Edge</b> على جهاز الكمبيوتر."
+            },
+            title: {
+                vi: "Nạp Firmware ESP32-S3", en: "ESP32-S3 Web Flasher", zh: "ESP32-S3 网页固件烧录",
+                es: "Flasheador Web ESP32-S3", fr: "Flasheur Web ESP32-S3", de: "ESP32-S3 Web-Flasher",
+                ja: "ESP32-S3 Web ファームウェア書き込み", ko: "ESP32-S3 웹 펌웨어 플래셔", ru: "ESP32-S3 Web Flasher", ar: "تثبيت برنامج تشغيل ESP32-S3 عبر الويب"
+            },
+            subtitle: {
+                vi: "Nạp trực tiếp firmware đầy đủ (Bootloader + Partitions + App) qua cổng USB chỉ với 1 cú click!",
+                en: "Flash full factory firmware (Bootloader + Partitions + App) via USB in just 1 click!",
+                zh: "只需一键即可通过 USB 直接烧录完整固件（Bootloader + 分区表 + 应用程序）！",
+                es: "¡Grabe el firmware completo (Bootloader + Particiones + App) por USB con 1 clic!",
+                fr: "Flashez le firmware complet (Bootloader + Partitions + App) via USB en 1 clic !",
+                de: "Vollständige Firmware (Bootloader + Partitionen + App) mit 1 Klick über USB flashen!",
+                ja: "USB 経由で完全なファームウェア（Bootloader + パーティション + アプリ）をワンクリックで書き込み！",
+                ko: "원클릭으로 USB를 통해 전체 펌웨어(부트로더 + 파티션 + 앱)를 직접 플래시하세요!",
+                ru: "Прошейте полную заводскую прошивку (Bootloader + Partitions + App) через USB в 1 клик!",
+                ar: "قم بتثبيت البرنامج الثابت الكامل (Bootloader + Partitions + App) عبر USB بنقرة واحدة!"
+            },
+            source_label: {
+                vi: "Nguồn Firmware:", en: "Firmware Source:", zh: "固件来源：",
+                es: "Origen del Firmware:", fr: "Source du Firmware :", de: "Firmware-Quelle:",
+                ja: "ファームウェアソース：", ko: "펌웨어 소스:", ru: "Источник прошивки:", ar: "مصدر البرنامج الثابت:"
+            },
+            version_history: {
+                vi: "Lịch sử phiên bản", en: "Version History", zh: "版本历史",
+                es: "Historial de versiones", fr: "Historique des versions", de: "Versionsverlauf",
+                ja: "バージョン履歴", ko: "버전 기록", ru: "История версий", ar: "سجل الإصدارات"
+            },
+            opt_local: {
+                vi: "📁 Chọn file từ máy tính (Offline)", en: "📁 Local File from Computer (Offline)", zh: "📁 从电脑选择文件（离线）",
+                es: "📁 Archivo local de la computadora (Offline)", fr: "📁 Fichier local depuis l'ordinateur (Hors ligne)", de: "📁 Lokale Datei vom Computer (Offline)",
+                ja: "📁 PCからファイルを選択（オフライン）", ko: "📁 컴퓨터에서 로컬 파일 선택 (오프라인)", ru: "📁 Локальный файл с компьютера (Офлайн)", ar: "📁 ملف محلي من الكمبيوتر (دون اتصال)"
+            },
+            opt_github: {
+                vi: "🌐 Tải trực tiếp từ GitHub (Online Firmware)", en: "🌐 Download from GitHub (Online Firmware)", zh: "🌐 从 GitHub 在线下载（在线固件）",
+                es: "🌐 Descargar de GitHub (Firmware en línea)", fr: "🌐 Télécharger depuis GitHub (En ligne)", de: "🌐 Von GitHub herunterladen (Online-Firmware)",
+                ja: "🌐 GitHub から直接ダウンロード（オンライン）", ko: "🌐 GitHub에서 온라인 다운로드", ru: "🌐 Загрузить с GitHub (Онлайн прошивка)", ar: "🌐 تنزيل من GitHub (برنامج تشغيل عبر الإنترنت)"
+            },
+            baud_label: {
+                vi: "Tốc độ nạp (Baudrate):", en: "Flashing Baudrate:", zh: "烧录波特率：",
+                es: "Velocidad de grabación (Baudrate):", fr: "Vitesse de flash (Baudrate) :", de: "Flash-Baudrate:",
+                ja: "書き込み速度（ボーレート）：", ko: "플래시 속도 (보드레이트):", ru: "Скорость прошивки (Baudrate):", ar: "سرعة التثبيت (Baudrate):"
+            },
+            baud_stable: {
+                vi: "115200 (Ổn định nhất)", en: "115200 (Most Stable)", zh: "115200（最稳定）",
+                es: "115200 (Más estable)", fr: "115200 (Le plus stable)", de: "115200 (Am stabilsten)",
+                ja: "115200（最も安定）", ko: "115200 (가장 안정적)", ru: "115200 (Самый стабильный)", ar: "115200 (الأكثر استقرارًا)"
+            },
+            baud_high: {
+                vi: "460800 (Tốc độ cao)", en: "460800 (High Speed)", zh: "460800（高速）",
+                es: "460800 (Alta velocidad)", fr: "460800 (Haute vitesse)", de: "460800 (Hohe Geschwindigkeit)",
+                ja: "460800（高速）", ko: "460800 (고속)", ru: "460800 (Высокая скорость)", ar: "460800 (سرعة عالية)"
+            },
+            baud_ultra: {
+                vi: "921600 (Siêu nhanh)", en: "921600 (Ultra Fast)", zh: "921600（极速）",
+                es: "921600 (Ultra rápido)", fr: "921600 (Ultra rapide)", de: "921600 (Ultraschnell)",
+                ja: "921600（超高速）", ko: "921600 (초고속)", ru: "921600 (Ультра быстрый)", ar: "921600 (فائق السرعة)"
+            },
+            offset_label: {
+                vi: "Địa chỉ Flash (Offset):", en: "Flash Memory Offset:", zh: "Flash 烧录地址 (Offset)：",
+                es: "Dirección de Flash (Offset):", fr: "Adresse Flash (Offset) :", de: "Flash-Adresse (Offset):",
+                ja: "Flash アドレス (Offset)：", ko: "플래시 주소 (Offset):", ru: "Адрес Flash (Offset):", ar: "عنوان الذاكرة (Offset):"
+            },
+            offset_full: {
+                vi: "0x0000 (Full_Flash.bin - Toàn bộ Flash)", en: "0x0000 (Full_Flash.bin - Factory Merged)", zh: "0x0000 (Full_Flash.bin - 完整出厂固件)",
+                es: "0x0000 (Full_Flash.bin - Flash Completo)", fr: "0x0000 (Full_Flash.bin - Flash Complet)", de: "0x0000 (Full_Flash.bin - Gesamter Flash)",
+                ja: "0x0000 (Full_Flash.bin - フルイメージ)", ko: "0x0000 (Full_Flash.bin - 전체 플래시)", ru: "0x0000 (Full_Flash.bin - Полный образ)", ar: "0x0000 (Full_Flash.bin - الفلاش بالكامل)"
+            },
+            offset_app: {
+                vi: "0x10000 (OTA_Update.bin - Chỉ App)", en: "0x10000 (OTA_Update.bin - App Only)", zh: "0x10000 (OTA_Update.bin - 仅应用)",
+                es: "0x10000 (OTA_Update.bin - Solo App)", fr: "0x10000 (OTA_Update.bin - App uniquement)", de: "0x10000 (OTA_Update.bin - Nur App)",
+                ja: "0x10000 (OTA_Update.bin - アプリのみ)", ko: "0x10000 (OTA_Update.bin - 앱 전용)", ru: "0x10000 (OTA_Update.bin - Только App)", ar: "0x10000 (OTA_Update.bin - التطبيق فقط)"
+            },
+            offset_lock_note: {
+                vi: "🔒 Chế độ Online tự động nạp Full Flash hợp nhất tại địa chỉ 0x0000 để đảm bảo hệ thống boot chuẩn xác.",
+                en: "🔒 Online mode automatically flashes merged Full Flash at offset 0x0000 for guaranteed boot stability.",
+                zh: "🔒 在线模式自动在 0x0000 地址烧录完整固件，以确保系统正常引导启动。",
+                es: "🔒 El modo en línea graba automáticamente el Full Flash en 0x0000 para un arranque seguro.",
+                fr: "🔒 Le mode en ligne flashe automatiquement le Full Flash en 0x0000 pour garantir le démarrage.",
+                de: "🔒 Der Online-Modus flasht automatisch Full Flash bei 0x0000 für garantierten Systemstart.",
+                ja: "🔒 オンラインモードでは、正常な起動を保証するために 0x0000 にフルイメージを自動書き込みします。",
+                ko: "🔒 온라인 모드는 안전한 부팅을 위해 0x0000 주소에 통합 Full Flash를 자동 플래시합니다.",
+                ru: "🔒 В онлайн-режиме полный образ автоматически прошивается по адресу 0x0000 для стабильной загрузки.",
+                ar: "🔒 يقوم الوضع عبر الإنترنت تلقائيًا بتثبيت الفلاش الكامل عند 0x0000 لضمان الإقلاع الصحيح."
+            },
+            flash_btn: {
+                vi: "Cài Đặt / Nạp Firmware Ngay", en: "Install / Flash Firmware Now", zh: "立即安装 / 烧录固件",
+                es: "Instalar / Grabar Firmware Ahora", fr: "Installer / Flasher le Firmware", de: "Firmware jetzt installieren / flashen",
+                ja: "今すぐファームウェアを書き込む", ko: "지금 펌웨어 설치 / 플래시", ru: "Установить / Прошить прошивку сейчас", ar: "تثبيت البرنامج الثابت الآن"
+            },
+            preparing: {
+                vi: "Đang chuẩn bị...", en: "Preparing...", zh: "正在准备...",
+                es: "Preparando...", fr: "Préparation...", de: "Vorbereitung...",
+                ja: "準備中...", ko: "준비 중...", ru: "Подготовка...", ar: "جارٍ التحضير..."
+            },
+            downloading: {
+                vi: "Đang tải firmware...", en: "Downloading firmware...", zh: "正在下载固件...",
+                es: "Descargando firmware...", fr: "Téléchargement du firmware...", de: "Firmware wird heruntergeladen...",
+                ja: "ファームウェアをダウンロード中...", ko: "펌웨어 다운로드 중...", ru: "Загрузка прошивки...", ar: "جارٍ تنزيل البرنامج الثابت..."
+            },
+            connecting: {
+                vi: "Đang kết nối ESP32-S3 qua USB...", en: "Connecting ESP32-S3 via USB...", zh: "正在通过 USB 连接 ESP32-S3...",
+                es: "Conectando ESP32-S3 por USB...", fr: "Connexion à l'ESP32-S3 via USB...", de: "ESP32-S3 über USB verbinden...",
+                ja: "USB 経由で ESP32-S3 に接続中...", ko: "USB를 통해 ESP32-S3 연결 중...", ru: "Подключение к ESP32-S3 по USB...", ar: "جارٍ الاتصال بـ ESP32-S3 عبر USB..."
+            },
+            flashing: {
+                vi: "Đang ghi dữ liệu vào Flash...", en: "Flashing binary to Flash memory...", zh: "正在写入 Flash 内存...",
+                es: "Escribiendo en memoria Flash...", fr: "Écriture dans la mémoire Flash...", de: "Schreiben in den Flash-Speicher...",
+                ja: "Flash メモリに書き込み中...", ko: "플래시 메모리에 기록 중...", ru: "Запись во Flash память...", ar: "جارٍ الكتابة إلى ذاكرة الفلاش..."
+            },
+            flash_success_100: {
+                vi: "🎉 Nạp thành công 100%!", en: "🎉 100% Flash Completed!", zh: "🎉 100% 烧录成功！",
+                es: "¡🎉 100% Grabado con éxito!", fr: "🎉 Flash 100% Réussi !", de: "🎉 100% Flash erfolgreich!",
+                ja: "🎉 100% 書き込み完了！", ko: "🎉 100% 플래시 완료!", ru: "🎉 Прошивка завершена на 100%!", ar: "🎉 اكتمل التثبيت بنسبة 100%!"
+            },
+            flash_success_alert: {
+                vi: "<b>✅ Nạp hoàn tất 100%!</b><br>ESP32-S3 đã tự động khởi động lại. Hãy kết nối Wi-Fi <b>ESP32-S3-Setup</b> (Pass: <code>12345678</code>) hoặc truy cập IP của thiết bị!",
+                en: "<b>✅ Flash 100% Complete!</b><br>ESP32-S3 has rebooted. Connect to Wi-Fi <b>ESP32-S3-Setup</b> (Pass: <code>12345678</code>) or access its IP address!",
+                zh: "<b>✅ 100% 烧录完成！</b><br>ESP32-S3 已自动重启。请连接 Wi-Fi <b>ESP32-S3-Setup</b>（密码：<code>12345678</code>）或访问其 IP 地址！",
+                es: "<b>✅ ¡Grabación completa al 100%!</b><br>ESP32-S3 se ha reiniciado. ¡Conéctese a la Wi-Fi <b>ESP32-S3-Setup</b> (Clave: <code>12345678</code>) o acceda a su IP!",
+                fr: "<b>✅ Flash terminé à 100% !</b><br>L'ESP32-S3 a redémarré. Connectez-vous au Wi-Fi <b>ESP32-S3-Setup</b> (Mot de passe : <code>12345678</code>) !",
+                de: "<b>✅ Flash zu 100 % abgeschlossen!</b><br>ESP32-S3 wurde neu gestartet. Verbinden Sie sich mit dem WLAN <b>ESP32-S3-Setup</b> (Passwort: <code>12345678</code>)!",
+                ja: "<b>✅ 100% 書き込み完了！</b><br>ESP32-S3 が自動再起動しました。Wi-Fi <b>ESP32-S3-Setup</b>（パスワード: <code>12345678</code>）に接続してください！",
+                ko: "<b>✅ 100% 플래시 완료!</b><br>ESP32-S3가 재부팅되었습니다. Wi-Fi <b>ESP32-S3-Setup</b> (비밀번호: <code>12345678</code>)에 연결하세요!",
+                ru: "<b>✅ Прошивка завершена на 100%!</b><br>ESP32-S3 перезагружен. Подключитесь к Wi-Fi <b>ESP32-S3-Setup</b> (Пароль: <code>12345678</code>)!",
+                ar: "<b>✅ اكتمل التثبيت بنسبة 100%!</b><br>تمت إعادة تشغيل ESP32-S3. اتصل بشبكة Wi-Fi <b>ESP32-S3-Setup</b> (كلمة المرور: <code>12345678</code>)!"
+            },
+            flash_failed_label: {
+                vi: "Lỗi nạp!", en: "Flash Failed!", zh: "烧录失败！",
+                es: "¡Fallo al grabar!", fr: "Échec du flash !", de: "Flash fehlgeschlagen!",
+                ja: "書き込み失敗！", ko: "플래시 실패!", ru: "Ошибка прошивки!", ar: "فشل التثبيت!"
+            },
+            flash_failed_hint: {
+                vi: "Giữ nút BOOT, bấm nhả RST rồi thử lại.", en: "Hold BOOT, press RST, and try again.", zh: "按住 BOOT 键，轻按 RST 键后再试一次。",
+                es: "Mantenga BOOT, presione RST y reintente.", fr: "Maintenez BOOT, appuyez sur RST et réessayez.", de: "BOOT gedrückt halten, RST drücken und erneut versuchen.",
+                ja: "BOOT を押しながら RST を押し直してください。", ko: "BOOT을 누른 상태에서 RST를 누르고 다시 시도하세요.", ru: "Удерживайте BOOT, нажмите RST и повторите попытку.", ar: "اضغط مع الاستمرار على BOOT، ثم اضغط RST وحاول مجددًا."
+            },
+            steps_title: {
+                vi: "🔧 3 Bước đơn giản để nạp:", en: "🔧 3 Simple Steps to Flash:", zh: "🔧 3 步轻松烧录：",
+                es: "🔧 3 Pasos sencillos para grabar:", fr: "🔧 3 étapes simples pour flasher :", de: "🔧 3 einfache Schritte zum Flashen:",
+                ja: "🔧 簡単な3ステップで書き込み：", ko: "🔧 3단계 간단 플래시 가이드:", ru: "🔧 3 простых шага для прошивки:", ar: "🔧 3 خطوات بسيطة للتثبيت:"
+            },
+            step1: {
+                vi: "<b>Bước 1:</b> Cắm cáp USB nối mạch ESP32-S3 với máy tính.",
+                en: "<b>Step 1:</b> Connect your ESP32-S3 board to your PC using a USB cable.",
+                zh: "<b>第 1 步：</b> 使用 USB 数据线将 ESP32-S3 开发板连接到电脑。",
+                es: "<b>Paso 1:</b> Conecte la placa ESP32-S3 a la PC mediante un cable USB.",
+                fr: "<b>Étape 1 :</b> Connectez votre carte ESP32-S3 à votre PC avec un câble USB.",
+                de: "<b>Schritt 1:</b> Verbinden Sie Ihr ESP32-S3-Board über ein USB-Kabel mit dem PC.",
+                ja: "<b>ステップ 1:</b> USB ケーブルで ESP32-S3 ボードを PC に接続します。",
+                ko: "<b>1단계:</b> USB 케이블로 ESP32-S3 보드를 PC에 연결합니다.",
+                ru: "<b>Шаг 1:</b> Подключите плату ESP32-S3 к компьютеру через USB-кабель.",
+                ar: "<b>الخطوة 1:</b> قم بتوصيل لوحة ESP32-S3 بالكمبيوتر باستخدام كابل USB."
+            },
+            step2: {
+                vi: "<b>Bước 2:</b> Chọn file <code>Full_Flash.bin</code> hoặc chọn tải Online.",
+                en: "<b>Step 2:</b> Select local <code>Full_Flash.bin</code> or choose Online mode.",
+                zh: "<b>第 2 步：</b> 选择本地 <code>Full_Flash.bin</code> 文件或选择在线模式。",
+                es: "<b>Paso 2:</b> Seleccione <code>Full_Flash.bin</code> local o elija el modo en línea.",
+                fr: "<b>Étape 2 :</b> Sélectionnez le fichier <code>Full_Flash.bin</code> ou le mode en ligne.",
+                de: "<b>Schritt 2:</b> Wählen Sie die Datei <code>Full_Flash.bin</code> oder den Online-Modus.",
+                ja: "<b>ステップ 2:</b> ローカルの <code>Full_Flash.bin</code> またはオンラインモードを選択します。",
+                ko: "<b>2단계:</b> 로컬 <code>Full_Flash.bin</code> 파일을 선택하거나 온라인 모드를 선택합니다.",
+                ru: "<b>Шаг 2:</b> Выберите локальный файл <code>Full_Flash.bin</code> или онлайн-режим.",
+                ar: "<b>الخطوة 2:</b> اختر ملف <code>Full_Flash.bin</code> محليًا أو الوضع عبر الإنترنت."
+            },
+            step3: {
+                vi: "<b>Bước 3:</b> Bấm nút Nạp -> Chọn đúng cổng COM trong bảng hiện lên.",
+                en: "<b>Step 3:</b> Click Flash button -> Select the corresponding COM port.",
+                zh: "<b>第 3 步：</b> 点击烧录按钮 -> 在弹出窗口中选择对应的 COM 端口。",
+                es: "<b>Paso 3:</b> Haga clic en Grabar -> Seleccione el puerto COM correspondiente.",
+                fr: "<b>Étape 3 :</b> Cliquez sur Flasher -> Sélectionnez le port COM correspondant.",
+                de: "<b>Schritt 3:</b> Klicken Sie auf Flashen -> Wählen Sie den passenden COM-Port.",
+                ja: "<b>ステップ 3:</b> 書き込みボタンをクリック -> ポップアップで COM ポートを選択。",
+                ko: "<b>3단계:</b> 플래시 버튼 클릭 -> 팝업 창에서 해당 COM 포트 선택.",
+                ru: "<b>Шаг 3:</b> Нажмите Прошить -> Выберите нужный COM-порт в окне.",
+                ar: "<b>الخطوة 3:</b> انقر فوق زر التثبيت -> حدد منفذ COM المناسب من القائمة."
+            },
+            specs_title: {
+                vi: "🔧 Thông số phần cứng:", en: "🔧 Hardware Specifications:", zh: "🔧 硬件技术规格：",
+                es: "🔧 Especificaciones de hardware:", fr: "🔧 Spécifications matérielles :", de: "🔧 Hardware-Spezifikationen:",
+                ja: "🔧 ハードウェア仕様：", ko: "🔧 하드웨어 사양:", ru: "🔧 Технические характеристики:", ar: "🔧 المواصفات الفنية للعتاد:"
+            },
+            view_log: {
+                vi: "🔍 Xem log chi tiết", en: "🔍 View detailed logs", zh: "🔍 查看详细日志",
+                es: "🔍 Ver registro detallado", fr: "🔍 Voir le journal détaillé", de: "🔍 Detaillierte Protokolle anzeigen",
+                ja: "🔍 詳細ログを表示", ko: "🔍 상세 로그 보기", ru: "🔍 Подробный лог", ar: "🔍 عرض السجلات التفصيلية"
+            },
+            hide_log: {
+                vi: "🙈 Ẩn log chi tiết", en: "🙈 Hide detailed logs", zh: "🙈 隐藏详细日志",
+                es: "🙈 Ocultar registro", fr: "🙈 Masquer le journal", de: "🙈 Protokolle ausblenden",
+                ja: "🙈 ログを非表示", ko: "🙈 상세 로그 숨기기", ru: "🙈 Скрыть лог", ar: "🙈 إخفاء السجلات"
+            },
+            history_title: {
+                vi: "Lịch Sử Phiên Bản Firmware", en: "Firmware Version History", zh: "固件版本发布历史",
+                es: "Historial de Versiones del Firmware", fr: "Historique des Versions du Firmware", de: "Firmware-Versionsverlauf",
+                ja: "ファームウェアバージョン履歴", ko: "펌웨어 버전 릴리스 기록", ru: "История версий прошивки", ar: "سجل إصدارات البرنامج الثابت"
+            },
+            view_on_github: {
+                vi: "Xem trên GitHub Releases", en: "View on GitHub Releases", zh: "在 GitHub Releases 查看",
+                es: "Ver en GitHub Releases", fr: "Voir sur GitHub Releases", de: "Auf GitHub Releases ansehen",
+                ja: "GitHub Releases で見る", ko: "GitHub Releases에서 보기", ru: "Смотреть на GitHub Releases", ar: "عرض على GitHub Releases"
+            },
+            btn_close: {
+                vi: "Đóng", en: "Close", zh: "关闭",
+                es: "Cerrar", fr: "Fermer", de: "Schließen",
+                ja: "閉じる", ko: "닫기", ru: "Закрыть", ar: "إغلاق"
+            },
+            no_local_file: {
+                vi: "Vui lòng chọn file .bin trên máy tính trước!", en: "Please choose a local .bin file first!", zh: "请先在电脑上选择 .bin 固件文件！",
+                es: "¡Elija primero un archivo .bin local!", fr: "Veuillez d'abord choisir un fichier .bin local !", de: "Bitte wählen Sie zuerst eine lokale .bin-Datei aus!",
+                ja: "最初にローカルの .bin ファイルを選択してください！", ko: "먼저 로컬 .bin 파일을 선택하세요!", ru: "Пожалуйста, сначала выберите локальный файл .bin!", ar: "يرجى اختيار ملف .bin محلي أولاً!"
+            },
+            lib_not_found: {
+                vi: "Không tìm thấy thư viện esptool-js!", en: "esptool-js library not loaded!", zh: "未找到 esptool-js 烧录库！",
+                es: "¡No se encontró la biblioteca esptool-js!", fr: "Bibliothèque esptool-js introuvable !", de: "esptool-js Bibliothek nicht gefunden!",
+                ja: "esptool-js ライブラリが見つかりません！", ko: "esptool-js 라이브러리를 찾을 수 없습니다!", ru: "Библиотека esptool-js не найдена!", ar: "لم يتم العثور على مكتبة esptool-js!"
+            },
+            changelog: {
+                v0_0_002_title: {
+                    vi: "v0.0.002: Tối ưu Web Assets & Chuẩn hóa 10 Ngôn Ngữ",
+                    en: "v0.0.002: Web Assets Optimization & 10-Language Standardization",
+                    zh: "v0.0.002: 网页资源优化与 10 种多语言标准化",
+                    es: "v0.0.002: Optimización de Web Assets y 10 idiomas",
+                    fr: "v0.0.002: Optimisation des Web Assets & 10 langues",
+                    de: "v0.0.002: Web-Assets-Optimierung & 10 Sprachen",
+                    ja: "v0.0.002: Web アセット最適化と 10 言語標準化",
+                    ko: "v0.0.002: 웹 자산 최적화 및 10개 다국어 표준화",
+                    ru: "v0.0.002: Оптимизация веб-ресурсов и 10 языков",
+                    ar: "v0.0.002: تحسين موارد الويب وتوحيد 10 لغات"
+                },
+                v0_0_002_desc: {
+                    vi: "Nén GZIP Flash (~68KB), chuẩn hóa giao diện Web Flasher và tự động hóa pipeline build.",
+                    en: "Flash GZIP compression (~68KB), Web Flasher UI fixes & automated build clean-up.",
+                    zh: "Flash GZIP 压缩（~68KB），Web Flasher 界面修复及自动化构建清理。",
+                    es: "Compresión Flash GZIP (~68KB), mejoras de Web Flasher y limpieza automática.",
+                    fr: "Compression Flash GZIP (~68KB), correctifs Web Flasher & nettoyage automatique.",
+                    de: "Flash-GZIP-Komprimierung (~68KB), Web-Flasher-Korrekturen & Build-Bereinigung.",
+                    ja: "Flash GZIP 圧縮（約68KB）、Web フラッシャーの UI 修正、ビルド自動クリーンアップ。",
+                    ko: "Flash GZIP 압축(~68KB), Web Flasher UI 수정 및 자동화된 빌드 정리.",
+                    ru: "Сжатие Flash GZIP (~68KB), исправления Web Flasher и автоматическая очистка.",
+                    ar: "ضغط Flash GZIP (~68KB) وإصلاحات واجهة Web Flasher والتنظيف التلقائي."
+                },
+                v0_0_001_title: {
+                    vi: "v0.0.001: Khởi tạo Master OS & Hệ thống Dual-OTA",
+                    en: "v0.0.001: Bootstrap Master OS & Dual-OTA Engine",
+                    zh: "v0.0.001: 引导 Master OS 与双 OTA 引擎",
+                    es: "v0.0.001: Inicialización de Master OS y Dual-OTA",
+                    fr: "v0.0.001: Démarrage de Master OS & Moteur Dual-OTA",
+                    de: "v0.0.001: Master OS Bootstrap & Dual-OTA-Engine",
+                    ja: "v0.0.001: Master OS ブートストラップと Dual-OTA",
+                    ko: "v0.0.001: Master OS 부트스트랩 및 듀얼 OTA 엔진",
+                    ru: "v0.0.001: Запуск Master OS и движок Dual-OTA",
+                    ar: "v0.0.001: تشغيل Master OS ومحرك Dual-OTA"
+                },
+                v0_0_001_desc: {
+                    vi: "Bản phát hành khởi đầu tích hợp 20 ứng dụng, Dual AP+STA và GitHub Cloud App Store.",
+                    en: "Initial release featuring 20 app sites, Dual AP+STA and GitHub Cloud App Store.",
+                    zh: "首发版本，包含 20 个应用程序、双 AP+STA 模式以及 GitHub 云端应用商店。",
+                    es: "Versión inicial con 20 aplicaciones, Dual AP+STA y Tienda GitHub Cloud.",
+                    fr: "Version initiale intégrant 20 applications, Dual AP+STA et GitHub Cloud Store.",
+                    de: "Erste Version mit 20 App-Sites, Dual AP+STA und GitHub Cloud Store.",
+                    ja: "20 のアプリ、Dual AP+STA、GitHub クラウドストアを統合した初期リリース。",
+                    ko: "20개 앱, Dual AP+STA 및 GitHub 클라우드 앱 스토어가 포함된 초기 릴리스.",
+                    ru: "Первый релиз с 20 приложениями, Dual AP+STA и магазином GitHub Cloud.",
+                    ar: "الإصدار الأولي يضم 20 تطبيقًا ووضع Dual AP+STA ومتجر GitHub Cloud."
+                }
+            }
+        },
+
         // --- A. TỪ VỰNG CHUNG TOÀN HỆ THỐNG (COMMON) ---
         common: {
             title_os: {
