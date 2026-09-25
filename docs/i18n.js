@@ -250,6 +250,11 @@
                 es: "Tienda de Proyectos (App Store)", fr: "Boutique de Projets (App Store)", de: "Projekt-Store (Cloud App Store)",
                 ja: "プロジェクトストア (Cloud App Store)", ko: "프로젝트 스토어 (Cloud App Store)", ru: "Магазин Проектов (App Store)", ar: "متجر المشاريع (Cloud App Store)"
             },
+            tab_settings: {
+                vi: "Cấu Hình Hệ Thống & Wi-Fi", en: "System & Wi-Fi Settings", zh: "系统与 Wi-Fi 配置",
+                es: "Configuración de Sistema y Wi-Fi", fr: "Paramètres Système & Wi-Fi", de: "System- & WLAN-Einstellungen",
+                ja: "システム＆Wi-Fi設定", ko: "시스템 및 Wi-Fi 설정", ru: "Настройки Системы и Wi-Fi", ar: "إعدادات النظام وWi-Fi"
+            },
             store_title: {
                 vi: "Kho Dự Án Trực Tuyến (Online App Store)", en: "Online Project App Store", zh: "在线项目应用商店",
                 es: "Tienda de Proyectos en Línea", fr: "Boutique de Projets en Ligne", de: "Online-Projekt-App-Store",
@@ -372,6 +377,80 @@
                 ko: "구성이 성공적으로 저장되었습니다! 장치가 다시 연결 중입니다...",
                 ru: "Настройки успешно сохранены! Устройство переподключается...",
                 ar: "تم حفظ الإعدادات بنجاح! تتم إعادة اتصال الجهاز..."
+            }
+        },
+
+        // --- 3.1 SETTINGS (CẤU HÌNH HỆ THỐNG, mDNS & BẢO MẬT) ---
+        settings: {
+            title: {
+                vi: "Cấu Hình Hệ Thống & Bảo Mật", en: "System & Network Settings", zh: "系统与网络设置",
+                es: "Configuración de Sistema y Red", fr: "Paramètres Système & Réseau", de: "System- & Netzwerkeinstellungen",
+                ja: "システム＆ネットワーク設定", ko: "시스템 및 네트워크 설정", ru: "Настройки Системы и Сети", ar: "إعدادات النظام والشبكة"
+            },
+            wifi_section: {
+                vi: "Kết Nối Wi-Fi (Station Mode)", en: "Wi-Fi Connection (STA Mode)", zh: "Wi-Fi 连接 (STA 模式)",
+                es: "Conexión Wi-Fi (Modo STA)", fr: "Connexion Wi-Fi (Mode STA)", de: "WLAN-Verbindung (STA-Modus)",
+                ja: "Wi-Fi 接続 (STA モード)", ko: "Wi-Fi 연결 (STA 모드)", ru: "Подключение Wi-Fi (STA Режим)", ar: "اتصال Wi-Fi (وضع STA)"
+            },
+            dns_section: {
+                vi: "Tên Miền Cục Bộ (mDNS / Local DNS)", en: "Local Domain (mDNS Hostname)", zh: "本地域名 (mDNS / 局域网主机名)",
+                es: "Dominio Local (Nombre mDNS)", fr: "Domaine Local (Nom mDNS)", de: "Lokale Domain (mDNS Hostname)",
+                ja: "ローカルドメイン (mDNS ホスト名)", ko: "로컬 도메인 (mDNS 호스트 이름)", ru: "Локальный Домен (Имя mDNS)", ar: "النطاق المحلي (اسم mDNS)"
+            },
+            dns_desc: {
+                vi: "Truy cập thiết bị qua địa chỉ: http://[tên_miền].local", en: "Access device via: http://[hostname].local", zh: "通过以下地址访问设备：http://[域名].local",
+                es: "Acceda al dispositivo en: http://[nombre].local", fr: "Accéder à l'appareil via: http://[nom].local", de: "Gerät aufrufen über: http://[hostname].local",
+                ja: "アクセスアドレス: http://[ホスト名].local", ko: "장치 접속 주소: http://[도메인].local", ru: "Доступ к устройству: http://[имя].local", ar: "الوصول للجهاز عبر: http://[الاسم].local"
+            },
+            auth_section: {
+                vi: "Bảo Mật & Xác Thực Người Dùng", en: "Access Authentication & Security", zh: "访问认证与安全设置",
+                es: "Autenticación de Acceso y Seguridad", fr: "Authentification & Sécurité d'Accès", de: "Zugriffssicherheit & Authentifizierung",
+                ja: "アクセス認証・セキュリティ設定", ko: "접속 인증 및 보안 설정", ru: "Безопасность и Аутентификация", ar: "أمان الوصول والمصادقة"
+            },
+            auth_enable: {
+                vi: "Bật Xác Thực Khi Đăng Nhập", en: "Require Login Authentication", zh: "启用登录密码保护",
+                es: "Requerir Autenticación de Acceso", fr: "Exiger une Authentification", de: "Anmelde-Authentifizierung aktivieren",
+                ja: "ログイン認証を有効化", ko: "로그인 인증 활성화", ru: "Включить Аутентификацию", ar: "تفعيل المصادقة عند تسجيل الدخول"
+            },
+            auth_user: {
+                vi: "Tên Đăng Nhập (Username)", en: "Username", zh: "管理员用户名",
+                es: "Nombre de Usuario", fr: "Nom d'Utilisateur", de: "Benutzername",
+                ja: "ユーザー名", ko: "사용자 이름", ru: "Имя Пользователя", ar: "اسم المستخدم"
+            },
+            auth_pass: {
+                vi: "Mật Khẩu (Password)", en: "Password", zh: "访问密码",
+                es: "Contraseña", fr: "Mot de Passe", de: "Passwort",
+                ja: "パスワード", ko: "비밀번호", ru: "Пароль", ar: "كلمة المرور"
+            },
+            ap_section: {
+                vi: "Điểm Phát Sóng SoftAP", en: "SoftAP Hotspot Setup", zh: "SoftAP 热点配置",
+                es: "Punto de Acceso SoftAP", fr: "Point d'Accès SoftAP", de: "SoftAP Hotspot",
+                ja: "SoftAP ホットスポット設定", ko: "SoftAP 핫스팟 설정", ru: "Точка Доступа SoftAP", ar: "نقطة اتصال SoftAP"
+            },
+            ap_ssid: {
+                vi: "Tên SoftAP (SSID)", en: "SoftAP SSID", zh: "SoftAP 名称 (SSID)",
+                es: "Nombre SoftAP (SSID)", fr: "Nom SoftAP (SSID)", de: "SoftAP Name (SSID)",
+                ja: "SoftAP 名 (SSID)", ko: "SoftAP 이름 (SSID)", ru: "Имя SoftAP (SSID)", ar: "اسم SoftAP (SSID)"
+            },
+            ap_pass: {
+                vi: "Mật Khẩu SoftAP (≥8 ký tự)", en: "SoftAP Password (≥8 chars)", zh: "SoftAP 密码 (至少8位)",
+                es: "Contraseña SoftAP (≥8 car.)", fr: "Mot de Passe SoftAP (≥8 car.)", de: "SoftAP Passwort (≥8 Zeichen)",
+                ja: "SoftAP パスワード (8文字以上)", ko: "SoftAP 비밀번호 (8자 이상)", ru: "Пароль SoftAP (≥8 симв.)", ar: "كلمة مرور SoftAP (8 أحرف على الأقل)"
+            },
+            saved_nets: {
+                vi: "Mạng Wi-Fi Đã Lưu", en: "Saved Wi-Fi Networks", zh: "已保存的 Wi-Fi 网络",
+                es: "Redes Wi-Fi Guardadas", fr: "Réseaux Wi-Fi Enregistrés", de: "Gespeicherte WLAN-Netzwerke",
+                ja: "保存済み Wi-Fi ネットワーク", ko: "저장된 Wi-Fi 네트워크", ru: "Сохраненные Сети Wi-Fi", ar: "شبكات Wi-Fi المحفوظة"
+            },
+            forget_btn: {
+                vi: "Xóa", en: "Forget", zh: "删除",
+                es: "Olvidar", fr: "Oublier", de: "Löschen",
+                ja: "削除", ko: "삭제", ru: "Забыть", ar: "حذف"
+            },
+            save_all_btn: {
+                vi: "💾 Lưu Cấu Hình Hệ Thống", en: "💾 Save System Settings", zh: "💾 保存系统配置",
+                es: "💾 Guardar Configuración", fr: "💾 Enregistrer Paramètres", de: "💾 Einstellungen Speichern",
+                ja: "💾 設定を保存", ko: "💾 시스템 설정 저장", ru: "💾 Сохранить Настройки", ar: "💾 حفظ إعدادات النظام"
             }
         },
 
