@@ -719,7 +719,23 @@
         // Success
         progBar.style.width = '100%';
         percentLabel.innerText = '100%';
-        log('🎉 100% OK!');
+        log('🎉 100% Flash Completed!');
+
+        // Auto Reset ESP32-S3 into normal execution mode
+        log('🔄 Auto-resetting ESP32-S3...');
+        try {
+          if (typeof esptoolDevice.hardReset === 'function') {
+            await esptoolDevice.hardReset();
+          } else if (typeof esptoolDevice.hard_reset === 'function') {
+            await esptoolDevice.hard_reset();
+          } else if (typeof esptoolDevice.after === 'function') {
+            await esptoolDevice.after('hard_reset');
+          }
+          log('✅ Board reboot signal sent successfully!');
+        } catch(resetErr) {
+          console.warn('Auto-reset notice:', resetErr);
+        }
+
         statusLabel.innerText = window.I18N ? window.I18N.t('flasher.flash_success_100') : '100% OK!';
         statusAlert.className = 'status-msg success';
         statusAlert.innerHTML = window.I18N ? window.I18N.t('flasher.flash_success_alert') : 'Success!';

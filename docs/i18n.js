@@ -496,16 +496,16 @@
                 vi: "🎉 Nạp thành công 100%!", en: "🎉 Flashed 100% successfully!", zh: "🎉 烧录成功 100%！", es: "¡🎉 Flasheo exitoso al 100%!", fr: "🎉 Flash réussi à 100% !", de: "🎉 100% erfolgreich geflasht!", ja: "🎉 100% 書き込み成功！", ko: "🎉 100% 설치 완료!", ru: "🎉 Успешно прошито на 100%!", ar: "🎉 تم التثبيت بنجاح 100%!"
             },
             flash_success_alert: {
-                vi: "🎉 <b>Nạp firmware thành công 100%!</b><br>Nhấn nút <b>RST</b> trên mạch ESP32-S3. Sau đó kết nối Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Mật khẩu: <b>12345678</b>) rồi truy cập <b>http://192.168.4.1</b>.",
-                en: "🎉 <b>Flashing completed 100%!</b><br>Press <b>RST</b> on ESP32-S3. Connect to Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Password: <b>12345678</b>) and open <b>http://192.168.4.1</b>.",
-                zh: "🎉 <b>固件烧录 100% 成功！</b><br>请按 ESP32-S3 上的 <b>RST</b> 按钮重启。连接 Wi-Fi <b>ESP32S3-CAM-SETUP</b>（密码: <b>12345678</b>），然后打开 <b>http://192.168.4.1</b>。",
-                es: "🎉 <b>¡Flasheo completado al 100%!</b><br>Presione <b>RST</b> en el ESP32-S3. Conéctese al Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Clave: <b>12345678</b>) y abra <b>http://192.168.4.1</b>.",
-                fr: "🎉 <b>Flash terminé à 100% !</b><br>Appuyez sur <b>RST</b> sur l'ESP32-S3. Connectez-vous au Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Mot de passe : <b>12345678</b>) et ouvrez <b>http://192.168.4.1</b>.",
-                de: "🎉 <b>100% erfolgreich geflasht!</b><br>Drücken Sie <b>RST</b> am ESP32-S3. Verbinden Sie sich mit Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Passwort: <b>12345678</b>) und öffnen Sie <b>http://192.168.4.1</b>.",
-                ja: "🎉 <b>書き込みが 100% 完了しました！</b><br>ESP32-S3 の <b>RST</b> ボタンを押してください。Wi-Fi <b>ESP32S3-CAM-SETUP</b>（パスワード: <b>12345678</b>）に接続し、<b>http://192.168.4.1</b> を開きます。",
-                ko: "🎉 <b>펌웨어 설치가 100% 완료되었습니다!</b><br>ESP32-S3의 <b>RST</b> 버튼을 누르세요. Wi-Fi <b>ESP32S3-CAM-SETUP</b> (비밀번호: <b>12345678</b>) 연결 후 <b>http://192.168.4.1</b>에 접속하세요.",
-                ru: "🎉 <b>Прошивка завершена на 100%!</b><br>Нажмите <b>RST</b> на ESP32-S3. Подключитесь к Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Пароль: <b>12345678</b>) и откройте <b>http://192.168.4.1</b>.",
-                ar: "🎉 <b>اكتمل التثبيت بنسبة 100%!</b><br>اضغط على زر <b>RST</b> على ESP32-S3. اتصل بشبكة Wi-Fi <b>ESP32S3-CAM-SETUP</b> (الرمز: <b>12345678</b>) ثم افتح <b>http://192.168.4.1</b>."
+                vi: "🎉 <b>Nạp firmware thành công 100%!</b><br>Thiết bị đang tự động khởi động lại (nếu chưa chạy, nhấn nhẹ nút <b>RST</b>). Sau đó kết nối Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Mật khẩu: <b>12345678</b>) rồi truy cập <b>http://192.168.4.1</b>.",
+                en: "🎉 <b>Flashing completed 100%!</b><br>Device is auto-rebooting (if not running, press <b>RST</b>). Connect to Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Password: <b>12345678</b>) and open <b>http://192.168.4.1</b>.",
+                zh: "🎉 <b>固件烧录 100% 成功！</b><br>设备正在自动重启（若未启动请按 <b>RST</b>）。连接 Wi-Fi <b>ESP32S3-CAM-SETUP</b>（密码: <b>12345678</b>），然后打开 <b>http://192.168.4.1</b>。",
+                es: "🎉 <b>¡Flasheo completado al 100%!</b><br>El dispositivo se está reiniciando (si no, pulse <b>RST</b>). Conéctese a <b>ESP32S3-CAM-SETUP</b> (Clave: <b>12345678</b>) y abra <b>http://192.168.4.1</b>.",
+                fr: "🎉 <b>Flash terminé à 100% !</b><br>L'appareil redémarre automatiquement (sinon appuyez sur <b>RST</b>). Connectez-vous à <b>ESP32S3-CAM-SETUP</b> (Mot de passe : <b>12345678</b>) et ouvrez <b>http://192.168.4.1</b>.",
+                de: "🎉 <b>100% erfolgreich geflasht!</b><br>Gerät startet automatisch neu (oder drücken Sie <b>RST</b>). Verbinden Sie sich mit <b>ESP32S3-CAM-SETUP</b> (Passwort: <b>12345678</b>), öffnen Sie <b>http://192.168.4.1</b>.",
+                ja: "🎉 <b>書き込みが 100% 完了しました！</b><br>デバイスが自動再起動しています（起動しない場合は <b>RST</b> を押下）。Wi-Fi <b>ESP32S3-CAM-SETUP</b>（パスワード: <b>12345678</b>）に接続し <b>http://192.168.4.1</b> を開きます。",
+                ko: "🎉 <b>펌웨어 설치가 100% 완료되었습니다!</b><br>기기가 자동 재부팅 중입니다 (미실행 시 <b>RST</b> 누름). Wi-Fi <b>ESP32S3-CAM-SETUP</b> (비밀번호: <b>12345678</b>) 연결 후 <b>http://192.168.4.1</b> 접속.",
+                ru: "🎉 <b>Прошивка завершена на 100%!</b><br>Устройство перезагружается (если нет, нажмите <b>RST</b>). Подключитесь к Wi-Fi <b>ESP32S3-CAM-SETUP</b> (Пароль: <b>12345678</b>) и откройте <b>http://192.168.4.1</b>.",
+                ar: "🎉 <b>اكتمل التثبيت بنسبة 100%!</b><br>الجهاز يقوم بإعادة التشغيل تلقائياً (أو اضغط <b>RST</b>). اتصل بـ Wi-Fi <b>ESP32S3-CAM-SETUP</b> (الرمز: <b>12345678</b>) ثم افتح <b>http://192.168.4.1</b>."
             },
             flash_failed_hint: {
                 vi: "💡 Mẹo khắc phục: Giữ nút <b>BOOT</b> (GPIO0) → Nhấn nút <b>RST</b> → Thả nút <b>BOOT</b> rồi bấm nạp lại.",
