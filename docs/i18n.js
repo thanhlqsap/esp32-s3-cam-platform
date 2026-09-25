@@ -1017,8 +1017,12 @@
 
             // 4. Đồng bộ giá trị select nếu có
             const selectEl = document.getElementById('langSelect');
-            if (selectEl && selectEl.value !== this.currentLang) {
-                selectEl.value = this.currentLang;
+            if (selectEl) {
+                if (selectEl.options.length === 0) {
+                    this.renderLangSelector('langSelect');
+                } else {
+                    selectEl.value = this.currentLang;
+                }
             }
         },
 
@@ -1036,6 +1040,7 @@
                 if (lang.code === this.currentLang) opt.selected = true;
                 select.appendChild(opt);
             });
+            select.value = this.currentLang;
             select.onchange = (e) => this.setLanguage(e.target.value);
         },
 
