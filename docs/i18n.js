@@ -1264,18 +1264,28 @@
     // 4. ENGINE ĐIỀU KHIỂN & HÀM TIỆN ÍCH I18N
     const I18nEngine = {
         currentLang: 'vi',
+        _isChanging: false,
 
         /**
-         * Khởi tạo hệ thống ngôn ngữ từ localStorage hoặc mặc định 'vi'
+         * Khởi tạo hệ thống ngôn ngữ an toàn từ localStorage hoặc mặc định 'vi'
          */
         init: function() {
-            const saved = localStorage.getItem('app_lang');
+            let saved = 'vi';
+            try {
+                if (typeof window !== 'undefined' && window.localStorage) {
+                    saved = localStorage.getItem('app_lang') || 'vi';
+                }
+            } catch(e) {
+                saved = 'vi';
+            }
             const found = SUPPORTED_LANGUAGES.some(l => l.code === saved);
             this.currentLang = found ? saved : 'vi';
+            
+            // Luôn render danh sách lựa chọn ngôn ngữ trước
+            this.renderLangSelector('langSelect');
             this.applyToDOM();
             BRAND_CONFIG.applyFavicon();
             BRAND_CONFIG.renderHeaderLogo();
-            this.renderLangSelector();
         },
 
         /**
@@ -1289,20 +1299,25 @@
          * Đổi ngôn ngữ hệ thống và cập nhật DOM + hướng chữ LTR/RTL
          */
         setLanguage: function(langCode) {
+            if (this._isChanging) return;
             const langObj = SUPPORTED_LANGUAGES.find(l => l.code === langCode);
             if (!langObj) return;
 
+            this._isChanging = true;
             this.currentLang = langCode;
+
             try {
-                localStorage.setItem('app_lang', langCode);
-                localStorage.setItem('esp32_s3_lang', langCode);
-                localStorage.setItem('esp32_cam_global_lang', langCode);
-                localStorage.setItem('selected_lang', langCode);
-                localStorage.setItem('esp32_cam_flasher_lang', langCode);
+                if (typeof window !== 'undefined' && window.localStorage) {
+                    localStorage.setItem('app_lang', langCode);
+                    localStorage.setItem('esp32_s3_lang', langCode);
+                    localStorage.setItem('esp32_cam_global_lang', langCode);
+                    localStorage.setItem('selected_lang', langCode);
+                    localStorage.setItem('esp32_cam_flasher_lang', langCode);
+                }
             } catch(e) {}
 
             document.documentElement.lang = langCode;
-            document.documentElement.dir = langObj.dir;
+            document.documentElement.dir = langObj.dir || 'ltr';
             if (document.body) {
                 document.body.setAttribute('data-lang', langCode);
             }
@@ -1311,16 +1326,25 @@
             BRAND_CONFIG.applyFavicon();
             BRAND_CONFIG.renderHeaderLogo();
 
+            const selectEl = document.getElementById('langSelect');
+            if (selectEl && selectEl.value !== langCode) {
+                selectEl.value = langCode;
+            }
+
             // Gọi callback chuyển đổi ngôn ngữ của từng trang (nếu có)
-            if (typeof window.onAppLanguageChange === 'function') {
+            if (typeof window.onAppLanguageChange === 'function' && window.onAppLanguageChange !== this.setLanguage) {
                 try { window.onAppLanguageChange(langCode); } catch(e) {}
             }
-            if (typeof window.pageSetLanguage === 'function') {
+            if (typeof window.pageSetLanguage === 'function' && window.pageSetLanguage !== this.setLanguage) {
                 try { window.pageSetLanguage(langCode); } catch(e) {}
             }
 
             // Kích hoạt Event tùy biến cho các component riêng lắng nghe
-            window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: langCode, dir: langObj.dir } }));
+            try {
+                window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: langCode, dir: langObj.dir } }));
+            } catch(e) {}
+
+            this._isChanging = false;
         },
 
         /**
