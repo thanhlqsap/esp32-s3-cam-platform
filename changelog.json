@@ -1,5 +1,41 @@
 [
   {
+    "version": "v0.0.006",
+    "date": "2026-09-26",
+    "tag": "Latest Release",
+    "title": {
+      "vi": "Phiên bản v0.0.006 - Tách Từ Điển JSON Thuần & Đồng Bộ Ngôn Ngữ Thời Gian Thực",
+      "en": "Release v0.0.006 - Pure JSON Dictionary Decoupling & Real-time i18n Sync",
+      "zh": "v0.0.006 版本 - 纯 JSON 字典解耦与实时语言同步",
+      "es": "Versión v0.0.006 - Desacoplamiento de Diccionario JSON y Sincronización en Tiempo Real",
+      "fr": "Version v0.0.006 - Séparation du Dictionnaire JSON et Synchronisation en Temps Réel",
+      "de": "Release v0.0.006 - Reines JSON-Wörterbuch & Echtzeit-Sprachsynchronisierung",
+      "ja": "v0.0.006 リリース - 純粋な JSON 辞書の分離とリアルタイム言語同期",
+      "ko": "v0.0.006 릴리스 - 순수 JSON 사전 분리 및 실시간 언어 동기화",
+      "ru": "Релиз v0.0.006 - Разделение словарей JSON и синхронизация в реальном времени",
+      "ar": "الإصدار v0.0.006 - فصل قاموس JSON الخالص والمزامنة الفورية للغات"
+    },
+    "description": "Decoupled 10-language dictionaries into pure JSON format (i18n_dictionary.json) with build-time automated bundling, real-time dynamic language synchronization for all DOM alert states, and integrated Smart Logo Fallback mechanism.",
+    "details": {
+      "vi": "✨ Phiên bản v0.0.006 hoàn tất bóc tách toàn bộ từ điển 10 ngôn ngữ thành định dạng JSON thuần (i18n_dictionary.json) độc lập, tự động gộp (bundle) vào i18n.js ở build-time. Đồng bộ hóa 100% việc chuyển đổi ngôn ngữ theo thời gian thực cho mọi thông báo động (Quét Wi-Fi, Lưu kết nối, Diagnostics). Tích hợp cơ chế Smart Logo Fallback hỗ trợ hiển thị liền mạch trên cả phần cứng ESP32 và khi mở offline trên máy tính.",
+      "en": "✨ Release v0.0.006 extracts the complete 10-language dictionary into pure JSON (i18n_dictionary.json) with automated build-time bundling into i18n.js. Ensures 100% real-time dynamic translation across all alert and error states. Integrates Smart Logo Fallback mechanism for seamless operation on both ESP32 hardware and local offline previews.",
+      "zh": "✨ v0.0.004 版本将 10 国语言字典完整解耦为纯 JSON 文件 (i18n_dictionary.json)，并在构建期自动打包到 i18n.js。实现所有动态弹窗与错误提示的 100% 实时多语言同步切换。集成智能 Logo 容灾机制。",
+      "es": "✨ La versión v0.0.006 desacopla el diccionario de 10 idiomas en formato JSON puro con empaquetado automático. Sincroniza traducciones en tiempo real para todos los estados de alerta y agrega respaldo inteligente de Logo.",
+      "fr": "✨ La version v0.0.006 extrait le dictionnaire de 10 langues en JSON pur avec regroupement automatique au build. Synchronisation dynamique en temps réel pour tous les états d alerte et mécanisme Smart Logo Fallback.",
+      "de": "✨ Release v0.0.006 entkoppelt das 10-Sprachen-Wörterbuch in reines JSON mit automatischem Build-Time-Bundling. 100% Echtzeit-Sprachsynchronisierung für alle Benachrichtigungen und Smart-Logo-Fallback.",
+      "ja": "✨ v0.0.006 では 10 言語辞書を純粋な JSON (i18n_dictionary.json) に分離し、ビルド時に自動バンドル。すべてのアラート状態におけるリアルタイム言語同期と Smart Logo Fallback を実装しました。",
+      "ko": "✨ v0.0.006 릴리스는 10개 국어 사전을 순수 JSON (i18n_dictionary.json)으로 분리하고 빌드 타임 자동 번들링을 적용했습니다. 모든 동적 알림 상태의 100% 실시간 다국어 동기화와 Smart Logo Fallback 메커니즘을 지원합니다.",
+      "ru": "✨ Релиз v0.0.006 разделяет словарь 10 языков в чистый JSON с автоматической сборкой. Обеспечивает 100% синхронизацию динамических сообщений в реальном времени и механизм Smart Logo Fallback.",
+      "ar": "✨ الإصدار v0.0.006 يفصل قاموس 10 لغات إلى ملف JSON خالص مع تجميع تلقائي عند البناء ومزامنة فورية كاملة للحالات والتنبيهات."
+    },
+    "changes": [
+      "Bóc tách toàn bộ từ điển 10 ngôn ngữ thành file JSON thuần (i18n_dictionary.json), tự động gộp vào i18n.js khi build để tối ưu bộ nhớ Flash",
+      "Đồng bộ hóa 100% việc chuyển đổi ngôn ngữ theo thời gian thực cho các thông báo động (quét Wi-Fi, kết nối, lưu cấu hình, chẩn đoán hệ thống)",
+      "Tích hợp cơ chế Smart Logo Fallback hỗ trợ hiển thị mượt mà trên cả mạch ESP32 và khi mở offline trên máy tính",
+      "Bổ sung trọn bộ từ điển 10 ngôn ngữ cho trang Diagnostics & UART Logger"
+    ]
+  },
+  {
     "version": "v0.0.005",
     "date": "2026-09-26",
     "title": "Phiên bản v0.0.005 - Tích hợp Cơ chế Smart Dynamic AP & Chuẩn hóa URL GitHub Releases",
@@ -12,7 +48,6 @@
   },
   {
     "version": "v0.0.004",
-
     "date": "2026-09-26",
     "tag": "Latest Release",
     "title": {

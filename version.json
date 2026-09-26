@@ -1,10 +1,10 @@
 {
-  "version": "0.0.005",
+  "version": "0.0.006",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
-  "description": "Phiên bản v0.0.005: Tích hợp cơ chế Smart Dynamic AP (tự động tắt SoftAP sau 5 phút không có client để tối đa hóa băng thông RF & hạ nhiệt chip, tự động kích hoạt lại SoftAP sau 20 giây nếu mất kết nối STA), chuẩn hóa quy chuẩn đường dẫn tải firmware GitHub Releases.",
+  "description": "Phiên bản v0.0.006: Bóc tách từ điển đa ngôn ngữ sang định dạng JSON thuần (i18n_dictionary.json) tự động gộp vào i18n.js khi build. Đồng bộ hóa chuyển đổi ngôn ngữ tức thì theo thời gian thực cho tất cả trạng thái thông báo động (Quét Wi-Fi, Lưu kết nối, Diagnostics). Tích hợp cơ chế Smart Fallback cho Logo BumBonTechLab.",
   "release_date": "26/09/2026",
   "mandatory": false,
-  "changelog": "v0.0.005: Integrated Smart Dynamic AP controller (auto-disables SoftAP after 5min inactivity to maximize RF bandwidth & cool down chip, auto-reactivates SoftAP after 20s if STA disconnects), standardized GitHub Releases download URLs.",
+  "changelog": "v0.0.006: Extracted multi-language dictionary into pure JSON (i18n_dictionary.json) with automated build-time bundling into i18n.js. Real-time dynamic language synchronization across all alert states. Integrated Smart Logo Fallback mechanism.",
   "binary_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json"

@@ -2,15 +2,14 @@
  * =============================================================================
  * @file i18n.js
  * @brief Thư Viện Từ Điển Đa Ngôn Ngữ Trung Tâm (Centralized i18n Dictionary)
- * @details Cung cấp cơ chế dịch thuật 10 ngôn ngữ (Tiếng Việt mặc định #1),
- *          quản lý từ vựng phân tầng theo Namespace và tự động ánh xạ giao diện.
+ * @details Hỗ trợ 10 ngôn ngữ (Tiếng Việt mặc định #1), tối ưu bộ nhớ Flash cho Master OS.
  * =============================================================================
  */
 
 (function(window) {
     'use strict';
 
-    // 1. Danh sách 10 ngôn ngữ được hỗ trợ trong hệ thống
+    // 1. Danh sách 10 ngôn ngữ hệ thống
     const SUPPORTED_LANGUAGES = [
         { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', dir: 'ltr' },
         { code: 'en', name: 'English', flag: '🇺🇸', dir: 'ltr' },
@@ -24,306 +23,15 @@
         { code: 'ar', name: 'العربية', flag: '🇸🇦', dir: 'rtl' }
     ];
 
-    // 2. BẢNG TỪ ĐIỂN ĐA NGÔN NGỮ PHÂN TẦNG THEO NAMESPACE (10 NGÔN NGỮ)
-    const DICTIONARY = {
-// --- A. TỪ VỰNG CHUNG TOÀN HỆ THỐNG (COMMON) ---
-        common: {
-            title_os: {
-                vi: "ESP32-S3 Master OS", en: "ESP32-S3 Master OS", zh: "ESP32-S3 主控系统",
-                es: "ESP32-S3 Master OS", fr: "ESP32-S3 Master OS", de: "ESP32-S3 Master OS",
-                ja: "ESP32-S3 Master OS", ko: "ESP32-S3 Master OS", ru: "ESP32-S3 Master OS", ar: "ESP32-S3 نظام التشغيل الرئيسي"
-            },
-            sub_title: {
-                vi: "16MB Flash • Dual-OTA • GitHub Cloud Store",
-                en: "16MB Flash • Dual-OTA • GitHub Cloud Store",
-                zh: "16MB Flash • 双OTA • GitHub 云端商店",
-                es: "16MB Flash • Dual-OTA • Tienda Cloud GitHub",
-                fr: "16Mo Flash • Dual-OTA • Boutique Cloud GitHub",
-                de: "16MB Flash • Dual-OTA • GitHub Cloud Store",
-                ja: "16MB Flash • Dual-OTA • GitHub クラウドストア",
-                ko: "16MB Flash • 듀얼 OTA • GitHub 클라우드 스토어",
-                ru: "16MB Flash • Dual-OTA • Магазин GitHub Cloud",
-                ar: "16 ميجابايت فلاش • ترقية مزدوجة OTA • متجر GitHub السحابي"
-            },
-            back_dashboard: {
-                vi: "Về Dashboard", en: "Back to Dashboard", zh: "返回仪表盘",
-                es: "Volver al Panel", fr: "Retour au Tableau", de: "Zurück zum Dashboard",
-                ja: "ダッシュボードへ戻る", ko: "대시보드로 돌아가기", ru: "Назад в Панель", ar: "العودة للوحة التحكم"
-            },
-            datasheet: {
-                vi: "Tài Liệu Kỹ Thuật", en: "Datasheet", zh: "技术规格书",
-                es: "Ficha Técnica", fr: "Fiche Technique", de: "Datenblatt",
-                ja: "データシート", ko: "데이터시트", ru: "Техпаспорт", ar: "ورقة البيانات"
-            },
-            telemetry_title: {
-                vi: "Thông Số & Nhật Ký Hoạt Động", en: "System Telemetry & Event Logs", zh: "系统遥测与运行日志",
-                es: "Telemetría y Registros del Sistema", fr: "Télémétrie & Journaux Système", de: "Systemtelemetrie & Ereignisprotokolle",
-                ja: "システム情報＆動作ログ", ko: "시스템 정보 및 작동 로그", ru: "Телеметрия и Системные Логи", ar: "بيانات النظام وسجلات الأحداث"
-            },
-            status_online: {
-                vi: "TRỰC TUYẾN", en: "ONLINE", zh: "在线",
-                es: "EN LÍNEA", fr: "EN LIGNE", de: "ONLINE",
-                ja: "オンライン", ko: "온라인", ru: "В СЕТИ", ar: "متصل"
-            },
-            status_running: {
-                vi: "ĐANG CHẠY", en: "RUNNING", zh: "运行中",
-                es: "EJECUTANDO", fr: "EN COURS", de: "LÄUFT",
-                ja: "稼働中", ko: "실행 중", ru: "РАБОТАЕТ", ar: "قيد التشغيل"
-            },
-            status_standby: {
-                vi: "CHỜ LỆNH", en: "STANDBY", zh: "待机",
-                es: "EN ESPERA", fr: "EN ATTENTE", de: "STANDBY",
-                ja: "待機中", ko: "대기 중", ru: "ОЖИДАНИЕ", ar: "في وضع الاستعداد"
-            },
-            free_heap: {
-                vi: "RAM Khả dụng", en: "Free Heap", zh: "可用 RAM",
-                es: "RAM Libre", fr: "RAM Libre", de: "Freier RAM",
-                ja: "空き RAM", ko: "여유 RAM", ru: "Свободная RAM", ar: "ذاكرة RAM المتاحة"
-            },
-            psram_size: {
-                vi: "Bộ nhớ PSRAM", en: "Octal PSRAM", zh: "PSRAM 内存",
-                es: "Memoria PSRAM", fr: "Mémoire PSRAM", de: "PSRAM-Speicher",
-                ja: "PSRAM メモリ", ko: "PSRAM 메모리", ru: "Память PSRAM", ar: "ذاكرة PSRAM"
-            },
-            ip_address: {
-                vi: "Địa chỉ IP", en: "IP Address", zh: "IP 地址",
-                es: "Dirección IP", fr: "Adresse IP", de: "IP-Adresse",
-                ja: "IP アドレス", ko: "IP 주소", ru: "IP-адрес", ar: "عنوان IP"
-            },
-            wifi_signal: {
-                vi: "Tín hiệu Wi-Fi", en: "Wi-Fi RSSI", zh: "Wi-Fi 信号",
-                es: "Señal Wi-Fi", fr: "Signal Wi-Fi", de: "WLAN-Signal",
-                ja: "Wi-Fi 信号", ko: "Wi-Fi 신호", ru: "Сигнал Wi-Fi", ar: "إشارة Wi-Fi"
-            },
-            latency: {
-                vi: "Độ Trễ Phản Hồi", en: "Response Latency", zh: "响应延迟",
-                es: "Latencia de Respuesta", fr: "Latence de Réponse", de: "Antwortlatenz",
-                ja: "応答遅延", ko: "응답 지연", ru: "Задержка Ответа", ar: "زمن الاستجابة"
-            },
-            core_temp: {
-                vi: "Nhiệt Độ Chip", en: "Core Temp", zh: "芯片温度",
-                es: "Temp. del Núcleo", fr: "Temp. Processeur", de: "Chiptemperatur",
-                ja: "チップ温度", ko: "칩 온도", ru: "Температура Чипа", ar: "حرارة المعالج"
-            },
-            clear_log: {
-                vi: "Xóa log", en: "Clear log", zh: "清空日志",
-                es: "Borrar log", fr: "Effacer journal", de: "Protokoll löschen",
-                ja: "ログ消去", ko: "로그 삭제", ru: "Очистить лог", ar: "مسح السجل"
-            },
-            btn_restart: {
-                vi: "Khởi Động Lại", en: "Reboot System", zh: "重启系统",
-                es: "Reiniciar Sistema", fr: "Redémarrer", de: "System neu starten",
-                ja: "システム再起動", ko: "시스템 재부팅", ru: "Перезагрузка", ar: "إعادة التشغيل"
-            }
-        },
+    // 2. BẢNG TỪ ĐIỂN ĐA NGÔN NGỮ CỐT LÕI CHO MASTER OS (10 NGÔN NGỮ)
+    const DICTIONARY = {"common":{"title_os":{"vi":"ESP32-S3 Master OS","en":"ESP32-S3 Master OS","zh":"ESP32-S3 主控系统","es":"ESP32-S3 Master OS","fr":"ESP32-S3 Master OS","de":"ESP32-S3 Master OS","ja":"ESP32-S3 Master OS","ko":"ESP32-S3 Master OS","ru":"ESP32-S3 Master OS","ar":"ESP32-S3 نظام التشغيل"},"sub_title":{"vi":"16MB Flash • Dual-OTA • GitHub Cloud Store","en":"16MB Flash • Dual-OTA • GitHub Cloud Store","zh":"16MB Flash • 双OTA • GitHub 云端商店","es":"16MB Flash • Dual-OTA • Tienda GitHub","fr":"16Mo Flash • Dual-OTA • Boutique GitHub","de":"16MB Flash • Dual-OTA • GitHub Cloud Store","ja":"16MB Flash • Dual-OTA • GitHub クラウドストア","ko":"16MB Flash • 듀얼 OTA • GitHub 클라우드 스토어","ru":"16MB Flash • Dual-OTA • Магазин GitHub","ar":"16 ميجابايت فلاش • ترقية مزدوجة OTA • متجر GitHub"},"back_dashboard":{"vi":"Về Dashboard","en":"Back to Dashboard","zh":"返回仪表盘","es":"Volver al Panel","fr":"Retour au Tableau","de":"Zurück zum Dashboard","ja":"ダッシュボードへ戻る","ko":"대시보드로 돌아가기","ru":"Назад в Панель","ar":"العودة للوحة التحكم"},"datasheet":{"vi":"Tài Liệu Kỹ Thuật","en":"Datasheet","zh":"技术规格书","es":"Ficha Técnica","fr":"Fiche Technique","de":"Datenblatt","ja":"データシート","ko":"데이터시트","ru":"Техпаспорт","ar":"ورقة البيانات"},"telemetry_title":{"vi":"Thông Số \u0026 Nhật Ký Hoạt Động","en":"System Telemetry \u0026 Logs","zh":"系统遥测与日志","es":"Telemetría y Registros","fr":"Télémétrie \u0026 Journaux","de":"Systemtelemetrie \u0026 Logs","ja":"システム情報＆ログ","ko":"시스템 정보 및 로그","ru":"Телеметрия и Логи","ar":"بيانات النظام والسجلات"},"status_online":{"vi":"TRỰC TUYẾN","en":"ONLINE","zh":"在线","es":"EN LÍNEA","fr":"EN LIGNE","de":"ONLINE","ja":"オンライン","ko":"온라인","ru":"В СЕТИ","ar":"متصل"},"status_running":{"vi":"ĐANG CHẠY","en":"RUNNING","zh":"运行中","es":"EJECUTANDO","fr":"EN COURS","de":"LÄUFT","ja":"稼働中","ko":"실행 중","ru":"РАБОТАЕТ","ar":"قيد التشغيل"},"status_standby":{"vi":"CHỜ LỆNH","en":"STANDBY","zh":"待机","es":"EN ESPERA","fr":"EN ATTENTE","de":"STANDBY","ja":"待機中","ko":"대기 중","ru":"ОЖИДАНИЕ","ar":"في وضع الاستعداد"},"free_heap":{"vi":"RAM Khả dụng","en":"Free Heap","zh":"可用 RAM","es":"RAM Libre","fr":"RAM Libre","de":"Freier RAM","ja":"空き RAM","ko":"여유 RAM","ru":"Свободная RAM","ar":"ذاكرة RAM المتاحة"},"psram_size":{"vi":"Bộ nhớ PSRAM","en":"Octal PSRAM","zh":"PSRAM 内存","es":"Memoria PSRAM","fr":"Mémoire PSRAM","de":"PSRAM-Speicher","ja":"PSRAM メモリ","ko":"PSRAM 메모리","ru":"Память PSRAM","ar":"ذاكرة PSRAM"},"ip_address":{"vi":"Địa chỉ IP","en":"IP Address","zh":"IP 地址","es":"Dirección IP","fr":"Adresse IP","de":"IP-Adresse","ja":"IP アドレス","ko":"IP 주소","ru":"IP-адрес","ar":"عنوان IP"},"wifi_signal":{"vi":"Tín hiệu Wi-Fi","en":"Wi-Fi RSSI","zh":"Wi-Fi 信号","es":"Señal Wi-Fi","fr":"Signal Wi-Fi","de":"WLAN-Signal","ja":"Wi-Fi 信号","ko":"Wi-Fi 신호","ru":"Сигнал Wi-Fi","ar":"إشارة Wi-Fi"},"latency":{"vi":"Độ Trễ Phản Hồi","en":"Response Latency","zh":"响应延迟","es":"Latencia","fr":"Latence","de":"Antwortlatenz","ja":"応答遅延","ko":"응답 지연","ru":"Задержка","ar":"زمن الاستجابة"},"core_temp":{"vi":"Nhiệt Độ CPU","en":"Core Temp","zh":"CPU 温度","es":"Temp. CPU","fr":"Temp. CPU","de":"CPU-Temperatur","ja":"CPU 温度","ko":"CPU 온도","ru":"Температура CPU","ar":"حرارة المعالج"},"clear_log":{"vi":"Xóa Nhật Ký","en":"Clear Log","zh":"清空日志","es":"Borrar Registros","fr":"Effacer Journal","de":"Log Löschen","ja":"ログ消去","ko":"로그 삭제","ru":"Очистить Лог","ar":"مسح السجل"},"btn_restart":{"vi":"Khởi Động Lại","en":"Reboot System","zh":"重启设备","es":"Reiniciar","fr":"Redémarrer","de":"Neustarten","ja":"再起動","ko":"재부팅","ru":"Перезагрузить","ar":"إعادة التشغيل"}},"dashboard":{"tab_camera":{"vi":"Camera Live Dashboard","en":"Camera Live Dashboard","zh":"实时视频监控","es":"Panel de Cámara en Vivo","fr":"Tableau de Bord Caméra","de":"Kamera-Live-Dashboard","ja":"カメラライブダッシュボード","ko":"카메라 라이브 대시보드","ru":"Панель Камеры","ar":"لوحة تحكم الكاميرا"},"tab_store":{"vi":"Kho Dự Án (Cloud App Store)","en":"Project Store (Cloud App Store)","zh":"项目商店 (Cloud App Store)","es":"Tienda de Proyectos","fr":"Boutique de Projets","de":"Projekt-Store","ja":"プロジェクトストア","ko":"프로젝트 스토어","ru":"Магазин Проектов","ar":"متجر المشاريع"},"tab_ota":{"vi":"Cập Nhật Firmware (OTA)","en":"Firmware Update (OTA)","zh":"固件升级 (OTA)","es":"Actualización Firmware (OTA)","fr":"Mise à Jour Firmware (OTA)","de":"Firmware-Update (OTA)","ja":"ファームウェア更新 (OTA)","ko":"펌웨어 업데이트 (OTA)","ru":"Обновление Прошивки (OTA)","ar":"تحديث البرامج الثابتة (OTA)"},"tab_settings":{"vi":"Cấu Hình Hệ Thống \u0026 Wi-Fi","en":"System \u0026 Wi-Fi Settings","zh":"系统与 Wi-Fi 设置","es":"Configuración Sistema y Wi-Fi","fr":"Paramètres Système \u0026 Wi-Fi","de":"System- \u0026 WLAN-Einstellungen","ja":"システム＆ Wi-Fi 設定","ko":"시스템 및 Wi-Fi 설정","ru":"Настройки Системы и Wi-Fi","ar":"إعدادات النظام والـ Wi-Fi"},"store_title":{"vi":"Kho Dự Án Trực Tuyến (Online App Store)","en":"Online Project App Store","zh":"在线项目应用商店","es":"Tienda de Proyectos en Línea","fr":"Boutique de Projets en Ligne","de":"Online-Projekt-App-Store","ja":"オンラインプロジェクトストア","ko":"온라인 프로젝트 앱 스토어","ru":"Онлайн Магазин Проектов","ar":"متجر المشاريع المباشر"},"store_sub":{"vi":"Tải và nạp trực tiếp firmware từ GitHub Releases qua HTTPS Streaming OTA (Không cần thẻ nhớ)","en":"Download and stream flash firmware directly from GitHub Releases via HTTPS OTA","zh":"直接从 GitHub Releases 通过 HTTPS 串流 OTA 烧录固件（无需 SD 卡）","es":"Descarga e instala firmware directamente desde GitHub Releases vía HTTPS OTA","fr":"Téléchargez et flashez le firmware directement depuis GitHub Releases via HTTPS OTA","de":"Firmware direkt von GitHub Releases über HTTPS OTA herunterladen und flashen","ja":"GitHub Releases から HTTPS OTA 経由で直接ファームウェアをフラッシュ","ko":"GitHub Releases에서 HTTPS OTA를 통해 직접 펌웨어 다운로드 및 플래시","ru":"Загрузка и прошивка напрямую из GitHub Releases через HTTPS OTA","ar":"تنزيل وتثبيت البرامج الثابتة مباشرة من GitHub Releases عبر HTTPS OTA"},"cat_all":{"vi":"Tất cả","en":"All","zh":"全部","es":"Todo","fr":"Tous","de":"Alle","ja":"すべて","ko":"전체","ru":"Все","ar":"الكل"},"cat_edge_ai":{"vi":"Edge AI","en":"Edge AI","zh":"边缘 AI","es":"Edge AI","fr":"Edge IA","de":"Edge KI","ja":"Edge AI","ko":"엣지 AI","ru":"Edge AI","ar":"الذكاء الاصطناعي"},"cat_smart_home":{"vi":"Smart Home","en":"Smart Home","zh":"智能家居","es":"Smart Home","fr":"Maison Intelligente","de":"Smart Home","ja":"スマートホーム","ko":"스마트홈","ru":"Умный Дом","ar":"المنزل الذكي"},"cat_voice_ai":{"vi":"Voice AI","en":"Voice AI","zh":"语音 AI","es":"Voice AI","fr":"IA Vocale","de":"Sprach-KI","ja":"音声 AI","ko":"음성 AI","ru":"Голосовой AI","ar":"الصوت الذكي"},"cat_robotics":{"vi":"Robotics","en":"Robotics","zh":"机器人","es":"Robótica","fr":"Robotique","de":"Robotik","ja":"ロボティクス","ko":"로보틱스","ru":"Робототехника","ar":"الروبوتات"},"cat_gadgets":{"vi":"Gadgets \u0026 Tools","en":"Gadgets \u0026 Tools","zh":"极客工具","es":"Herramientas","fr":"Gadgets \u0026 Outils","de":"Gadgets \u0026 Tools","ja":"ガジェット","ko":"가젯 및 도구","ru":"Гаджеты","ar":"الأدوات الذكية"},"open_site_btn":{"vi":"Mở Site Điều Khiển","en":"Open Control Site","zh":"打开控制站点","es":"Abrir Sitio de Control","fr":"Ouvrir le Site","de":"Steuerungs-Site öffnen","ja":"制御サイトを開く","ko":"제어 사이트 열기","ru":"Открыть Сайт Управления","ar":"فتح موقع التحكم"},"install_btn":{"vi":"1-Click Cài Đặt","en":"1-Click Install","zh":"一键安装","es":"Instalar en 1-Clic","fr":"Installer en 1-Clic","de":"1-Klick-Installation","ja":"1クリックインストール","ko":"원클릭 설치","ru":"Установка в 1 клик","ar":"تثبيت بنقرة واحدة"}},"camera":{"live_stream":{"vi":"Camera Live Feed","en":"Camera Live Feed","zh":"实时视频流","es":"Transmisión en Vivo","fr":"Flux en Direct","de":"Live-Kamera-Feed","ja":"カメラライブ映像","ko":"카메라 라이브 영상","ru":"Прямой Эфир Камеры","ar":"بث الكاميرا المباشر"},"controls_title":{"vi":"Bảng Điều Khiển Cảm Biến Camera","en":"Camera Sensor Controls","zh":"摄像头传感器控制面板","es":"Controles del Sensor","fr":"Contrôles du Capteur","de":"Kamerasensor-Steuerung","ja":"カメラセンサー制御パネル","ko":"카메라 센서 제어판","ru":"Панель Управления Камерой","ar":"لوحة تحكم الكاميرا"},"snap_btn":{"vi":"Chụp Ảnh","en":"Capture Snapshot","zh":"抓拍照片","es":"Capturar Foto","fr":"Prendre Photo","de":"Schnappschuss","ja":"写真撮影","ko":"스냅샷 촬영","ru":"Сделать Снимок","ar":"التقاط صورة"},"toggle_stream":{"vi":"Tạm Dừng Stream","en":"Pause Stream","zh":"暂停视频流","es":"Pausar Stream","fr":"Pause Flux","de":"Stream Pausieren","ja":"ストリーム一時停止","ko":"스트림 일시 중지","ru":"Пауза Потока","ar":"إيقاف البث مؤقتاً"},"resolution":{"vi":"Độ Phân Giải (Resolution)","en":"Resolution","zh":"画面分辨率","es":"Resolución","fr":"Résolution","de":"Auflösung","ja":"解像度 (Resolution)","ko":"해상도 (Resolution)","ru":"Разрешение","ar":"الدقة"},"jpeg_quality":{"vi":"Chất Lượng JPEG (Quality)","en":"JPEG Quality","zh":"JPEG 图像画质","es":"Calidad JPEG","fr":"Qualité JPEG","de":"JPEG-Qualität","ja":"JPEG 画質 (Quality)","ko":"JPEG 품질 (Quality)","ru":"Качество JPEG","ar":"جودة JPEG"},"flash_led":{"vi":"Đèn Flash LED (Độ sáng)","en":"Flash LED (Brightness)","zh":"补光闪光灯 (亮度)","es":"Flash LED (Brillo)","fr":"Flash LED (Luminosité)","de":"Blitz-LED (Helligkeit)","ja":"フラッシュ LED (明るさ)","ko":"플래시 LED (밝기)","ru":"Вспышка LED (Яркость)","ar":"فلاش LED (السطوع)"},"awb":{"vi":"Cân Bằng Trắng Tự Động (AWB)","en":"Auto White Balance (AWB)","zh":"自动白平衡 (AWB)","es":"Balance de Blancos Auto","fr":"Balance des Blancs Auto","de":"Automatischer Weißabgleich","ja":"自動ホワイトバランス (AWB)","ko":"자동 화이트 밸런스 (AWB)","ru":"Автобаланс Белого (AWB)","ar":"توازن اللون الأبيض التلقائي"},"brightness":{"vi":"Độ Sáng","en":"Brightness","zh":"亮度","es":"Brillo","fr":"Luminosité","de":"Helligkeit","ja":"明るさ","ko":"밝기","ru":"Яркость","ar":"السطوع"},"contrast":{"vi":"Độ Tương Phản","en":"Contrast","zh":"对比度","es":"Contraste","fr":"Contraste","de":"Kontrast","ja":"コントラスト","ko":"대비","ru":"Контраст","ar":"التباين"},"saturation":{"vi":"Độ Bão Hòa Màu","en":"Saturation","zh":"饱和度","es":"Saturación","fr":"Saturation","de":"Sättigung","ja":"彩度","ko":"채도","ru":"Насыщенность","ar":"التشبع"},"special_effect":{"vi":"Hiệu Ứng Hình Ảnh","en":"Special Effect","zh":"特殊滤镜效果","es":"Efecto Especial","fr":"Effet Spécial","de":"Spezialeffekt","ja":"特殊効果","ko":"특수 효과","ru":"Спецэкраны","ar":"تأثير خاص"},"effect_normal":{"vi":"Bình Thường (No Effect)","en":"Normal","zh":"正常","es":"Normal","fr":"Normal","de":"Normal","ja":"標準","ko":"기본","ru":"Обычный","ar":"عادي"},"effect_negative":{"vi":"Âm Bản (Negative)","en":"Negative","zh":"负片","es":"Negativo","fr":"Négatif","de":"Negativ","ja":"ネガ","ko":"반전","ru":"Негатив","ar":"سالب"},"effect_grayscale":{"vi":"Trắng Đen (Grayscale)","en":"Grayscale","zh":"灰度","es":"Escala de grises","fr":"Niveaux de gris","de":"Graustufen","ja":"グレースケール","ko":"흑백","ru":"Оттенки серого","ar":"تدرج رمادي"},"effect_red":{"vi":"Ám Đỏ (Red Tint)","en":"Red Tint","zh":"偏红","es":"Tinte Rojo","fr":"Teinte Rouge","de":"Rotstich","ja":"赤みがかり","ko":"붉은색 틴트","ru":"Красный оттенок","ar":"صبغة حمراء"},"effect_green":{"vi":"Ám Xanh Lá (Green Tint)","en":"Green Tint","zh":"偏绿","es":"Tinte Verde","fr":"Teinte Verte","de":"Grünstich","ja":"緑がかり","ko":"녹색 틴트","ru":"Зеленый оттенок","ar":"صبغة خضراء"},"effect_blue":{"vi":"Ám Xanh Dương (Blue Tint)","en":"Blue Tint","zh":"偏蓝","es":"Tinte Azul","fr":"Teinte Bleue","de":"Blaustich","ja":"青みがかり","ko":"파란색 틴트","ru":"Синий оттенок","ar":"صبغة زرقاء"},"effect_sepia":{"vi":"Cổ Điển (Sepia)","en":"Sepia","zh":"复古怀旧","es":"Sepia","fr":"Sépia","de":"Sepia","ja":"セピア","ko":"세피아","ru":"Сепия","ar":"سيبيا"},"hmirror":{"vi":"Lật Ngang (H-Mirror)","en":"Horizontal Mirror","zh":"水平镜像","es":"Espejo Horizontal","fr":"Miroir Horizontal","de":"Horizontal Spiegeln","ja":"水平反転 (H-Mirror)","ko":"좌우 반전 (H-Mirror)","ru":"Горизонтальное Зеркало","ar":"مرآة أفقية"},"vflip":{"vi":"Lật Dọc (V-Flip)","en":"Vertical Flip","zh":"垂直翻转","es":"Volteo Vertical","fr":"Retournement Vertical","de":"Vertikal Spiegeln","ja":"垂直反転 (V-Flip)","ko":"상하 반전 (V-Flip)","ru":"Вертикальное Зеркало","ar":"قلب عمودي"},"stream_loading":{"vi":"Đang kết nối camera stream...","en":"Connecting camera stream...","zh":"正在连接摄像头画面...","es":"Conectando stream...","fr":"Connexion au flux...","de":"Kamera-Stream wird verbunden...","ja":"カメラストリーム接続中...","ko":"카메라 스트림 연결 중...","ru":"Подключение к камере...","ar":"جارٍ الاتصال بالبث..."},"stream_paused":{"vi":"Tạm dừng truyền phát","en":"Stream paused","zh":"画面已暂停","es":"Transmisión pausada","fr":"Flux en pause","de":"Stream pausiert","ja":"ストリーム一時停止","ko":"스트림 일시 중지","ru":"Трансляция приостановлена","ar":"البث متوقف مؤقتاً"},"stream_reconnecting":{"vi":"Đang tự động kết nối lại...","en":"Reconnecting automatically...","zh":"正在自动重连...","es":"Reconectando...","fr":"Reconnexion...","de":"Automatische Wiederverbindung...","ja":"自動再接続中...","ko":"자동 재연결 중...","ru":"Автоподключение...","ar":"إعادة الاتصال التلقائي..."},"pause_stream":{"vi":"Tạm Dừng Stream","en":"Pause Stream","zh":"暂停视频流","es":"Pausar Stream","fr":"Pause Flux","de":"Stream Pausieren","ja":"ストリーム一時停止","ko":"스트림 일시 중지","ru":"Пауза Потока","ar":"إيقاف البث مؤقتاً"},"start_stream":{"vi":"Bật Live Stream","en":"Start Stream","zh":"启动视频流","es":"Iniciar Stream","fr":"Démarrer Flux","de":"Stream Starten","ja":"配信開始","ko":"스트림 시작","ru":"Запуск Потока","ar":"بدء البث"},"stop_stream":{"vi":"Dừng Stream","en":"Stop Stream","zh":"停止视频流","es":"Detener Stream","fr":"Arrêter Flux","de":"Stream Stoppen","ja":"配信停止","ko":"스트림 중지","ru":"Остановить Поток","ar":"إيقاف البث"}},"wifi":{"setup_title":{"vi":"Cấu Hình Mạng Wi-Fi","en":"Wi-Fi Configuration","zh":"Wi-Fi 网络配置","es":"Configuración Wi-Fi","fr":"Configuration Wi-Fi","de":"WLAN-Konfiguration","ja":"Wi-Fi ネットワーク設定","ko":"Wi-Fi 네트워크 설정","ru":"Настройка Сети Wi-Fi","ar":"إعداد شبكة Wi-Fi"},"setup_desc":{"vi":"Chọn mạng Wi-Fi khả dụng hoặc nhập thủ công SSID và mật khẩu để kết nối thiết bị.","en":"Select an available Wi-Fi network or manually enter SSID and password to connect.","zh":"选择可用 Wi-Fi 网络或手动输入 SSID 和密码以连接设备。","es":"Seleccione una red Wi-Fi disponible o ingrese manualmente el SSID y la contraseña.","fr":"Sélectionnez un réseau Wi-Fi disponible ou saisissez manuellement le SSID et le mot de passe.","de":"Wählen Sie ein verfügbares WLAN-Netzwerk aus oder geben Sie SSID und Passwort manuell ein.","ja":"利用可能な Wi-Fi を選択するか、SSID とパスワードを手動入力して接続してください。","ko":"사용 가능한 Wi-Fi 네트워크를 선택하거나 SSID와 비밀번호를 직접 입력하여 연결하세요.","ru":"Выберите доступную сеть Wi-Fi или введите SSID и пароль вручную.","ar":"حدد شبكة Wi-Fi متوفرة أو أدخل اسم الشبكة SSID وكلمة المرور يدوياً للاتصال."},"scan_networks":{"vi":"Quét Mạng Wi-Fi","en":"Scan Wi-Fi Networks","zh":"扫描 Wi-Fi","es":"Escanear Wi-Fi","fr":"Scanner Wi-Fi","de":"WLAN scannen","ja":"Wi-Fi スキャン","ko":"Wi-Fi 검색","ru":"Сканировать Wi-Fi","ar":"مسح شبكات Wi-Fi"},"scanning":{"vi":"Đang quét mạng...","en":"Scanning networks...","zh":"正在扫描网络...","es":"Escaneando redes...","fr":"Recherche en cours...","de":"Netzwerke werden gesucht...","ja":"スキャン中...","ko":"네트워크 검색 중...","ru":"Поиск сетей...","ar":"جارٍ مسح الشبكات..."},"refresh":{"vi":"Làm Mới","en":"Refresh","zh":"刷新","es":"Actualizar","fr":"Actualiser","de":"Aktualisieren","ja":"更新","ko":"새로고침","ru":"Обновить","ar":"تحديث"},"avail_networks":{"vi":"Mạng khả dụng:","en":"Available networks:","zh":"可用网络：","es":"Redes disponibles:","fr":"Réseaux disponibles :","de":"Verfügbare Netzwerke:","ja":"利用可能なネットワーク：","ko":"사용 가능한 네트워크:","ru":"Доступные сети:","ar":"الشبكات المتوفرة:"},"select_scanned_opt":{"vi":"-- Chọn mạng Wi-Fi quét được --","en":"-- Select scanned Wi-Fi network --","zh":"-- 选择已扫描的 Wi-Fi 网络 --","es":"-- Seleccionar red Wi-Fi escaneada --","fr":"-- Sélectionner le réseau Wi-Fi scanné --","de":"-- Gescanntes WLAN-Netzwerk auswählen --","ja":"-- スキャンしたWi-Fiを選択 --","ko":"-- 검색된 Wi-Fi 네트워크 선택 --","ru":"-- Выберите найденную сеть Wi-Fi --","ar":"-- حدد شبكة Wi-Fi المكتشفة --"},"ssid_label":{"vi":"Tên Mạng Wi-Fi (SSID)","en":"Network Name (SSID)","zh":"网络名称 (SSID)","es":"Nombre de Red (SSID)","fr":"Nom du Réseau (SSID)","de":"Netzwerkname (SSID)","ja":"ネットワーク名 (SSID)","ko":"네트워크 이름 (SSID)","ru":"Имя Сети (SSID)","ar":"اسم الشبكة (SSID)"},"ssid_placeholder":{"vi":"Hoặc nhập tên mạng SSID...","en":"Or enter SSID manually...","zh":"或手动输入网络 SSID...","es":"O ingrese el SSID manualmente...","fr":"Ou saisissez le SSID manuellement...","de":"Oder SSID manuell eingeben...","ja":"または SSID を手動入力...","ko":"또는 SSID 직접 입력...","ru":"Или введите SSID вручную...","ar":"أو أدخل اسم الشبكة SSID يدوياً..."},"password_label":{"vi":"Mật Khẩu Wi-Fi","en":"Wi-Fi Password","zh":"Wi-Fi 密码","es":"Contraseña Wi-Fi","fr":"Mot de Passe Wi-Fi","de":"WLAN-Passwort","ja":"Wi-Fi パスワード","ko":"Wi-Fi 비밀번호","ru":"Пароль Wi-Fi","ar":"كلمة مرور Wi-Fi"},"password_placeholder":{"vi":"Nhập mật khẩu Wi-Fi...","en":"Enter Wi-Fi password...","zh":"输入 Wi-Fi 密码...","es":"Ingrese la contraseña Wi-Fi...","fr":"Saisissez le mot de passe Wi-Fi...","de":"WLAN-Passwort eingeben...","ja":"Wi-Fi パスワードを入力...","ko":"Wi-Fi 비밀번호 입력...","ru":"Введите пароль Wi-Fi...","ar":"أدخل كلمة مرور Wi-Fi..."},"not_found":{"vi":"Không tìm thấy mạng Wi-Fi nào","en":"No Wi-Fi networks found","zh":"未找到 Wi-Fi 网络","es":"No se encontraron redes Wi-Fi","fr":"Aucun réseau Wi-Fi trouvé","de":"Keine WLAN-Netzwerke gefunden","ja":"Wi-Fi ネットワークが見つかりません","ko":"Wi-Fi 네트워크를 찾을 수 없습니다","ru":"Сети Wi-Fi не найдены","ar":"لم يتم العثور على شبكات Wi-Fi"},"connect_btn":{"vi":"Lưu \u0026 Kết Nối","en":"Save \u0026 Connect","zh":"保存并连接","es":"Guardar y Conectar","fr":"Enregistrer \u0026 Connecter","de":"Speichern \u0026 Verbinden","ja":"保存して接続","ko":"저장 및 연결","ru":"Сохранить и Подключить","ar":"حفظ والاتصال"},"connecting":{"vi":"Đang kết nối...","en":"Connecting...","zh":"正在连接...","es":"Conectando...","fr":"Connexion en cours...","de":"Verbindung wird hergestellt...","ja":"接続中...","ko":"연결 중...","ru":"Подключение...","ar":"جارٍ الاتصال..."},"saving":{"vi":"Đang lưu cấu hình \u0026 kết nối...","en":"Saving settings \u0026 connecting...","zh":"正在保存配置并连接...","es":"Guardando configuración...","fr":"Sauvegarde des paramètres...","de":"Einstellungen speichern...","ja":"設定を保存して接続中...","ko":"설정 저장 및 연결 중...","ru":"Сохранение настроек...","ar":"جاري حفظ الإعدادات والاتصال..."},"scan_error":{"vi":"Không tìm thấy mạng Wi-Fi nào!","en":"No Wi-Fi networks found!","zh":"未找到扫描到的 Wi-Fi 网络！","es":"¡No se encontraron redes Wi-Fi!","fr":"Aucun réseau Wi-Fi trouvé !","de":"Keine WLAN-Netzwerke gefunden!","ja":"Wi-Fi ネットワークが見つかりませんでした！","ko":"Wi-Fi 네트워크를 찾을 수 없습니다!","ru":"Сети Wi-Fi не найдены!","ar":"لم يتم العثور على شبكات Wi-Fi!"},"success_msg":{"vi":"Lưu cấu hình thành công! Thiết bị đang kết nối lại...","en":"Configuration saved! Device is reconnecting...","zh":"配置保存成功！设备正在重新连接...","es":"¡Configuración guardada! El dispositivo se está reconectando...","fr":"Configuration enregistrée ! L\u0027appareil se reconnecte...","de":"Konfiguration gespeichert! Gerät verbindet sich neu...","ja":"設定が保存されました！デバイスが再接続中です...","ko":"설정이 저장되었습니다! 기기가 다시 연결 중입니다...","ru":"Настройки сохранены! Устройство переподключается...","ar":"تم حفظ الإعدادات بنجاح! الجهاز يعيد الاتصال..."}},"settings":{"wifi_section":{"vi":"Kết Nối Wi-Fi (Station Mode)","en":"Wi-Fi Connection (Station Mode)","zh":"Wi-Fi 连接 (Station 模式)","es":"Conexión Wi-Fi (Modo Station)","fr":"Connexion Wi-Fi (Mode Station)","de":"WLAN-Verbindung (Station-Modus)","ja":"Wi-Fi 接続 (Station モード)","ko":"Wi-Fi 연결 (Station 모드)","ru":"Подключение Wi-Fi (Режим Station)","ar":"اتصال Wi-Fi (وضع Station)"},"saved_nets":{"vi":"Mạng Wi-Fi Đã Lưu (NVS)","en":"Saved Wi-Fi Networks (NVS)","zh":"已保存的 Wi-Fi 网络 (NVS)","es":"Redes Wi-Fi Guardadas (NVS)","fr":"Réseaux Wi-Fi Enregistrés (NVS)","de":"Gespeicherte WLAN-Netzwerke (NVS)","ja":"保存済み Wi-Fi ネットワーク (NVS)","ko":"저장된 Wi-Fi 네트워크 (NVS)","ru":"Сохраненные Сети Wi-Fi (NVS)","ar":"شبكات Wi-Fi المحفوظة (NVS)"},"dns_section":{"vi":"Tên Miền Cục Bộ (mDNS / Local DNS)","en":"Local Domain (mDNS / Local DNS)","zh":"本地域名 (mDNS / Local DNS)","es":"Dominio Local (mDNS)","fr":"Domaine Local (mDNS)","de":"Lokale Domäne (mDNS)","ja":"ローカルドメイン (mDNS)","ko":"로컬 도메인 (mDNS)","ru":"Локальный Домен (mDNS)","ar":"النطاق المحلي (mDNS)"},"hostname_label":{"vi":"Tên Thiết Bị (Host Name)","en":"Device Host Name","zh":"设备主机名 (Host Name)","es":"Nombre de Host","fr":"Nom d\u0027Hôte","de":"Host-Name","ja":"ホスト名 (Host Name)","ko":"호스트 이름 (Host Name)","ru":"Имя Хоста (Host Name)","ar":"اسم المضيف (Host Name)"},"dns_desc":{"vi":"Truy cập thiết bị qua địa chỉ: http://[tên_miền].local","en":"Access device via URL: http://[domain_name].local","zh":"通过以下地址访问设备：http://[域名].local","es":"Acceda al dispositivo mediante: http://[nombre_dominio].local","fr":"Accédez à l\u0027appareil via : http://[nom_domaine].local","de":"Zugriff auf das Gerät über: http://[domainname].local","ja":"デバイスアクセス URL: http://[ドメイン名].local","ko":"기기 접속 주소: http://[도메인_이름].local","ru":"Доступ к устройству по адресу: http://[домен].local","ar":"الوصول للجهاز عبر الرابط: http://[اسم_النطاق].local"},"auth_section":{"vi":"Bảo Mật \u0026 Xác Thực Người Dùng","en":"Security \u0026 User Authentication","zh":"安全与用户身份验证","es":"Seguridad y Autenticación","fr":"Sécurité \u0026 Authentification","de":"Sicherheit \u0026 Authentifizierung","ja":"セキュリティ＆ユーザー認証","ko":"보안 및 사용자 인증","ru":"Безопасность и Аутентификация","ar":"الأمان ومصادقة المستخدم"},"auth_enable":{"vi":"Bật Xác Thực Khi Đăng Nhập","en":"Enable Login Authentication","zh":"启用登录身份验证","es":"Habilitar Autenticación","fr":"Activer l\u0027Authentification","de":"Anmeldeauthentifizierung aktivieren","ja":"ログイン認証を有効化","ko":"로그인 인증 활성화","ru":"Включить Аутентификацию","ar":"تفعيل مصادقة تسجيل الدخول"},"auth_user":{"vi":"Tên Đăng Nhập","en":"Username","zh":"用户名","es":"Usuario","fr":"Nom d\u0027utilisateur","de":"Benutzername","ja":"ユーザー名","ko":"사용자 이름","ru":"Имя Пользователя","ar":"اسم المستخدم"},"user_placeholder":{"vi":"Tên đăng nhập (mặc định: admin)","en":"Username (default: admin)","zh":"用户名（默认：admin）","es":"Usuario (por defecto: admin)","fr":"Nom d\u0027utilisateur (défaut: admin)","de":"Benutzername (Standard: admin)","ja":"ユーザー名 (デフォルト: admin)","ko":"사용자 이름 (기본: admin)","ru":"Имя пользователя (по умолч.: admin)","ar":"اسم المستخدم (الافتراضي: admin)"},"auth_pass":{"vi":"Mật Khẩu","en":"Password","zh":"密码","es":"Contraseña","fr":"Mot de passe","de":"Passwort","ja":"パスワード","ko":"비밀번호","ru":"Пароль","ar":"كلمة المرور"},"pass_placeholder":{"vi":"Mật khẩu quản trị...","en":"Admin password...","zh":"管理员密码...","es":"Contraseña de administrador...","fr":"Mot de passe administrateur...","de":"Admin-Passwort...","ja":"管理者パスワード...","ko":"관리자 비밀번호...","ru":"Пароль администратора...","ar":"كلمة مرور المسؤول..."},"ap_section":{"vi":"Điểm Phát Sóng SoftAP","en":"SoftAP Hotspot","zh":"SoftAP 热点配置","es":"Punto de Acceso SoftAP","fr":"Point d\u0027Accès SoftAP","de":"SoftAP-Hotspot","ja":"SoftAP アクセスポイント","ko":"SoftAP 핫스팟","ru":"Точка Доступа SoftAP","ar":"نقطة اتصال SoftAP"},"ap_ssid":{"vi":"Tên SoftAP (SSID)","en":"SoftAP Name (SSID)","zh":"SoftAP 名称 (SSID)","es":"Nombre SoftAP (SSID)","fr":"Nom SoftAP (SSID)","de":"SoftAP-Name (SSID)","ja":"SoftAP 名 (SSID)","ko":"SoftAP 이름 (SSID)","ru":"Имя SoftAP (SSID)","ar":"اسم SoftAP (SSID)"},"ap_ssid_placeholder":{"vi":"Tên phát Wi-Fi (ESP32-S3-Setup)","en":"SoftAP Name (ESP32-S3-Setup)","zh":"SoftAP 名称 (ESP32-S3-Setup)","es":"Nombre SoftAP (ESP32-S3-Setup)","fr":"Nom SoftAP (ESP32-S3-Setup)","de":"SoftAP-Name (ESP32-S3-Setup)","ja":"SoftAP 名 (ESP32-S3-Setup)","ko":"SoftAP 이름 (ESP32-S3-Setup)","ru":"Имя SoftAP (ESP32-S3-Setup)","ar":"اسم SoftAP (ESP32-S3-Setup)"},"ap_pass":{"vi":"Mật Khẩu SoftAP","en":"SoftAP Password","zh":"SoftAP 密码","es":"Contraseña SoftAP","fr":"Mot de passe SoftAP","de":"SoftAP-Passwort","ja":"SoftAP パスワード","ko":"SoftAP 비밀번호","ru":"Пароль SoftAP","ar":"كلمة مرور SoftAP"},"ap_pass_placeholder":{"vi":"Mật khẩu SoftAP (tối thiểu 8 ký tự)","en":"SoftAP Password (min 8 chars)","zh":"SoftAP 密码（至少8位）","es":"Contraseña SoftAP (mín 8 caract)","fr":"Mot de passe SoftAP (min 8 car)","de":"SoftAP-Passwort (mind. 8 Zeichen)","ja":"SoftAP パスワード (8文字以上)","ko":"SoftAP 비밀번호 (8자 이상)","ru":"Пароль SoftAP (мин. 8 символов)","ar":"كلمة مرور SoftAP (8 أحرف على الأقل)"},"no_saved_nets":{"vi":"Chưa có mạng Wi-Fi nào được lưu.","en":"No saved Wi-Fi networks.","zh":"暂无已保存的 Wi-Fi 网络。","es":"No hay redes Wi-Fi guardadas.","fr":"Aucun réseau Wi-Fi enregistré.","de":"Keine gespeicherten WLAN-Netzwerke.","ja":"保存済みの Wi-Fi ネットワークはありません。","ko":"저장된 Wi-Fi 네트워크가 없습니다.","ru":"Нет сохраненных сетей Wi-Fi.","ar":"لا توجد شبكات Wi-Fi محفوظة."},"save_all_btn":{"vi":"💾 Lưu Cấu Hình Hệ Thống","en":"💾 Save System Settings","zh":"💾 保存系统配置","es":"💾 Guardar Configuración","fr":"💾 Enregistrer Paramètres","de":"💾 Systemeinstellungen Speichern","ja":"💾 システム設定を保存","ko":"💾 시스템 설정 저장","ru":"💾 Сохранить Настройки","ar":"💾 حفظ إعدادات النظام"}},"ota":{"tab_ota":{"vi":"Cập Nhật Firmware (OTA)","en":"Firmware Update (OTA)","zh":"固件升级 (OTA)","es":"Actualización Firmware (OTA)","fr":"Mise à Jour Firmware (OTA)","de":"Firmware-Update (OTA)","ja":"ファームウェア更新 (OTA)","ko":"펌웨어 업데이트 (OTA)","ru":"Обновление Прошивки (OTA)","ar":"تحديث البرامج الثابتة (OTA)"},"title":{"vi":"Trung Tâm Nâng Cấp Firmware (Dual-OTA Engine)","en":"Firmware Upgrade Center (Dual-OTA Engine)","zh":"固件升级中心 (Dual-OTA 引擎)","es":"Centro de Actualización Firmware (Dual-OTA)","fr":"Centre de Mise à Jour Firmware (Dual-OTA)","de":"Firmware-Upgrade-Zentrum (Dual-OTA)","ja":"ファームウェア更新センター (Dual-OTA)","ko":"펌웨어 업그레이드 센터 (Dual-OTA)","ru":"Центр Обновления Прошивки (Dual-OTA)","ar":"مركز ترقية البرامج الثابتة (Dual-OTA)"},"mode_label":{"vi":"Phương thức cập nhật:","en":"Update method:","zh":"更新方式：","es":"Método de actualización:","fr":"Méthode de mise à jour :","de":"Aktualisierungsmethode:","ja":"更新方法：","ko":"업데이트 방식:","ru":"Метод обновления:","ar":"طريقة التحديث:"},"mode_online":{"vi":"🌐 Trực tuyến (GitHub Releases)","en":"🌐 Online (GitHub Releases)","zh":"🌐 在线云端 (GitHub Releases)","es":"🌐 En línea (GitHub Releases)","fr":"🌐 En ligne (GitHub Releases)","de":"🌐 Online (GitHub Releases)","ja":"🌐 オンライン (GitHub Releases)","ko":"🌐 온라인 (GitHub Releases)","ru":"🌐 Онлайн (GitHub Releases)","ar":"🌐 عبر الإنترنت (GitHub Releases)"},"mode_offline":{"vi":"📁 Cục bộ (Chọn file .bin từ máy)","en":"📁 Local (Select .bin file from PC)","zh":"📁 本地上传 (从电脑选择 .bin 文件)","es":"📁 Local (Seleccionar archivo .bin)","fr":"📁 Local (Sélectionner fichier .bin)","de":"📁 Lokal (.bin-Datei auswählen)","ja":"📁 ローカル (PCから.binファイル選択)","ko":"📁 로컬 (PC에서 .bin 파일 선택)","ru":"📁 Локально (Выбрать файл .bin)","ar":"📁 محلي (اختر ملف .bin من الجهاز)"},"current_ver":{"vi":"Phiên bản hiện tại:","en":"Current version:","zh":"当前版本：","es":"Versión actual:","fr":"Version actuelle :","de":"Aktuelle Version:","ja":"現在のバージョン：","ko":"현재 버전:","ru":"Текущая версия:","ar":"الإصدار الحالي:"},"latest_ver":{"vi":"Phiên bản mới nhất:","en":"Latest version:","zh":"最新版本：","es":"Última versión:","fr":"Dernière version :","de":"Neueste Version:","ja":"最新バージョン：","ko":"최신 버전:","ru":"Последняя версия:","ar":"أحدث إصدار:"},"check_btn":{"vi":"Kiểm tra","en":"Check","zh":"检查","es":"Comprobar","fr":"Vérifier","de":"Prüfen","ja":"確認","ko":"확인","ru":"Проверить","ar":"فحص"},"select_file_btn":{"vi":"Chọn File Firmware (.bin)","en":"Select Firmware File (.bin)","zh":"选择固件文件 (.bin)","es":"Seleccionar Archivo Firmware (.bin)","fr":"Sélectionner Fichier Firmware (.bin)","de":"Firmware-Datei (.bin) auswählen","ja":"ファームウェアファイル (.bin) を選択","ko":"펌웨어 파일 (.bin) 선택","ru":"Выбрать файл прошивки (.bin)","ar":"اختر ملف البرامج الثابتة (.bin)"},"flash_btn":{"vi":"⚡ Bắt Đầu Nạp Firmware","en":"⚡ Start Firmware Flash","zh":"⚡ 开始烧录固件","es":"⚡ Iniciar Flasheo","fr":"⚡ Démarrer le Flash","de":"⚡ Firmware-Flash Starten","ja":"⚡ ファームウェア書き込み開始","ko":"⚡ 펌웨어 플래시 시작","ru":"⚡ Начать Прошивку","ar":"⚡ بدء تثبيت البرامج الثابتة"},"downloading":{"vi":"Đang tải bản cập nhật...","en":"Downloading update...","zh":"正在下载更新...","es":"Descargando actualización...","fr":"Téléchargement en cours...","de":"Update wird heruntergeladen...","ja":"更新をダウンロード中...","ko":"업데이트 다운로드 중...","ru":"Загрузка обновления...","ar":"جارٍ تنزيل التحديث..."},"flashing":{"vi":"Đang ghi vào bộ nhớ Flash...","en":"Flashing binary to Flash memory...","zh":"正在写入 Flash 内存...","es":"Escribiendo en memoria Flash...","fr":"Écriture dans la mémoire Flash...","de":"Flash-Speicher wird beschrieben...","ja":"Flash メモリに書き込み中...","ko":"Flash 메모리에 기록 중...","ru":"Запись во Flash память...","ar":"جارٍ الكتابة في ذاكرة Flash..."},"verify_success":{"vi":"Cập nhật hoàn tất! Thiết bị đang khởi động lại...","en":"Update complete! Device is rebooting...","zh":"更新完成！设备正在重启...","es":"¡Actualización completada! Reiniciando...","fr":"Mise à jour terminée ! Redémarrage...","de":"Update abgeschlossen! Gerät startet neu...","ja":"更新完了！再起動中...","ko":"업데이트 완료! 기기가 재부팅됩니다...","ru":"Обновление завершено! Перезагрузка...","ar":"اكتمل التحديث! الجهاز يعيد التشغيل..."},"failed":{"vi":"Cập nhật thất bại!","en":"Update failed!","zh":"更新失败！","es":"¡Actualización fallida!","fr":"Échec de la mise à jour !","de":"Update fehlgeschlagen!","ja":"更新失敗！","ko":"업데이트 실패!","ru":"Ошибка обновления!","ar":"فشل التحديث!"},"warning_power":{"vi":"⚠️ Không ngắt nguồn điện hoặc Wi-Fi trong quá trình cài đặt!","en":"⚠️ Do not disconnect power or Wi-Fi during installation!","zh":"⚠️ 安装过程中请勿断开电源或 Wi-Fi！","es":"⚠️ ¡No desconecte la alimentación ni el Wi-Fi durante la instalación!","fr":"⚠️ Ne débranchez pas l\u0027alimentation ou le Wi-Fi pendant l\u0027installation !","de":"⚠️ Trennen Sie während der Installation weder Strom noch WLAN!","ja":"⚠️ インストール中は電源や Wi-Fi を切断しないでください！","ko":"⚠️ 설치 중에는 전원이나 Wi-Fi를 끄지 마세요!","ru":"⚠️ Не отключайте питание и Wi-Fi во время установки!","ar":"⚠️ لا تفصل الطاقة أو شبكة Wi-Fi أثناء التثبيت!"}},"diagnostics":{"page_title":{"vi":"ESP32-S3 | Chẩn Đoán Hệ Thống \u0026 Telemetry","en":"ESP32-S3 | System Diagnostics \u0026 Telemetry","zh":"ESP32-S3 | 系统诊断与遥测","es":"ESP32-S3 | Diagnóstico del Sistema","fr":"ESP32-S3 | Diagnostics Système","de":"ESP32-S3 | Systemdiagnose \u0026 Telemetrie","ja":"ESP32-S3 | システム診断＆テレメトリ","ko":"ESP32-S3 | 시스템 진단 및 원격 측정","ru":"ESP32-S3 | Диагностика Системы","ar":"ESP32-S3 | تشخيص النظام والقياس"},"hardware":{"vi":"Phần Cứng:","en":"Hardware:","zh":"硬件型号：","es":"Hardware:","fr":"Matériel :","de":"Hardware:","ja":"ハードウェア：","ko":"하드웨어:","ru":"Оборудование:","ar":"الأجهزة:"},"fw_ver":{"vi":"Phiên Bản Firmware:","en":"Firmware Version:","zh":"固件版本：","es":"Versión Firmware:","fr":"Version Firmware :","de":"Firmware-Version:","ja":"ファームウェアバージョン：","ko":"펌웨어 버전:","ru":"Версия Прошивки:","ar":"إصدار البرنامج الثابت:"},"uptime":{"vi":"Thời Gian Hoạt Động (Uptime):","en":"System Uptime:","zh":"运行时间 (Uptime)：","es":"Tiempo Activo (Uptime):","fr":"Temps de Fonctionnement :","de":"Betriebszeit (Uptime):","ja":"稼働時間 (Uptime)：","ko":"가동 시간 (Uptime):","ru":"Время Работы (Uptime):","ar":"وقت التشغيل (Uptime):"},"ota_status":{"vi":"Trạng Thái OTA:","en":"OTA Status:","zh":"OTA 状态：","es":"Estado OTA:","fr":"État OTA :","de":"OTA-Status:","ja":"OTA ステータス：","ko":"OTA 상태:","ru":"Статус OTA:","ar":"حالة OTA:"},"ota_normal":{"vi":"Bình Thường (OK)","en":"Normal (OK)","zh":"正常 (OK)","es":"Normal (OK)","fr":"Normal (OK)","de":"Normal (OK)","ja":"正常 (OK)","ko":"정상 (OK)","ru":"В норме (OK)","ar":"طبيعي (OK)"},"ota_pending":{"vi":"Chờ Xác Nhận (Rollback Pending)","en":"Rollback Pending","zh":"等待确认 (Rollback Pending)","es":"Pendiente de Confirmación","fr":"En Attente de Confirmation","de":"Rollback Ausstehend","ja":"ロールバック保留中","ko":"롤백 대기 중","ru":"Ожидание Отката","ar":"في انتظار التراجع"},"log_title":{"vi":"Nhật Ký Hệ Thống Thời Gian Thực (UART Logger)","en":"Real-Time System Log (UART Logger)","zh":"实时系统日志 (UART Logger)","es":"Registro del Sistema en Tiempo Real","fr":"Journal Système en Temps Réel","de":"Echtzeit-Systemprotokoll (UART)","ja":"リアルタイムシステムログ (UART Logger)","ko":"실시간 시스템 로그 (UART Logger)","ru":"Системный Журнал в Реальном Времени","ar":"سجل النظام في الوقت الحقيقي (UART)"},"log_loading":{"vi":"[SYSTEM] Đang tải nhật ký hệ thống...","en":"[SYSTEM] Loading system logs...","zh":"[SYSTEM] 正在加载系统日志...","es":"[SYSTEM] Cargando registros del sistema...","fr":"[SYSTEM] Chargement des journaux système...","de":"[SYSTEM] Systemprotokoll wird geladen...","ja":"[SYSTEM] システムログを読み込み中...","ko":"[SYSTEM] 시스템 로그를 불러오는 중...","ru":"[SYSTEM] Загрузка системных логов...","ar":"[SYSTEM] جارٍ تحميل سجلات النظام..."}}};
 
-// --- B. TỪ VỰNG DASHBOARD & APP STORE (STORE) ---
-        dashboard: {
-            tab_camera: {
-                vi: "Camera Live Dashboard", en: "Camera Live Dashboard", zh: "实时视频监控",
-                es: "Panel de Cámara en Vivo", fr: "Tableau de Bord Caméra", de: "Kamera-Live-Dashboard",
-                ja: "カメラライブダッシュボード", ko: "카메라 라이브 대시보드", ru: "Панель Камеры", ar: "لوحة تحكم الكاميرا"
-            },
-            tab_store: {
-                vi: "Kho Dự Án (Cloud App Store)", en: "Project Store (Cloud App Store)", zh: "项目商店 (Cloud App Store)",
-                es: "Tienda de Proyectos (App Store)", fr: "Boutique de Projets (App Store)", de: "Projekt-Store (Cloud App Store)",
-                ja: "プロジェクトストア (Cloud App Store)", ko: "프로젝트 스토어 (Cloud App Store)", ru: "Магазин Проектов (App Store)", ar: "متجر المشاريع (Cloud App Store)"
-            },
-            store_title: {
-                vi: "Kho Dự Án Trực Tuyến (Online App Store)", en: "Online Project App Store", zh: "在线项目应用商店",
-                es: "Tienda de Proyectos en Línea", fr: "Boutique de Projets en Ligne", de: "Online-Projekt-App-Store",
-                ja: "オンラインプロジェクトアプリストア", ko: "온라인 프로젝트 앱 스토어", ru: "Онлайн Магазин Проектов", ar: "متجر المشاريع المباشر"
-            },
-            store_sub: {
-                vi: "Tải và nạp trực tiếp firmware từ GitHub Releases qua HTTPS Streaming OTA (Không cần thẻ nhớ)",
-                en: "Download and stream flash firmware directly from GitHub Releases via HTTPS OTA",
-                zh: "直接从 GitHub Releases 通过 HTTPS 串流 OTA 烧录固件（无需 SD 卡）",
-                es: "Descarga e instala firmware directamente desde GitHub Releases vía HTTPS OTA",
-                fr: "Téléchargez et flashez le firmware directement depuis GitHub Releases via HTTPS OTA",
-                de: "Firmware direkt von GitHub Releases über HTTPS OTA herunterladen und flashen",
-                ja: "GitHub Releases から HTTPS OTA 経由で直接ファームウェアをフラッシュ",
-                ko: "GitHub Releases에서 HTTPS OTA를 통해 직접 펌웨어 다운로드 및 플래시",
-                ru: "Загрузка и прошивка напрямую из GitHub Releases через HTTPS OTA",
-                ar: "تنزيل وتثبيت البرامج الثابتة مباشرة من GitHub Releases عبر HTTPS OTA"
-            },
-            cat_all: { vi: "Tất cả", en: "All", zh: "全部", es: "Todo", fr: "Tous", de: "Alle", ja: "すべて", ko: "전체", ru: "Все", ar: "الكل" },
-            cat_edge_ai: { vi: "Edge AI", en: "Edge AI", zh: "边缘 AI", es: "Edge AI", fr: "Edge IA", de: "Edge KI", ja: "Edge AI", ko: "엣지 AI", ru: "Edge AI", ar: "الذكاء الاصطناعي" },
-            cat_smart_home: { vi: "Smart Home", en: "Smart Home", zh: "智能家居", es: "Smart Home", fr: "Maison Intelligente", de: "Smart Home", ja: "スマートホーム", ko: "스마트홈", ru: "Умный Дом", ar: "المنزل الذكي" },
-            cat_voice_ai: { vi: "Voice AI", en: "Voice AI", zh: "语音 AI", es: "Voice AI", fr: "IA Vocale", de: "Sprach-KI", ja: "音声 AI", ko: "음성 AI", ru: "Голосовой AI", ar: "الصوت الذكي" },
-            cat_robotics: { vi: "Robotics", en: "Robotics", zh: "机器人", es: "Robótica", fr: "Robotique", de: "Robotik", ja: "ロボティクス", ko: "로보틱스", ru: "Робототехника", ar: "الروبوتات" },
-            cat_gadgets: { vi: "Gadgets & Tools", en: "Gadgets & Tools", zh: "极客工具", es: "Herramientas", fr: "Gadgets & Outils", de: "Gadgets & Tools", ja: "ガジェット", ko: "가젯 및 도구", ru: "Гаджеты", ar: "الأدوات الذكية" },
-            open_site_btn: {
-                vi: "Mở Site Điều Khiển", en: "Open Control Site", zh: "打开控制站点",
-                es: "Abrir Sitio de Control", fr: "Ouvrir le Site", de: "Steuerungs-Site öffnen",
-                ja: "制御サイトを開く", ko: "제어 사이트 열기", ru: "Открыть Сайт Управления", ar: "فتح موقع التحكم"
-            },
-            install_btn: {
-                vi: "1-Click Cài Đặt", en: "1-Click Install", zh: "一键安装",
-                es: "Instalar en 1-Clic", fr: "Installer en 1-Clic", de: "1-Klick-Installation",
-                ja: "1クリックインストール", ko: "원클릭 설치", ru: "Установка в 1 клик", ar: "تثبيت بنقرة واحدة"
-            }
-        },
-
-// --- B1. TỪ VỰNG CẤU HÌNH MẠNG WI-FI & CAPTIVE PORTAL (WIFI) ---
-        wifi: {
-            setup_title: {
-                vi: "Cấu Hình Mạng Wi-Fi", en: "Wi-Fi Configuration", zh: "Wi-Fi 网络配置",
-                es: "Configuración Wi-Fi", fr: "Configuration Wi-Fi", de: "WLAN-Konfiguration",
-                ja: "Wi-Fi ネットワーク設定", ko: "Wi-Fi 네트워크 설정", ru: "Настройка Сети Wi-Fi", ar: "إعداد شبكة Wi-Fi"
-            },
-            setup_desc: {
-                vi: "Chọn mạng Wi-Fi khả dụng hoặc nhập thủ công SSID và mật khẩu để kết nối thiết bị.",
-                en: "Select an available Wi-Fi network or manually enter SSID and password to connect.",
-                zh: "选择可用 Wi-Fi 网络或手动输入 SSID 和密码以连接设备。",
-                es: "Seleccione una red Wi-Fi disponible o ingrese manualmente el SSID y la contraseña.",
-                fr: "Sélectionnez un réseau Wi-Fi disponible ou saisissez manuellement le SSID et le mot de passe.",
-                de: "Wählen Sie ein verfügbares WLAN-Netzwerk aus oder geben Sie SSID und Passwort manuell ein.",
-                ja: "利用可能な Wi-Fi を選択するか、SSID とパスワードを手動入力して接続してください。",
-                ko: "사용 가능한 Wi-Fi 네트워크를 선택하거나 SSID와 비밀번호를 직접 입력하여 연결하세요.",
-                ru: "Выберите доступную сеть Wi-Fi или введите SSID и пароль вручную.",
-                ar: "حدد شبكة Wi-Fi متوفرة أو أدخل اسم الشبكة SSID وكلمة المرور يدوياً للاتصال."
-            },
-            scan_networks: { vi: "Quét Mạng Wi-Fi", en: "Scan Wi-Fi Networks", zh: "扫描 Wi-Fi", es: "Escanear Wi-Fi", fr: "Scanner Wi-Fi", de: "WLAN scannen", ja: "Wi-Fi スキャン", ko: "Wi-Fi 검색", ru: "Сканировать Wi-Fi", ar: "مسح شبكات Wi-Fi" },
-            scanning: { vi: "Đang quét mạng...", en: "Scanning networks...", zh: "正在扫描网络...", es: "Escaneando redes...", fr: "Recherche en cours...", de: "Netzwerke werden gesucht...", ja: "スキャン中...", ko: "네트워크 검색 중...", ru: "Поиск сетей...", ar: "جارٍ مسح الشبكات..." },
-            ssid_label: { vi: "Tên Mạng Wi-Fi (SSID)", en: "Network Name (SSID)", zh: "网络名称 (SSID)", es: "Nombre de Red (SSID)", fr: "Nom du Réseau (SSID)", de: "Netzwerkname (SSID)", ja: "ネットワーク名 (SSID)", ko: "네트워크 이름 (SSID)", ru: "Имя Сети (SSID)", ar: "اسم الشبكة (SSID)" },
-            password_label: { vi: "Mật Khẩu Wi-Fi", en: "Wi-Fi Password", zh: "Wi-Fi 密码", es: "Contraseña Wi-Fi", fr: "Mot de Passe Wi-Fi", de: "WLAN-Passwort", ja: "Wi-Fi パスワード", ko: "Wi-Fi 비밀번호", ru: "Пароль Wi-Fi", ar: "كلمة مرور Wi-Fi" },
-            connect_btn: { vi: "Lưu & Kết Nối", en: "Save & Connect", zh: "保存并连接", es: "Guardar y Conectar", fr: "Enregistrer & Connecter", de: "Speichern & Verbinden", ja: "保存して接続", ko: "저장 및 연결", ru: "Сохранить и Подключить", ar: "حفظ والاتصال" },
-            connecting: { vi: "Đang kết nối...", en: "Connecting...", zh: "正在连接...", es: "Conectando...", fr: "Connexion en cours...", de: "Verbindung wird hergestellt...", ja: "接続中...", ko: "연결 중...", ru: "Подключение...", ar: "جارٍ الاتصال..." },
-            success_msg: {
-                vi: "Lưu cấu hình thành công! Thiết bị đang kết nối lại...",
-                en: "Configuration saved! Device is reconnecting...",
-                zh: "配置保存成功！设备正在重新连接...",
-                es: "¡Configuración guardada! El dispositivo se está reconectando...",
-                fr: "Configuration enregistrée ! L'appareil se reconnecte...",
-                de: "Konfiguration gespeichert! Gerät verbindet sich neu...",
-                ja: "設定が保存されました！デバイスが再接続中です...",
-                ko: "설정이 저장되었습니다! 기기가 다시 연결 중입니다...",
-                ru: "Настройки сохранены! Устройство переподключается...",
-                ar: "تم حفظ الإعدادات بنجاح! الجهاز يعيد الاتصال..."
-            }
-        },
-
-// --- B2. TỪ VỰNG DUAL-OTA & CẬP NHẬT FIRMWARE (OTA) ---
-        ota: {
-            title: { vi: "Nâng Cấp Firmware Dual-OTA", en: "Dual-OTA Firmware Update", zh: "双 OTA 固件升级", es: "Actualización de Firmware Dual-OTA", fr: "Mise à Jour Firmware Dual-OTA", de: "Dual-OTA Firmware-Aktualisierung", ja: "Dual-OTA ファームウェア更新", ko: "듀얼 OTA 펌웨어 업데이트", ru: "Обновление Прошивки Dual-OTA", ar: "ترقية البرامج الثابتة Dual-OTA" },
-            downloading: { vi: "Đang tải bản cập nhật...", en: "Downloading update...", zh: "正在下载更新...", es: "Descargando actualización...", fr: "Téléchargement en cours...", de: "Update wird heruntergeladen...", ja: "更新をダウンロード中...", ko: "업데이트 다운로드 중...", ru: "Загрузка обновления...", ar: "جارٍ تنزيل التحديث..." },
-            flashing: { vi: "Đang ghi vào bộ nhớ Flash...", en: "Flashing binary to Flash memory...", zh: "正在写入 Flash 内存...", es: "Escribiendo en memoria Flash...", fr: "Écriture dans la mémoire Flash...", de: "Flash-Speicher wird beschrieben...", ja: "Flash メモリに書き込み中...", ko: "Flash 메모리에 기록 중...", ru: "Запись во Flash память...", ar: "جارٍ الكتابة في ذاكرة Flash..." },
-            verify_success: { vi: "Cập nhật hoàn tất! Thiết bị đang khởi động lại...", en: "Update complete! Device is rebooting...", zh: "更新完成！设备正在重启...", es: "¡Actualización completada! Reiniciando...", fr: "Mise à jour terminée ! Redémarrage...", de: "Update abgeschlossen! Gerät startet neu...", ja: "更新完了！再起動中...", ko: "업데이트 완료! 기기가 재부팅됩니다...", ru: "Обновление завершено! Перезагрузка...", ar: "اكتمل التحديث! الجهاز يعيد التشغيل..." },
-            failed: { vi: "Cập nhật thất bại!", en: "Update failed!", zh: "更新失败！", es: "¡Actualización fallida!", fr: "Échec de la mise à jour !", de: "Update fehlgeschlagen!", ja: "更新失敗！", ko: "업데이트 실패!", ru: "Ошибка обновления!", ar: "فشل التحديث!" },
-            warning_power: {
-                vi: "⚠️ Không ngắt nguồn điện hoặc Wi-Fi trong quá trình cài đặt!",
-                en: "⚠️ Do not disconnect power or Wi-Fi during installation!",
-                zh: "⚠️ 安装过程中请勿断开电源或 Wi-Fi！",
-                es: "⚠️ ¡No desconecte la alimentación ni el Wi-Fi durante la instalación!",
-                fr: "⚠️ Ne débranchez pas l'alimentation ou le Wi-Fi pendant l'installation !",
-                de: "⚠️ Trennen Sie während der Installation weder Strom noch WLAN!",
-                ja: "⚠️ インストール中は電源や Wi-Fi を切断しないでください！",
-                ko: "⚠️ 설치 중에는 전원이나 Wi-Fi를 끄지 마세요!",
-                ru: "⚠️ Не отключайте питание и Wi-Fi во время установки!",
-                ar: "⚠️ لا تفصل الطاقة أو شبكة Wi-Fi أثناء التثبيت!"
-            }
-        },
-
-// --- H. THÔNG TIN METADATA CỦA 20 ỨNG DỤNG ---
-        apps: {
-            app_face_ai: {
-                name: { vi: "01. Camera AI Nhận Diện Khuôn Mặt (ESP-WHO)", en: "01. Offline Face Recognition AI Camera", zh: "01. 离线人脸识别 AI 相机 (ESP-WHO)", es: "01. Cámara AI de Reconocimiento Facial", fr: "01. Caméra IA Reconnaissance Faciale", de: "01. Offline KI-Gesichtserkennungskamera", ja: "01. オフライン顔認識 AI カメラ", ko: "01. 오프라인 얼굴 인식 AI 카메라", ru: "01. AI-Камера Распознавания Лиц", ar: "01. كاميرا التعرف على الوجوه" },
-                desc: { vi: "Nhận diện khuôn mặt offline với ESP-WHO & Face Embeddings.", en: "Offline face detection and recognition using ESP-WHO & Face Embeddings.", zh: "基于 ESP-WHO 和 Face Embeddings 的离线人脸检测与识别。", es: "Detección y reconocimiento facial offline con ESP-WHO.", fr: "Détection et reconnaissance faciale hors ligne avec ESP-WHO.", de: "Offline-Gesichtserkennung mit ESP-WHO & Face Embeddings.", ja: "ESP-WHO によるオフライン顔検出と認識。", ko: "ESP-WHO 기반 오프라인 얼굴 인식.", ru: "Офлайн распознавание лиц с помощью ESP-WHO.", ar: "كشف والتعرف على الوجوه دون اتصال بالإنترنت." }
-            },
-            app_edge_alpr: {
-                name: { vi: "02. Camera Đọc Biển Số Xe (Edge ALPR)", en: "02. Automatic License Plate Recognition", zh: "02. 边缘车牌自动识别相机 (Edge ALPR)", es: "02. Cámara Lectora de Matrículas", fr: "02. Reconnaissance de Plaques (ALPR)", de: "02. Kennzeichenerkennungskamera", ja: "02. ナンバープレート自動認識カメラ", ko: "02. 엣지 번호판 자동 인식 카메라", ru: "02. Камера Распознавания Автономеров", ar: "02. كاميرا التعرف على لوحات السيارات" },
-                desc: { vi: "Trích xuất biển số xe tự động với TinyML TensorFlow Lite Micro.", en: "Automated license plate extraction with TinyML TensorFlow Lite Micro.", zh: "基于 TinyML TensorFlow Lite Micro 的车牌自动识别与提取。", es: "Extracción automática de matrículas con TensorFlow Lite Micro.", fr: "Extraction automatique de plaques avec TensorFlow Lite Micro.", de: "Automatische Kennzeichenerkennung mit TinyML TensorFlow Lite Micro.", ja: "TinyML TensorFlow Lite Micro によるナンバープレート認識。", ko: "TinyML TensorFlow Lite Micro를 통한 번호판 자동 추출.", ru: "Автоматическое распознавание автономеров на базе TinyML.", ar: "استخراج تلقائي للوحات السيارات باستخدام TensorFlow Lite Micro." }
-            },
-            app_waste_fomo: {
-                name: { vi: "03. Phân Loại Rác Thông Minh (FOMO)", en: "03. Smart Waste Classification Camera (FOMO)", zh: "03. 智能垃圾分类视觉相机 (FOMO)", es: "03. Clasificación Inteligente de Residuos", fr: "03. Tri Intelligent des Déchets (FOMO)", de: "03. Intelligente Müllsortierkamera", ja: "03. スマートゴミ分別ビジョンカメラ", ko: "03. 스마트 쓰레기 분류 비전 카메라", ru: "03. Умная Сортировка Отходов (FOMO)", ar: "03. كاميرا فرز النفايات الذكية (FOMO)" },
-                desc: { vi: "Phát hiện và phân loại rác tái chế/hữu cơ với Edge Impulse FOMO.", en: "Object detection and waste sorting powered by Edge Impulse FOMO.", zh: "利用 Edge Impulse FOMO 进行可回收/有机垃圾实时目标检测分类。", es: "Detección y clasificación de residuos con Edge Impulse FOMO.", fr: "Détection et tri des déchets alimentés par Edge Impulse FOMO.", de: "Objekterkennung und Müllsortierung mit Edge Impulse FOMO.", ja: "Edge Impulse FOMO によるリアルタイムゴミ分別。", ko: "Edge Impulse FOMO 기반 재활용/유기물 쓰레기 분류.", ru: "Детекция и сортировка отходов с помощью Edge Impulse FOMO.", ar: "كشف وفرز النفايات بواسطة Edge Impulse FOMO." }
-            },
-            app_gesture_counter: {
-                name: { vi: "04. Cử Chỉ & Đếm Người (Occupancy Counter)", en: "04. Gesture Control & Occupancy Counter", zh: "04. 手势识别控制与人流计数器", es: "04. Control por Gestos y Conteo de Personas", fr: "04. Contrôle Gestuel & Compteur de Personnes", de: "04. Gestensteuerung & Personenzähler", ja: "04. ジェスチャー制御＆人数カウント", ko: "04. 제스처 제어 및 인원 계수기", ru: "04. Распознавание Жестов и Счетчик Людей", ar: "04. التحكم بالإيماءات وتعداد الأشخاص" },
-                desc: { vi: "Điều khiển không chạm và đếm mật độ người ra vào hiển thị trên Web.", en: "Touchless gesture interface and real-time occupancy counting.", zh: "非接触手势控制以及实时进出人流密度统计并网页展示。", es: "Control por gestos sin contacto y conteo de ocupación en tiempo real.", fr: "Interface gestuelle sans contact et comptage des personnes.", de: "Berührungslose Gestensteuerung und Personenzählung in Echtzeit.", ja: "タッチレスジェスチャー制御とリアルタイム人数カウント。", ko: "비접촉 제스처 제어 및 실시간 인원 계수 웹 표시.", ru: "Бесконтактное управление жестами и учет посетителей.", ar: "واجهة إيماءات بدون لمس وحساب عدد الأشخاص في الوقت الفعلي." }
-            },
-            app_video_doorbell: {
-                name: { vi: "05. Chuông Cửa Hình RTSP 2 Chiều", en: "05. Two-Way Audio RTSP Smart Doorbell", zh: "05. 双向对讲 RTSP 智能可视门铃", es: "05. Timbre Inteligente con Audio Bidireccional RTSP", fr: "05. Sonnette Vidéo Intelligente RTSP", de: "05. Intelligente RTSP-Video-Türklingel", ja: "05. 双方向音声対応 RTSP ドアホン", ko: "05. 양방향 음성 RTSP 스마트 도어벨", ru: "05. Умный Дверной Звонок RTSP", ar: "05. جرس باب ذكي ببث RTSP" },
-                desc: { vi: "Stream RTSP/WebRTC tích hợp Home Assistant và đàm thoại 2 chiều.", en: "RTSP/WebRTC live stream with Home Assistant integration and 2-way talk.", zh: "支持 RTSP/WebRTC 串流、Home Assistant 集成与双向语音对讲。", es: "Stream RTSP/WebRTC con integración en Home Assistant y audio 2 vías.", fr: "Flux RTSP/WebRTC avec Home Assistant et audio bidirectionnel.", de: "RTSP/WebRTC-Stream mit Home Assistant und 2-Wege-Audio.", ja: "Home Assistant 連携と双方向通話対応の RTSP 配信。", ko: "Home Assistant 연동 및 양방향 통화를 지원하는 RTSP 스트림.", ru: "Стриминг RTSP/WebRTC с интеграцией в Home Assistant и интеркомом.", ar: "بث مباشر RTSP/WebRTC متكامل مع Home Assistant ومحادثة ثنائية الاتجاه." }
-            },
-            app_loop_dashcam: {
-                name: { vi: "06. Camera Hành Trình Mini Ghi Thẻ Nhớ", en: "06. Mini Loop Recording Dashcam", zh: "06. 微型循环录像行车记录仪", es: "06. Mini Cámara de Tablero en Bucle", fr: "06. Mini Dashcam Enregistrement Boucle", de: "06. Mini-Dashcam mit Schleifenaufnahme", ja: "06. ミニループ録画ドライブレコーダー", ko: "06. 미니 루프 녹화 블랙박스", ru: "06. Компактный Видеорегистратор MicroSD", ar: "06. كاميرا لوحة قيادة للتسجيل الحلقي" },
-                desc: { vi: "Quay video AVI vòng lặp ghi thẻ nhớ MicroSD kèm cảm biến gia tốc.", en: "Continuous AVI loop recording to MicroSD with G-Sensor shock detection.", zh: "MicroSD 卡 AVI 循环录像，内置重力加速度碰撞锁存保护。", es: "Grabación continua en bucle AVI en MicroSD con sensor G.", fr: "Enregistrement en boucle AVI sur carte MicroSD avec capteur G.", de: "Kontinuierliche AVI-Schleifenaufnahme auf MicroSD mit G-Sensor.", ja: "MicroSD への AVI ループ録画と G センサー衝撃検知。", ko: "MicroSD 카드 AVI 루프 녹화 및 G 센서 충격 감지.", ru: "Циклическая запись AVI на MicroSD карту с G-сенсором.", ar: "تسجيل حلقي مستمر بصيغة AVI على MicroSD مع مستشعر الصدمات." }
-            },
-            app_matter_bridge: {
-                name: { vi: "07. Bộ Điều Khiển Cầu Nối Matter Bridge", en: "07. Smart Home Matter 1.3 Bridge Controller", zh: "07. 智能家居 Matter 1.3 桥接网关", es: "07. Controlador de Puente Matter 1.3", fr: "07. Contrôleur de Pont Matter 1.3", de: "07. Matter 1.3 Smart Home Bridge", ja: "07. スマートホーム Matter 1.3 ブリッジ", ko: "07. 스마트홈 Matter 1.3 브릿지", ru: "07. Мост-Контроллер Matter 1.3", ar: "07. وحدة تحكم جسر Matter 1.3" },
-                desc: { vi: "Cầu nối Matter 1.3 cho HomeKit, Google Home & Alexa.", en: "Unified Matter 1.3 bridge controller for Apple HomeKit, Google Home, and Alexa.", zh: "统一 Matter 1.3 桥接网关，无缝接入 Apple HomeKit、Google Home 及 Alexa。", es: "Puente Matter 1.3 unificado para HomeKit, Google Home y Alexa.", fr: "Pont Matter 1.3 unifié pour HomeKit, Google Home et Alexa.", de: "Matter 1.3 Bridge-Controller für HomeKit, Google Home und Alexa.", ja: "Apple HomeKit、Google Home、Alexa 対応 Matter 1.3 ブリッジ。", ko: "Apple HomeKit, Google Home 및 Alexa 지원 Matter 1.3 브릿지.", ru: "Мост Matter 1.3 для Apple HomeKit, Google Home и Alexa.", ar: "جسر Matter 1.3 موحد لـ HomeKit و Google Home و Alexa." }
-            },
-            app_solar_timelapse: {
-                name: { vi: "08. Camera Nông Nghiệp Solar Timelapse", en: "08. Solar Agricultural Timelapse Camera", zh: "08. 太阳能超低功耗农业延时摄影相机", es: "08. Cámara Agrícola Solar Timelapse", fr: "08. Caméra Agricole Solaire Timelapse", de: "08. Solarbetriebene Agrar-Zeitrafferkamera", ja: "08. ソーラー農業用タイムラプスカメラ", ko: "08. 태양광 농업용 타임랩스 카메라", ru: "08. Сельскохозяйственная Таймлапс-Камера", ar: "08. كاميرا تايم لابس زراعية بالطاقة الشمسية" },
-                desc: { vi: "Pin mặt trời, Deep Sleep 7uA, tự chụp ảnh định kỳ phát hiện sâu bệnh.", en: "Solar-powered 7uA deep sleep periodic camera for crop health monitoring.", zh: "太阳能供电，7uA 深度睡眠，超长续航农业延时拍摄与病虫害监测。", es: "Cámara solar con suspensión profunda de 7uA para monitoreo de cultivos.", fr: "Caméra solaire 7uA pour surveillance agricole et timelapse.", de: "Solarbetriebene 7uA Deep-Sleep Zeitrafferkamera für Agrar-Monitoring.", ja: "太陽光発電＆ 7uA ディープスリープ農業用タイムラプスカメラ。", ko: "태양광 전원 및 7uA 딥슬립 농업용 타임랩스 카메라.", ru: "Таймлапс-камера на солнечной батарее с глубоким сном 7мкА.", ar: "كاميرا تعمل بالطاقة الشمسية مع نوم عميق 7uA لمراقبة المحاصيل الزراعية." }
-            },
-            app_gemini_voice: {
-                name: { vi: "09. Trợ Lý Giọng Nói Gemini Live", en: "09. Gemini Live Real-time Voice AI Assistant", zh: "09. Gemini Live 实时语音 AI 助手", es: "09. Asistente de Voz Gemini Live", fr: "09. Assistant Vocal Gemini Live", de: "09. Gemini Live Sprach-KI-Assistent", ja: "09. Gemini Live 音声 AI アシスタント", ko: "09. Gemini Live 실시간 음성 AI 비서", ru: "09. Голосовой AI-Ассистент Gemini Live", ar: "09. مساعد Gemini Live الصوتي المباشر" },
-                desc: { vi: "Hội thoại giọng nói thời gian thực với Google Gemini Live.", en: "Real-time bidirectional voice conversation with Google Gemini Live.", zh: "基于 Google Gemini Live 的超低延迟双向实时语音大模型对话。", es: "Conversación de voz bidireccional en tiempo real con Gemini Live.", fr: "Conversation vocale bidirectionnelle en direct avec Gemini Live.", de: "Bidirektionale Sprachkonversation in Echtzeit mit Google Gemini Live.", ja: "Google Gemini Live との超低遅延双方向リアルタイム音声会話。", ko: "Google Gemini Live 기반 초저지연 실시간 음성 대화.", ru: "Двусторонний голосовой диалог в реальном времени с Google Gemini Live.", ar: "محادثة صوتية ثنائية الاتجاه في الوقت الفعلي مع Google Gemini Live." }
-            },
-            app_ai_translator: {
-                name: { vi: "10. Máy Thông Dịch Bỏ Túi Đa Ngữ", en: "10. Pocket Real-time Multilingual Voice Translator", zh: "10. 便携式多语言实时语音翻译机", es: "10. Traductor de Voz Multilingüe de Bolsillo", fr: "10. Traducteur Vocal Multilingue de Poche", de: "10. Mehrsprachiger Taschen-Sprachübersetzer", ja: "10. ポケット双方向多言語音声翻訳機", ko: "10. 포켓 양방향 다국어 음성 번역기", ru: "10. Мультиязычный Голосовой Переводчик", ar: "10. مترجم صوتي متعدد اللغات للجيب" },
-                desc: { vi: "Dịch giọng nói 30+ ngôn ngữ tức thì qua microphone và loa I2S.", en: "Instant 30+ language speech translation via I2S microphone and DAC speaker.", zh: "通过 I2S 数字麦克风和扬声器实现 30+ 种语言即时双向同声传译。", es: "Traducción de voz instantánea en 30+ idiomas mediante I2S.", fr: "Traduction vocale instantanée en plus de 30 langues via I2S.", de: "Sofortige Sprachübersetzung in über 30 Sprachen über I2S.", ja: "I2S マイクとスピーカーによる 30 以上の言語のリアルタイム音声翻訳。", ko: "I2S 마이크와 스피커를 통한 30개 이상 언어 실시간 동시통역.", ru: "Мгновенный голосовой перевод на 30+ языков через I2S микрофон и динамик.", ar: "ترجمة صوتية فورية لأكثر من 30 لغة عبر ميكروفون ومكبر صوت I2S." }
-            },
-            app_hires_audio: {
-                name: { vi: "11. Loa Hi-Res AirPlay 2 & Spotify", en: "11. Hi-Res Lossless Audio Streamer", zh: "11. 高保真无损音频流播放器", es: "11. Reproductor de Audio Hi-Res", fr: "11. Lecteur Audio Hi-Res", de: "11. Hi-Res Lossless Audio-Streamer", ja: "11. ハイレゾロスレスオーディオストリーマー", ko: "11. 하이레조 무손실 오디오 스트리머", ru: "11. Hi-Res Аудиостример (AirPlay/Spotify)", ar: "11. مشغل صوتي عالي الدقة" },
-                desc: { vi: "Bộ giải mã âm thanh 24-bit/192kHz qua I2S DAC.", en: "Lossless 24-bit/192kHz Wi-Fi audio streamer with AirPlay and Spotify Connect.", zh: "支持 24-bit/192kHz I2S DAC 解码的 AirPlay 2 与 Spotify Connect 播放器。", es: "Decodificador de audio de 24 bits/192 kHz vía I2S DAC.", fr: "Décodeur audio 24-bit/192kHz via I2S DAC avec AirPlay.", de: "24-Bit/192kHz Lossless-Audio-Streamer mit AirPlay & Spotify Connect.", ja: "24-bit/192kHz I2S DAC による AirPlay ＆ Spotify ロスレス再生。", ko: "24-bit/192kHz I2S DAC 지원 AirPlay 및 Spotify 무손실 스트리머.", ru: "24-бит/192кГц I2S ЦАП стример с поддержкой AirPlay и Spotify.", ar: "مشغل صوتي لاسلكي بدقة 24 بت / 192 كيلوهرتز مع AirPlay و Spotify." }
-            },
-            app_meeting_recorder: {
-                name: { vi: "12. Máy Ghi Âm Cuộc Họp AI Khử Ồn", en: "12. AI Noise-Canceling Meeting Audio Recorder", zh: "12. AI 智能降噪会议录音与摘要生成器", es: "12. Grabadora de Reuniones con Reducción de Ruido", fr: "12. Enregistreur de Réunion avec Réduction Bruit", de: "12. KI-Meeting-Recorder mit Rauschunterdrückung", ja: "12. AI ノイズキャンセリング会議レコーダー", ko: "12. AI 노이즈 캔슬링 회의 음성 녹음기", ru: "12. AI-Диктофон для Совещаний", ar: "12. مسجل اجتماعات ذكي مع إلغاء الضوضاء" },
-                desc: { vi: "Ghi âm khử ồn và tóm tắt biên bản cuộc họp qua AI.", en: "Beamforming noise reduction meeting recorder with AI transcription.", zh: "双麦波束成形降噪录音，并自动生成 AI 会议纪要与摘要。", es: "Grabación de reuniones con reducción de ruido y resúmenes automáticos por IA.", fr: "Enregistrement de réunion avec réduction de bruit et résumé IA.", de: "Rauschunterdrückung und KI-Zusammenfassung von Meeting-Aufnahmen.", ja: "ノイズキャンセリング録音と AI による会議議事録の自動要約。", ko: "노이즈 캔슬링 녹음 및 AI 회의록 자동 요약 생성.", ru: "Шумоподавляющая запись встреч с генерацией саммари через AI.", ar: "تسجيل صوتي مع إلغاء الضوضاء وإنشاء ملخصات للاجتماعات بالذكاء الاصطناعي." }
-            },
-            app_tracking_robot: {
-                name: { vi: "13. Xe Robot AI Bám Người (Mecanum)", en: "13. Autonomous AI Person-Following Mecanum Robot", zh: "13. 自动跟随麦克纳姆轮 AI 机器人小车", es: "13. Robot Mecanum con Seguimiento de Personas", fr: "13. Robot Mecanum Suiveur de Personne", de: "13. Autonomer Mecanum-Roboter mit Personenverfolgung", ja: "13. 人物追従自律走行メカナムホイール AI ロボット", ko: "13. 인물 추적 자율주행 메카넘 휠 AI 로봇", ru: "13. AI-Робот Mecanum с Функцией Следования", ar: "13. روبوت ميكانوم لتتبع الأشخاص بالذكاء الاصطناعي" },
-                desc: { vi: "Robot 4 bánh Mecanum tự bám theo đối tượng và né vật cản.", en: "4-Wheel omnidirectional Mecanum robot with AI visual target tracking and obstacle avoidance.", zh: "四轮全向麦克纳姆轮小车，具备视觉目标自主锁定跟随与超声波避障。", es: "Robot omnidireccional Mecanum con seguimiento visual de objetivos por IA.", fr: "Robot omnidirectionnel Mecanum avec suivi visuel de personnes.", de: "Allrad-Mecanum-Roboter mit visueller KI-Zielverfolgung und Hindernisausweichung.", ja: "全方向移動メカナムホイールによる人物追従と障害物回避。", ko: "4륜 메카넘 휠 기반 AI 시각 목표 추적 및 장애물 회피 로봇.", ru: "4-колесный робот Mecanum с визуальным автотрекингом людей và объездом препятствий.", ar: "روبوت ميكانوم رباعي العجلات ذاتي القيادة لتتبع الأهداف وتفادي العوائق." }
-            },
-            app_fpv_drone: {
-                name: { vi: "14. Máy Bay Mini FPV Wi-Fi Kèm OSD", en: "14. Ultra-Low Latency Wi-Fi FPV Drone Controller", zh: "14. 超低延迟 Wi-Fi FPV 穿越机图传遥控器", es: "14. Controlador de Dron FPV Wi-Fi", fr: "14. Contrôleur de Drone FPV Wi-Fi", de: "14. WLAN FPV-Drohnen-Controller", ja: "14. Wi-Fi FPV ドローンコントローラー", ko: "14. 초저지연 Wi-Fi FPV 드론 컨트롤러", ru: "14. Контроллер FPV-Дрона по Wi-Fi", ar: "14. وحدة تحكم طائرة FPV بدون طيار" },
-                desc: { vi: "Truyền hình FPV độ trễ dưới 70ms qua Wi-Fi kèm cảm biến IMU.", en: "Sub-70ms ultra-low latency Wi-Fi video telemetry stream with IMU flight stabilization.", zh: "低于 70ms 超低延迟 Wi-Fi 实时图传，支持 6 轴 IMU 飞控姿态解算。", es: "Transmisión de video FPV < 70 ms con estabilización por sensor IMU.", fr: "Transmission vidéo FPV < 70ms avec stabilisation IMU.", de: "FPV-Videostream unter 70ms über WLAN mit IMU-Flugstabilisierung.", ja: "70ms 未満の超低遅延 Wi-Fi FPV 映像配信と IMU 飛行姿勢制御。", ko: "70ms 미만 초저지연 Wi-Fi FPV 영상 스트림 및 IMU 비행 제어.", ru: "Трансляция FPV видео с задержкой менее 70мс и стабилизацией IMU.", ar: "بث فيديو FPV بزمن انتقال أقل من 70 مللي ثانية مع تثبيت طيران IMU." }
-            },
-            app_sorting_arm: {
-                name: { vi: "15. Cánh Tay Robot Phân Loại Mã QR", en: "15. QR/Barcode Sorting Robotic Arm", zh: "15. 基于视觉条码识别的智能分拣机械臂", es: "15. Brazo Robótico Clasificador de Códigos QR", fr: "15. Bras Robotique de Tri de Codes QR", de: "15. QR-Code-Sortier-Roboterarm", ja: "15. QRコード自動仕分けロボットアーム", ko: "15. QR 코드 자동 분류 로봇 팔", ru: "15. Роботизированная Рука Сортировки по QR", ar: "15. ذراع روبوتية لفرز رموز QR" },
-                desc: { vi: "Giải mã QR Code và gắp thả phân loại sản phẩm tự động.", en: "Real-time QR/Barcode visual decoding and automated sorting pick-and-place.", zh: "视觉快速识别二维码/条形码并驱动多轴机械臂精准分拣抓取。", es: "Decodificación visual de códigos QR y clasificación automatizada.", fr: "Décodage visuel de codes QR et tri automatique par bras robotique.", de: "QR-Code-Erkennung und automatisches Sortieren mit Roboterarm.", ja: "QRコード高速認識と多軸アームによる自動仕分けピック＆プレース。", ko: "QR 코드 시각 인식 및 다축 로봇 팔 자동 분류 제어.", ru: "Распознавание QR-кодов и автоматическая сортировка роботизированной рукой.", ar: "فك تشفير رموز QR وفرز المنتجات تلقائياً بواسطة الذراع الروبوتية." }
-            },
-            app_water_vessel: {
-                name: { vi: "16. Thuyền Robot Khảo Sát Thủy Văn GPS", en: "16. Autonomous Water Quality Survey Boat", zh: "16. GPS 自主导航水质水文监测无人艇", es: "16. Barco Autónomo de Inspección de Agua", fr: "16. Bateau Autonome d'Analyse Hydrographique", de: "16. Autonomes Gewässer-Messboot mit GPS", ja: "16. GPS 自律航行水質水文調査ボート", ko: "16. GPS 자율주행 수질 및 수문 조사 보트", ru: "16. Автономный Катер Гидрографического Мониторинга", ar: "16. قارب مسح هيدروغرافي ذاتي القيادة" },
-                desc: { vi: "Tự hành GPS, đo pH/TDS và truyền dữ liệu LoRa 3-5km.", en: "GPS-guided autonomous waypoint navigation with pH/TDS sensors and LoRa telemetry.", zh: "GPS 航点自主巡航，测量水体 pH/TDS 并通过 LoRa 远距离回传 3-5km。", es: "Navegación autónoma por GPS, medición de pH/TDS y telemetría LoRa.", fr: "Navigation autonome GPS, mesure pH/TDS et télémétrie LoRa longue portée.", de: "Autonome GPS-Wegpunkt-Navigation mit pH/TDS-Sensor und LoRa-Funk.", ja: "GPS ウェイポイント自律航行、水質 pH/TDS 測定および LoRa 長距離通信。", ko: "GPS 자율 항행, pH/TDS 수질 측정 및 3-5km LoRa 원격 전송.", ru: "Автономная навигация по GPS, замер pH/TDS и передача данных по LoRa.", ar: "ملاحة ذاتية بنظام GPS وقياس pH/TDS مع نقل بيانات LoRa لمسافة 3-5 كم." }
-            },
-            app_retro_game: {
-                name: { vi: "17. Máy Chơi Game Retro NES / DOOM", en: "17. Retro Gaming Console (NES / DOOM)", zh: "17. 复古便携游戏机 (NES / DOOM 引擎)", es: "17. Consola de Juegos Retro (NES / DOOM)", fr: "17. Console de Jeux Rétro (NES / DOOM)", de: "17. Retro-Spielekonsole (NES / DOOM)", ja: "17. レトロゲームコンソール (NES / DOOM)", ko: "17. 레트로 게임 콘솔 (NES / DOOM)", ru: "17. Ретро-Игровая Консоль (NES / DOOM)", ar: "17. منصة ألعاب كلاسيكية (NES / DOOM)" },
-                desc: { vi: "Giả lập NES 8-bit và chơi game DOOM 3D trên màn hình SPI.", en: "Full-speed 8-bit NES emulation and 3D DOOM engine running on SPI display.", zh: "在 SPI 彩屏上流畅运行 8 位 NES 模拟器及经典 3D DOOM 游戏引擎。", es: "Emulación de NES de 8 bits y motor DOOM 3D en pantalla SPI.", fr: "Émulation NES 8 bits et moteur 3D DOOM sur écran SPI.", de: "8-Bit-NES-Emulation und 3D-DOOM-Engine auf SPI-Farbdisplay.", ja: "SPI 液晶での 8 ビットファミコンエミュレータ＆ 3D DOOM エンジン動作。", ko: "SPI 디스플레이 기반 8비트 NES 에뮬레이터 및 3D DOOM 실행.", ru: "Эмулятор 8-битной NES и 3D движок DOOM на SPI-дисплее.", ar: "محاكي NES بدقة 8 بت ومحرك 3D DOOM على شاشة SPI." }
-            },
-            app_marauder_security: {
-                name: { vi: "18. Thiết Bị Kiểm Thử An Ninh Marauder", en: "18. Wireless Security Auditing Tool", zh: "18. 无线网络安全渗透测试与 BadUSB 工具", es: "18. Herramienta de Auditoría de Seguridad", fr: "18. Outil d'Audit de Sécurité Sans Fil", de: "18. WLAN/BLE Sicherheitsaudit Tool", ja: "18. 無線セキュリティ診断＆ BadUSB", ko: "18. 무선 보안 진단 및 BadUSB 도구", ru: "18. Тестер Безопасности Сетей и BadUSB", ar: "18. أداة تدقيق الأمان اللاسلكي" },
-                desc: { vi: "Kiểm thử bảo mật Wi-Fi/BLE và giả lập BadUSB qua cổng OTG.", en: "Wi-Fi/BLE penetration testing, packet analysis, and native BadUSB OTG emulation.", zh: "Wi-Fi/BLE 无线网络安全审计、抓包分析以及原生 USB OTG BadUSB 模拟。", es: "Auditoría de seguridad Wi-Fi/BLE y emulación BadUSB mediante USB OTG.", fr: "Audit de sécurité sans fil Wi-Fi/BLE et émulation BadUSB via USB OTG.", de: "WLAN/BLE-Sicherheitsanalyse und native BadUSB-Emulation über USB OTG.", ja: "Wi-Fi/BLE セキュリティ診断と USB OTG による BadUSB エミュレーション。", ko: "Wi-Fi/BLE 보안 테스트, 패킷 분석 및 USB OTG BadUSB 시뮬레이션.", ru: "Аудит безопасности сетей Wi-Fi/BLE и эмуляция BadUSB через порт OTG.", ar: "تدقيق أمان Wi-Fi/BLE ومحاكاة BadUSB عبر منفذ USB OTG الأصلي." }
-            },
-            app_mini_oscilloscope: {
-                name: { vi: "19. Máy Hiện Sóng Mini DMA ADC 2 Kênh", en: "19. 2-Channel DMA Oscilloscope", zh: "19. 双通道高速数字示波器与逻辑分析仪", es: "19. Osciloscopio Digital de 2 Canales", fr: "19. Oscilloscope Numérique 2 Voies", de: "19. 2-Kanal Digital-Oszilloskop", ja: "19. 2ch 高速デジタルオシロスコープ", ko: "19. 2채널 고속 디지털 오실로스코프", ru: "19. 2-Канальный Скоростной Осциллограф", ar: "19. راسم ذبذبات رقمي عالي السرعة بقناتين" },
-                desc: { vi: "Lấy mẫu DMA ADC 2Msps và hiển thị đồ thị FFT qua Web.", en: "Dual-channel 2Msps DMA ADC sampling with real-time Web FFT waveform visualization.", zh: "双通道 2Msps 高速 DMA ADC 硬件采样，实时 FFT 频谱分析与网页波形显示。", es: "Muestreo DMA ADC de 2Msps con visualización web de ondas FFT.", fr: "Échantillonnage DMA ADC 2Msps avec visualisation FFT.", de: "2Msps DMA-ADC-Abtastung mit FFT-Frequenzanalyse im Webbrowser.", ja: "2Msps 高速 DMA ADC サンプリングとリアルタイム Web FFT 波形表示。", ko: "2Msps 고속 DMA ADC 샘플링 및 실시간 웹 FFT 파형 분석.", ru: "Сэмплирование DMA АЦП 2Msps с отображением графиков и FFT через Web.", ar: "أخذ عينات DMA ADC بسرعة 2Msps وعرض الرسوم البيانية لـ FFT عبر الويب." }
-            },
-            app_epaper_calendar: {
-                name: { vi: "20. Lịch Thông Minh E-Paper E-Ink", en: "20. Smart E-Paper Desk Calendar", zh: "20. 电子墨水屏智能桌面日历与 AI 助理", es: "20. Calendario Inteligente E-Paper", fr: "20. Calendrier de Bureau E-Paper", de: "20. Intelligenter E-Paper Kalender", ja: "20. スマート電子ペーパーデスクカレンダー", ko: "20. 스마트 전자종이 탁상 달력", ru: "20. Умный Настольный E-Paper Календарь", ar: "20. تقويم مكتبي ذكي بحبر إلكتروني E-Paper" },
-                desc: { vi: "Màn hình mực điện tử E-Ink hiển thị lịch và tin tức AI tiết kiệm điện.", en: "Ultra-low power E-Ink display showing synchronized calendar, weather, and AI daily briefings.", zh: "超低功耗电子墨水屏，同步显示日程日历、天气预报及 AI 每日简报。", es: "Pantalla E-Ink de bajo consumo con calendario, clima y noticias por IA.", fr: "Écran E-Ink ultra-basse consommation affichant calendrier et actualités IA.", de: "Extrem stromsparendes E-Ink-Display für Kalender, Wetter und KI-Nachrichten.", ja: "超低消費電力 E-Ink ディスプレイにカレンダー、天気、AI ニュースを表示。", ko: "초저전력 전자잉크 디스플레이로 캘린더, 날씨 및 AI 브리핑 표시.", ru: "Сверхэкономичный E-Ink дисплей с календарем, погодой и новостями от AI.", ar: "شاشة حبر إلكتروني E-Paper فائقة التوفير لعرض التقويم والطقس وموجز الأخبار الذكي." }
-            }
-        }
-    };
-
-    // 3. THÔNG TIN THƯƠNG HIỆU & LOGO BUMBONTECHLAB
+// 3. THÔNG TIN THƯƠNG HIỆU & SOCIAL MEDIA
     const BRAND_CONFIG = {
-        url: 'https://www.bumbontechlab.com',
-        youtubeUrl: 'https://www.youtube.com/@BumBon_Tech_Lab',
-        name: 'BumBonTechLab',
-        logoUrl: 'logo.png',
-        renderHeaderLogo: function(containerId = 'brandLogoContainer') {
-            const el = document.getElementById(containerId);
-            if (!el) return;
-            el.innerHTML = `
-                <a href="${this.url}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:inherit;" title="Visit ${this.name} (www.bumbontechlab.com)">
-                    <img src="${this.logoUrl}" onerror="this.src='logo_96.png'" alt="${this.name}" style="width:36px; height:36px; border-radius:50%; object-fit:cover; box-shadow:0 0 10px rgba(6,182,212,0.5); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
-                </a>
-            `;
-        },
+        name: "BumBonTechLab",
+        website: "https://www.bumbontechlab.com",
+        youtube: "https://www.youtube.com/@BumBon_Tech_Lab",
+        logo: "/logo.png",
         applyFavicon: function() {
             let link = document.querySelector("link[rel~='icon']");
             if (!link) {
@@ -331,41 +39,53 @@
                 link.rel = 'icon';
                 document.head.appendChild(link);
             }
-            link.href = this.logoUrl;
+            link.href = this.logo;
+        },
+        renderHeaderLogo: function(containerId = 'brandLogoContainer') {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = `
+                <a href="${this.website}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; text-decoration:none;" title="${this.name} (${this.website})">
+                    <img src="${this.logo}" alt="${this.name}" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='logo.png';}else if(!this.dataset.tried2){this.dataset.tried2='1';this.src='logo_96.png';}" style="height:36px; width:36px; border-radius:50%; object-fit:cover; vertical-align:middle; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.4)); box-shadow:0 0 10px rgba(6,182,212,0.4); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+            `;
         }
     };
 
-    // 4. ENGINE ĐIỀU KHIỂN & HÀM TIỆN ÍCH I18N
+    // 4. ĐỘNG CƠ XỬ LÝ ĐA NGÔN NGỮ (I18N ENGINE)
     const I18nEngine = {
         currentLang: 'vi',
 
-        /**
-         * Khởi tạo hệ thống ngôn ngữ từ localStorage hoặc mặc định 'vi'
-         */
         init: function() {
-            const saved = localStorage.getItem('app_lang');
-            const found = SUPPORTED_LANGUAGES.some(l => l.code === saved);
-            this.currentLang = found ? saved : 'vi';
             if (window._pendingI18n && Array.isArray(window._pendingI18n)) {
-                window._pendingI18n.forEach(dict => this.extend(dict));
+                window._pendingI18n.forEach(ext => this.extend(ext));
                 window._pendingI18n = [];
             }
+            const saved = localStorage.getItem('app_lang') || localStorage.getItem('selected_lang');
+            const found = SUPPORTED_LANGUAGES.some(l => l.code === saved);
+            this.currentLang = found ? saved : 'vi';
             this.applyToDOM();
             BRAND_CONFIG.applyFavicon();
             BRAND_CONFIG.renderHeaderLogo();
             this.renderLangSelector();
         },
 
-        /**
-         * Lấy mã ngôn ngữ hiện tại
-         */
+        extend: function(extra) {
+            if (!extra || typeof extra !== 'object') return;
+            for (const k in extra) {
+                if (typeof extra[k] === 'object' && !Array.isArray(extra[k])) {
+                    DICTIONARY[k] = Object.assign(DICTIONARY[k] || {}, extra[k]);
+                } else {
+                    DICTIONARY[k] = extra[k];
+                }
+            }
+            this.applyToDOM();
+        },
+
         getLanguage: function() {
             return this.currentLang;
         },
 
-        /**
-         * Đổi ngôn ngữ hệ thống và cập nhật DOM + hướng chữ LTR/RTL
-         */
         setLanguage: function(langCode) {
             const langObj = SUPPORTED_LANGUAGES.find(l => l.code === langCode);
             if (!langObj) return;
@@ -373,10 +93,8 @@
             this.currentLang = langCode;
             try {
                 localStorage.setItem('app_lang', langCode);
-                localStorage.setItem('esp32_s3_lang', langCode);
-                localStorage.setItem('esp32_cam_global_lang', langCode);
                 localStorage.setItem('selected_lang', langCode);
-                localStorage.setItem('esp32_cam_flasher_lang', langCode);
+                localStorage.setItem('esp32_s3_lang', langCode);
             } catch(e) {}
 
             document.documentElement.lang = langCode;
@@ -385,33 +103,19 @@
                 document.body.setAttribute('data-lang', langCode);
             }
 
-            if (window._pendingI18n && Array.isArray(window._pendingI18n)) {
-                window._pendingI18n.forEach(dict => this.extend(dict));
-                window._pendingI18n = [];
-            }
             this.applyToDOM();
             BRAND_CONFIG.applyFavicon();
             BRAND_CONFIG.renderHeaderLogo();
 
-            // Gọi callback chuyển đổi ngôn ngữ của từng trang (nếu có)
             if (typeof window.onAppLanguageChange === 'function') {
                 try { window.onAppLanguageChange(langCode); } catch(e) {}
             }
-            if (typeof window.pageSetLanguage === 'function') {
-                try { window.pageSetLanguage(langCode); } catch(e) {}
-            }
-
-            // Kích hoạt Event tùy biến cho các component riêng lắng nghe
             window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: langCode, dir: langObj.dir } }));
         },
 
-        /**
-         * Hàm dịch chuỗi theo đường dẫn dot-notation (Ví dụ: t('common.free_heap'))
-         */
         t: function(path, defaultText) {
             if (!path) return defaultText || '';
             const parts = path.split('.');
-            if (parts[0] === 'cam') parts[0] = 'camera';
             let curr = DICTIONARY;
             for (let i = 0; i < parts.length; i++) {
                 if (curr[parts[i]] !== undefined) {
@@ -432,85 +136,36 @@
             return (typeof curr === 'string') ? curr : (defaultText || path);
         },
 
-        /**
-         * Lấy metadata dịch thuật của một App cụ thể
-         */
-        getAppInfo: function(appId) {
-            const app = DICTIONARY.apps[appId];
-            if (!app) return { name: appId, desc: '' };
-            const name = (app.name && app.name[this.currentLang]) ? app.name[this.currentLang] : (app.name ? app.name['vi'] : appId);
-            const desc = (app.desc && app.desc[this.currentLang]) ? app.desc[this.currentLang] : (app.desc ? app.desc['vi'] : '');
-            return { name, desc };
-        },
-
-        /**
-         * Nạp và mở rộng từ điển động cho các ứng dụng con (Modular App Extension)
-         */
-        extend: function(additionalDict) {
-            if (!additionalDict || typeof additionalDict !== 'object') return;
-            for (const ns in additionalDict) {
-                if (!DICTIONARY[ns]) {
-                    DICTIONARY[ns] = {};
-                }
-                for (const key in additionalDict[ns]) {
-                    DICTIONARY[ns][key] = additionalDict[ns][key];
-                }
-            }
-            // Áp dụng dịch ngay nếu DOM đã sẵn sàng
-            if (document.readyState === 'interactive' || document.readyState === 'complete') {
-                if (window._pendingI18n && Array.isArray(window._pendingI18n)) {
-                window._pendingI18n.forEach(dict => this.extend(dict));
-                window._pendingI18n = [];
-            }
-            this.applyToDOM();
-            }
-        },
-
-        /**
-         * Tự động quét và dịch toàn bộ các thẻ HTML có thuộc tính data-i18n
-         */
         applyToDOM: function() {
             if (document.body) {
                 document.body.setAttribute('data-lang', this.currentLang);
             }
-            // 1. Dịch innerText cho data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 const trans = this.t(key);
                 if (trans) el.innerText = trans;
             });
-
-            // 1b. Dịch innerHTML cho data-i18n-html (cho phép thẻ định dạng b, span, pin...)
             document.querySelectorAll('[data-i18n-html]').forEach(el => {
                 const key = el.getAttribute('data-i18n-html');
                 const trans = this.t(key);
                 if (trans) el.innerHTML = trans;
             });
-
-            // 2. Dịch placeholder cho data-i18n-placeholder
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.getAttribute('data-i18n-placeholder');
                 const trans = this.t(key);
                 if (trans) el.setAttribute('placeholder', trans);
             });
-
-            // 3. Dịch title / tooltip cho data-i18n-title
             document.querySelectorAll('[data-i18n-title]').forEach(el => {
                 const key = el.getAttribute('data-i18n-title');
                 const trans = this.t(key);
                 if (trans) el.setAttribute('title', trans);
             });
-
-            // 4. Đồng bộ giá trị select nếu có
             const selectEl = document.getElementById('langSelect');
             if (selectEl && selectEl.value !== this.currentLang) {
                 selectEl.value = this.currentLang;
             }
         },
 
-        /**
-         * Tự động render danh sách Option cho thẻ <select id="langSelect">
-         */
         renderLangSelector: function(selectId = 'langSelect') {
             const select = document.getElementById(selectId);
             if (!select) return;
@@ -534,14 +189,11 @@
         }
     };
 
-    // Xuất ra phạm vi toàn cục (Global Scope)
     window.I18N = I18nEngine;
     window.BRAND = BRAND_CONFIG;
     window.t = function(path, def) { return I18nEngine.t(path, def); };
     window.setLanguage = function(lang) { return I18nEngine.setLanguage(lang); };
-    window.changeLanguage = function(lang) { return I18nEngine.setLanguage(lang); };
 
-    // Tự động khởi chạy khi trang hoàn tất nạp DOM
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => I18nEngine.init());
     } else {
