@@ -1,6 +1,18 @@
 [
   {
+    "version": "v0.0.005",
+    "date": "2026-09-26",
+    "title": "Phiên bản v0.0.005 - Tích hợp Cơ chế Smart Dynamic AP & Chuẩn hóa URL GitHub Releases",
+    "changes": [
+      "Tự động tắt SoftAP sau 5 phút không có thiết bị kết nối khi đã có Wi-Fi STA, giải phóng 100% băng thông RF cho Camera MJPEG và hạ nhiệt độ chip",
+      "Tự động kích hoạt lại SoftAP dự phòng (192.168.4.1) sau 20 giây nếu mất kết nối Wi-Fi nhà (Router tắt / đổi mật khẩu)",
+      "Chuẩn hóa đường dẫn URL tải OTA trực tiếp trên GitHub Releases (/main/build/OTA_Update.bin) triệt tiêu lỗi 404",
+      "Đồng bộ toàn diện hệ thống quản lý phiên bản trên cả local và cloud"
+    ]
+  },
+  {
     "version": "v0.0.004",
+
     "date": "2026-09-26",
     "tag": "Latest Release",
     "title": {
