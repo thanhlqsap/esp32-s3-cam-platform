@@ -1,8 +1,89 @@
 [
   {
+    "version": "v0.0.004",
+    "date": "2026-09-26",
+    "tag": "Latest Release",
+    "title": {
+      "vi": "Phiên bản v0.0.004 - Tách rời Module i18n & Quét Wi-Fi Bất đồng bộ Tốc độ cao",
+      "en": "Release v0.0.004 - Modular i18n Architecture & Non-blocking Async Wi-Fi Scanning",
+      "zh": "v0.0.004 版本 - 多语言模块化解耦与非阻塞高速异步 Wi-Fi 扫描",
+      "es": "Versión v0.0.004 - Arquitectura i18n Modular y Escaneo Wi-Fi Asíncrono",
+      "fr": "Version v0.0.004 - Architecture i18n Modulaire & Scan Wi-Fi Asynchrone",
+      "de": "Release v0.0.004 - Modulare i18n-Architektur & Asynchroner WLAN-Scan",
+      "ja": "v0.0.004 リリース - モジュール化 i18n アーキテクチャと非同期高速 Wi-Fi スキャン",
+      "ko": "v0.0.004 릴리스 - 모듈형 i18n 아키텍처 및 논블로킹 고속 비동기 Wi-Fi 스캔",
+      "ru": "Релиз v0.0.004 - Модульная архитектура i18n и неблокирующее асинхронное сканирование Wi-Fi",
+      "ar": "الإصدار v0.0.004 - بنية i18n المعيارية والمسح اللاسلكي غير المحظور عالي السرعة"
+    },
+    "description": "Modularized i18n dictionaries into standalone .js files per app, implemented Non-blocking Async Wi-Fi Scanning (zero 3s freeze), optimized JSON serialization and ultra-fast REST API latency (< 2ms).",
+    "details": {
+      "vi": "⚡ Phiên bản v0.0.004 hoàn tất bóc tách toàn bộ từ điển 10 ngôn ngữ thành các file .js độc lập cho từng ứng dụng con (i18n_camera.js, i18n_robotics.js,...), giải phóng hơn 18KB Flash PROGMEM cho Master OS. Nâng cấp cơ chế Quét Wi-Fi Bất đồng bộ (Async Non-blocking Scan) triệt tiêu hoàn toàn hiện tượng nghẽn CPU 3s, tối ưu bộ đệm JSON và tốc độ phản hồi RESTful API đạt < 2ms.",
+      "en": "⚡ Release v0.0.004 decouples all 10-language dictionaries into standalone .js files per sub-app (i18n_camera.js, i18n_robotics.js,...), saving over 18KB Flash PROGMEM for Master OS. Implemented Non-blocking Async Wi-Fi Scanning eliminating 3s CPU freeze, optimized JSON buffer reservations with ultra-fast REST API latency (< 2ms).",
+      "zh": "⚡ v0.0.004 版本将 10 国语言字典按子应用彻底解耦为独立 .js 文件（i18n_camera.js、i18n_robotics.js 等），为 Master OS 节省超过 18KB Flash PROGMEM。升级非阻塞异步 Wi-Fi 扫描，彻底消除 3 秒 CPU 卡顿，优化 JSON 序列化并实现 < 2ms 的超高速 API 响应。",
+      "es": "⚡ La versión v0.0.004 desacopla los diccionarios de 10 idiomas en archivos .js independientes por aplicación, ahorrando más de 18KB de Flash PROGMEM. Implementa escaneo Wi-Fi asíncrono sin bloqueo y optimiza la latencia de API a < 2ms.",
+      "fr": "⚡ La version v0.0.004 sépare les dictionnaires en 10 langues dans des fichiers .js autonomes par application, économisant plus de 18 Ko de Flash PROGMEM. Intègre un scan Wi-Fi asynchrone non bloquant et optimise la latence des API (< 2 ms).",
+      "de": "⚡ Release v0.0.004 modularisiert die 10-Sprachen-Wörterbücher in eigenständige .js-Dateien pro App und spart über 18KB Flash PROGMEM. Implementiert asynchronen WLAN-Scan und optimiert die API-Latenz auf < 2ms.",
+      "ja": "⚡ v0.0.004 では 10 言語辞書を各アプリごとの独立した .js ファイルに分離し、Master OS の Flash PROGMEM を 18KB 以上削減。非同期 Wi-Fi スキャンにより 3 秒の CPU フリーズを完全解消し、API 応答速度を 2ms 未満に最適化しました。",
+      "ko": "⚡ v0.0.004 릴리스는 10개 국어 사전을 각 앱별 독립 .js 파일로 완벽 분리하여 Master OS Flash PROGMEM을 18KB 이상 절약했습니다. 논블로킹 비동기 Wi-Fi 스캔을 적용하여 3초 CPU 지연을 완전 해소하고 API 응답을 2ms 미만으로 단축했습니다.",
+      "ru": "⚡ Релиз v0.0.004 разделяет словари на 10 языках на отдельные .js файлы для каждого приложения, экономя более 18 КБ Flash PROGMEM. Внедрено неблокирующее асинхронное сканирование Wi-Fi (без зависания на 3 сек) и оптимизировано время отклика API (< 2мс).",
+      "ar": "⚡ يفصل الإصدار v0.0.004 قواميس اللغات العشر إلى ملفات .js مستقلة لكل تطبيق، مما يوفر أكثر من 18 كيلوبايت من ذاكرة الفلاش PROGMEM. يوفر مسحاً لاسلكياً غير محظور ويقلل زمن استجابة API إلى أقل من 2 مللي ثانية."
+    },
+    "changes": {
+      "vi": [
+        "🌐 Bóc tách từ điển 10 ngôn ngữ thành các file .js chuyên dụng riêng biệt cho từng App (i18n_camera.js, i18n_robotics.js,...)",
+        "⚡ Tiết kiệm hơn 18.4KB bộ nhớ Flash PROGMEM cho phân vùng Master OS",
+        "🚀 Nâng cấp Quét Wi-Fi Bất đồng bộ (Async Non-blocking Scan) triệt tiêu hoàn toàn nghẽn mạng 3 giây",
+        "⚡ Tối ưu bộ đệm chuỗi JSON (reserve) và giảm thời gian khóa Mutex trong System Logger (< 2ms)",
+        "📦 Chuẩn hóa Pipeline 1-Click đóng gói trực tiếp vào github/build/ và đồng bộ github/docs/"
+      ],
+      "en": [
+        "🌐 Modularized 10-language dictionaries into dedicated standalone .js files per App (i18n_camera.js, i18n_robotics.js,...)",
+        "⚡ Saved over 18.4KB Flash PROGMEM storage for Master OS partition",
+        "🚀 Implemented Non-blocking Async Wi-Fi Scanning completely eliminating 3-second system stalls",
+        "⚡ Optimized JSON string buffers (reserve) and reduced Mutex lock time in System Logger (< 2ms)",
+        "📦 Standardized 1-Click build pipeline directly targeting github/build/ and syncing github/docs/"
+      ],
+      "zh": [
+        "🌐 将 10 国语言字典按 App 独立解耦为专属 .js 文件（i18n_camera.js、i18n_robotics.js 等）",
+        "⚡ 为 Master OS 分区节省超过 18.4KB 的 Flash PROGMEM 空间",
+        "🚀 升级非阻塞异步 Wi-Fi 扫描，彻底消除 3 秒系统卡死现象",
+        "⚡ 优化 JSON 字符串预分配缓存（reserve）并减少 System Logger 的 Mutex 占用（< 2ms）",
+        "📦 标准化 1 键打包构建流程，直接输出到 github/build/ 并同步 github/docs/"
+      ],
+      "ja": [
+        "🌐 10 言語辞書を各アプリ専用の独立 .js ファイル（i18n_camera.js、i18n_robotics.js 等）に分離",
+        "⚡ Master OS 用の Flash PROGMEM 容量を 18.4KB 以上削減",
+        "🚀 非同期 Wi-Fi スキャンを実装し、3 秒間のシステム停止を完全解消",
+        "⚡ JSON バッファの事前確保（reserve）と System Logger の Mutex 時間短縮（< 2ms）",
+        "📦 github/build/ への直接出力と github/docs/ 同期を行う 1 クリックビルドを標準化"
+      ],
+      "ko": [
+        "🌐 10개 국어 사전을 각 앱별 전용 독립 .js 파일로 분리 (i18n_camera.js, i18n_robotics.js 등)",
+        "⚡ Master OS 파티션의 Flash PROGMEM 용량 18.4KB 이상 절약",
+        "🚀 논블로킹 비동기 Wi-Fi 스캔 적용으로 3초 시스템 멈춤 완전 제거",
+        "⚡ JSON 버퍼 사전 할당(reserve) 및 System Logger Mutex 점유 시간 단축 (< 2ms)",
+        "📦 github/build/ 직접 출력 및 github/docs/ 동기화 1클릭 빌드 파이프라인 표준화"
+      ],
+      "ru": [
+        "🌐 Разделение словарей 10 языков на отдельные .js файлы для каждого приложения",
+        "⚡ Экономия более 18.4 КБ Flash PROGMEM для раздела Master OS",
+        "🚀 Неблокирующее асинхронное сканирование Wi-Fi (без 3-секундных зависаний)",
+        "⚡ Оптимизация буферов JSON (reserve) и сокращение времени блокировки Mutex (< 2мс)",
+        "📦 Стандартизация сборки в 1 клик с выводом в github/build/ и синхронизацией github/docs/"
+      ],
+      "ar": [
+        "🌐 فصل قواميس اللغات العشر إلى ملفات .js مخصصة لكل تطبيق",
+        "⚡ توفير أكثر من 18.4 كيلوبايت من مساحة الفلاش PROGMEM",
+        "🚀 مسح شبكات Wi-Fi غير محظور يمنع توقف النظام لمدة 3 ثوانٍ",
+        "⚡ تحسين مخازن JSON وتقليل زمن قفل Mutex (< 2 مللي ثانية)",
+        "📦 توحيد مسار البناء بنقرة واحدة والتزامن مع github/build/ و github/docs/"
+      ]
+    }
+  },
+  {
     "version": "v0.0.003",
     "date": "2026-09-25",
-    "tag": "Latest Release",
+    "tag": "Previous Release",
     "title": {
       "vi": "Phiên bản v0.0.003 - Thẻ Cập Nhật OTA trên Dashboard & Kiến trúc Dual-Core bất biến",
       "en": "Release v0.0.003 - Dashboard OTA Update Tab & Immutable Dual-Core Architecture",

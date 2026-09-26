@@ -1,11 +1,11 @@
 {
-  "version": "0.0.003",
-  "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
-  "description": "Phiên bản v0.0.003: Thêm thẻ OTA Update trên Dashboard (Online Cloud OTA & Offline File OTA), kiến trúc Dual-Core bất biến (Core 0 Port 81 MJPEG Stream, Core 1 Port 80 WebServer), tối ưu độ mượt và đa ngôn ngữ.",
-  "release_date": "25/09/2026",
+  "version": "0.0.004",
+  "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/github/build/OTA_Update.bin",
+  "description": "Phiên bản v0.0.004: Tách từ điển đa ngôn ngữ thành các file .js độc lập cho từng app, nâng cấp Quét Wi-Fi Bất đồng bộ (Async Non-blocking Scan) triệt tiêu độ trễ 3s, tối ưu hóa JSON buffer và tốc độ phản hồi REST API (< 2ms).",
+  "release_date": "26/09/2026",
   "mandatory": false,
-  "changelog": "v0.0.003: Added OTA Update tab on Dashboard (Online Cloud OTA & Offline File OTA), Immutable Dual-Core Architecture (Core 0 Port 81 MJPEG Stream, Core 1 Port 80 WebServer), UI smoothness & i18n fixes.",
-  "binary_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
-  "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
-  "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json"
+  "changelog": "v0.0.004: Modularized i18n dictionaries into standalone .js files per app, implemented Non-blocking Async Wi-Fi Scanning (zero 3s freeze), optimized JSON serialization and ultra-fast REST API latency (< 2ms).",
+  "binary_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/github/build/OTA_Update.bin",
+  "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/github/build/Full_Flash.bin",
+  "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/github/changelog.json"
 }
