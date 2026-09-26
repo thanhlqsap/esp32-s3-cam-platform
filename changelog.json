@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.008",
+    "date": "2026-09-26",
+    "title": "Phiên bản v0.0.008 - Multi-Client Broadcast Stream & Khóa Công Suất Wi-Fi Full Performance",
+    "changes": [
+      "Nâng cấp máy chủ truyền phát Live Stream Cổng 81 (Core 0) hỗ trợ Multi-Client Broadcast đồng thời lên đến 6 thiết bị/người dùng cùng xem",
+      "Tối ưu khóa công suất Wi-Fi WIFI_PS_NONE của ESP-IDF, triệt tiêu 100% hiện tượng Modem-Sleep gây trễ mạng khi chuyển chế độ SoftAP",
+      "Tích hợp cơ chế kiểm tra phiên bản OTA Dual-Channel và chống Fastly CDN cache tức thời (< 1ms)",
+      "Đồng bộ hóa giao diện nút điều hướng Home tinh gọn (Icon-only) trên tất cả 20+ trang ứng dụng"
+    ]
+  },
+  {
     "version": "v0.0.007",
     "date": "2026-09-26",
     "title": "Phiên bản v0.0.007 - Tối Giản Nút Điều Hướng & Bổ Sung Telemetry Cảm Biến Camera DVP",

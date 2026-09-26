@@ -1,10 +1,10 @@
 {
-  "version": "0.0.007",
+  "version": "0.0.008",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
-  "description": "Phiên bản v0.0.007: Tối giản hóa nút điều hướng về Dashboard sang icon Home đồng bộ trên tất cả các trang web ứng dụng và chẩn đoán. Bổ sung bảng thông số chẩn đoán Telemetry toàn diện cho Cảm biến Camera DVP (nhận diện model OV2640/3660/5640/7725, độ phân giải, chất lượng JPEG, kiến trúc Triple-Buffer PSRAM, Cổng 81 Core 0 MJPEG Stream Task, AWB, H-Mirror/V-Flip).",
+  "description": "Phiên bản v0.0.008: Nâng cấp máy chủ Live Stream Cổng 81 sang kiến trúc Multi-Client Broadcast (lên tới 6 thiết bị xem đồng thời). Tối ưu khóa công suất Wi-Fi WIFI_PS_NONE triệt tiêu hoàn toàn độ trễ Modem-Sleep, duy trì ping < 2ms và livestream max FPS. Tích hợp cơ chế kiểm tra OTA Dual-Channel chống Fastly CDN cache.",
   "release_date": "26/09/2026",
   "mandatory": false,
-  "changelog": "v0.0.007: Streamlined Dashboard navigation button into a clean Home icon across all web app and diagnostics pages. Added comprehensive Camera DVP Telemetry & Streaming diagnostics (OV-series PID auto-detect, resolution, JPEG quality, Triple-Buffer PSRAM, Port 81 @ Core 0 MJPEG task, AWB, H-Mirror/V-Flip).",
+  "changelog": "v0.0.008: Upgraded Port 81 Live Stream server to Multi-Client Broadcast architecture (up to 6 concurrent viewers). Enforced WIFI_PS_NONE to eliminate Modem-Sleep latency, maintaining <2ms ping and maximum stream FPS. Integrated Dual-Channel OTA check engine.",
   "binary_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json"
