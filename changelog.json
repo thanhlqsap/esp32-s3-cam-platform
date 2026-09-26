@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.007",
+    "date": "2026-09-26",
+    "title": "Phiên bản v0.0.007 - Tối Giản Nút Điều Hướng & Bổ Sung Telemetry Cảm Biến Camera DVP",
+    "changes": [
+      "Tối giản hóa nút điều hướng về Dashboard thành icon Home tối giản tinh tế (icon-only button) trên tất cả các trang web ứng dụng và chẩn đoán",
+      "Bổ sung thẻ Telemetry Cảm biến Camera DVP vào trang Diagnostics: nhận diện tự động chip OV2640/3660/5640/7725, độ phân giải, chất lượng JPEG, FrameBuffer Triple-Buffer PSRAM 8MB",
+      "Hiển thị chi tiết cổng & Core xử lý truyền phát Video MJPEG (Port 81 @ Core 0 Task FreeRTOS độc lập)",
+      "Bổ sung đầy đủ từ điển 10 ngôn ngữ và tối ưu hóa diện mạo giao diện người dùng"
+    ]
+  },
+  {
     "version": "v0.0.006",
     "date": "2026-09-26",
     "tag": "Latest Release",
