@@ -198,7 +198,13 @@
         <!-- GitHub Version Picker -->
         <div id="githubVersionWrap" style="display: none; margin-bottom: 12px;">
           <select id="versionSelect" class="version-select" onchange="onVersionChange(this.value)">
-            <option value="v0.0.002" selected>⭐ v0.0.002 (Latest Release)</option>
+            <option value="v0.0.008" selected>⭐ v0.0.008 (Latest Release)</option>
+            <option value="v0.0.007">v0.0.007</option>
+            <option value="v0.0.006">v0.0.006</option>
+            <option value="v0.0.005">v0.0.005</option>
+            <option value="v0.0.004">v0.0.004</option>
+            <option value="v0.0.003">v0.0.003</option>
+            <option value="v0.0.002">v0.0.002</option>
             <option value="v0.0.001">v0.0.001</option>
           </select>
         </div>
@@ -231,7 +237,7 @@
       <!-- Version Details Box -->
       <div class="version-desc-box" id="versionDescBox">
         <div class="version-desc-header">
-          <span class="version-desc-tag" id="descVerTag">v0.0.002 (Full Merged)</span>
+          <span class="version-desc-tag" id="descVerTag">v0.0.008 (Full Merged)</span>
           <span class="version-desc-date" id="descVerDate">2026-09</span>
         </div>
         <div class="version-desc-content" id="descVerContent">Loading...</div>
@@ -366,24 +372,144 @@
     // ================================================================
     let changelogData = [
       {
-        version: "v0.0.002",
-        date: "2026-09",
+        version: "v0.0.008",
+        date: "2026-09-26",
         tag: "Latest Release",
-        urlFull:  GITHUB_RELEASES_BASE + "v0.0.002/Full_Flash.bin",
-        urlOta:   GITHUB_RELEASES_BASE + "v0.0.002/OTA_Update.bin",
-        titleKey: "flasher.changelog.v0_0_002_title",
-        descKey:  "flasher.changelog.v0_0_002_desc"
+        urlFull: "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
+        urlOta:  "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
+        title: {
+          vi: "Phiên bản v0.0.008 - Multi-Client Broadcast Stream & Khóa Công Suất Wi-Fi Full Performance",
+          en: "Release v0.0.008 - Multi-Client Broadcast Stream & Full Performance Wi-Fi Lock",
+          zh: "v0.0.008 版本 - 多客户端广播推流与 Wi-Fi 全性能功耗锁定",
+          es: "Versión v0.0.008 - Transmisión Broadcast Multi-Cliente y Bloqueo Wi-Fi Full Performance",
+          fr: "Version v0.0.008 - Diffusion Broadcast Multi-Clients & Verrouillage Wi-Fi Pleine Puissance",
+          de: "Release v0.0.008 - Multi-Client Broadcast Stream & Wi-Fi Full-Power-Sperre",
+          ja: "v0.0.008 リリース - マルチクライアント同報配信＆Wi-Fiフル性能ロック",
+          ko: "v0.0.008 릴리스 - 멀티 클라이언트 브로드캐스트 스트림 및 Wi-Fi 최대 성능 고정",
+          ru: "Релиз v0.0.008 - Мультиклиентский Broadcast-стрим и фиксация полной мощности Wi-Fi",
+          ar: "الإصدار v0.0.008 - بث متعدد العملاء وتثبيت أداء Wi-Fi بأقصى طاقة"
+        },
+        description: {
+          vi: "🚀 Nâng cấp Live Stream Cổng 81 (Core 0) phát đồng thời 6 thiết bị, khóa cứng WIFI_PS_NONE triệt tiêu độ trễ Modem-Sleep, Dual-Channel OTA Check chống CDN cache.",
+          en: "🚀 Upgraded Port 81 (Core 0) Live Stream for 6 concurrent viewers, locked WIFI_PS_NONE to eliminate Modem-Sleep latency, and added Dual-Channel Anti-Cache OTA Check.",
+          zh: "🚀 升级端口 81 (Core 0) 直播推流支持 6 台设备同时观看，锁定 WIFI_PS_NONE 消除 Modem-Sleep 延迟，支持双通道防 CDN 缓存 OTA 检查。",
+          es: "🚀 Transmisión en vivo Puerto 81 para 6 dispositivos simultáneos, bloqueo WIFI_PS_NONE sin latencia Modem-Sleep y verificación OTA Dual-Channel.",
+          fr: "🚀 Flux en direct Port 81 pour 6 clients simultanés, verrouillage WIFI_PS_NONE sans latence Modem-Sleep et vérification OTA Dual-Channel.",
+          de: "🚀 Port 81 Live-Stream für 6 gleichzeitige Clients, WIFI_PS_NONE-Sperre gegen Modem-Sleep-Latenz und Dual-Channel-Anti-Cache-OTA-Check.",
+          ja: "🚀 ポート81 Live Streamで6台同時視聴対応、WIFI_PS_NONEロックでModem-Sleep遅延を解消、Dual-Channel OTAチェック搭載。",
+          ko: "🚀 포트 81 실시간 스트림 6대 동시 접속 지원, WIFI_PS_NONE 고정으로 Modem-Sleep 지연 제거, Dual-Channel Anti-Cache OTA 확인 탑재.",
+          ru: "🚀 Live Stream порт 81 для 6 одновременных клиентов, фиксация WIFI_PS_NONE без задержек Modem-Sleep и Dual-Channel OTA проверка.",
+          ar: "🚀 ترقية بث المنفذ 81 لـ 6 مستخدمين متزامنين، وتثبيت WIFI_PS_NONE لإلغاء تأخير Modem-Sleep وفحص OTA ثنائي القناة."
+        },
+        changes: [
+          "Nâng cấp máy chủ truyền phát Live Stream Cổng 81 (Core 0) hỗ trợ Multi-Client Broadcast đồng thời lên đến 6 thiết bị/người dùng cùng xem",
+          "Tối ưu khóa công suất Wi-Fi WIFI_PS_NONE của ESP-IDF, triệt tiêu 100% hiện tượng Modem-Sleep gây trễ mạng khi chuyển chế độ SoftAP",
+          "Tích hợp cơ chế kiểm tra phiên bản OTA Dual-Channel và chống Fastly CDN cache tức thời (< 1ms)",
+          "Đồng bộ hóa giao diện nút điều hướng Home tinh gọn (Icon-only) trên tất cả 20+ trang ứng dụng"
+        ]
+      },
+      {
+        version: "v0.0.007",
+        date: "2026-09-26",
+        tag: "Previous Release",
+        urlFull: "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
+        urlOta:  "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
+        title: {
+          vi: "Phiên bản v0.0.007 - Tối Giản Nút Điều Hướng & Bổ Sung Telemetry Cảm Biến Camera DVP",
+          en: "Release v0.0.007 - Simplified Navigation & DVP Camera Telemetry Card"
+        },
+        description: {
+          vi: "Tối giản nút Home trên tất cả các trang, bổ sung thẻ Telemetry Cảm biến Camera DVP trong Diagnostics (OV2640/3660/5640/7725, Triple-Buffer PSRAM 8MB).",
+          en: "Minimalist Home button across all sites, DVP Camera Telemetry card on Diagnostics."
+        }
+      },
+      {
+        version: "v0.0.006",
+        date: "2026-09-26",
+        tag: "Previous Release",
+        urlFull: "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
+        urlOta:  "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin"
+      },
+      {
+        version: "v0.0.005",
+        date: "2026-09-26",
+        tag: "Previous Release",
+        urlFull: "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
+        urlOta:  "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin"
+      },
+      {
+        version: "v0.0.004",
+        date: "2026-09-26",
+        tag: "Previous Release",
+        urlFull: "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
+        urlOta:  "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin"
+      },
+      {
+        version: "v0.0.003",
+        date: "2026-09-25",
+        tag: "Previous Release",
+        urlFull: "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
+        urlOta:  "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin"
+      },
+      {
+        version: "v0.0.002",
+        date: "2026-09-25",
+        tag: "Previous Release",
+        urlFull: "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
+        urlOta:  "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin"
       },
       {
         version: "v0.0.001",
-        date: "2026-09",
+        date: "2026-09-24",
         tag: "Previous Release",
-        urlFull:  GITHUB_RELEASES_BASE + "v0.0.001/Full_Flash.bin",
-        urlOta:   GITHUB_RELEASES_BASE + "v0.0.001/OTA_Update.bin",
-        titleKey: "flasher.changelog.v0_0_001_title",
-        descKey:  "flasher.changelog.v0_0_001_desc"
+        urlFull: "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
+        urlOta:  "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin"
       }
     ];
+
+    function getLocalizedText(obj, lang) {
+      if (!obj) return '';
+      if (typeof obj === 'string') return obj;
+      if (typeof obj === 'object') {
+        return obj[lang] || obj['vi'] || obj['en'] || Object.values(obj)[0] || '';
+      }
+      return String(obj);
+    }
+
+    async function fetchChangelogData() {
+      const urls = [
+        'https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json?_t=' + Date.now(),
+        'https://cdn.jsdelivr.net/gh/thanhlqsap/esp32-s3-cam-platform@main/changelog.json?_t=' + Date.now(),
+        '../changelog.json?_t=' + Date.now(),
+        'changelog.json?_t=' + Date.now()
+      ];
+      for (const u of urls) {
+        try {
+          const resp = await fetch(u, { cache: 'no-cache' });
+          if (resp.ok) {
+            const list = await resp.json();
+            if (Array.isArray(list) && list.length > 0) {
+              changelogData = list.map((item, idx) => ({
+                version: item.version,
+                date: item.date || '',
+                tag: idx === 0 ? 'Latest Release' : (item.tag || 'Release'),
+                urlFull: item.urlFull || 'https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin',
+                urlOta: item.urlOta || 'https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin',
+                title: item.title,
+                description: item.description || item.details,
+                changes: item.changes,
+                rawItem: item
+              }));
+              renderVersionOptions();
+              renderHistoryModal();
+              break;
+            }
+          }
+        } catch(e) {
+          console.warn('Failed fetch changelog:', u, e);
+        }
+      }
+    }
 
     // ================================================================
     // SOURCE TYPE CONTROLLER
@@ -436,16 +562,20 @@
     function renderVersionOptions() {
       const sel = document.getElementById('versionSelect');
       if (!sel || !changelogData.length) return;
+      const curSelected = sel.value;
       sel.innerHTML = changelogData.map((item, idx) => {
         const star = idx === 0 ? '⭐ ' : '📦 ';
         return `<option value="${item.version}">${star}${item.version} (${item.tag || 'Release'})</option>`;
       }).join('');
+      if (curSelected && changelogData.some(c => c.version === curSelected)) {
+        sel.value = curSelected;
+      }
       updateLiveDescription();
     }
 
     function updateLiveDescription() {
       const sel = document.getElementById('versionSelect');
-      const curVer = sel ? sel.value : changelogData[0].version;
+      const curVer = sel ? sel.value : (changelogData[0] ? changelogData[0].version : 'v0.0.008');
       const item = changelogData.find(c => c.version === curVer) || changelogData[0];
       const tagEl = document.getElementById('descVerTag');
       const dateEl = document.getElementById('descVerDate');
@@ -453,8 +583,16 @@
       if (!item) return;
       if (tagEl) tagEl.innerText = `${item.version} (Full Merged)`;
       if (dateEl) dateEl.innerText = item.date ? `${item.date} (${item.tag || 'Latest Release'})` : '';
-      if (contentEl && window.I18N) {
-        contentEl.innerText = window.I18N.t(item.descKey, '');
+      if (contentEl) {
+        let desc = getLocalizedText(item.description, currentLang);
+        if (!desc && item.changes) {
+          const ch = Array.isArray(item.changes) ? item.changes : (item.changes[currentLang] || item.changes['vi'] || item.changes['en']);
+          if (Array.isArray(ch)) desc = ch.slice(0, 3).join('. ');
+        }
+        if (!desc && item.descKey && window.I18N) {
+          desc = window.I18N.t(item.descKey, '');
+        }
+        contentEl.innerText = desc || `${item.version} - ESP32-S3 Cam Platform`;
       }
     }
 
@@ -465,18 +603,33 @@
       const body = document.getElementById('modalHistoryBody');
       if (!body) return;
       body.innerHTML = changelogData.map(item => {
-        const title = window.I18N ? window.I18N.t(item.titleKey, item.version) : item.version;
-        const desc = window.I18N ? window.I18N.t(item.descKey, '') : '';
+        let title = getLocalizedText(item.title, currentLang);
+        if (!title && item.titleKey && window.I18N) title = window.I18N.t(item.titleKey, item.version);
+        if (!title) title = item.version;
+
+        let desc = getLocalizedText(item.description, currentLang);
+        if (!desc && item.descKey && window.I18N) desc = window.I18N.t(item.descKey, '');
+
+        let changesHtml = '';
+        if (item.changes) {
+          const chList = Array.isArray(item.changes) ? item.changes : (item.changes[currentLang] || item.changes['vi'] || item.changes['en']);
+          if (Array.isArray(chList) && chList.length > 0) {
+            changesHtml = `<ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; color:#cbd5e1; list-style-type: disc;">` +
+              chList.map(c => `<li style="margin-bottom:3px;">${c}</li>`).join('') + `</ul>`;
+          }
+        }
+
         return `
           <div class="history-card">
             <div class="history-tag">${item.version} — ${item.date || ''} (${item.tag || 'Release'})</div>
             <h4>${title}</h4>
-            <p style="margin-bottom:10px; font-size:0.82rem; color:#cbd5e1;">${desc}</p>
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <a href="${item.urlFull}" target="_blank" class="btn-secondary" style="font-size:0.78rem;">
+            ${desc ? `<p style="margin-bottom:8px; font-size:0.82rem; color:#94a3b8;">${desc}</p>` : ''}
+            ${changesHtml}
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
+              <a href="${item.urlFull || 'https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin'}" target="_blank" class="btn-secondary" style="font-size:0.78rem;">
                 ⬇️ Full_Flash.bin (${item.version})
               </a>
-              <a href="${item.urlOta}" target="_blank" class="btn-secondary" style="font-size:0.78rem;">
+              <a href="${item.urlOta || 'https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin'}" target="_blank" class="btn-secondary" style="font-size:0.78rem;">
                 ⬇️ OTA_Update.bin
               </a>
             </div>
@@ -812,6 +965,7 @@
       } catch(e) {}
       setLanguage(lang);
       renderVersionOptions();
+      fetchChangelogData();
 
       if (!('serial' in navigator)) {
         document.getElementById('browserAlert').style.display = 'block';
