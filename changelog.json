@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.009",
+    "date": "2026-09-28",
+    "title": "Phiên bản v0.0.009 - Khắc phục Triệt Để Camera Stream, NVS Auto-Recovery & Tối Ưu An Toàn OTA Cache",
+    "changes": [
+      "Khắc phục triệt để lỗi Camera Stream đứng hình sau 1-2s: chuyển sang persistent keep-alive và tích hợp sendBufferSafe chống rớt socket",
+      "Khắc phục xung đột bus MSPI / Cache Disabled Panic khi nạp OTA: tự động deinit camera trước khi ghi Flash",
+      "Tích hợp khởi tạo NVS an toàn tự động khôi phục format khi partition bị phân mảnh",
+      "Tích hợp chuỗi Universal Hard Reset Pulse trên Web Flasher (index.html) sau khi nạp Full Flash 100%"
+    ]
+  },
+  {
     "version": "v0.0.008",
     "date": "2026-09-26",
     "title": "Phiên bản v0.0.008 - Multi-Client Broadcast Stream & Khóa Công Suất Wi-Fi Full Performance",

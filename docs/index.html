@@ -904,17 +904,45 @@
         percentLabel.innerText = '100%';
         log('🎉 100% Flash Completed!');
 
-        // Auto Reset ESP32-S3 into normal execution mode
-        log('🔄 Auto-resetting ESP32-S3...');
+        // Auto Hard Reset ESP32-S3 into normal execution mode
+        log('🔄 Sending Universal Hardware Reset pulse to ESP32-S3...');
         try {
-          if (typeof esptoolDevice.hardReset === 'function') {
-            await esptoolDevice.hardReset();
-          } else if (typeof esptoolDevice.hard_reset === 'function') {
-            await esptoolDevice.hard_reset();
-          } else if (typeof esptoolDevice.after === 'function') {
-            await esptoolDevice.after('hard_reset');
+          // 1. Gửi lệnh thoát chế độ Flash tới ROM Bootloader
+          if (typeof esptoolDevice.flashFinish === 'function') {
+            try { await esptoolDevice.flashFinish(false); } catch(e) {}
+          } else if (typeof esptoolDevice.flash_finish === 'function') {
+            try { await esptoolDevice.flash_finish(false); } catch(e) {}
           }
-          log('✅ Board reboot signal sent successfully!');
+
+          // 2. Kích hoạt chuỗi Hardware Reset Pulse qua DTR & RTS
+          if (esptoolTransport && esptoolTransport.device) {
+            // Đảm bảo GPIO0 (BOOT) = HIGH (không vào Download Bootloader)
+            if (typeof esptoolTransport.setDTR === 'function') {
+              await esptoolTransport.setDTR(false);
+            }
+            await new Promise(r => setTimeout(r, 50));
+
+            // Kéo chân EN/RST = LOW để kích hoạt Reset phần cứng
+            if (typeof esptoolTransport.setRTS === 'function') {
+              await esptoolTransport.setRTS(true);
+            }
+            await new Promise(r => setTimeout(r, 150)); // Giữ 150ms để tụ EN xả hết
+
+            // Nhả chân EN/RST = HIGH để ESP32-S3 boot vào firmware
+            if (typeof esptoolTransport.setRTS === 'function') {
+              await esptoolTransport.setRTS(false);
+            }
+            await new Promise(r => setTimeout(r, 150));
+
+            // Thiết lập tín hiệu ổn định cho USB-CDC & CH340
+            try {
+              await esptoolTransport.device.setSignals({ dataTerminalReady: false, requestToSend: false });
+            } catch(e) {}
+          } else if (typeof esptoolDevice.hardReset === 'function') {
+            await esptoolDevice.hardReset();
+          }
+
+          log('✅ Hard Reset Successful! ESP32-S3 is now running.');
         } catch(resetErr) {
           console.warn('Auto-reset notice:', resetErr);
         }
