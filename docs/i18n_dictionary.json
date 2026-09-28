@@ -120,6 +120,18 @@
       "ru": "Память PSRAM",
       "ar": "ذاكرة PSRAM"
     },
+    "soc_temp": {
+      "vi": "Nhiệt Độ SoC",
+      "en": "SoC Temp",
+      "zh": "芯片温度",
+      "es": "Temp. SoC",
+      "fr": "Temp. SoC",
+      "de": "SoC-Temp",
+      "ja": "SoC 温度",
+      "ko": "SoC 온도",
+      "ru": "Темп. SoC",
+      "ar": "حرارة المعالج"
+    },
     "ip_address": {
       "vi": "Địa chỉ IP",
       "en": "IP Address",
