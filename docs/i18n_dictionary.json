@@ -1198,6 +1198,66 @@
       "ru": "Последняя версия:",
       "ar": "أحدث إصدار:"
     },
+    "up_to_date": {
+      "vi": "Đang ở phiên bản mới nhất",
+      "en": "Up to date",
+      "zh": "已是最新版本",
+      "es": "Está actualizado",
+      "fr": "À jour",
+      "de": "Auf dem neuesten Stand",
+      "ja": "最新バージョンです",
+      "ko": "최신 버전입니다",
+      "ru": "У вас последняя версия",
+      "ar": "أحدث إصدار مثبت"
+    },
+    "update_available": {
+      "vi": "Có bản cập nhật mới",
+      "en": "Update available",
+      "zh": "有新版本可用",
+      "es": "Actualización disponible",
+      "fr": "Mise à jour disponible",
+      "de": "Update verfügbar",
+      "ja": "更新が利用可能",
+      "ko": "새 업데이트 있음",
+      "ru": "Доступно обновление",
+      "ar": "تحديث متوفر"
+    },
+    "already_latest_msg": {
+      "vi": "Thiết bị đang chạy phiên bản mới nhất, hệ thống hoạt động ổn định.",
+      "en": "Device is running the latest firmware version. System is stable.",
+      "zh": "设备正在运行最新固件版本，系统运行稳定。",
+      "es": "El dispositivo está ejecutando la última versión del firmware.",
+      "fr": "L'appareil utilise la dernière version du micrologiciel.",
+      "de": "Das Gerät läuft mit der neuesten Firmware-Version.",
+      "ja": "デバイスは最新のファームウェアで稼働しています。",
+      "ko": "기기가 최신 펌웨어 버전으로 실행 중입니다.",
+      "ru": "Устройство работает на актуальной версии прошивки.",
+      "ar": "الجهاز يعمل بأحدث إصدار من البرامج الثابتة."
+    },
+    "reinstall_btn": {
+      "vi": "🔄 Cài Đặt Lại Firmware",
+      "en": "🔄 Reinstall Firmware",
+      "zh": "🔄 重新安装固件",
+      "es": "🔄 Reinstalar Firmware",
+      "fr": "🔄 Réinstaller le Firmware",
+      "de": "🔄 Firmware Neu Installieren",
+      "ja": "🔄 ファームウェアを再インストール",
+      "ko": "🔄 펌웨어 재설치",
+      "ru": "🔄 Переустановить Прошивку",
+      "ar": "🔄 إعادة تثبيت البرامج الثابتة"
+    },
+    "update_btn": {
+      "vi": "⚡ Cập Nhật Firmware Ngay",
+      "en": "⚡ Update Firmware Now",
+      "zh": "⚡ 立即升级固件",
+      "es": "⚡ Actualizar Firmware Ahora",
+      "fr": "⚡ Mettre à Jour le Firmware",
+      "de": "⚡ Firmware Jetzt Aktualisieren",
+      "ja": "⚡ ファームウェアを今すぐ更新",
+      "ko": "⚡ 지금 펌웨어 업데이트",
+      "ru": "⚡ Обновить Прошивку Сейчас",
+      "ar": "⚡ تحديث البرامج الثابتة الآن"
+    },
     "check_btn": {
       "vi": "Kiểm tra",
       "en": "Check",
