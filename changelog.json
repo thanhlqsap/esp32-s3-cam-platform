@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.018",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.018 - Giải Thuật Bypass Fastly Edge CDN Cache GitHub Tức Thì 0 Giây",
+    "changes": [
+      "Tích hợp cơ chế Bypass Fastly CDN của GitHub: sử dụng tham số ngẫu nhiên kép kết hợp header no-cache, no-store, max-age=0",
+      "Bổ sung kênh truy vấn trực tiếp qua GitHub REST API (Contents API) nhận diện commit mới ngay lập tức 0 giây",
+      "Đồng bộ giải thuật kiểm tra phiên bản trên cả Web Dashboard và Core 0 OTA Worker"
+    ]
+  },
+  {
     "version": "v0.0.017",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.017 - Khắc Phục Hiện Tượng Reconnecting Giả Khi Bấm Tạm Dừng Stream",
