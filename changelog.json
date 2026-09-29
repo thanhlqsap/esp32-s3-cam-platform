@@ -1,5 +1,25 @@
 [
   {
+    "version": "v0.0.013",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.013 - Tinh Giản Giao Diện Live Camera & Tối Ưu Triệt Để Stream Socket Frame Skipping",
+    "changes": [
+      "Loại bỏ khối Telemetry & System Logs thừa trong tab Camera Live Dashboard giúp giao diện gọn gàng và tập trung vào trải nghiệm video",
+      "Hủy bỏ hoàn toàn vòng lặp polling API ngầm trong lúc xem camera, giải phóng 100% băng thông sóng Wi-Fi (RF) và tài nguyên CPU",
+      "Nâng cấp máy chủ Stream Cổng 81 (Core 0) sang cơ chế Frame Skipping thông minh: không bao giờ ngắt kết nối socket của người dùng khi có dao động mạng"
+    ]
+  },
+  {
+    "version": "v0.0.012",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.012 - Khắc Phục Hiện Tượng Đứng 95% & Tự Động Reload Sau Khi Nạp OTA",
+    "changes": [
+      "Khắc phục triệt để hiện tượng tiến trình đứng ở 95% khi nạp OTA xong",
+      "Tích hợp cờ nhận diện 100% upload hoàn tất và tự động chuyển thanh tiến trình sang 100% kèm countdown reload trang web",
+      "Bảo đảm hiển thị chính xác phiên bản mới ngay sau khi thiết bị khởi động lại"
+    ]
+  },
+  {
     "version": "v0.0.011",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.011 - Tự Động Khởi Động Lại ESP32 Bằng Lệnh Sau Khi Nạp OTA Thành Công",

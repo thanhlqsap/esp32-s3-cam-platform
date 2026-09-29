@@ -1,10 +1,10 @@
 {
-  "version": "0.0.012",
+  "version": "0.0.013",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
-  "description": "Phiên bản v0.0.012: Khắc phục triệt để hiện tượng đứng ở 95% khi nạp OTA: tích hợp nhận diện 100% upload hoàn tất và tự động reload trang web khi ESP32 reboot.",
+  "description": "Phiên bản v0.0.013: Tinh giản giao diện Live Camera Dashboard (loại bỏ Telemetry & Log box thừa), hủy bỏ vòng lặp poll API ngầm và tối ưu luồng truyền phát MJPEG với cơ chế Frame Skipping không bao giờ đứt socket.",
   "release_date": "29/09/2026",
   "mandatory": false,
-  "changelog": "v0.0.012: Completely resolved 95% progress bar freeze on OTA flashing: integrated robust 100% upload completion detection and auto page reload upon ESP32 reboot.",
+  "changelog": "v0.0.013: Streamlined Live Camera Dashboard UI (removed redundant Telemetry & Log box), eliminated background API poll overhead, and upgraded MJPEG stream with robust zero-socket-drop Frame Skipping.",
   "binary_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json"
