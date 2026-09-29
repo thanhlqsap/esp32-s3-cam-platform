@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.016",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.016 - Khắc Phục Triệt Để Hiển Thị Current Version & Tích Hợp API /api/version Siêu Tốc",
+    "changes": [
+      "Khắc phục triệt để lỗi hiển thị Current Version là -- và so sánh sai lệch khi chưa load xong phiên bản từ ESP32",
+      "Bổ sung endpoint chuyên dụng /api/version siêu nhẹ (<1ms) độc lập hoàn toàn với dữ liệu telemetry",
+      "Cải tiến hàm fetchCurrentVersion với Multi-layered Fallback và khóa so khớp an toàn, ngăn chặn hiển thị nâng cấp từ v--"
+    ]
+  },
+  {
     "version": "v0.0.015",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.015 - Hộp Thoại Cảnh Báo Xác Nhận Reinstall Yes/No Khi Nạp Lại Firmware Cùng Phiên Bản",

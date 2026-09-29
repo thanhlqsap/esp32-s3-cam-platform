@@ -1,6 +1,6 @@
 {
-  "version": "0.0.015",
-  "build_number": 15,
+  "version": "0.0.016",
+  "build_number": 16,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-09-29",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.015: Thêm hộp thoại cảnh báo và xác nhận Yes/No (10 ngôn ngữ) khi người dùng bấm nạp lại firmware trong trường hợp thiết bị đã ở phiên bản mới nhất.",
-    "en": "Release v0.0.015: Added warning alert and Yes/No confirmation dialog (10 languages) when reinstalling firmware on devices already running the latest version."
+    "vi": "Phiên bản v0.0.016: Khắc phục triệt để lỗi đọc Current Version hiển thị '--'. Tích hợp endpoint siêu tốc /api/version (<1ms) cùng cơ chế Multi-layered Fallback và điều kiện so khớp phiên bản chặt chẽ.",
+    "en": "Release v0.0.016: Completely resolved the Current Version '--' display issue. Added ultra-fast /api/version endpoint (<1ms) with multi-layered fallback and strict version comparison checks."
   }
 }
