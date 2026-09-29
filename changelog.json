@@ -1,5 +1,14 @@
 [
   {
+    "version": "v0.0.020",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.020 - Truyền Phát Atomic Full JPEG Buffer & Triple-Buffer CAMERA_GRAB_WHEN_EMPTY",
+    "changes": [
+      "Tích hợp hàm sendFrameComplete với vòng lặp bù đệm TCP MSS 1460 bytes, bảo đảm 100% dung lượng frame JPEG (30-60KB) được gửi trọn vẹn, không bao giờ bị cắt cụt frame",
+      "Chuyển đổi cấu hình camera sang CAMERA_GRAB_WHEN_EMPTY với Triple-Buffering 3 Frame trên 8MB Octal PSRAM OPI, ngăn chặn triệt để DMA ghi đè dở dang"
+    ]
+  },
+  {
     "version": "v0.0.019",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.019 - Tối Ưu Triệt Để Stream Camera Native Hardware-Paced & Khử Hiện Tượng Giật Khựng",
