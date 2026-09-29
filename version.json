@@ -1,11 +1,18 @@
 {
-  "version": "0.0.014",
+  "version": "0.0.015",
+  "build_number": 15,
+  "hardware": "ESP32-S3-WROOM-N16R8",
+  "release_date": "2026-09-29",
+  "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
-  "description": "Phiên bản v0.0.014: Khử bỏ toàn bộ chuỗi phiên bản hardcode trong dashboard.html, tích hợp cache-busting cho endpoint /api/status giúp đọc phiên bản Flash chính xác tức thì và chống rollback ảo.",
-  "release_date": "29/09/2026",
-  "mandatory": false,
-  "changelog": "v0.0.014: Removed all hardcoded version strings in dashboard.html, added strict cache-busting to /api/status to guarantee instant and accurate live Flash version display.",
+  "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "binary_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
-  "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json"
+  "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json",
+  "md5": "auto-generated-on-build",
+  "critical_update": false,
+  "changelog": {
+    "vi": "Phiên bản v0.0.015: Thêm hộp thoại cảnh báo và xác nhận Yes/No (10 ngôn ngữ) khi người dùng bấm nạp lại firmware trong trường hợp thiết bị đã ở phiên bản mới nhất.",
+    "en": "Release v0.0.015: Added warning alert and Yes/No confirmation dialog (10 languages) when reinstalling firmware on devices already running the latest version."
+  }
 }

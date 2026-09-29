@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.015",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.015 - Hộp Thoại Cảnh Báo Xác Nhận Reinstall Yes/No Khi Nạp Lại Firmware Cùng Phiên Bản",
+    "changes": [
+      "Thêm hộp thoại cảnh báo và xác nhận Yes/No (10 ngôn ngữ) khi người dùng bấm nạp lại firmware trong trường hợp thiết bị đã ở phiên bản mới nhất",
+      "Cho phép người dùng dừng nạp ngay lập tức nếu chọn Không/Cancel, giúp tránh việc ghi đè Flash không cần thiết",
+      "Đồng bộ từ điển đa ngôn ngữ i18n_dictionary.json và cập nhật logic executeOta"
+    ]
+  },
+  {
     "version": "v0.0.014",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.014 - Khử Hardcode Version Dashboard & Cache-Busting Trạng Thái Firmware",
