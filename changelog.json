@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.019",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.019 - Tối Ưu Triệt Để Stream Camera Native Hardware-Paced & Khử Hiện Tượng Giật Khựng",
+    "changes": [
+      "Loại bỏ hoàn toàn đoạn delay nhân tạo gây xung đột tần số và lệch pha VSYNC với cảm biến camera OV2640",
+      "Chuyển sang cơ chế Native Hardware-Paced Stream: tốc độ luồng tự động đồng bộ theo chu kỳ quét DMA phần cứng của cảm biến",
+      "Tối ưu hóa hàm sendFrameDirect truyền Atomic Frame nguyên khối qua TCP stack, giảm độ trễ socket xuống 150ms"
+    ]
+  },
+  {
     "version": "v0.0.018",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.018 - Giải Thuật Bypass Fastly Edge CDN Cache GitHub Tức Thì 0 Giây",

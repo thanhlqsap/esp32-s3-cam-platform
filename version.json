@@ -1,6 +1,6 @@
 {
-  "version": "0.0.018",
-  "build_number": 18,
+  "version": "0.0.019",
+  "build_number": 19,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-09-29",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.018: Tích hợp giải thuật Bypass Fastly Edge CDN Cache của GitHub. Hỗ trợ truy vấn GitHub REST API tức thì 0 giây và thêm tham số ngẫu nhiên kép kết hợp header chống lưu cache.",
-    "en": "Release v0.0.018: Implemented GitHub Fastly Edge CDN Cache-Bypassing engine with GitHub REST API fallback (0s instant) and aggressive no-cache headers."
+    "vi": "Phiên bản v0.0.019: Tối ưu triệt để độ mượt mà của Live Stream Cổng 81. Loại bỏ hoàn toàn độ trễ nhân tạo gây lệch pha VSYNC phần cứng, chuyển sang Native Hardware-Paced Stream và gửi Atomic Frame qua TCP stack.",
+    "en": "Release v0.0.019: Completely eliminated stream micro-stutters by removing artificial delay that conflicted with hardware VSYNC pacing. Implemented Native Hardware-Paced 30FPS stream and atomic frame delivery."
   }
 }
