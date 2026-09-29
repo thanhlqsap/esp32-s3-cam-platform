@@ -1,6 +1,6 @@
 {
-  "version": "0.0.022",
-  "build_number": 22,
+  "version": "0.0.023",
+  "build_number": 23,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-09-29",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.022: Tối ưu hoàn chỉnh Stream UXGA 1600x1200: Khai báo kích thước đệm trần FRAMESIZE_UXGA trong 8MB PSRAM và tích hợp vòng lặp Adaptive Full-Buffer xả khối 64KB không delay.",
-    "en": "Release v0.0.022: Full UXGA 1600x1200 Stream optimization: Registered FRAMESIZE_UXGA ceiling buffer in 8MB PSRAM and implemented Adaptive 64KB Full-Buffer streaming loop without artificial delay."
+    "vi": "Phiên bản v0.0.023: Tối ưu tinh gọn thanh điều hướng Web Dashboard: Rút ngắn nhãn các Tab thành 'Camera', 'App', 'OTA', 'Setting' và giữ nguyên vẹn 100% hệ thống icon.",
+    "en": "Release v0.0.023: Compact Web Dashboard navigation bar: Shortened tab labels to 'Camera', 'App', 'OTA', 'Setting' while preserving all FontAwesome icons."
   }
 }

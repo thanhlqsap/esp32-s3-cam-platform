@@ -1,5 +1,14 @@
 [
   {
+    "version": "v0.0.023",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.023 - Tinh Gọn Nhãn Thanh Điều Hướng Dashboard (Camera, App, OTA, Setting)",
+    "changes": [
+      "Rút ngắn các nhãn tab điều hướng trên Web Dashboard thành 'Camera', 'App', 'OTA', 'Setting' giúp giao diện thoáng đãng, hiện đại",
+      "Giữ nguyên 100% hệ thống icon nhận diện và đồng bộ từ điển 10 ngôn ngữ i18n_dictionary.json"
+    ]
+  },
+  {
     "version": "v0.0.022",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.022 - Tối Ưu Stream Độ Phân Giải Cực Nét UXGA 1600x1200 & Adaptive Full-Buffer Loop",
