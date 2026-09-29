@@ -1,6 +1,6 @@
 {
-  "version": "0.0.021",
-  "build_number": 21,
+  "version": "0.0.022",
+  "build_number": 22,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-09-29",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.021: Tối ưu triệt để độ trễ Stream Camera: Chuyển sang CAMERA_GRAB_LATEST khử trễ hàng đợi, truyền Full Socket Buffer 64KB nguyên khối và áp dụng mô hình Dedicated 1-Client với Preemption tức thì.",
-    "en": "Release v0.0.021: Ultra-low latency Camera Stream optimization: Switched to CAMERA_GRAB_LATEST eliminating buffer queue delay, direct 64KB Full Socket Buffer transmission, and dedicated 1-Client engine with immediate preemption."
+    "vi": "Phiên bản v0.0.022: Tối ưu hoàn chỉnh Stream UXGA 1600x1200: Khai báo kích thước đệm trần FRAMESIZE_UXGA trong 8MB PSRAM và tích hợp vòng lặp Adaptive Full-Buffer xả khối 64KB không delay.",
+    "en": "Release v0.0.022: Full UXGA 1600x1200 Stream optimization: Registered FRAMESIZE_UXGA ceiling buffer in 8MB PSRAM and implemented Adaptive 64KB Full-Buffer streaming loop without artificial delay."
   }
 }

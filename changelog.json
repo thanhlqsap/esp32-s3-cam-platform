@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.022",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.022 - Tối Ưu Stream Độ Phân Giải Cực Nét UXGA 1600x1200 & Adaptive Full-Buffer Loop",
+    "changes": [
+      "Khai báo kích thước đệm trần FRAMESIZE_UXGA trong 8MB Octal PSRAM OPI lúc initCamera(), ngăn ngừa hoàn toàn lỗi tràn DMA Descriptor khi chuyển đổi sang 1600x1200 ở runtime",
+      "Tích hợp vòng lặp Adaptive Full-Buffer trong sendFrameComplete: xả dữ liệu theo khối lớn tối đa 64KB mà không chèn delay nhân tạo khi mạng thông suốt",
+      "Hỗ trợ truyền mượt mà 100% dung lượng frame lớn (150KB-250KB) của độ phân giải UXGA mà không bị ngắt kết nối socket"
+    ]
+  },
+  {
     "version": "v0.0.021",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.021 - Tối Ưu Triệt Để Độ Trễ Stream: CAMERA_GRAB_LATEST, Full 64KB Buffer & 1-Client Preemption",
