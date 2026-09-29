@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.014",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.014 - Khử Hardcode Version Dashboard & Cache-Busting Trạng Thái Firmware",
+    "changes": [
+      "Khử bỏ toàn bộ chuỗi phiên bản hardcode 'v0.0.009' trong dashboard.html, thay bằng ký hiệu chờ '--'",
+      "Bổ sung tham số chống cache (Cache-Busting Timestamp & no-store) khi fetch API /api/status giúp cập nhật phiên bản chính xác tức thì",
+      "Đảm bảo đồng bộ tuyệt đối phiên bản firmware thực tế từ bộ nhớ Flash đang chạy của ESP32"
+    ]
+  },
+  {
     "version": "v0.0.013",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.013 - Tinh Giản Giao Diện Live Camera & Tối Ưu Triệt Để Stream Socket Frame Skipping",
