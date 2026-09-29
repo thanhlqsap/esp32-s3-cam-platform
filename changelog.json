@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.010",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.010 - Dual-Channel Browser-Assisted Cloud Streaming OTA & Thread-Safe Stream Server",
+    "changes": [
+      "Nâng cấp luồng truyền phát Live Camera Cổng 81 (Core 0) với Thread-Safe Mutex an toàn và Client Preemption chống kẹt socket khi F5 hoặc chuyển tab",
+      "Tích hợp giải thuật Dual-Channel Browser-Assisted Cloud Streaming OTA 1-Click thành công 100%, khử triệt để lỗi kết nối và bypass chặn DNS GitHub",
+      "Khử trùng lặp icon tia sét trên nút nạp OTA và tự động so khớp phiên bản firmware tức thì trên Dashboard",
+      "Tối ưu hóa khả năng tương thích Octal PSRAM 8MB OPI và cơ chế Direct Fallback khi lấy khung hình camera"
+    ]
+  },
+  {
     "version": "v0.0.009",
     "date": "2026-09-28",
     "title": "Phiên bản v0.0.009 - Khắc phục Triệt Để Camera Stream, NVS Auto-Recovery & Tối Ưu An Toàn OTA Cache",
