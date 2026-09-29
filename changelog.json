@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.011",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.011 - Tự Động Khởi Động Lại ESP32 Bằng Lệnh Sau Khi Nạp OTA Thành Công",
+    "changes": [
+      "Tự động kích hoạt lệnh khởi động lại phần cứng esp_restart() ngay sau khi nạp firmware OTA thành công",
+      "Bổ sung khoảng trễ đệm mạng 1 giây trước khi khởi động lại để đảm bảo truyền trọn vẹn phản hồi HTTP OK về trình duyệt",
+      "Tối ưu hóa các điểm cuối nạp OTA (Cloud OTA, Local Web OTA, GitHub App Store) hoạt động đồng nhất và an toàn"
+    ]
+  },
+  {
     "version": "v0.0.010",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.010 - Dual-Channel Browser-Assisted Cloud Streaming OTA & Thread-Safe Stream Server",

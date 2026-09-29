@@ -1,10 +1,10 @@
 {
-  "version": "0.0.010",
+  "version": "0.0.012",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
-  "description": "Phiên bản v0.0.010: Nâng cấp luồng truyền phát Live Camera Cổng 81 (Core 0) với Thread-Safe Mutex an toàn và Client Preemption chống kẹt socket. Tích hợp giải thuật Dual-Channel Browser-Assisted Cloud Streaming OTA 1-Click thành công 100%, khử triệt để lỗi kết nối và đồng bộ hoàn hảo giao diện OTA.",
+  "description": "Phiên bản v0.0.012: Khắc phục triệt để hiện tượng đứng ở 95% khi nạp OTA: tích hợp nhận diện 100% upload hoàn tất và tự động reload trang web khi ESP32 reboot.",
   "release_date": "29/09/2026",
   "mandatory": false,
-  "changelog": "v0.0.010: Upgraded Port 81 Camera Live Stream (Core 0) with Thread-Safe Mutex & Client Preemption. Integrated 1-Click Dual-Channel Browser-Assisted Cloud Streaming OTA with 100% success guarantee, resolving connection bottlenecks and perfecting OTA UI.",
+  "changelog": "v0.0.012: Completely resolved 95% progress bar freeze on OTA flashing: integrated robust 100% upload completion detection and auto page reload upon ESP32 reboot.",
   "binary_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json"
