@@ -1,6 +1,6 @@
 {
-  "version": "0.0.020",
-  "build_number": 20,
+  "version": "0.0.021",
+  "build_number": 21,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-09-29",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.020: Tối ưu hoàn chỉnh giải thuật truyền phát MJPEG Cổng 81. Tích hợp vòng lặp bù đệm TCP MSS 1460 bytes truyền trọn vẹn 100% dung lượng frame JPEG và chuyển grab_mode sang CAMERA_GRAB_WHEN_EMPTY với Triple-Buffer 3 Frame trên 8MB Octal PSRAM OPI.",
-    "en": "Release v0.0.020: Fully optimized Port 81 MJPEG streaming pipeline. Implemented robust TCP MSS 1460 chunked transmission guaranteeing 100% full JPEG frame delivery and switched to CAMERA_GRAB_WHEN_EMPTY with Triple-Buffer on 8MB Octal PSRAM."
+    "vi": "Phiên bản v0.0.021: Tối ưu triệt để độ trễ Stream Camera: Chuyển sang CAMERA_GRAB_LATEST khử trễ hàng đợi, truyền Full Socket Buffer 64KB nguyên khối và áp dụng mô hình Dedicated 1-Client với Preemption tức thì.",
+    "en": "Release v0.0.021: Ultra-low latency Camera Stream optimization: Switched to CAMERA_GRAB_LATEST eliminating buffer queue delay, direct 64KB Full Socket Buffer transmission, and dedicated 1-Client engine with immediate preemption."
   }
 }

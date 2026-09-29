@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.021",
+    "date": "2026-09-29",
+    "title": "Phiên bản v0.0.021 - Tối Ưu Triệt Để Độ Trễ Stream: CAMERA_GRAB_LATEST, Full 64KB Buffer & 1-Client Preemption",
+    "changes": [
+      "Chuyển cấu hình camera sang CAMERA_GRAB_LATEST, tự động bỏ qua các frame cũ trong queue và luôn lấy frame tươi mới nhất từ DMA, triệt tiêu độ trễ 150-250ms",
+      "Gửi toàn bộ khung hình JPEG trực tiếp qua Socket Buffer 64KB (SO_SNDBUF) nguyên khối, loại bỏ vòng lặp chia nhỏ 1460 bytes thủ công giúp giải phóng tải CPU Core 0",
+      "Áp dụng kiến trúc Stream Dedicated 1-Client với cơ chế Preemption tức thì: Client mới kết nối sẽ ngay lập tức chiếm quyền và ngắt client cũ, tối đa hóa FPS",
+      "Khắc phục hoàn toàn lỗi xoay loading vô tận khi truy cập /capture trên cổng 81 bằng bộ phản hồi 1-frame tự đóng socket và cập nhật takeSnapshot() trên Web UI"
+    ]
+  },
+  {
     "version": "v0.0.020",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.020 - Truyền Phát Atomic Full JPEG Buffer & Triple-Buffer CAMERA_GRAB_WHEN_EMPTY",
