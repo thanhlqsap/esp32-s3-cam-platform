@@ -1,6 +1,6 @@
 {
   "name": "ESP32-S3-cam-platform Master OS",
-  "version": "0.0.009",
+  "version": "0.0.025",
   "funding_url": "https://github.com/thanhlqsap/esp32-s3-cam-platform",
   "new_install_prompt_erase": true,
   "builds": [

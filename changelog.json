@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.025",
+    "date": "2026-09-30",
+    "title": "Phiên bản v0.0.025 - Khắc Phục Lỗi Render Diagnostics & Tự Động Khởi Chạy Telemetry An Toàn",
+    "changes": [
+      "Khắc phục lỗi DOM exception trong diagnostics.html bằng helper an toàn setEl(), ngăn ngừa 100% lỗi dừng cập nhật số liệu",
+      "Bổ sung cơ chế phát hiện readyState đảm bảo các API Telemetry và Log tự động tải ngay lập tức khi mở trang",
+      "Khử bỏ hoàn toàn các chuỗi version hardcode tĩnh, tự động đồng bộ theo firmware v0.0.025"
+    ]
+  },
+  {
     "version": "v0.0.024",
     "date": "2026-09-30",
     "title": "Phiên bản v0.0.024 - Chẩn Đoán Reset Reason, Giám Sát System Uptime & Tối Ưu Stream Logger",
