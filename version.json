@@ -1,8 +1,8 @@
 {
-  "version": "0.0.023",
-  "build_number": 23,
+  "version": "0.0.024",
+  "build_number": 24,
   "hardware": "ESP32-S3-WROOM-N16R8",
-  "release_date": "2026-09-29",
+  "release_date": "2026-09-30",
   "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.023: Tối ưu tinh gọn thanh điều hướng Web Dashboard: Rút ngắn nhãn các Tab thành 'Camera', 'App', 'OTA', 'Setting' và giữ nguyên vẹn 100% hệ thống icon.",
-    "en": "Release v0.0.023: Compact Web Dashboard navigation bar: Shortened tab labels to 'Camera', 'App', 'OTA', 'Setting' while preserving all FontAwesome icons."
+    "vi": "Phiên bản v0.0.024: Tích hợp chẩn đoán chuyên sâu Reset Reason & System Uptime thời gian thực, tối ưu hóa bộ đệm Socket và cơ chế giám sát luồng stream camera.",
+    "en": "Release v0.0.024: Deep diagnostics for Reset Reason & real-time System Uptime, optimized socket buffers and camera streaming supervision."
   }
 }

@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.024",
+    "date": "2026-09-30",
+    "title": "Phiên bản v0.0.024 - Chẩn Đoán Reset Reason, Giám Sát System Uptime & Tối Ưu Stream Logger",
+    "changes": [
+      "Bổ sung cơ chế phát hiện và ghi nhận chi tiết Lý do khởi động (Reset Reason: Brownout, Task Watchdog, Panic, Power-on) vào RAM RingBuffer ngay khi boot",
+      "Gắn nhãn thời gian System Uptime và Free Heap chi tiết trên từng sự kiện khởi tạo/kết nối/ngắt kết nối stream camera",
+      "Nâng cấp giao diện Web Diagnostics: hiển thị thời gian hoạt động Uptime định dạng chuẩn, tô màu cảnh báo nếu có sự cố Reset bất thường và hiển thị Uptime trên từng dòng nhật ký UART Logger",
+      "Cải thiện cơ chế chống cache dữ liệu Telemetry (/api/status, /api/logs) trên trình duyệt"
+    ]
+  },
+  {
     "version": "v0.0.023",
     "date": "2026-09-29",
     "title": "Phiên bản v0.0.023 - Tinh Gọn Nhãn Thanh Điều Hướng Dashboard (Camera, App, OTA, Setting)",
