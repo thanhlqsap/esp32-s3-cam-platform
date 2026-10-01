@@ -1,5 +1,25 @@
 [
   {
+    "version": "v0.0.027",
+    "date": "2026-10-01",
+    "title": "Phiên bản v0.0.027 - Khắc Phục Lỗi Guru Meditation Crash /api/status & An Toàn Bộ Đệm Telemetry",
+    "changes": [
+      "Khắc phục triệt để lỗi Null Pointer trong WiFi.BSSIDstr() khi Access Point chưa sẵn sàng BSSID",
+      "Bổ sung bảo vệ an toàn cho con trỏ cảm biến Camera DVP esp_camera_sensor_get() chống tràn bộ nhớ",
+      "Thêm bộ lọc kiểm tra NaN/Inf và giới hạn hợp lệ cho cảm biến nhiệt nội chip temperatureRead()",
+      "Cấp phát trước bộ đệm JSON 2048 bytes giúp phản hồi API Telemetry nhanh hơn (< 2ms) và không phân mảnh Heap"
+    ]
+  },
+  {
+    "version": "v0.0.026",
+    "date": "2026-10-01",
+    "title": "Phiên bản v0.0.026 - Nâng Cấp Logger An Toàn Luồng & Debug Tracing Cấp Hệ Thống",
+    "changes": [
+      "Đồng bộ hóa Mutex cho SystemLogger khi xuất dữ liệu UART Serial giữa Core 0 và Core 1",
+      "Thêm nhãn debug trace giám sát toàn bộ chu kỳ xử lý request API /api/status"
+    ]
+  },
+  {
     "version": "v0.0.025",
     "date": "2026-09-30",
     "title": "Phiên bản v0.0.025 - Khắc Phục Lỗi Render Diagnostics & Tự Động Khởi Chạy Telemetry An Toàn",

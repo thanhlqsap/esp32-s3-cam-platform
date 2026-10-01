@@ -1,6 +1,6 @@
 {
-  "version": "0.0.026",
-  "build_number": 26,
+  "version": "0.0.027",
+  "build_number": 27,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-01",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.024: Tích hợp chẩn đoán chuyên sâu Reset Reason & System Uptime thời gian thực, tối ưu hóa bộ đệm Socket và cơ chế giám sát luồng stream camera.",
-    "en": "Release v0.0.024: Deep diagnostics for Reset Reason & real-time System Uptime, optimized socket buffers and camera streaming supervision."
+    "vi": "Phiên bản v0.0.027: Khắc phục triệt để lỗi sập Guru Meditation Crash khi truy cập /api/status bằng các bộ lọc Null Pointer an toàn cho Wi-Fi BSSID, cảm biến Camera DVP và TSENS.",
+    "en": "Release v0.0.027: Fix Guru Meditation Crash on /api/status with safe Null Pointer guards for Wi-Fi BSSID, Camera DVP sensor, and TSENS core temperature."
   }
 }
