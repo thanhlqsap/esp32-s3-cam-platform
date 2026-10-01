@@ -1,8 +1,8 @@
 {
-  "version": "0.0.025",
-  "build_number": 25,
+  "version": "0.0.026",
+  "build_number": 26,
   "hardware": "ESP32-S3-WROOM-N16R8",
-  "release_date": "2026-09-30",
+  "release_date": "2026-10-01",
   "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
