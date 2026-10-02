@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.028",
+    "date": "2026-10-02",
+    "title": "Phiên bản v0.0.028 - Khắc Phục Lỗi ERR_CONNECTION_RESET /api/status & Tối Ưu Hóa Zero-Contention Bus",
+    "changes": [
+      "Khắc phục triệt để lỗi ERR_CONNECTION_RESET khi truy cập /api/status trực tiếp từ trình duyệt Chrome bằng header Connection: close",
+      "Dời hàm tính toán ESP.getSketchMD5() lên thực thi 1 lần duy nhất trong WebDashboard::init() lúc khởi động, loại bỏ hoàn toàn việc đọc 6MB Flash làm nghẽn bus MSPI khi đang stream video",
+      "Tách việc đọc nhiệt độ chip TSENS sang cơ chế lấy mẫu ngầm định kỳ 5 giây trong update(), triệt tiêu 100% nguy cơ xung đột tài nguyên SAR ADC với mạch RF Wi-Fi",
+      "Cache số lượng mạng Wi-Fi đã lưu trong RAM (getSavedNetworksCount), xóa bỏ việc mở phân vùng Flash NVS mỗi lần thăm dò Telemetry"
+    ]
+  },
+  {
     "version": "v0.0.027",
     "date": "2026-10-01",
     "title": "Phiên bản v0.0.027 - Khắc Phục Lỗi Guru Meditation Crash /api/status & An Toàn Bộ Đệm Telemetry",

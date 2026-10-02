@@ -1,8 +1,8 @@
 {
-  "version": "0.0.027",
-  "build_number": 27,
+  "version": "0.0.028",
+  "build_number": 28,
   "hardware": "ESP32-S3-WROOM-N16R8",
-  "release_date": "2026-10-01",
+  "release_date": "2026-10-02",
   "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.027: Khắc phục triệt để lỗi sập Guru Meditation Crash khi truy cập /api/status bằng các bộ lọc Null Pointer an toàn cho Wi-Fi BSSID, cảm biến Camera DVP và TSENS.",
-    "en": "Release v0.0.027: Fix Guru Meditation Crash on /api/status with safe Null Pointer guards for Wi-Fi BSSID, Camera DVP sensor, and TSENS core temperature."
+    "vi": "Phiên bản v0.0.028: Khắc phục triệt để lỗi ERR_CONNECTION_RESET trên /api/status với header Connection: close, dời tính MD5 lên setup() tránh nghẽn 6MB Flash, lấy mẫu nhiệt độ TSENS ngầm và cache NVS trong RAM.",
+    "en": "Release v0.0.028: Fix ERR_CONNECTION_RESET on /api/status via Connection: close header, move sketch MD5 computation to boot time, background sample TSENS temperature, and RAM-cache saved Wi-Fi count."
   }
 }
