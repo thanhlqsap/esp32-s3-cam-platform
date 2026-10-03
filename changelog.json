@@ -1,5 +1,25 @@
 [
   {
+    "version": "v0.0.031",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.031 - Loại Bỏ Các File Gom Nhóm Cũ & Chuẩn Hóa Modular Single App Độc Lập",
+    "changes": [
+      "Loại bỏ 5 file app site gom nhóm cũ (app_camera_ai, app_smart_iot, app_voice_audio, app_robotics, app_gadgets) để chuyển sang kiến trúc mỗi app 1 site độc lập",
+      "Dọn dẹp các file javascript i18n thừa, gom toàn bộ từ điển 10 ngôn ngữ về i18n_dictionary.json",
+      "Chuẩn bị sẵn sàng hạ tầng để triển khai độc lập từng site ứng dụng chuyên sâu"
+    ]
+  },
+  {
+    "version": "v0.0.030",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.030 - Gỡ Bỏ Liên Kết Datasheet Khỏi Dashboard & Tối Ưu Hóa Giao Diện Điều Khiển",
+    "changes": [
+      "Gỡ bỏ nút liên kết Datasheet trên thanh Header của Web Dashboard, tối ưu không gian điều khiển và biểu tượng mạng xã hội",
+      "Chuyển đổi tài liệu kỹ thuật datasheet.html sang chế độ lưu trữ tra cứu nội bộ, không phân phối trực tiếp trên giao diện người dùng",
+      "Đảm bảo mã nguồn Flash firmware luôn duy trì danh mục nhúng tối giản (~68KB) phục vụ phản hồi tức thì"
+    ]
+  },
+  {
     "version": "v0.0.029",
     "date": "2026-10-03",
     "title": "Phiên bản v0.0.029 - Tích Hợp Driver Cảm Biến Nhiệt TSENS Phần Cứng ESP32-S3 & Đồng Bộ Log Telemetry",
