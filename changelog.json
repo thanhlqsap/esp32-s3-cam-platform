@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.035",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.035 - Khắc Phục Lỗi Hiển Thị Trang Face AI & Đưa Nhãn Firmware Version Lên Header Dashboard",
+    "changes": [
+      "Khắc phục triệt để lỗi hiển thị trang Face AI: Sửa điều kiện tiền xử lý C++ sang macro HAS_APP_FACE_AI_HTML giúp nạp ngay tài nguyên HTML GZIP từ Flash PROGMEM",
+      "Thay thế dòng phụ đề cũ '16MB Flash • Dual-OTA • GitHub Cloud Store' bằng nhãn hiển thị Firmware Version trực quan trên Header Dashboard",
+      "Tự động đồng bộ hóa hiển thị số hiệu phiên bản thời gian thực từ endpoint /api/version (< 1ms)",
+      "Đóng gói lại toàn bộ nhị phân OTA_Update.bin và Full_Flash.bin sẵn sàng sử dụng"
+    ]
+  },
+  {
     "version": "v0.0.034",
     "date": "2026-10-03",
     "title": "Phiên bản v0.0.034 - Sửa Lỗi Hiển Thị Thẻ App Store, Bổ Sung Route Alias /api/face_ai & Tối Ưu Chuyển Hướng Captive Portal",

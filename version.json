@@ -1,6 +1,6 @@
 {
-  "version": "0.0.034",
-  "build_number": 34,
+  "version": "0.0.035",
+  "build_number": 35,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-03",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.034: Sửa lỗi hiển thị thẻ App Store, thêm alias route /api/face_ai, ngăn chặn chuyển hướng sai về 192.168.4.1/captive khi đang kết nối Wi-Fi.",
-    "en": "Release v0.0.034: Fix App Store card rendering, add /api/face_ai route alias, prevent incorrect 192.168.4.1/captive redirect when STA Wi-Fi is active."
+    "vi": "Phiên bản v0.0.035: Khắc phục triệt để lỗi hiển thị trang Face AI (sửa preprocessor check C++), đưa nhãn Version trực tiếp lên Header Dashboard.",
+    "en": "Release v0.0.035: Completely resolve Face AI site rendering (fix C++ preprocessor check), display Firmware Version badge directly on Dashboard Header."
   }
 }
