@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.036",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.036 - Chuẩn Hóa Header Hệ Thống Theo 2 Layout Chuẩn & Tích Hợp Nút Về Dashboard Trên Mọi Site App",
+    "changes": [
+      "Chuẩn hóa thanh Header toàn hệ thống theo đúng quy chuẩn 2 hình ảnh giao diện:",
+      "Layout Dashboard/Main Site: Logo BumBonTechLab tròn + Tiêu đề + Chấm trạng thái/Firmware Version động | Cụm phải gồm YouTube đỏ #ff0000 và Bộ chọn đa ngôn ngữ",
+      "Layout Site App: Logo BumBonTechLab tròn + Tiêu đề định danh App + Phụ đề kỹ thuật | Cụm phải bắt buộc có nút Về Dashboard (Back to Dashboard dạng pill có icon fa-house), YouTube đỏ #ff0000 và Bộ chọn đa ngôn ngữ",
+      "Đồng bộ hóa nút Về Dashboard trên toàn bộ các trang: app_face_ai.html, app_site.html (blueprint 20 app), diagnostics.html, captive_portal.html và datasheet.html",
+      "Cập nhật tài liệu đặc tả kiến trúc APP_SITE_SPECIFICATION.md quy định bắt buộc chuẩn Header cho toàn bộ 20 ứng dụng tương lai"
+    ]
+  },
+  {
     "version": "v0.0.035",
     "date": "2026-10-03",
     "title": "Phiên bản v0.0.035 - Khắc Phục Lỗi Hiển Thị Trang Face AI & Đưa Nhãn Firmware Version Lên Header Dashboard",

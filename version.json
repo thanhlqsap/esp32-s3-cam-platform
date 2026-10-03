@@ -1,6 +1,6 @@
 {
-  "version": "0.0.035",
-  "build_number": 35,
+  "version": "0.0.036",
+  "build_number": 36,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-03",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.035: Khắc phục triệt để lỗi hiển thị trang Face AI (sửa preprocessor check C++), đưa nhãn Version trực tiếp lên Header Dashboard.",
-    "en": "Release v0.0.035: Completely resolve Face AI site rendering (fix C++ preprocessor check), display Firmware Version badge directly on Dashboard Header."
+    "vi": "Phiên bản v0.0.036: Chuẩn hóa đồng bộ giao diện Header toàn hệ thống theo 2 layout chuẩn, bổ sung nút Về Dashboard (Back to Dashboard) trên tất cả site app và trang chức năng.",
+    "en": "Release v0.0.036: Standardize system-wide Headers across all sites into 2 layouts, integrate dedicated 'Back to Dashboard' button on all app sites and telemetry tools."
   }
 }
