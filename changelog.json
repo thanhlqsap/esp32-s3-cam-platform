@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.029",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.029 - Tích Hợp Driver Cảm Biến Nhiệt TSENS Phần Cứng ESP32-S3 & Đồng Bộ Log Telemetry",
+    "changes": [
+      "Tích hợp driver cảm biến nhiệt độ phần cứng chuyên biệt ESP-IDF driver/temp_sensor.h cho vi xử lý ESP32-S3 trên nền Arduino Core 2.0.17",
+      "Hỗ trợ tự động chuyển dải đo DAC linh hoạt (-10°C ~ 80°C và 20°C ~ 100°C) tối ưu hoàn hảo cho board ESP32-S3-CAM khi tải nặng",
+      "Bổ sung thông số Nhiệt độ CPU trực quan vào Banner khởi động Serial UART, dòng log [BOOT] đầu tiên và bảng điều khiển chẩn đoán Diagnostics",
+      "Tối ưu độ trễ chuyển đổi ADC 5ms cho TSENS và tự động dừng cảm biến sau khi lấy mẫu để bảo toàn tài nguyên"
+    ]
+  },
+  {
     "version": "v0.0.028",
     "date": "2026-10-02",
     "title": "Phiên bản v0.0.028 - Khắc Phục Lỗi ERR_CONNECTION_RESET /api/status & Tối Ưu Hóa Zero-Contention Bus",
