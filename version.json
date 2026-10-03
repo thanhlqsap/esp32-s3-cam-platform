@@ -1,6 +1,6 @@
 {
-  "version": "0.0.032",
-  "build_number": 32,
+  "version": "0.0.033",
+  "build_number": 33,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-03",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.032: Triển khai hoàn thiện App 01: Camera AI Nhận Diện Khuôn Mặt (Offline Face AI) theo kiến trúc Modular Single App độc lập, lưu trữ NVS Flash và giao diện Dark Mode Glassmorphism.",
-    "en": "Release v0.0.032: Fully implement App 01: Offline Face AI Recognition Camera under independent Modular Single App architecture, NVS Flash storage, and Dark Mode Glassmorphism UI."
+    "vi": "Phiên bản v0.0.033: Đồng bộ liên kết điều hướng 1-Click mở site Face AI từ Dashboard App Store (/app/face_ai và /app/app_face_ai).",
+    "en": "Release v0.0.033: Synchronize 1-Click navigation route to open Face AI app site from Dashboard App Store (/app/face_ai and /app/app_face_ai)."
   }
 }

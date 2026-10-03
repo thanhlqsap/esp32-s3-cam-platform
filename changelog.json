@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.033",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.033 - Đồng Bộ Điều Hướng 1-Click Mở Site Face AI Từ Dashboard",
+    "changes": [
+      "Bổ sung cấu hình route url /app/face_ai vào app_catalog.json cho thẻ ứng dụng đầu tiên trong Dashboard App Store",
+      "Đăng ký song song 2 endpoint /app/face_ai và /app/app_face_ai trong app_face_ai.cpp để hỗ trợ tương thích ngược tuyệt đối",
+      "Tối ưu trải nghiệm chuyển đổi mượt mà giữa Master Dashboard và App Site độc lập"
+    ]
+  },
+  {
     "version": "v0.0.032",
     "date": "2026-10-03",
     "title": "Phiên bản v0.0.032 - Triển Khai Hoàn Thiện App 01: Offline Face AI Recognition",
