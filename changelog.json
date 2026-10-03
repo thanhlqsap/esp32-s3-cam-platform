@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.034",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.034 - Sửa Lỗi Hiển Thị Thẻ App Store, Bổ Sung Route Alias /api/face_ai & Tối Ưu Chuyển Hướng Captive Portal",
+    "changes": [
+      "Bổ sung phương thức getAppInfo() vào i18n.js và sửa lỗi TypeError trong dashboard.html giúp hiển thị đầy đủ danh sách 20 thẻ App Store",
+      "Khắc phục triệt để lỗi chuyển hướng sai về 192.168.4.1/captive: Chỉ kích hoạt Captive Portal khi truy cập từ SoftAP hoặc chưa nối Wi-Fi",
+      "Đăng ký thêm endpoint alias /api/face_ai và /face_ai trong app_face_ai.cpp và handleNotFound() giúp truy cập tức thì",
+      "Đồng bộ bộ từ điển 10 ngôn ngữ (Tiếng Việt vi đứng đầu) cho thẻ danh mục App Face AI trong i18n_dictionary.json"
+    ]
+  },
+  {
     "version": "v0.0.033",
     "date": "2026-10-03",
     "title": "Phiên bản v0.0.033 - Đồng Bộ Điều Hướng 1-Click Mở Site Face AI Từ Dashboard",
