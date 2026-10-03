@@ -1,6 +1,6 @@
 {
-  "version": "0.0.031",
-  "build_number": 31,
+  "version": "0.0.032",
+  "build_number": 32,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-03",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.031: Loại bỏ các file gom nhóm 5 app site cũ, chuẩn hóa kiến trúc Modular Single App độc lập cho từng ứng dụng chuyên biệt.",
-    "en": "Release v0.0.031: Remove legacy 5-category grouped app site files, standardizing Modular Single App architecture for each independent application."
+    "vi": "Phiên bản v0.0.032: Triển khai hoàn thiện App 01: Camera AI Nhận Diện Khuôn Mặt (Offline Face AI) theo kiến trúc Modular Single App độc lập, lưu trữ NVS Flash và giao diện Dark Mode Glassmorphism.",
+    "en": "Release v0.0.032: Fully implement App 01: Offline Face AI Recognition Camera under independent Modular Single App architecture, NVS Flash storage, and Dark Mode Glassmorphism UI."
   }
 }

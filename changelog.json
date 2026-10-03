@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.032",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.032 - Triển Khai Hoàn Thiện App 01: Offline Face AI Recognition",
+    "changes": [
+      "Xây dựng hoàn chỉnh giao diện app_face_ai.html độc lập chuẩn Dark Mode Glassmorphism, Live Video MJPEG Cổng 81 và Canvas vẽ Bounding Box/Landmark thời gian thực",
+      "Tích hợp module C++ độc lập app_face_ai.h/.cpp quản lý cơ sở dữ liệu khuôn mặt Flash NVS và 7 endpoint RESTful API chuyên biệt",
+      "Mở rộng từ điển trung tâm i18n_dictionary.json hỗ trợ 10 ngôn ngữ (Tiếng Việt vi đứng đầu) cho toàn bộ chức năng Face AI",
+      "Nén GZIP tối ưu Flash PROGMEM (app_face_ai.html nén 77.4% còn 8.3KB) và đăng ký route /app/face_ai trên Cổng 80 Core 1"
+    ]
+  },
+  {
     "version": "v0.0.031",
     "date": "2026-10-03",
     "title": "Phiên bản v0.0.031 - Loại Bỏ Các File Gom Nhóm Cũ & Chuẩn Hóa Modular Single App Độc Lập",
