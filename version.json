@@ -1,6 +1,6 @@
 {
-  "version": "0.0.036",
-  "build_number": 36,
+  "version": "0.0.038",
+  "build_number": 38,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-03",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.036: Chuẩn hóa đồng bộ giao diện Header toàn hệ thống theo 2 layout chuẩn, bổ sung nút Về Dashboard (Back to Dashboard) trên tất cả site app và trang chức năng.",
-    "en": "Release v0.0.036: Standardize system-wide Headers across all sites into 2 layouts, integrate dedicated 'Back to Dashboard' button on all app sites and telemetry tools."
+    "vi": "Phiên bản v0.0.038: Tích hợp Module Lõi Nhận Diện Khuôn Mặt Độc Lập (FaceAiEngine Core) chạy ngầm 100% On-Device, hỗ trợ trích xuất Vector nhúng 512-D lưu NVS và Event Callbacks dùng chung đa ứng dụng.",
+    "en": "Release v0.0.038: Integrated Standalone Face AI Core Engine (FaceAiEngine) running 100% On-Device, supporting 512-D embedding vectors in NVS Flash and event-driven callbacks for multi-app integration."
   }
 }

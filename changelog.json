@@ -1,5 +1,29 @@
 [
   {
+    "version": "v0.0.038",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.038 - Tích Hợp Module Lõi Face AI Engine Độc Lập Chạy On-Device & Hỗ Trợ Event Callbacks Dùng Chung",
+    "changes": [
+      "Xây dựng module lõi FaceAiEngine độc lập (face_ai_engine.h/.cpp) hoạt động 100% On-Device trên ESP32-S3, tự động nhận diện ngầm không cần trình duyệt",
+      "Triển khai thuật toán trích xuất Vector nhúng đặc trưng 512-D INT8 và so khớp góc Cosine Distance chuẩn mực với ngưỡng Threshold linh hoạt",
+      "Lưu trữ cơ sở dữ liệu khuôn mặt và mảng vector đặc trưng vĩnh viễn trong phân vùng Flash NVS (không mất khi mất điện)",
+      "Cung cấp cơ chế Event Callbacks dùng chung (onFaceMatched, onUnknownFace) sẵn sàng liên kết với các app con khác (Chuông cửa Doorbell, Matter Bridge) và phần cứng GPIO",
+      "Tái cấu trúc app_face_ai.cpp thành Adapter kết nối REST API mượt mà với Core Engine, đảm bảo tính toàn vẹn và độ tin cậy của hệ thống"
+    ]
+  },
+  {
+    "version": "v0.0.037",
+    "date": "2026-10-03",
+    "title": "Phiên bản v0.0.037 - Tối Ưu Giao Diện Face AI: Mở Rộng 100% Khung Hình Camera & Gom Nhóm Sliding Control Hub",
+    "changes": [
+      "Tối ưu hóa toàn diện bố cục trang Face AI: Dành 100% không gian hiển thị rộng rãi cho Camera Stream sắc nét",
+      "Gom toàn bộ 3 khu vực (Bảng Điều Khiển AI, Quản Lý Danh Sách Khuôn Mặt Flash NVS, Nhật Ký Điểm Danh Live) vào một Sliding Control Drawer ẩn hiện mượt mà",
+      "Tích hợp Tabs chuyển đổi nhanh 3 phân hệ trực quan kèm Badge đếm số lượng khuôn mặt thời gian thực",
+      "Bổ sung nút mở nhanh trên thanh công cụ Camera và nút Floating Action Button (FAB) góc màn hình, hỗ trợ phím tắt ESC đóng nhanh",
+      "Tự động co dãn Canvas tọa độ nhận diện phủ khít theo kích thước khung hình camera mà không bao giờ bị lệch Bounding Box"
+    ]
+  },
+  {
     "version": "v0.0.036",
     "date": "2026-10-03",
     "title": "Phiên bản v0.0.036 - Chuẩn Hóa Header Hệ Thống Theo 2 Layout Chuẩn & Tích Hợp Nút Về Dashboard Trên Mọi Site App",
