@@ -1,6 +1,6 @@
 {
-  "version": "0.0.039",
-  "build_number": 39,
+  "version": "0.0.040",
+  "build_number": 40,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-04",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.039: Chuẩn hóa kiến trúc Wi-Fi Độc Quyền (Single Mode): Khởi động thuần SoftAP khi NVS trống, thuần STA khi có mạng lưu; tự động thử lại 10 lần (chu kỳ 30s) khi mất kết nối STA trước khi kích hoạt SoftAP dự phòng.",
-    "en": "Release v0.0.039: Standardized Exclusive Single-Mode Wi-Fi Architecture: Boots into SoftAP if empty NVS, STA if saved credentials exist; auto-reconnects 10 times (30s interval) upon STA disconnect before failover to SoftAP."
+    "vi": "Phiên bản v0.0.040: Tích hợp đồng hồ đếm ngược 10 giây trên Captive Portal và cơ chế tự động khởi động lại phần cứng ESP32-S3 sau 10s khi lưu thông tin Wi-Fi thành công.",
+    "en": "Release v0.0.040: Integrated 10-second countdown on Captive Portal and automated hardware reboot after 10s upon saving Wi-Fi credentials."
   }
 }

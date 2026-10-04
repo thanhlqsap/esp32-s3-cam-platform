@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.040",
+    "date": "2026-10-04",
+    "title": "Phiên bản v0.0.040 - Tích Hợp Đồng Hồ Đếm Ngược 10 Giây Trên Captive Portal & Tự Động Khởi Động Lại ESP32-S3",
+    "changes": [
+      "Tích hợp đồng hồ đếm ngược 10 giây (Countdown Timer) trực quan trên giao diện Captive Portal sau khi bấm Lưu & Kết Nối",
+      "Kích hoạt cơ chế hẹn giờ tự động khởi động lại phần cứng ESP32-S3 (Hardware Reboot via ESP.restart()) đúng 10 giây sau khi lưu thành công thông tin Wi-Fi vào Flash NVS",
+      "Hỗ trợ bản dịch đa ngôn ngữ 10 thứ tiếng (Tiếng Việt vi đứng đầu) cho thông báo đếm ngược và thông báo hướng dẫn truy cập http://esp32-s3.local sau khởi động",
+      "Tự động chuyển hướng trình duyệt về http://esp32-s3.local sau khi hoàn tất chu kỳ đếm ngược"
+    ]
+  },
+  {
     "version": "v0.0.039",
     "date": "2026-10-04",
     "title": "Phiên bản v0.0.039 - Tối Ưu Kiến Trúc Wi-Fi Độc Quyền (Single-Mode AP/STA) & Cơ Chế Reconnect Tự Động 10 Lần",
