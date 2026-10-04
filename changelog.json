@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.043",
+    "date": "2026-10-04",
+    "title": "Phiên bản v0.0.043 - Kiểm Tra & Tối Ưu Lấy Dữ Liệu Nhiệt Độ Phần Cứng TSENS SoC & Ổn Định API Trạng Thái",
+    "changes": [
+      "Kiểm tra và xác thực trực tiếp cơ chế đo nhiệt độ phần cứng TSENS (On-chip Temperature Sensor) trên SoC ESP32-S3: Xác nhận đọc trực tiếp cảm biến thực (52.2°C - 54.2°C)",
+      "Khắc phục triệt để lỗi ngoại lệ SoftAP null pointer trong endpoint /api/status khi thiết bị hoạt động ở chế độ thuần STA (Exclusive STA Mode)",
+      "Bảo đảm thông số nhiệt độ core_temp_c được lấy mẫu định kỳ mỗi 5 giây và phản hồi tức thì qua REST API",
+      "Đồng bộ hóa nhị phân cập nhật OTA và Full Flash sẵn sàng nạp cho thiết bị"
+    ]
+  },
+  {
     "version": "v0.0.042",
     "date": "2026-10-04",
     "title": "Phiên bản v0.0.042 - Khắc Phục Lỗi Nút Quét Mạng Wi-Fi Trên Dashboard & Captive Portal",
