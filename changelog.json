@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.039",
+    "date": "2026-10-04",
+    "title": "Phiên bản v0.0.039 - Tối Ưu Kiến Trúc Wi-Fi Độc Quyền (Single-Mode AP/STA) & Cơ Chế Reconnect Tự Động 10 Lần",
+    "changes": [
+      "Triển khai kiến trúc mạng Wi-Fi Độc Quyền (Single Mode): Chỉ chạy 1 chế độ SoftAP hoặc STA tại một thời điểm, triệt tiêu 100% hiện tượng xung đột nhảy kênh RF",
+      "Khởi động thông minh theo trạng thái NVS: Nếu NVS chưa có Wi-Fi lưu -> Khởi động ngay chế độ thuần SoftAP (WIFI_AP) trên Kênh 1 ổn định cao",
+      "Nếu NVS có mạng Wi-Fi hợp lệ -> Khởi động chế độ thuần STA (WIFI_STA) và kết nối ngầm với mạng MRU",
+      "Cơ chế tự động kết nối lại (Auto-Reconnect): Khi STA bị ngắt kết nối, tự động thử kết nối lại định kỳ mỗi 30 giây (tối đa 10 lần)",
+      "Cơ chế dự phòng SoftAP tự động: Nếu sau 10 lần thử (5 phút) vẫn không kết nối được router -> Tự động chuyển sang chế độ SoftAP (192.168.4.1) kèm DNS Captive Portal để cấu hình lại mạng",
+      "Tối ưu hóa quét Wi-Fi bất đồng bộ: Tạm thời mở WIFI_AP_STA khi quét mạng và tự động khôi phục chế độ thuần WIFI_AP ngay khi hoàn tất"
+    ]
+  },
+  {
     "version": "v0.0.038",
     "date": "2026-10-03",
     "title": "Phiên bản v0.0.038 - Tích Hợp Module Lõi Face AI Engine Độc Lập Chạy On-Device & Hỗ Trợ Event Callbacks Dùng Chung",

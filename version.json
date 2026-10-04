@@ -1,8 +1,8 @@
 {
-  "version": "0.0.038",
-  "build_number": 38,
+  "version": "0.0.039",
+  "build_number": 39,
   "hardware": "ESP32-S3-WROOM-N16R8",
-  "release_date": "2026-10-03",
+  "release_date": "2026-10-04",
   "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.038: Tích hợp Module Lõi Nhận Diện Khuôn Mặt Độc Lập (FaceAiEngine Core) chạy ngầm 100% On-Device, hỗ trợ trích xuất Vector nhúng 512-D lưu NVS và Event Callbacks dùng chung đa ứng dụng.",
-    "en": "Release v0.0.038: Integrated Standalone Face AI Core Engine (FaceAiEngine) running 100% On-Device, supporting 512-D embedding vectors in NVS Flash and event-driven callbacks for multi-app integration."
+    "vi": "Phiên bản v0.0.039: Chuẩn hóa kiến trúc Wi-Fi Độc Quyền (Single Mode): Khởi động thuần SoftAP khi NVS trống, thuần STA khi có mạng lưu; tự động thử lại 10 lần (chu kỳ 30s) khi mất kết nối STA trước khi kích hoạt SoftAP dự phòng.",
+    "en": "Release v0.0.039: Standardized Exclusive Single-Mode Wi-Fi Architecture: Boots into SoftAP if empty NVS, STA if saved credentials exist; auto-reconnects 10 times (30s interval) upon STA disconnect before failover to SoftAP."
   }
 }
