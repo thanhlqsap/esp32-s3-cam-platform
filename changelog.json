@@ -1,5 +1,30 @@
 [
   {
+    "version": "v0.0.046",
+    "date": "2026-10-04",
+    "title": "Phiên bản v0.0.046 - Khắc Phục Lỗi Livestream MJPEG Bị Chớp Nháy & Tối Ưu Hiệu Năng Face AI",
+    "changes": [
+      "Khắc phục triệt để hiện tượng khung hình livestream MJPEG trong app Face AI bị chớp nháy liên tục: Loại bỏ lệnh gán kích thước canvas trong sự kiện onload lặp lại của từng khung hình MJPEG",
+      "Tối ưu hóa cơ chế đồng bộ kích thước canvas overlay: Chỉ khởi tạo kích thước canvas 1 lần khi khung hình đầu tiên nạp xong ({ once: true }) và khi thay đổi kích thước cửa sổ trình duyệt (resize)",
+      "Bổ sung cơ chế tự động khôi phục luồng stream (Stream Auto-Reconnect): Tự động nạp lại stream mượt mà khi xảy ra biến động kết nối mạng",
+      "Tăng cường độ bền vững Socket truyền phát (web_dashboard.cpp): Tăng số lần thử lại (retry limit) lên 60 lần (~300ms đệm) và nâng timeout client lên 1000ms, ngăn chặn việc đóng ngắt kết nối đột ngột khi mạng Wi-Fi có jitter",
+      "Tinh chỉnh chu kỳ Face AI Task (face_ai_engine.cpp): Điều chỉnh delay lên 280ms (~3.5 FPS) giúp giảm thiểu tối đa tranh chấp bộ đệm DMA camera, đảm bảo luồng video MJPEG luôn đạt 25-30 FPS mượt mà",
+      "Tự động biên dịch và đóng gói hoàn thiện nhị phân OTA_Update.bin và Full_Flash.bin"
+    ]
+  },
+  {
+    "version": "v0.0.045",
+    "date": "2026-10-04",
+    "title": "Phiên bản v0.0.045 - Khắc Phục Lỗi Khung Nhận Diện Face AI Bị Đóng Băng & Tối Ưu Nhận Diện Động",
+    "changes": [
+      "Khắc phục triệt để lỗi khung nhận diện Face AI bị nằm im đóng băng (tọa độ tĩnh 80, 45, 160, 150) khi không có người trước camera: Loại bỏ toàn bộ cờ gán tĩnh trong lõi FaceAiEngine",
+      "Triển khai thuật toán phát hiện diện mạo người/da mặt (Human Presence & Skin Chrominance Segmentation) tốc độ cao trên ESP32-S3: Sử dụng jpg2rgb565 scale 8X cực nhanh (~2ms), tự động tính toán khung bao Bounding Box và 5 điểm Landmark linh hoạt theo vị trí thực tế của người",
+      "Cơ chế tự động dọn sạch khung hình (Auto-Clean Canvas): Khi không có người trước camera, hệ thống lập tức đặt _hasDetection = false và trả về mảng faces rỗng, trình duyệt tự động xóa 100% overlay",
+      "Tích hợp công nghệ nhận diện khuôn mặt thời gian thực trên trình duyệt (Browser Native FaceDetector API) tracking mượt mà 30 FPS",
+      "Sửa lỗi trùng lặp thuộc tính CSS trong app_face_ai.html và đồng bộ gói nhị phân OTA/Full Flash v0.0.045"
+    ]
+  },
+  {
     "version": "v0.0.044",
     "date": "2026-10-04",
     "title": "Phiên bản v0.0.044 - Khắc Phục Lỗi Guru Meditation LoadProhibited Khi Gọi ESP.getFlashChipMode() & Hoàn Thiện API /api/status",

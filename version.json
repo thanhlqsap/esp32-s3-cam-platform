@@ -1,6 +1,6 @@
 {
-  "version": "0.0.044",
-  "build_number": 44,
+  "version": "0.0.046",
+  "build_number": 46,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-04",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.044: Khắc phục triệt để lỗi ngoại lệ LoadProhibited khi gọi ESP.getFlashChipMode() trên ESP32-S3, khôi phục hoạt động hoàn hảo cho /api/status và truyền dữ liệu nhiệt độ TSENS thời gian thực.",
-    "en": "Release v0.0.044: Fixed LoadProhibited panic caused by ESP.getFlashChipMode() on ESP32-S3 under Arduino Core 2.0.17, fully restoring /api/status and real-time TSENS core temperature telemetry."
+    "vi": "Phiên bản v0.0.046: Khắc phục triệt để hiện tượng livestream MJPEG bị chớp nháy liên tục trong app Face AI. Tối ưu hóa cơ chế đồng bộ kích thước canvas một lần duy nhất, tăng ngưỡng socket retry buffer và tinh chỉnh tần số Face AI task giải phóng băng thông DMA camera.",
+    "en": "Release v0.0.046: Fixed continuous livestream flickering in Face AI app. Optimized single-pass canvas dimension synchronization, increased TCP socket retry buffer resilience, and tuned Face AI task frequency to free up camera DMA bandwidth."
   }
 }
