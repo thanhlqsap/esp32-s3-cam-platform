@@ -1,6 +1,6 @@
 {
-  "version": "0.0.040",
-  "build_number": 40,
+  "version": "0.0.042",
+  "build_number": 42,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-04",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.040: Tích hợp đồng hồ đếm ngược 10 giây trên Captive Portal và cơ chế tự động khởi động lại phần cứng ESP32-S3 sau 10s khi lưu thông tin Wi-Fi thành công.",
-    "en": "Release v0.0.040: Integrated 10-second countdown on Captive Portal and automated hardware reboot after 10s upon saving Wi-Fi credentials."
+    "vi": "Phiên bản v0.0.042: Sửa lỗi nút Quét Mạng Wi-Fi (Scan) trên Dashboard và Captive Portal, chuyển sang cơ chế quét đồng bộ phản hồi tức thì kèm cơ chế tự động thử lại (polling retry) khi đang quét ngầm.",
+    "en": "Release v0.0.042: Fixed Wi-Fi Network Scan button on Dashboard and Captive Portal, implemented responsive synchronous scan with automatic polling retry fallback."
   }
 }

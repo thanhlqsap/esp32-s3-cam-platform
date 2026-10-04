@@ -1,5 +1,29 @@
 [
   {
+    "version": "v0.0.042",
+    "date": "2026-10-04",
+    "title": "Phiên bản v0.0.042 - Khắc Phục Lỗi Nút Quét Mạng Wi-Fi Trên Dashboard & Captive Portal",
+    "changes": [
+      "Khắc phục triệt để lỗi nút Quét Mạng (Scan) trên Dashboard không hiển thị danh sách Wi-Fi: Chuyển sang cơ chế quét đồng bộ (Active Scan 120ms/kênh, ~1.5s) trả về kết quả đầy đủ ngay trong 1 phản hồi HTTP duy nhất",
+      "Bổ sung cơ chế tự động thử lại (Polling Retry) trên giao diện Web (Dashboard & Captive Portal) tối đa 5 lần nếu nhận trạng thái 'scanning', tránh hoàn toàn hiện tượng dropdown rỗng",
+      "Sửa lỗi hiển thị biểu tượng ổ khóa bảo mật 🔒 cho các mạng Wi-Fi có mật khẩu (WPA/WPA2/WPA3)",
+      "Bổ sung tùy chọn thông báo trạng thái '-- Không tìm thấy mạng Wi-Fi nào --' khi khu vực không có sóng phát",
+      "Tự động giải phóng bộ đệm RAM sau khi quét sóng và khôi phục an toàn chế độ SoftAP nếu đang ở chế độ cứu hộ"
+    ]
+  },
+  {
+    "version": "v0.0.041",
+    "date": "2026-10-04",
+    "title": "Phiên bản v0.0.041 - Tích Hợp Cơ Chế Smart Auto-Recovery Tự Động Phục Hồi Kết Nối Wi-Fi Khi Ở Chế Độ SoftAP",
+    "changes": [
+      "Triển khai cơ chế Smart Auto-Recovery thông minh: Tự động giải quyết triệt để tình huống Router Wi-Fi mất điện tạm thời hoặc mất mạng kéo dài (khi ESP32-S3 được cấp nguồn dự phòng UPS/Pin)",
+      "Chu kỳ quét ngầm định kỳ (2 phút): Khi ở chế độ SoftAP và NVS đã có mạng lưu trước đó, hệ thống định kỳ quét ngầm bất đồng bộ (Async Scan) tìm kiếm Router",
+      "Bảo vệ người dùng cấu hình tuyệt đối (Zero Disruption): Tự động phát hiện số lượng client SoftAP (WiFi.softAPgetStationNum() > 0) để lập tức tạm hoãn quét ngầm, tránh hoàn toàn nguy cơ rớt mạng của người dùng",
+      "Tự động khôi phục kết nối STA: Ngay khi phát hiện SSID đã lưu xuất hiện lại trong kết quả quét, ESP32-S3 tự động tắt SoftAP, chuyển về chế độ STA thuần công suất cao và kết nối lại ngay lập tức",
+      "Cơ chế bảo vệ Timeout 10s: Nếu đợt quét ngầm gặp lỗi sóng RF bị nghẽn, tự động hủy phiên quét và khôi phục an toàn chế độ SoftAP"
+    ]
+  },
+  {
     "version": "v0.0.040",
     "date": "2026-10-04",
     "title": "Phiên bản v0.0.040 - Tích Hợp Đồng Hồ Đếm Ngược 10 Giây Trên Captive Portal & Tự Động Khởi Động Lại ESP32-S3",
