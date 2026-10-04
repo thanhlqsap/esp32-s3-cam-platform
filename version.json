@@ -1,6 +1,6 @@
 {
-  "version": "0.0.043",
-  "build_number": 43,
+  "version": "0.0.044",
+  "build_number": 44,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-04",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.043: Kiểm tra và bảo vệ an toàn phân hệ đo nhiệt độ phần cứng TSENS SoC, đồng thời sửa lỗi SoftAP null pointer giúp API /api/status phản hồi ổn định nhiệt độ CPU thời gian thực.",
-    "en": "Release v0.0.043: Verified and hardened on-chip TSENS SoC temperature telemetry, fixed SoftAP null pointer check in /api/status endpoint."
+    "vi": "Phiên bản v0.0.044: Khắc phục triệt để lỗi ngoại lệ LoadProhibited khi gọi ESP.getFlashChipMode() trên ESP32-S3, khôi phục hoạt động hoàn hảo cho /api/status và truyền dữ liệu nhiệt độ TSENS thời gian thực.",
+    "en": "Release v0.0.044: Fixed LoadProhibited panic caused by ESP.getFlashChipMode() on ESP32-S3 under Arduino Core 2.0.17, fully restoring /api/status and real-time TSENS core temperature telemetry."
   }
 }

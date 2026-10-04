@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.044",
+    "date": "2026-10-04",
+    "title": "Phiên bản v0.0.044 - Khắc Phục Lỗi Guru Meditation LoadProhibited Khi Gọi ESP.getFlashChipMode() & Hoàn Thiện API /api/status",
+    "changes": [
+      "Khắc phục triệt để lỗi sập nguồn (Guru Meditation LoadProhibited panic tại EXCVADDR 0x00000008) khi gọi API /api/status: Thay thế lệnh ESP.getFlashChipMode() (vốn xung đột với thanh ghi SPI0 trên ESP32-S3 trong Arduino Core 2.0.17) bằng cơ chế định danh an toàn QIO/OPI",
+      "Khôi phục hoàn toàn khả năng phản hồi tức thì (< 2ms) của endpoint /api/status, giải quyết triệt để tình trạng trình duyệt treo tải khi truy cập",
+      "Bảo đảm thông số nhiệt độ vi xử lý (core_temp_c) đo từ cảm biến phần cứng TSENS SoC được trả về chính xác trong chuỗi JSON trạng thái hệ thống",
+      "Tự động biên dịch, đồng bộ mã nhị phân OTA_Update.bin và Full_Flash.bin sẵn sàng cập nhật"
+    ]
+  },
+  {
     "version": "v0.0.043",
     "date": "2026-10-04",
     "title": "Phiên bản v0.0.043 - Kiểm Tra & Tối Ưu Lấy Dữ Liệu Nhiệt Độ Phần Cứng TSENS SoC & Ổn Định API Trạng Thái",
