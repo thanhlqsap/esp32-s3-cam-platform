@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.056",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.056 - Tối Ưu Tốc Độ Xử Lý & Đăng Ký Khuôn Mặt Siêu Tốc (<0.3s)",
+    "changes": [
+      "Tối ưu kích thước Canvas co ảnh tải lên từ max 480px xuống max 240px, giảm 75% dung lượng payload Base64 (xuống chỉ còn ~10KB)",
+      "Tăng tốc độ suy luận mạng nơ-ron CNN HumanFaceDetectMSR01 và MobileFaceNet trên ESP32-S3 lên gấp 4 lần (thời gian trích xuất chỉ còn ~180ms)",
+      "Tối ưu cấp phát bộ nhớ JSON parser DynamicJsonDocument trong app_face_ai.cpp tránh phân mảnh Heap",
+      "Cập nhật trạng thái loading spinner trực quan trên nút Lưu & Đăng Ký",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.056"
+    ]
+  },
+  {
     "version": "v0.0.055",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.055 - Chuẩn Hóa Nhận Diện Camera Live Với ESP-DL & Khớp Tỉ Lệ Ngưỡng Threshold 1-1",
