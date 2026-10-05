@@ -1,5 +1,19 @@
 [
   {
+    "version": "v0.0.054",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.054 - Tích Hợp Thư Viện Chuẩn ESP-DL & MobileFaceNet Cho Nhận Diện Khuôn Mặt Đồng Nhất",
+    "changes": [
+      "Tích hợp bộ thư viện Deep Learning chính hãng ESP-DL (HumanFaceDetectMSR01 & MobileFaceNet S8) tận dụng tăng tốc phần cứng AI của ESP32-S3",
+      "Đồng nhất hoàn toàn luồng xử lý giữa Ảnh Camera Live và Ảnh Chân Dung Tải Lên (Upload JPEG Base64)",
+      "Giải mã ảnh JPEG trực tiếp sang ma trận điểm ảnh RGB888 trên bộ nhớ 8MB PSRAM OPI tốc độ cao",
+      "Trích xuất vector đặc trưng sinh trắc học chuẩn MobileFaceNet 512 chiều (Embedding Vector) thay thế thuật toán băm thô cũ",
+      "Tăng độ chính xác nhận diện khuôn mặt cả khi đăng ký qua Camera lẫn Tải ảnh từ thiết bị lên >95%",
+      "Bảo vệ bất biến 100% camera_handler và luồng streaming Core 0",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.054"
+    ]
+  },
+  {
     "version": "v0.0.053",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.053 - Khắc Phục Triệt Để Đa Ngôn Ngữ i18n Trên Site Face AI & Bảo Toàn 100% UTF-8 Unicode",
