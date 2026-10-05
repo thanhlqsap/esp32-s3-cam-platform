@@ -1,6 +1,6 @@
 {
-  "version": "0.0.047",
-  "build_number": 47,
+  "version": "0.0.048",
+  "build_number": 48,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-05",
   "min_bootloader_version": "0.0.001",
@@ -10,9 +10,9 @@
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json",
   "md5": "auto-generated-on-build",
-  "critical_update": false,
+  "critical_update": true,
   "changelog": {
-    "vi": "Phiên bản v0.0.047: Tích hợp thư viện Deep Learning chính hãng của Espressif (esp-dl, HumanFaceDetect MSR01 và FaceRecognition MobileFaceNet 112 S8) chạy trực tiếp trên ESP32-S3 N16R8, nhận diện khuôn mặt và 5 điểm Landmark AI thực thụ.",
-    "en": "Release v0.0.047: Integrated official Espressif Deep Learning models (esp-dl, HumanFaceDetect MSR01 and FaceRecognition MobileFaceNet 112 S8) running directly on ESP32-S3 N16R8, enabling true AI face recognition and 5-point landmarks."
+    "vi": "Phiên bản v0.0.048 (Khẩn cấp): Khôi phục phân vùng Dual-OTA 6MB chuẩn và thuật toán Face AI ổn định cao, khắc phục triệt để lỗi xung đột phân vùng và tràn bộ nhớ SRAM khi nạp mô hình lớn.",
+    "en": "Release v0.0.048 (Critical): Restored standard Dual-OTA 6MB partition and ultra-stable Face AI engine, completely resolving partition mismatch and SRAM exhaustion during boot."
   }
 }

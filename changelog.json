@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.048",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.048 - Khôi Phục Phân Vùng Dual-OTA 6MB & Ổn Định Tuyệt Đối Hệ Thống",
+    "changes": [
+      "Khôi phục hoàn toàn cấu hình phân vùng Dual-OTA 6MB (partitions.csv: app0 6MB + app1 6MB), bảo đảm Rollback Guard và bootloader boot_app0 hoạt động an toàn 100%",
+      "Khắc phục triệt để lỗi sập nguồn/treo boot (Bootloop Crash) do tràn bộ nhớ Internal SRAM khi nạp mô hình trọng số nơ-ron tĩnh trong không gian bộ nhớ hệ thống",
+      "Khôi phục lõi Face AI Heuristic tối ưu siêu tốc: Xử lý màu da 80x60 và băm đặc trưng trên PSRAM an toàn, không chiếm dụng tài nguyên SRAM của nhân hệ thống",
+      "Bảo đảm Web Dashboard, Captive Portal SoftAP (192.168.4.1) và camera stream mDNS (esp32-s3.local) hoạt động ổn định tức thì",
+      "Đóng gói bản build khẩn cấp OTA_Update.bin và Full_Flash.bin v0.0.048 sẵn sàng khôi phục thiết bị"
+    ]
+  },
+  {
     "version": "v0.0.047",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.047 - Tích Hợp Thư Viện Deep Learning Chính Hãng Espressif (esp-dl, MSR01 & MobileFaceNet 112 S8)",
