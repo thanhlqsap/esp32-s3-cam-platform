@@ -1,6 +1,6 @@
 {
-  "version": "0.0.048",
-  "build_number": 48,
+  "version": "0.0.049",
+  "build_number": 49,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-05",
   "min_bootloader_version": "0.0.001",
@@ -10,9 +10,9 @@
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json",
   "md5": "auto-generated-on-build",
-  "critical_update": true,
+  "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.048 (Khẩn cấp): Khôi phục phân vùng Dual-OTA 6MB chuẩn và thuật toán Face AI ổn định cao, khắc phục triệt để lỗi xung đột phân vùng và tràn bộ nhớ SRAM khi nạp mô hình lớn.",
-    "en": "Release v0.0.048 (Critical): Restored standard Dual-OTA 6MB partition and ultra-stable Face AI engine, completely resolving partition mismatch and SRAM exhaustion during boot."
+    "vi": "Phiên bản v0.0.049: Tối ưu Bounding Box khuôn mặt chuẩn tỷ lệ nhân trắc học 1:1.28, loại bỏ vùng da cổ/ngực và đồng bộ Canvas Overlay chuẩn xác từng pixel theo kích thước hiển thị video.",
+    "en": "Release v0.0.049: Optimized face bounding box with anthropometric 1:1.28 ratio, filtered out neck/chest outliers and pixel-perfect synchronized Canvas Overlay with rendered stream bounds."
   }
 }

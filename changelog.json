@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.049",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.049 - Khắc Phục Canvas Không Khớp & Tối Ưu Bounding Box Khuôn Mặt Vừa Khít",
+    "changes": [
+      "Khắc phục triệt để lỗi Canvas không đúng mô tả trong app_face_ai.html: Tự động tính toán kích thước hiển thị thật (rendered bounds) của ảnh stream sau khi áp dụng object-fit: contain, neo thẻ Canvas khớp chính xác từng pixel với luồng video, loại bỏ hiện tượng lệch tọa độ và kéo giãn sai tỷ lệ do 2 dải đen (pillarbox/letterbox)",
+      "Tối ưu hóa thuật toán Bounding Box khuôn mặt trong face_ai_engine.cpp: Áp dụng phân phối chuẩn độ phân tán Gaussian (Mean & Standard Deviation) quanh cụm pixel da, loại bỏ hoàn toàn các điểm ảnh ngoại vi (outliers) ở phông nền và vùng da cổ/ngực kéo dãn hộp bao",
+      "Chuẩn hóa tỷ lệ Bounding Box theo nhân trắc học khuôn mặt người: Cố định tỷ lệ vàng W:H ~ 1:1.28, nâng tâm hộp bao lên vùng mắt mũi, đảm bảo hộp bao luôn vừa vặn ôm khít khuôn mặt (từ trán đến cằm, tai trái sang tai phải), không bao giờ bị phình to trùm cả người",
+      "Nâng cấp phong cách đồ họa HUD AI Camera: Hiển thị góc nhọn Corner Brackets công nghệ cao, viền nét đứt thanh mảnh, nhãn tên nhận diện sắc nét và 5 điểm Landmark phát sáng",
+      "Loại bỏ xung đột từ bộ dò FaceDetector nội tại trình duyệt, bảo đảm dữ liệu Telemetry hiển thị đồng nhất 100% từ lõi ESP32-S3",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.049"
+    ]
+  },
+  {
     "version": "v0.0.048",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.048 - Khôi Phục Phân Vùng Dual-OTA 6MB & Ổn Định Tuyệt Đối Hệ Thống",
