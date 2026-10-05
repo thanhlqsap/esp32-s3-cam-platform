@@ -1,6 +1,6 @@
 {
-  "version": "0.0.050",
-  "build_number": 50,
+  "version": "0.0.051",
+  "build_number": 51,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-05",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.050: Triển khai thuật toán phân tích cụm Histogram trục X và bộ lọc xác thực 2 hốc mắt quang học, loại bỏ 100% hiện tượng bắt nhầm bàn tay và khóa chặt Bounding Box vào khuôn mặt.",
-    "en": "Release v0.0.050: Implemented Column Histogram clustering and eye-pair cavity verification, 100% eliminating false-positive hand detections and locking Bounding Box strictly to human faces."
+    "vi": "Phiên bản v0.0.051: Nâng cấp Modal Đăng Ký Khuôn Mặt với Live Viewfinder 60fps trực tiếp, chụp snapshot đóng băng khung hình và hỗ trợ tải ảnh chân dung lên từ máy tính/điện thoại.",
+    "en": "Release v0.0.051: Enhanced Face Enrollment Modal with 60fps Live Viewfinder, snapshot freeze frame, and photo upload support from PC/mobile with client-side JPEG optimization."
   }
 }

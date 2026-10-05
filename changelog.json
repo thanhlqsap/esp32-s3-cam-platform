@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.051",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.051 - Nâng Cấp Đăng Ký Khuôn Mặt Với Live Viewfinder 60fps & Hỗ Trợ Tải Ảnh Lên Từ Thiết Bị",
+    "changes": [
+      "Nâng cấp Modal Đăng Ký Khuôn Mặt thành giao diện 2 Tab chuyên nghiệp: Chụp Trực Tiếp (Live Viewfinder) và Tải Ảnh Lên (Upload Photo)",
+      "Tích hợp khung ngắm Live Viewfinder phản chiếu video stream 60fps với hồng tâm căn chỉnh tỷ lệ 4:3, chụp đóng băng khung hình (Snapshot Freeze) và nút Chụp Lại (Retake)",
+      "Hỗ trợ tải ảnh chân dung đã chụp từ máy tính/điện thoại: Kéo thả Drag & Drop, xem trước Preview tức thì và tự động nén tối ưu Client-Side Canvas JPEG ~25KB",
+      "Cài đặt hàm enrollFaceFromJpeg trong face_ai_engine.cpp và nâng cấp endpoint POST /api/face/enroll trong app_face_ai.cpp giải mã Base64 JPEG và lưu NVS Flash",
+      "Đồng bộ từ điển đa ngôn ngữ i18n_dictionary.json hỗ trợ đầy đủ 10 ngôn ngữ (Tiếng Việt đứng đầu)",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.051"
+    ]
+  },
+  {
     "version": "v0.0.050",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.050 - Triệt Tiêu Hiện Tượng Bắt Nhầm Bàn Tay & Khóa Chặt Bounding Box Khuôn Mặt",
