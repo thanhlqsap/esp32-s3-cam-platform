@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.052",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.052 - Tích Hợp Thanh Trượt Điều Chỉnh Tỷ Lệ Kích Thước Khuôn Mặt Tối Thiểu (Min Face Size Ratio)",
+    "changes": [
+      "Bổ sung thanh trượt Slide Bar 'Tỷ Lệ Mặt Tối Thiểu (Min Face Size: 3% - 35%)' trực tiếp trong bảng cài đặt AI Control Hub",
+      "Cho phép người dùng chủ động điều chỉnh độ nhạy khoảng cách: Bắt khuôn mặt ở cự ly xa / mặt nhỏ (3% - 6%) hoặc chỉ bắt khi đứng gần / mặt to rõ ràng (15% - 35%)",
+      "Xóa bỏ hoàn toàn các ngưỡng diện tích và chiều rộng hardcode cố định trong face_ai_engine.cpp, thay thế bằng công thức tỷ lệ kích thước động",
+      "Lưu trữ giá trị min_face_ratio vào Flash NVS (Preferences) và tự động đồng bộ 2 chiều qua RESTful API /api/face/config và /api/face/list",
+      "Đồng bộ từ điển đa ngôn ngữ 10 thứ tiếng cho các nhãn thanh trượt và chú thích khoảng cách",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.052"
+    ]
+  },
+  {
     "version": "v0.0.051",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.051 - Nâng Cấp Đăng Ký Khuôn Mặt Với Live Viewfinder 60fps & Hỗ Trợ Tải Ảnh Lên Từ Thiết Bị",

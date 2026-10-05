@@ -1,6 +1,6 @@
 {
-  "version": "0.0.051",
-  "build_number": 51,
+  "version": "0.0.052",
+  "build_number": 52,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-05",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.051: Nâng cấp Modal Đăng Ký Khuôn Mặt với Live Viewfinder 60fps trực tiếp, chụp snapshot đóng băng khung hình và hỗ trợ tải ảnh chân dung lên từ máy tính/điện thoại.",
-    "en": "Release v0.0.051: Enhanced Face Enrollment Modal with 60fps Live Viewfinder, snapshot freeze frame, and photo upload support from PC/mobile with client-side JPEG optimization."
+    "vi": "Phiên bản v0.0.052: Tích hợp thanh trượt Slide Bar điều chỉnh tỷ lệ kích thước khuôn mặt tối thiểu (Min Face Size: 3% - 35%), cho phép tùy biến linh hoạt khoảng cách bắt diện (xa hoặc gần) và lưu cấu hình vào Flash NVS.",
+    "en": "Release v0.0.052: Added Min Face Size Ratio slider bar (3% - 35%) for flexible detection distance tuning (far/small vs near/close faces) with NVS Flash persistence."
   }
 }
