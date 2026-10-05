@@ -1,5 +1,19 @@
 [
   {
+    "version": "v0.0.053",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.053 - Khắc Phục Triệt Để Đa Ngôn Ngữ i18n Trên Site Face AI & Bảo Toàn 100% UTF-8 Unicode",
+    "changes": [
+      "Khắc phục triệt để hiện tượng hiển thị key raw (app_face_ai.enroll_tab_capture, app_face_ai.btn_take_snapshot...) trên giao diện site app_face_ai.html",
+      "Nâng cấp cơ chế fallback của hàm t() và applyToDOM() trong i18n.js: Tuyệt đối không ghi đè key kỹ thuật lên DOM khi bản dịch chưa sẵn sàng hoặc cache chưa đồng bộ, bảo lưu 100% văn bản Tiếng Việt chuẩn",
+      "Sửa đổi pipeline sync_web_assets.ps1: Bỏ ConvertTo-Json của PowerShell 5.1 (nguyên nhân gây hỏng ký tự có dấu và emoji), đọc và nhúng trực tiếp chuỗi JSON UTF-8 gốc bảo toàn nguyên vẹn 1000% 10 ngôn ngữ và Emoji",
+      "Bổ sung query parameter chống cache trình duyệt (/i18n.js?v=0.0.053) trên toàn bộ site HTML",
+      "Kích hoạt tự động applyToDOM() ngay khi mở Modal Đăng Ký Khuôn Mặt và khi chuyển đổi Tab Chụp/Tải Ảnh",
+      "Bổ sung đầy đủ 42 từ khóa i18n cho site app_face_ai trong i18n_dictionary.json hỗ trợ 10 ngôn ngữ (Tiếng Việt đứng đầu)",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.053"
+    ]
+  },
+  {
     "version": "v0.0.052",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.052 - Tích Hợp Thanh Trượt Điều Chỉnh Tỷ Lệ Kích Thước Khuôn Mặt Tối Thiểu (Min Face Size Ratio)",

@@ -1,6 +1,6 @@
 {
-  "version": "0.0.052",
-  "build_number": 52,
+  "version": "0.0.053",
+  "build_number": 53,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-05",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.052: Tích hợp thanh trượt Slide Bar điều chỉnh tỷ lệ kích thước khuôn mặt tối thiểu (Min Face Size: 3% - 35%), cho phép tùy biến linh hoạt khoảng cách bắt diện (xa hoặc gần) và lưu cấu hình vào Flash NVS.",
-    "en": "Release v0.0.052: Added Min Face Size Ratio slider bar (3% - 35%) for flexible detection distance tuning (far/small vs near/close faces) with NVS Flash persistence."
+    "vi": "Phiên bản v0.0.053: Sửa triệt để hiển thị đa ngôn ngữ i18n trên site Face AI, bảo toàn 100% UTF-8 Unicode và Emoji, cơ chế chống cache trình duyệt i18n.js, bổ sung từ điển 10 ngôn ngữ cho các nhãn modal & điều khiển camera.",
+    "en": "Release v0.0.053: Fixed i18n multilingual rendering on Face AI site, 100% UTF-8 Unicode & Emoji preservation, browser cache-busting for i18n.js, and added 10-language dictionary entries for modal labels & camera controls."
   }
 }
