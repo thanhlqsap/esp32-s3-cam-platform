@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.050",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.050 - Triệt Tiêu Hiện Tượng Bắt Nhầm Bàn Tay & Khóa Chặt Bounding Box Khuôn Mặt",
+    "changes": [
+      "Triển khai thuật toán phân tích lược đồ cột (Column Histogram Projection): Tách biệt hoàn toàn cụm pixel khuôn mặt khỏi các cụm ngoại vi như bàn tay vẫy hoặc ngón tay giơ bên cạnh",
+      "Cô lập phép tính trọng tâm Gaussian trong dải cụm khuôn mặt chính: Loại bỏ triệt để hiện tượng bàn tay ở ngoài rìa hút lệch tâm Bounding Box",
+      "Tích hợp bộ lọc kiểm tra mật độ da (Skin Uniformity Filter): Tự động phát hiện và loại bỏ các mảng da đồng nhất phẳng lì (> 86%) như lòng bàn tay, mu bàn tay hoặc cánh tay",
+      "Tích hợp thuật toán xác thực quang học 2 hốc mắt (Eye-pair Cavity Verification): So sánh độ sụt giảm ánh sáng của 2 vùng mắt/chân mày so với vùng trán và má, chỉ kích hoạt Bounding Box khi phát hiện cấu trúc mắt thật của con người",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.050"
+    ]
+  },
+  {
     "version": "v0.0.049",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.049 - Khắc Phục Canvas Không Khớp & Tối Ưu Bounding Box Khuôn Mặt Vừa Khít",
