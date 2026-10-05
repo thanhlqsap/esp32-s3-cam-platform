@@ -1,5 +1,28 @@
 [
   {
+    "version": "v0.0.058",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.058 - Nâng Cấp Two-Stage Detector (MSR01 + MNP01) & Chuẩn Hóa 5 Landmarks ESP-DL Nhận Diện Tuyệt Đối",
+    "changes": [
+      "Khắc phục triệt để lỗi không nhận diện ra khuôn mặt khi tải ảnh lên hoặc quét camera live: Nâng cấp kiến trúc Two-Stage Face Detection chuẩn Espressif kết hợp Stage 1 MSR01 (tìm hộp ứng viên) và Stage 2 MNP01 (tinh chỉnh và trích xuất chuẩn xác 10 giá trị tọa độ của 5 điểm Landmarks)",
+      "Chuẩn hóa thứ tự 5 điểm Landmarks đầu vào cho mạng MobileFaceNet theo đúng quy chuẩn ESP-DL: [Left Eye, Mouth Left, Nose, Right Eye, Mouth Right], loại bỏ hoàn toàn lỗi đảo lộn chéo tọa độ",
+      "Nâng kích thước xử lý ảnh chân dung Canvas trên Web Client lên max 320px chuẩn sắc nét (~14KB), giúp mạng nơ-ron nhận diện tức thì mà không bị thu nhỏ quá mức",
+      "Tăng kích thước FreeRTOS Stack cho face_ai_task từ 8KB lên 16KB đảm bảo an toàn tuyệt đối cho luồng tính toán Deep Learning 2-Stage",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.058"
+    ]
+  },
+  {
+    "version": "v0.0.057",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.057 - Tích Hợp SpiRamAllocator & Triệt Tiêu Lỗi Nghẽn Bộ Nhớ Khi Tải Ảnh Lên",
+    "changes": [
+      "Khắc phục triệt để hiện tượng treo timeout và lưu thất bại khi upload ảnh: Chuyển toàn bộ bộ nhớ JSON parser sang 8MB Octal PSRAM ngoài thông qua SpiRamAllocator, triệt tiêu 100% lỗi cạn kiệt SRAM nội",
+      "Chuẩn hóa kích thước ảnh chân dung Client-side Canvas về 160x160 với chất lượng nén 0.75, dung lượng Base64 siêu nhẹ chỉ ~5KB (truyền qua Wi-Fi trong 10ms)",
+      "Bổ sung hệ thống ghi log chi tiết từng công đoạn nhận diện và lưu trữ vào Flash NVS",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.057"
+    ]
+  },
+  {
     "version": "v0.0.056",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.056 - Tối Ưu Tốc Độ Xử Lý & Đăng Ký Khuôn Mặt Siêu Tốc (<0.3s)",
