@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.047",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.047 - Tích Hợp Thư Viện Deep Learning Chính Hãng Espressif (esp-dl, MSR01 & MobileFaceNet 112 S8)",
+    "changes": [
+      "Nâng cấp toàn diện lõi Face AI Engine từ thuật toán Heuristic lên mạng nơ-ron tích chập học sâu (Deep Learning CNN) chính hãng của Espressif tích hợp sẵn trong ESP32 Core 2.0.17",
+      "Triển khai mô hình phát hiện khuôn mặt HumanFaceDetectMSR01: Phát hiện chính xác vị trí khuôn mặt và trích xuất chuẩn 5 điểm Landmark AI thực thụ (mắt trái, mắt phải, mũi, khóe miệng)",
+      "Triển khai mô hình nhận diện khuôn mặt FaceRecognition112V1S8 (MobileFaceNet 112x112 INT8 Quantization): Trích xuất vector nhúng đặc trưng khuôn mặt (Face Embedding) và so khớp danh tính độ tin cậy cao",
+      "Tận dụng tối đa tập lệnh tăng tốc phần cứng vector PIE (Processor Instruction Extension) của SoC ESP32-S3 WROOM-1 N16R8",
+      "Bảo toàn 100% kiến trúc bất biến của CameraHandler, WebServer Core 1 và Video Stream Core 0",
+      "Tự động biên dịch và xuất gói nhị phân OTA_Update.bin và Full_Flash.bin v0.0.047"
+    ]
+  },
+  {
     "version": "v0.0.046",
     "date": "2026-10-04",
     "title": "Phiên bản v0.0.046 - Khắc Phục Lỗi Livestream MJPEG Bị Chớp Nháy & Tối Ưu Hiệu Năng Face AI",

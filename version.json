@@ -1,8 +1,8 @@
 {
-  "version": "0.0.046",
-  "build_number": 46,
+  "version": "0.0.047",
+  "build_number": 47,
   "hardware": "ESP32-S3-WROOM-N16R8",
-  "release_date": "2026-10-04",
+  "release_date": "2026-10-05",
   "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.046: Khắc phục triệt để hiện tượng livestream MJPEG bị chớp nháy liên tục trong app Face AI. Tối ưu hóa cơ chế đồng bộ kích thước canvas một lần duy nhất, tăng ngưỡng socket retry buffer và tinh chỉnh tần số Face AI task giải phóng băng thông DMA camera.",
-    "en": "Release v0.0.046: Fixed continuous livestream flickering in Face AI app. Optimized single-pass canvas dimension synchronization, increased TCP socket retry buffer resilience, and tuned Face AI task frequency to free up camera DMA bandwidth."
+    "vi": "Phiên bản v0.0.047: Tích hợp thư viện Deep Learning chính hãng của Espressif (esp-dl, HumanFaceDetect MSR01 và FaceRecognition MobileFaceNet 112 S8) chạy trực tiếp trên ESP32-S3 N16R8, nhận diện khuôn mặt và 5 điểm Landmark AI thực thụ.",
+    "en": "Release v0.0.047: Integrated official Espressif Deep Learning models (esp-dl, HumanFaceDetect MSR01 and FaceRecognition MobileFaceNet 112 S8) running directly on ESP32-S3 N16R8, enabling true AI face recognition and 5-point landmarks."
   }
 }
