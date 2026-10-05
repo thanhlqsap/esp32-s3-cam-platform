@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.055",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.055 - Chuẩn Hóa Nhận Diện Camera Live Với ESP-DL & Khớp Tỉ Lệ Ngưỡng Threshold 1-1",
+    "changes": [
+      "Nâng cấp trực tiếp hàm _processFrame để chạy mô hình HumanFaceDetectMSR01 và trích xuất vector MobileFaceNet trực tiếp từ luồng Camera Live",
+      "Chuẩn hóa công thức ánh xạ Cosine Similarity (maxSimilarity * 100%) khớp chính xác 1-1 với thanh trượt ngưỡng nhận diện (Recognition Threshold)",
+      "Đặt giá trị mặc định cho Ngưỡng nhận diện là 55% (khớp chuẩn 0.55 của Espressif) và Tỷ lệ khuôn mặt tối thiểu là 8%",
+      "Tự động chuẩn hóa kích thước Bounding Box và 5 điểm Landmark về không gian hiển thị 320x240 trên Web Dashboard",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.055"
+    ]
+  },
+  {
     "version": "v0.0.054",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.054 - Tích Hợp Thư Viện Chuẩn ESP-DL & MobileFaceNet Cho Nhận Diện Khuôn Mặt Đồng Nhất",
