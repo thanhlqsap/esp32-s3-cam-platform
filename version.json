@@ -1,6 +1,6 @@
 {
-  "version": "0.0.058",
-  "build_number": 58,
+  "version": "0.0.059",
+  "build_number": 59,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-05",
   "min_bootloader_version": "0.0.001",

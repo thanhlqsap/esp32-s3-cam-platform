@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.059",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.059 - Khóa Mutex _aiMutex Độc Quyền & Tối Ưu Triệt Để Khâu Đăng Ký Khuôn Mặt",
+    "changes": [
+      "Khắc phục triệt để lỗi kẹt nút 'Đang lưu vào Flash...': Tích hợp khóa Mutex _aiMutex độc quyền, ngăn chặn 100% tình trạng Race Condition / Deadlock khi task camera ngầm và API enroll cùng gọi vào mô hình ESP-DL",
+      "Tách biệt luồng đăng ký: Tab 'Chụp Trực Tiếp' chuyển sang chụp trực tiếp từ cảm biến camera gốc của ESP32-S3 (không nén/giải mã Base64 trung gian, phản hồi tức thì <0.1s)",
+      "Bổ sung AbortController timeout 15s trên Web Client chống treo giao diện vĩnh viễn",
+      "Tăng timeout chờ ghi Flash NVS lên 500ms đảm bảo lưu trữ an toàn tuyệt đối",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.059"
+    ]
+  },
+  {
     "version": "v0.0.058",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.058 - Nâng Cấp Two-Stage Detector (MSR01 + MNP01) & Chuẩn Hóa 5 Landmarks ESP-DL Nhận Diện Tuyệt Đối",
