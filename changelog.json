@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.061",
+    "date": "2026-10-06",
+    "title": "Phiên bản v0.0.061 - Khắc Phục Triệt Để Lỗi Upload Ảnh Face AI Gây Reset & Tự Phục Hồi NVS Khởi Động",
+    "changes": [
+      "Khắc phục triệt để lỗi reset khi upload ảnh: Chuyển toàn bộ quá trình giải mã Base64 JPEG và Deep Learning từ loopTask (8KB) sang Worker Task chuyên dụng với 32KB Stack trên PSRAM",
+      "Chuẩn hóa Web Client: Tự động center-crop và resize ảnh upload thành chuẩn vuông 160x160 pixel (bội số 16px MCU JPEG), dung lượng siêu nhẹ ~4KB giúp truyền tải và giải mã cực nhanh",
+      "Chống tràn bộ nhớ Heap TJpgDec: Cấp phát bộ đệm RGB888 căn chỉnh trần theo khối MCU 16x16 pixel, loại bỏ hoàn toàn nguy cơ ghi đè bộ nhớ trong PSRAM",
+      "Khóa an toàn Flash NVS: Chiếm giữ khóa _aiMutex tạm thời khi lưu vector đặc trưng nhằm bảo vệ Flash Cache, ngăn chặn hiện tượng Cache Disabled Panic",
+      "Cơ chế tự phục hồi Boot toàn diện: Sửa đổi initNvsPartition() tự động format và phục hồi phân vùng NVS khi gặp bất kỳ lỗi hỏng dữ liệu nào, xóa bỏ 100% tình trạng bootloop",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.061"
+    ]
+  },
+  {
     "version": "v0.0.060",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.060 - Đột Phá Bộ Đệm Feature Vector Cache & Khử Triệt Để Lỗi Kẹt Nút Lưu Flash",

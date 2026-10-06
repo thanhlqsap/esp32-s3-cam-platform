@@ -1,8 +1,8 @@
 {
-  "version": "0.0.060",
-  "build_number": 60,
+  "version": "0.0.061",
+  "build_number": 61,
   "hardware": "ESP32-S3-WROOM-N16R8",
-  "release_date": "2026-10-05",
+  "release_date": "2026-10-06",
   "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.053: Sửa triệt để hiển thị đa ngôn ngữ i18n trên site Face AI, bảo toàn 100% UTF-8 Unicode và Emoji, cơ chế chống cache trình duyệt i18n.js, bổ sung từ điển 10 ngôn ngữ cho các nhãn modal & điều khiển camera.",
-    "en": "Release v0.0.053: Fixed i18n multilingual rendering on Face AI site, 100% UTF-8 Unicode & Emoji preservation, browser cache-busting for i18n.js, and added 10-language dictionary entries for modal labels & camera controls."
+    "vi": "Phiên bản v0.0.061: Khắc phục triệt để lỗi upload ảnh Face AI gây reset & bootloop; chuyển xử lý AI sang Worker Task 32KB stack, chuẩn hóa auto center-crop 160x160, đệm khối MCU 16x16 chống tràn heap và tự động phục hồi phân vùng NVS lúc boot.",
+    "en": "Release v0.0.061: Completely resolved Face AI photo upload reset & bootloop; offloaded AI inference to 32KB stack worker task, standardized 160x160 auto center-crop, padded MCU 16x16 heap buffers, and enabled automatic NVS recovery on boot."
   }
 }
