@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.060",
+    "date": "2026-10-05",
+    "title": "Phiên bản v0.0.060 - Đột Phá Bộ Đệm Feature Vector Cache & Khử Triệt Để Lỗi Kẹt Nút Lưu Flash",
+    "changes": [
+      "Giải quyết triệt để lỗi kẹt nút 'Đang lưu vào Flash...': Tích hợp cơ chế Feature Vector Cache thời gian thực từ camera live, cho phép lưu Flash tức thì < 5ms mà không cần re-infer hay tranh chấp DMA camera",
+      "Bổ sung tuyến đường HTTP OPTIONS Preflight cho toàn bộ API Face AI (/api/face/enroll, delete, clear, config), loại bỏ hoàn toàn hiện tượng trình duyệt chặn request",
+      "Thêm headers chống cache (Cache-Control: no-store, no-cache, must-revalidate) cho trang Web Face AI đảm bảo người dùng luôn tải phiên bản giao diện mới nhất",
+      "Tối ưu thời gian chờ Timeout Client xuống 8 giây kèm thông báo Alert kết quả đăng ký thành công chi tiết",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.060"
+    ]
+  },
+  {
     "version": "v0.0.059",
     "date": "2026-10-05",
     "title": "Phiên bản v0.0.059 - Khóa Mutex _aiMutex Độc Quyền & Tối Ưu Triệt Để Khâu Đăng Ký Khuôn Mặt",
