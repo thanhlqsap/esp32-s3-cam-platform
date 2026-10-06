@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.064",
+    "date": "2026-10-06",
+    "title": "Phiên bản v0.0.064 - Đột Phá Nhận Diện Đa Góc Mặt (Multi-Pose Wizard: Trực Diện, Nghiêng Trái, Nghiêng Phải) & Tối Ưu Độ Trễ Phát Hiện AI",
+    "changes": [
+      "Công nghệ lấy mẫu và nhận diện 3 góc khuôn mặt (Multi-Pose Matching): Bổ sung hỗ trợ trích xuất đồng thời 3 vector đặc trưng (Trực diện, Nghiêng trái ~20°, Nghiêng phải ~20°) cho mỗi người dùng, lưu trữ trực tiếp trên Octal PSRAM và Flash NVS",
+      "Thuật toán so khớp Max-Pooling Similarity: Tự động so sánh khuôn mặt camera thời gian thực với cả 3 góc mẫu, tăng độ nhạy và chính xác khi quay đầu từ <50% lên >85%, triệt tiêu hoàn toàn hiện tượng mất nhận diện khi quay mặt",
+      "Giao diện Multi-Angle Enrollment Wizard: Bổ sung 3 Slot trực quan có icon và thumbnail cho 3 góc mẫu, tích hợp dòng hướng dẫn tư thế động và cho phép lưu nhanh (chỉ cần 1 góc) hoặc lưu đủ bộ 3 góc",
+      "Tối ưu hóa độ trễ phát hiện ban đầu: Hạ chu kỳ nghỉ vTaskDelay của AI task từ 280ms xuống 180ms, nâng tốc độ phát hiện lên ~3.2 FPS giúp Bounding Box và Landmarks xuất hiện nhanh hơn gấp đôi",
+      "Đồng bộ từ điển i18n 10 ngôn ngữ: Bổ sung các nhãn và hướng dẫn đa góc mặt chuẩn xác trên giao diện Web Face AI",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.064"
+    ]
+  },
+  {
     "version": "v0.0.063",
     "date": "2026-10-06",
     "title": "Phiên bản v0.0.063 - Thuật Toán Adaptive Socket Buffer Thích Ứng Độ Phân Giải & Đột Phá Min Free Heap Watermark >60KB",

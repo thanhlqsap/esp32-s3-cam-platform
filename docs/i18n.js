@@ -2584,6 +2584,126 @@
       "ko": "ESP32-S3에 연결할 수 없습니다!",
       "ru": "Не удалось подключиться к ESP32-S3!",
       "ar": "تعذر الاتصال بـ ESP32-S3!"
+    },
+    "angle_front": {
+      "vi": "1. Trực diện",
+      "en": "1. Frontal",
+      "zh": "1. 正脸",
+      "es": "1. Frontal",
+      "fr": "1. De face",
+      "de": "1. Frontal",
+      "ja": "1. 正面",
+      "ko": "1. 정면",
+      "ru": "1. Анфас",
+      "ar": "1. مواجه"
+    },
+    "angle_left": {
+      "vi": "2. Nghiêng trái",
+      "en": "2. Turn Left",
+      "zh": "2. 左侧脸",
+      "es": "2. Perfil Izq.",
+      "fr": "2. Profil gauche",
+      "de": "2. Nach links",
+      "ja": "2. 左向き",
+      "ko": "2. 좌측면",
+      "ru": "2. Поворот влево",
+      "ar": "2. لليسار"
+    },
+    "angle_right": {
+      "vi": "3. Nghiêng phải",
+      "en": "3. Turn Right",
+      "zh": "3. 右侧脸",
+      "es": "3. Perfil Der.",
+      "fr": "3. Profil droit",
+      "de": "3. Nach rechts",
+      "ja": "3. 右向き",
+      "ko": "3. 우측면",
+      "ru": "3. Поворот вправо",
+      "ar": "3. لليمين"
+    },
+    "slot_captured": {
+      "vi": "✅ Đã chụp",
+      "en": "✅ Captured",
+      "zh": "✅ 已抓拍",
+      "es": "✅ Capturado",
+      "fr": "✅ Capturé",
+      "de": "✅ Erfasst",
+      "ja": "✅ 撮影済",
+      "ko": "✅ 촬영됨",
+      "ru": "✅ Снято",
+      "ar": "✅ تم الالتقاط"
+    },
+    "slot_empty": {
+      "vi": "Chưa chụp",
+      "en": "Not captured",
+      "zh": "未拍摄",
+      "es": "Sin capturar",
+      "fr": "Non capturé",
+      "de": "Nicht erfasst",
+      "ja": "未撮影",
+      "ko": "미촬영",
+      "ru": "Не снято",
+      "ar": "لم يتم الالتقاط"
+    },
+    "hint_front": {
+      "vi": "Bước 1/3: Giữ mặt thẳng nhìn trực diện vào camera",
+      "en": "Step 1/3: Look straight into the camera",
+      "zh": "第 1/3 步：保持正脸直视摄像头",
+      "es": "Paso 1/3: Mire de frente a la cámara",
+      "fr": "Étape 1/3 : Regardez droit dans la caméra",
+      "de": "Schritt 1/3: Gerade in die Kamera schauen",
+      "ja": "ステップ 1/3：カメラを正面から直視してください",
+      "ko": "1/3단계: 카메라를 정면으로 똑바로 바라보세요",
+      "ru": "Шаг 1/3: Смотрите прямо в камеру",
+      "ar": "الخطوة 1/3: انظر مباشرة إلى الكاميرا"
+    },
+    "hint_left": {
+      "vi": "Bước 2/3: Nghiêng nhẹ mặt sang trái khoảng 20°",
+      "en": "Step 2/3: Turn your head slightly to the left (~20°)",
+      "zh": "第 2/3 步：向左微转头部约 20°",
+      "es": "Paso 2/3: Gire la cabeza ligeramente a la izquierda (~20°)",
+      "fr": "Étape 2/3 : Tournez légèrement la tête à gauche (~20°)",
+      "de": "Schritt 2/3: Kopf leicht nach links drehen (~20°)",
+      "ja": "ステップ 2/3：顔を左に約 20° 傾けてください",
+      "ko": "2/3단계: 고개를 왼쪽으로 살짝 돌리세요 (~20°)",
+      "ru": "Шаг 2/3: Слегка поверните голову влево (~20°)",
+      "ar": "الخطوة 2/3: أدر رأسك قليلاً إلى اليسار (~20 درجة)"
+    },
+    "hint_right": {
+      "vi": "Bước 3/3: Nghiêng nhẹ mặt sang phải khoảng 20°",
+      "en": "Step 3/3: Turn your head slightly to the right (~20°)",
+      "zh": "第 3/3 步：向右微转头部约 20°",
+      "es": "Paso 3/3: Gire la cabeza ligeramente a la derecha (~20°)",
+      "fr": "Étape 3/3 : Tournez légèrement la tête à droite (~20°)",
+      "de": "Schritt 3/3: Kopf leicht nach rechts drehen (~20°)",
+      "ja": "ステップ 3/3：顔を右に約 20° 傾けてください",
+      "ko": "3/3단계: 고개를 오른쪽으로 살짝 돌리세요 (~20°)",
+      "ru": "Шаг 3/3: Слегка поверните голову вправо (~20°)",
+      "ar": "الخطوة 3/3: أدر رأسك قليلاً إلى اليمين (~20 درجة)"
+    },
+    "multi_angle_tip": {
+      "vi": "💡 Khuyến nghị chụp đủ 3 góc để nhận diện siêu nhạy, hoặc chỉ cần chụp Góc 1 (Trực diện) để lưu nhanh.",
+      "en": "💡 Capture all 3 angles for highest accuracy, or capture Angle 1 (Frontal) for quick enrollment.",
+      "zh": "💡 建议录满 3 个角度以获得最佳识别率，或仅拍摄角度 1 (正脸) 快速保存。",
+      "es": "💡 Se recomienda capturar los 3 ángulos para máxima precisión, o solo el Ángulo 1 para guardar rápido.",
+      "fr": "💡 Il est recommandé de capturer les 3 angles pour une sensibilité maximale, ou l'Angle 1 seul.",
+      "de": "💡 Es wird empfohlen, alle 3 Winkel für maximale Genauigkeit aufzunehmen, oder nur Winkel 1.",
+      "ja": "💡 最高精度のために3つの角度を撮影することを推奨します（正面のみでも保存可）。",
+      "ko": "💡 최고 정확도를 위해 3가지 각도를 모두 촬영하는 것을 권장합니다 (정면만으로도 저장 가능).",
+      "ru": "💡 Рекомендуется снять все 3 ракурса для максимальной точности, либо только Анфас для быстрой записи.",
+      "ar": "💡 يُنصح بالتقاط الزوايا الثلاث لأعلى دقة، أو التقاط الزاوية 1 فقط للحفظ السريع."
+    },
+    "msg_capture_front_first": {
+      "vi": "Vui lòng chụp tối thiểu Góc 1 (Trực diện) trước khi lưu!",
+      "en": "Please capture at least Angle 1 (Frontal) before saving!",
+      "zh": "请在保存前至少抓拍角度 1 (正脸)！",
+      "es": "¡Por favor capture al menos el Ángulo 1 (Frontal) antes de guardar!",
+      "fr": "Veuillez capturer au moins l'Angle 1 (De face) avant d'enregistrer !",
+      "de": "Bitte erfassen Sie vor dem Speichern mindestens Winkel 1 (Frontal)!",
+      "ja": "保存する前に少なくとも角度1（正面）を撮影してください！",
+      "ko": "저장하기 전에 최소한 1번 각도(정면)를 촬영하세요!",
+      "ru": "Пожалуйста, снимите хотя бы Ракурс 1 (Анфас) перед сохранением!",
+      "ar": "يرجى التقاط الزاوية 1 (المواجهة) على الأقل قبل الحفظ!"
     }
   },
   "apps": {
@@ -2616,6 +2736,10 @@
   }
 };
     // === DICTIONARY_END ===
+
+
+
+
 
 
 

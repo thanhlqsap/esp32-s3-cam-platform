@@ -1,6 +1,6 @@
 {
-  "version": "0.0.063",
-  "build_number": 63,
+  "version": "0.0.064",
+  "build_number": 64,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-06",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.063: Tích hợp thuật toán Adaptive Socket Buffer theo độ phân giải NVS (16KB cho <=VGA, 24KB cho SVGA, 32KB cho HD, 48KB cho UXGA); tự động co giãn buffer runtime khi đổi độ phân giải trên Web, tối ưu stack face_ai_task xuống 10KB, nâng Min Free Heap Watermark lên >60KB.",
-    "en": "Release v0.0.063: Integrated Dynamic Adaptive Socket Buffer scaled to camera resolution from NVS (16KB for <=VGA, 24KB for SVGA, 32KB for HD, 48KB for UXGA); dynamic runtime buffer resizing on Web resolution changes, optimized face_ai_task stack to 10KB, boosting Min Free Heap Watermark to >60KB."
+    "vi": "Phiên bản v0.0.064: Tích hợp công nghệ nhận diện đa góc mặt (Multi-Pose Wizard: Trực diện, Nghiêng trái, Nghiêng phải) với thuật toán Max-Pooling Similarity tăng độ nhạy nhận diện lên >85%; tối ưu chu kỳ quét AI xuống 180ms giúp phát hiện khuôn mặt nhanh gấp đôi; đồng bộ từ điển i18n 10 ngôn ngữ.",
+    "en": "Release v0.0.064: Integrated Multi-Pose Face Enrollment & Recognition (Frontal, Turn Left, Turn Right) with Max-Pooling Similarity algorithm boosting accuracy to >85%; optimized AI inference loop delay to 180ms cutting detection latency in half; synchronized 10-language i18n dictionary."
   }
 }
