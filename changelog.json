@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.065",
+    "date": "2026-10-06",
+    "title": "Phiên bản v0.0.065 - Khắc Phục Triệt Để Lỗi Timeout 14s Khi Đăng Ký 3 Góc Khuôn Mặt & Tối Ưu Tốc Độ Xử Lý AI Gấp 4 Lần",
+    "changes": [
+      "Khắc phục triệt để lỗi timeout 14s khi đăng ký 3 góc khuôn mặt: Tự động Center-Crop vùng tâm ngắm (240x240) từ camera live và thu chuẩn về 160x160 với chất lượng 80% JPEG, giảm dung lượng mỗi ảnh từ ~30KB xuống chỉ ~3.5KB",
+      "Rút ngắn thời gian xử lý AI cả 3 ảnh từ 14s xuống chỉ ~3.3s: Nhờ kích thước 160x160 chuẩn tỷ lệ tối ưu cho ESP-DL Two-Stage Detector, mỗi ảnh chỉ mất ~1.1s để trích xuất đặc trưng sinh trắc học và tiết kiệm 67% dung lượng RAM giải mã RGB888",
+      "Khóa Mutex _aiMutex nguyên khối cho toàn bộ batch enroll: Loại bỏ việc giải phóng Mutex xen kẽ giữa các ảnh mẫu, ngăn chặn hoàn toàn tác vụ nền realtime detection chen ngang gây chậm trễ",
+      "Mở rộng biên độ an toàn Timeout: Nâng thời gian chờ Semaphore FreeRTOS trên ESP32-S3 từ 12s lên 25s, và nâng timeout fetch phía giao diện Web từ 14s lên 30s",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.065"
+    ]
+  },
+  {
     "version": "v0.0.064",
     "date": "2026-10-06",
     "title": "Phiên bản v0.0.064 - Đột Phá Nhận Diện Đa Góc Mặt (Multi-Pose Wizard: Trực Diện, Nghiêng Trái, Nghiêng Phải) & Tối Ưu Độ Trễ Phát Hiện AI",

@@ -1,6 +1,6 @@
 {
-  "version": "0.0.064",
-  "build_number": 64,
+  "version": "0.0.065",
+  "build_number": 65,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-06",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.064: Tích hợp công nghệ nhận diện đa góc mặt (Multi-Pose Wizard: Trực diện, Nghiêng trái, Nghiêng phải) với thuật toán Max-Pooling Similarity tăng độ nhạy nhận diện lên >85%; tối ưu chu kỳ quét AI xuống 180ms giúp phát hiện khuôn mặt nhanh gấp đôi; đồng bộ từ điển i18n 10 ngôn ngữ.",
-    "en": "Release v0.0.064: Integrated Multi-Pose Face Enrollment & Recognition (Frontal, Turn Left, Turn Right) with Max-Pooling Similarity algorithm boosting accuracy to >85%; optimized AI inference loop delay to 180ms cutting detection latency in half; synchronized 10-language i18n dictionary."
+    "vi": "Phiên bản v0.0.065: Khắc phục triệt để lỗi timeout 14s khi đăng ký 3 góc khuôn mặt. Tối ưu Center-Crop 160x160 với chất lượng 80% JPEG giúp giảm dung lượng ảnh từ 30KB xuống ~3.5KB, rút ngắn thời gian xử lý AI cả 3 ảnh từ 14s xuống chỉ ~3.3s; khoá _aiMutex nguyên khối chống tác vụ nền chen ngang; nâng timeout Semaphore lên 25s và client timeout lên 30s.",
+    "en": "Release v0.0.065: Completely eliminated 14s timeout when enrolling 3 facial angles. Optimized Center-Crop 160x160 @ 80% JPEG slashing payload from 30KB to ~3.5KB, cutting AI processing time for 3 samples from 14s down to ~3.3s; locked _aiMutex atomically during batch enrollment preventing task interruptions; raised Semaphore timeout to 25s and client timeout to 30s."
   }
 }
