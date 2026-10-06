@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.062",
+    "date": "2026-10-06",
+    "title": "Phiên bản v0.0.062 - Tối Ưu Giải Phóng ~60KB Internal SRAM Sang Octal PSRAM & Chống Sụt Giảm Heap Watermark",
+    "changes": [
+      "Giải phóng ~60KB Internal SRAM sang Octal PSRAM 8MB: Tối ưu kiến trúc bộ nhớ, hạ tỷ lệ chiếm dụng SRAM từ 72% xuống ~45%, đưa Free Heap lên 140KB-160KB",
+      "Tái cấu trúc SystemLogger thành RingBuffer PSRAM: Cấp phát mảng nguyên khối 150 phần tử trên PSRAM (~22.8KB), loại bỏ 300 phân mảnh chuỗi String động trong SRAM",
+      "Cấp phát bộ đệm REST API JSON trên PSRAM: Đặt reserve 8KB cho /api/status và 16KB cho /api/logs trên PSRAM (>4096 bytes), nâng Min Free Heap Watermark từ 11KB lên >60KB",
+      "Chuyển cơ sở dữ liệu Face AI sang PSRAM: Cấp phát mảng 20 khuôn mặt (StoredFaceRecord 11KB) trực tiếp trên Octal PSRAM thay vì std::vector trên SRAM",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.062"
+    ]
+  },
+  {
     "version": "v0.0.061",
     "date": "2026-10-06",
     "title": "Phiên bản v0.0.061 - Khắc Phục Triệt Để Lỗi Upload Ảnh Face AI Gây Reset & Tự Phục Hồi NVS Khởi Động",

@@ -1,6 +1,6 @@
 {
-  "version": "0.0.061",
-  "build_number": 61,
+  "version": "0.0.062",
+  "build_number": 62,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-06",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.061: Khắc phục triệt để lỗi upload ảnh Face AI gây reset & bootloop; chuyển xử lý AI sang Worker Task 32KB stack, chuẩn hóa auto center-crop 160x160, đệm khối MCU 16x16 chống tràn heap và tự động phục hồi phân vùng NVS lúc boot.",
-    "en": "Release v0.0.061: Completely resolved Face AI photo upload reset & bootloop; offloaded AI inference to 32KB stack worker task, standardized 160x160 auto center-crop, padded MCU 16x16 heap buffers, and enabled automatic NVS recovery on boot."
+    "vi": "Phiên bản v0.0.062: Tối ưu kiến trúc giải phóng ~60KB Internal SRAM sang Octal PSRAM; chuyển SystemLogger 150 entries sang mảng PSRAM cố định (loại bỏ 300 phân mảnh chuỗi String), cấp phát JSON /api/status 8KB và database Face AI trên PSRAM, nâng Min Free Heap Watermark từ 11KB lên >60KB.",
+    "en": "Release v0.0.062: Offloaded ~60KB from Internal SRAM to Octal PSRAM; transitioned SystemLogger 150 entries to a contiguous PSRAM ring buffer (eliminating 300 fragmented Strings), allocated 8KB /api/status JSON and Face AI database in PSRAM, raising Min Free Heap Watermark from 11KB to >60KB."
   }
 }
