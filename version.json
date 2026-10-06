@@ -1,6 +1,6 @@
 {
-  "version": "0.0.062",
-  "build_number": 62,
+  "version": "0.0.063",
+  "build_number": 63,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-06",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.062: Tối ưu kiến trúc giải phóng ~60KB Internal SRAM sang Octal PSRAM; chuyển SystemLogger 150 entries sang mảng PSRAM cố định (loại bỏ 300 phân mảnh chuỗi String), cấp phát JSON /api/status 8KB và database Face AI trên PSRAM, nâng Min Free Heap Watermark từ 11KB lên >60KB.",
-    "en": "Release v0.0.062: Offloaded ~60KB from Internal SRAM to Octal PSRAM; transitioned SystemLogger 150 entries to a contiguous PSRAM ring buffer (eliminating 300 fragmented Strings), allocated 8KB /api/status JSON and Face AI database in PSRAM, raising Min Free Heap Watermark from 11KB to >60KB."
+    "vi": "Phiên bản v0.0.063: Tích hợp thuật toán Adaptive Socket Buffer theo độ phân giải NVS (16KB cho <=VGA, 24KB cho SVGA, 32KB cho HD, 48KB cho UXGA); tự động co giãn buffer runtime khi đổi độ phân giải trên Web, tối ưu stack face_ai_task xuống 10KB, nâng Min Free Heap Watermark lên >60KB.",
+    "en": "Release v0.0.063: Integrated Dynamic Adaptive Socket Buffer scaled to camera resolution from NVS (16KB for <=VGA, 24KB for SVGA, 32KB for HD, 48KB for UXGA); dynamic runtime buffer resizing on Web resolution changes, optimized face_ai_task stack to 10KB, boosting Min Free Heap Watermark to >60KB."
   }
 }

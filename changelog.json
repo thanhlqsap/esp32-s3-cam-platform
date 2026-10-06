@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.063",
+    "date": "2026-10-06",
+    "title": "Phiên bản v0.0.063 - Thuật Toán Adaptive Socket Buffer Thích Ứng Độ Phân Giải & Đột Phá Min Free Heap Watermark >60KB",
+    "changes": [
+      "Tích hợp thuật toán Dynamic Adaptive Socket Buffer: Tự động điều chỉnh kích thước bộ đệm SO_SNDBUF theo độ phân giải camera NVS (16KB cho <=VGA, 24KB cho SVGA, 32KB cho HD, 48KB cho UXGA), thay thế hoàn toàn cấu hình cứng 64KB",
+      "Tự động co giãn lại (Resize) Socket Buffer thời gian thực: Khi người dùng đổi độ phân giải trên giao diện Web Dashboard, cameraStreamTask tự động gọi setsockopt điều chỉnh buffer ngay trên kết nối đang chạy mà không cần tải lại trang",
+      "Hiển thị dung lượng Adaptive Buffer thời gian thực trên trang Diagnostics (/diagnostics) giúp theo dõi chính xác mức tiêu thụ bộ đệm",
+      "Tối ưu hóa FreeRTOS Task Stack: Hạ stack face_ai_task từ 16KB xuống 10KB an toàn do các mảng tensor ma trận đều đã chạy trên Octal PSRAM, giải phóng thêm 6KB SRAM",
+      "Đột phá chỉ số Min Free Heap Watermark: Duy trì điểm sàn bộ nhớ an toàn >60KB, xóa bỏ hoàn toàn hiện tượng sụt áp SRAM tức thời",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.063"
+    ]
+  },
+  {
     "version": "v0.0.062",
     "date": "2026-10-06",
     "title": "Phiên bản v0.0.062 - Tối Ưu Giải Phóng ~60KB Internal SRAM Sang Octal PSRAM & Chống Sụt Giảm Heap Watermark",
