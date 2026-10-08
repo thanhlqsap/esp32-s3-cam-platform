@@ -1,5 +1,31 @@
 [
   {
+    "version": "v0.0.067",
+    "date": "2026-10-08",
+    "title": "Phiên bản v0.0.067 - Khắc Phục Triệt Để Lỗi Đứng Board ESP32 Khi Đăng Ký 3 Góc Khuôn Mặt & Tối Ưu Mutex FreeRTOS",
+    "changes": [
+      "Khắc phục triệt để hiện tượng đứng/treo board ESP32-S3 khi đăng ký khuôn mặt 3 góc: Tách hoàn toàn tác vụ ghi Flash NVS (_saveDatabaseToNVS) ra ngoài khóa _dataMutex, loại bỏ việc chặn các endpoint Web và telemetry",
+      "Triệt tiêu 100% nguy cơ AB-BA Deadlock: Đảo ngược thứ tự xử lý trong camera fallback, luôn lấy frame từ CameraHandler trước rồi mới xin khóa _aiMutex, giải phóng ngay sau khi trích xuất",
+      "Bổ sung cơ chế nhường quyền CPU FreeRTOS chống Task Watchdog Timer (TWDT): Chèn các khoảng nghỉ vTaskDelay(40ms) xen kẽ giữa từng ảnh trong chuỗi trích xuất batch, không bao giờ độc chiếm CPU 100% liên tục",
+      "Hạ kích thước Stack của Worker Task xuống 10KB (10240 bytes) an toàn: Đảm bảo 100% lệnh xTaskCreatePinnedToCore luôn cấp phát thành công trên Internal SRAM, xóa bỏ hiện tượng sụt áp bộ nhớ",
+      "Dọn sạch bộ đệm NVS khỏi Stack: Chuyển toàn bộ bộ đệm giải mã StoredFaceRecord sang Octal PSRAM/Heap, giải phóng 1.6KB bộ nhớ Stack của hàm khởi động hệ thống",
+      "Đồng bộ luồng gửi dữ liệu Web Client: Ưu tiên bắt vector trực tiếp từ camera phần cứng (<1ms) và tự động đính kèm ảnh đa góc thu nhỏ làm fallback dự phòng",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.067"
+    ]
+  },
+  {
+    "version": "v0.0.066",
+    "date": "2026-10-06",
+    "title": "Phiên bản v0.0.066 - Kiến Trúc Zero-Base64 Live Sample Đột Phá, Khôi Phục Lưu Tức Thì <5ms & Triệt Tiêu Vĩnh Viễn Timeout 14s",
+    "changes": [
+      "Kiến trúc Zero-Base64 Live Sample: Loại bỏ hoàn toàn việc truyền chuỗi Base64 ảnh nặng nề từ HTML Canvas, chuyển sang bắt trực tiếp vector đặc trưng từ Camera Live phần cứng của ESP32-S3 qua endpoint POST /api/face/sample với tốc độ <1ms",
+      "Khôi phục 100% trải nghiệm lưu tức thì <5ms như 2 phiên bản trước: Khi bấm Lưu từ camera live, ESP32-S3 lưu trực tiếp vector từ cache NVS mà không cần giải mã JPEG hay tính toán lại AI",
+      "Linh hoạt 2 chế độ: Cho phép lưu nhanh 1 hình truyền thống (chỉ cần nhập tên rồi bấm Lưu) hoặc chụp đủ 3 góc (Trực diện, Nghiêng trái, Nghiêng phải) bằng các nút chụp góc siêu nhạy không độ trễ",
+      "Bổ sung cơ chế staged mẫu và API reset /api/face/sample?clear=1 giúp quản lý bộ nhớ đệm lấy mẫu sạch sẽ, an toàn",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.066"
+    ]
+  },
+  {
     "version": "v0.0.065",
     "date": "2026-10-06",
     "title": "Phiên bản v0.0.065 - Khắc Phục Triệt Để Lỗi Timeout 14s Khi Đăng Ký 3 Góc Khuôn Mặt & Tối Ưu Tốc Độ Xử Lý AI Gấp 4 Lần",

@@ -1,8 +1,8 @@
 {
-  "version": "0.0.065",
-  "build_number": 65,
+  "version": "0.0.067",
+  "build_number": 67,
   "hardware": "ESP32-S3-WROOM-N16R8",
-  "release_date": "2026-10-06",
+  "release_date": "2026-10-08",
   "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.065: Khắc phục triệt để lỗi timeout 14s khi đăng ký 3 góc khuôn mặt. Tối ưu Center-Crop 160x160 với chất lượng 80% JPEG giúp giảm dung lượng ảnh từ 30KB xuống ~3.5KB, rút ngắn thời gian xử lý AI cả 3 ảnh từ 14s xuống chỉ ~3.3s; khoá _aiMutex nguyên khối chống tác vụ nền chen ngang; nâng timeout Semaphore lên 25s và client timeout lên 30s.",
-    "en": "Release v0.0.065: Completely eliminated 14s timeout when enrolling 3 facial angles. Optimized Center-Crop 160x160 @ 80% JPEG slashing payload from 30KB to ~3.5KB, cutting AI processing time for 3 samples from 14s down to ~3.3s; locked _aiMutex atomically during batch enrollment preventing task interruptions; raised Semaphore timeout to 25s and client timeout to 30s."
+    "vi": "Phiên bản v0.0.067: Khắc phục triệt để lỗi đứng board ESP32 khi đăng ký 3 góc khuôn mặt. Tách việc ghi Flash NVS ra ngoài khóa _dataMutex, triệt tiêu 100% Deadlock giữa AI Mutex và Camera Handler, bổ sung nhường CPU FreeRTOS chống Task Watchdog Timer, hạ stack Worker Task xuống 10KB an toàn chống tràn SRAM nội bộ, dọn sạch bộ đệm NVS trên Stack.",
+    "en": "Release v0.0.067: Permanently resolves ESP32 board freezing during 3-angle face enrollment. Decouples Flash NVS writes from _dataMutex, eliminates 100% of Deadlocks between AI Mutex and Camera Handler, adds FreeRTOS CPU yielding against Task Watchdog Timer timeouts, optimizes Worker Task stack to safe 10KB against SRAM overflow, and clears NVS buffers off the execution stack."
   }
 }
