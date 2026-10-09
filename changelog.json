@@ -1,5 +1,28 @@
 [
   {
+    "version": "v0.0.088",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.088 - Tích Hợp Khung Bounding Box HUD & Điểm Nhận Diện Khuôn Mặt Trực Quan Trên Màn Hình Kiosk Điểm Danh",
+    "changes": [
+      "Bổ sung Canvas Overlay cho màn hình Kiosk: Thêm phần tử kioskOverlayCanvas đè trực tiếp lên luồng video camera stream trong chế độ Kiosk Fullscreen",
+      "Tính toán chuẩn xác tỷ lệ hiển thị (Letterbox/Pillarbox): Sử dụng thuật toán getRenderedImageBounds để đồng bộ tuyệt đối 100% tọa độ khuôn mặt theo kích thước thực tế của video stream trên mọi kích cỡ màn hình",
+      "Đồ họa HUD AI Camera công nghệ cao: Vẽ khung Bounding Box với 4 góc nhọn (Corner Brackets), viền nét đứt, nhãn tên kèm độ tin cậy và 5 điểm Landmark phát sáng sắc nét",
+      "Phân biệt màu sắc trực quan: Khung màu xanh lá (#00ff88) cho nhân viên đã nhận diện và màu cam (#ff9800) cho người lạ/khách chưa đăng ký",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.088"
+    ]
+  },
+  {
+    "version": "v0.0.087",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.087 - Khắc Phục Triệt Để Lỗi Nút Làm Mới Lịch Sử Điểm Danh & Thêm Hiệu Ứng Phản Hồi Trực Quan",
+    "changes": [
+      "Khắc phục lỗi ném ngoại lệ Javascript: Bổ sung kiểm tra an toàn (null guard) cho phần tử liveClock, ngăn chặn lỗi ngắt chuỗi hiển thị bảng lịch sử điểm danh",
+      "Thêm hiệu ứng Spinner phản hồi trực quan: Nút 'Làm mới' tự động xoay biểu tượng fa-spin và hiển thị 'Đang tải...' trong khi gửi yêu cầu mạng, chống double-click",
+      "Bảo đảm hiển thị danh sách điểm danh tức thì: Dữ liệu lịch sử quét từ camera và đồng bộ thẻ nhớ SD/Google Sheets cập nhật mượt mà",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.087"
+    ]
+  },
+  {
     "version": "v0.0.086",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.086 - Chuyển Đổi Hoàn Toàn Sang Cơ Chế Tự Động Lưu Cấu Hình (Auto-Save) & Tối Giản Nút Bấm",
