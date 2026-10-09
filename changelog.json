@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.078",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.078 - Phân Trang Thư Viện Ảnh MicroSD (Tối Đa 50 Ảnh, Tùy Chọn Số Lượng Hiển Thị) & Sửa Triệt Để Lỗi Khởi Động Bo Mạch",
+    "changes": [
+      "Phân trang Thư Viện Ảnh MicroSD (Photo Gallery Pagination): Bổ sung thanh điều hướng trang thông minh (Trang đầu/cuối, Trước/Sau, các số trang) hiển thị tối đa 50 ảnh/trang và tự động tính toán lại trang khi chuyển tab Tất Cả, Nhân Viên, Người Lạ",
+      "Tùy chọn số lượng ảnh hiển thị linh hoạt: Dropdown cho phép chọn 12, 24, 36, hoặc tối đa 50 ảnh/trang theo đúng yêu cầu người dùng",
+      "Sửa triệt để lỗi tràn bộ nhớ DynamicJsonDocument(4096) tại API /api/attendance/sd/snapshots: Chuyển sang stream JSON trực tiếp, chống cắt cụt dữ liệu khiến giao diện báo 0 ảnh",
+      "Sửa triệt để lỗi bo mạch không khởi động được sau khi nạp: Đảo thứ tự WebDashboard::init() trước AppModeManager::begin() và loại bỏ lệnh ESP.restart() tự động trong init() lúc nạp khôi phục thẻ nhớ, loại trừ dứt điểm nguy cơ bootloop",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.078"
+    ]
+  },
+  {
     "version": "v0.0.077",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.077 - Chuẩn Hoá Vòng Đời Ứng Dụng (App Lifecycle Management & Standby Mode)",
