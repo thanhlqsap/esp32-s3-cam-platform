@@ -2732,10 +2732,140 @@
         "ru": "Автономное распознавание лиц без интернета с помощью ESP-WHO.",
         "ar": "نظام مستقل للتعرف على الوجوه دون الحاجة للإنترنت باستخدام ESP-WHO."
       }
+    },
+    "app_attendance": {
+      "name": {
+        "vi": "Chấm Công Khuôn Mặt AI & Google Sheets",
+        "en": "AI Face Attendance & Google Sheets Sync",
+        "zh": "AI 人脸考勤与 Google 表格同步",
+        "es": "Asistencia Facial AI y Sincronización Google Sheets",
+        "fr": "Pointage Facial IA & Synchronisation Google Sheets",
+        "de": "KI-Gesichtszeiterfassung & Google Sheets Sync",
+        "ja": "AI 顔認証勤怠管理＆ Google スプレッドシート連携",
+        "ko": "AI 얼굴 인식 근태 관리 및 Google 스프레드시트 동기화",
+        "ru": "AI Учет Рабочего Времени по Лицу & Google Таблицы",
+        "ar": "حضور وانصراف بالوجه بالذكاء الاصطناعي وجوجل شيت"
+      },
+      "desc": {
+        "vi": "Tự động nhận diện nhân viên, ghi nhận thời gian thực và đồng bộ tức thì lên Google Sheets.",
+        "en": "Automatic employee recognition, real-time logging, and instant Google Sheets sync.",
+        "zh": "自动识别人脸、实时记录并即时同步到 Google 表格。",
+        "es": "Reconocimiento automático de empleados, registro en tiempo real y sincronización con Google Sheets.",
+        "fr": "Reconnaissance automatique des employés, enregistrement en temps réel et synchronisation Google Sheets.",
+        "de": "Automatische Mitarbeitererkennung, Echtzeit-Protokollierung und sofortige Google Sheets-Synchronisation.",
+        "ja": "従業員の自動認識、リアルタイム記録、Googleスプレッドシートへの即時同期。",
+        "ko": "직원 자동 인식, 실시간 로깅 및 Google 스프레드시트 즉시 동기화.",
+        "ru": "Автоматическое распознавание сотрудников, фиксация времени и синхронизация с Google Таблицами.",
+        "ar": "التعرف التلقائي على الموظفين، وتسجيل الوقت الفعلي، والمزامنة الفورية مع جداول بيانات جوجل."
+      }
+    }
+  },
+  "app_attendance": {
+    "title": {
+      "vi": "Hệ Thống Chấm Công Khuôn Mặt AI",
+      "en": "Smart Face Attendance System",
+      "zh": "AI 人脸考勤系统",
+      "es": "Sistema de Asistencia Facial AI",
+      "fr": "Système de Pointage Facial IA",
+      "de": "KI-Gesichtszeiterfassungssystem",
+      "ja": "AI 顔認証勤怠管理システム",
+      "ko": "AI 얼굴 인식 근태 관리 시스템",
+      "ru": "AI Система Учета Времени по Лицу",
+      "ar": "نظام الحضور بالوجه بالذكاء الاصطناعي"
+    },
+    "kiosk_view": {
+      "vi": "Khung Ngắm Chấm Công Trực Tiếp",
+      "en": "Live Kiosk Viewfinder",
+      "zh": "考勤实时取景框",
+      "es": "Visor de Asistencia en Vivo",
+      "fr": "Viseur de Pointage en Direct",
+      "de": "Live-Zeiterfassungs-Sucher",
+      "ja": "リアルタイム勤怠ファインダー",
+      "ko": "실시간 근태 뷰파인더",
+      "ru": "Видоискатель Учета Времени Live",
+      "ar": "شاشة الحضور المباشر"
+    },
+    "today_logs": {
+      "vi": "Lịch Sử Điểm Danh Hôm Nay",
+      "en": "Today's Attendance Logs",
+      "zh": "今日考勤打卡记录",
+      "es": "Registros de Asistencia de Hoy",
+      "fr": "Historique des Pointages du Jour",
+      "de": "Heutige Zeiterfassungsprotokolle",
+      "ja": "本日の勤怠ログ",
+      "ko": "오늘의 근태 기록",
+      "ru": "Журнал Посещаемости за Сегодня",
+      "ar": "سجلات الحضور اليومية"
+    },
+    "col_time": {
+      "vi": "Thời Gian",
+      "en": "Time",
+      "zh": "时间",
+      "es": "Hora",
+      "fr": "Heure",
+      "de": "Zeit",
+      "ja": "時刻",
+      "ko": "시간",
+      "ru": "Время",
+      "ar": "الوقت"
+    },
+    "col_name": {
+      "vi": "Nhân Viên",
+      "en": "Employee",
+      "zh": "员工姓名",
+      "es": "Empleado",
+      "fr": "Employé",
+      "de": "Mitarbeiter",
+      "ja": "従業員",
+      "ko": "직원",
+      "ru": "Сотрудник",
+      "ar": "الموظف"
+    },
+    "col_confidence": {
+      "vi": "Độ Khớp",
+      "en": "Confidence",
+      "zh": "匹配度",
+      "es": "Confianza",
+      "fr": "Précision",
+      "de": "Genauigkeit",
+      "ja": "一致率",
+      "ko": "일치율",
+      "ru": "Точность",
+      "ar": "الدقة"
+    },
+    "col_status": {
+      "vi": "Google Sheets",
+      "en": "Google Sheets",
+      "zh": "Google 表格",
+      "es": "Google Sheets",
+      "fr": "Google Sheets",
+      "de": "Google Sheets",
+      "ja": "Google スプレッドシート",
+      "ko": "Google 스프레드시트",
+      "ru": "Google Таблицы",
+      "ar": "جداول بيانات جوجل"
+    },
+    "refresh": {
+      "vi": "Làm mới",
+      "en": "Refresh",
+      "zh": "刷新",
+      "es": "Actualizar",
+      "fr": "Actualiser",
+      "de": "Aktualisieren",
+      "ja": "更新",
+      "ko": "새로고침",
+      "ru": "Обновить",
+      "ar": "تحديث"
     }
   }
 };
     // === DICTIONARY_END ===
+
+
+
+
+
+
 
 
 

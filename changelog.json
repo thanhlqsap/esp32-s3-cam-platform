@@ -1,5 +1,32 @@
 [
   {
+    "version": "v0.0.071",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.071 - Tái Cấu Trúc Hệ Thống Mã Nguồn Dạng Module apps/ Riêng Biệt Cho Từng App & Dọn Dẹp Tools",
+    "changes": [
+      "Tái cấu trúc chuẩn hóa hệ thống mã nguồn: Phân chia mã nguồn các ứng dụng độc lập vào từng thư mục con riêng biệt trong apps/ (apps/app_01_face_ai và apps/app_02_attendance)",
+      "Thiết lập cơ chế Wrapper Adapter tại thư mục gốc: Đảm bảo tương thích 100% với Arduino IDE và Arduino CLI, vừa giữ giao diện workspace cực kỳ tinh gọn vừa biên dịch trơn tru",
+      "Gom toàn bộ các script Python công cụ kiểm thử (*.py) vào thư mục tools/: Giải phóng triệt để hơn 8 file rác ở thư mục gốc giúp dự án gọn gàng, chuyên nghiệp",
+      "Nâng cấp bộ nạp tài nguyên Web sync_web_assets.ps1: Tự động phát hiện và nén GZIP các file HTML từ đúng thư mục tương ứng của từng app",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.071"
+    ]
+  },
+  {
+    "version": "v0.0.070",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.070 - Phát Hành Chính Thức App 02: Chấm Công Khuôn Mặt AI & Đồng Bộ Tự Động Lên Google Sheets (Smart Face Attendance)",
+    "changes": [
+      "Phát hành chính thức App 02 Smart Face Attendance: Ứng dụng điểm danh và chấm công khuôn mặt thông minh chạy trực tiếp trên vi điều khiển ESP32-S3",
+      "Đồng bộ thời gian thực lên Google Sheets qua Webhook HTTPS: Tự động ghi bản ghi mới [Ngày, Giờ, Mã ID, Tên nhân viên, Độ khớp, Trạng thái] vào bảng tính qua Google Apps Script mà không cần OAuth phức tạp",
+      "Đồng bộ thời gian chuẩn NTP GMT+7: Lấy giờ nguyên tử chính xác từ pool.ntp.org và time.google.com, bảo đảm giờ điểm danh luôn chính xác tuyệt đối",
+      "Cơ chế chống chấm công lặp (Cooldown Anti-Spam): Tự động giãn cách thời gian giữa 2 lần check-in liên tiếp của cùng 1 nhân viên (mặc định 5 phút, tùy chỉnh từ 1-60 phút)",
+      "Bộ đệm ngoại tuyến an toàn (Offline Buffer Queue): Tự động lưu tối đa 30 bản ghi vào Flash NVS khi mất mạng WiFi và tự động đẩy bù (Auto-flush) ngay khi có Internet trở lại",
+      "Giao diện Web Kiosk chuyên nghiệp (app_attendance.html): Hiển thị luồng camera live :81, vẽ khung HUD Bounding Box, Popup animation chúc mừng khi check-in thành công và bảng lịch sử điểm danh real-time",
+      "Tận dụng 100% Core AI Engine bất biến (FaceAiEngine): Kết nối qua Event Callback onFaceMatched, không can thiệp hay sửa đổi bất kỳ dòng mã nào của thư viện AI lõi",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.070"
+    ]
+  },
+  {
     "version": "v0.0.069",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.069 - Tối Ưu Giao Diện Di Động App Face AI & Đổi Icon Khuôn Mặt Tinh Tế Cho Nút Đăng Ký",

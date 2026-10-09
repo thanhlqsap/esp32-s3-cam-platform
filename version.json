@@ -1,6 +1,6 @@
 {
-  "version": "0.0.069",
-  "build_number": 69,
+  "version": "0.0.071",
+  "build_number": 71,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.069: Tối ưu responsive giao diện App Face AI trên điện thoại di động - thu gọn/ẩn nội dung tiêu đề chữ cồng kềnh giúp Header thanh thoát nằm gọn trên 1 hàng, đổi sang icon khuôn mặt (fa-user-plus) tinh tế cho nút 'Đăng ký khuôn mặt mới' và loại bỏ emoji máy ảnh thừa trong toàn bộ từ điển 10 ngôn ngữ.",
-    "en": "Release v0.0.069: Mobile UI optimization for App Face AI - collapses/hides bulky header title text on phones to keep the header on a single sleek line, changes the 'Enroll New Face' button icon to an elegant face icon (fa-user-plus), and removes redundant camera emojis across all 10 dictionary languages."
+    "vi": "Phiên bản v0.0.071: Tái cấu trúc chuẩn hóa hệ thống mã nguồn dạng Module theo thư mục apps/ (apps/app_01_face_ai và apps/app_02_attendance) kèm adapter tại thư mục gốc, gom toàn bộ công cụ kiểm thử Python vào tools/, giúp tối ưu tổ chức dự án gọn gàng và tương thích 100% Arduino IDE.",
+    "en": "Release v0.0.071: Modular project architecture restructuring into dedicated app folders (apps/app_01_face_ai and apps/app_02_attendance) with root adapters, and moved internal Python test scripts into tools/ for clean workspace organization and 100% Arduino IDE compatibility."
   }
 }
