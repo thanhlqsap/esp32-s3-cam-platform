@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.081",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.081 - Tách Biệt Hoàn Toàn Giữa Điều Hướng Web Site App Và Chế Độ Chạy Ngầm NVS",
+    "changes": [
+      "Tách biệt hoàn toàn Điều hướng Web Site và Quản lý Chạy ngầm: Người dùng tự do mở xem trang Web App con (Kiosk, xem thư viện ảnh MicroSD, xem log) mà không bị tự ý ép kích hoạt chạy ngầm đè lên App độc quyền đã lưu trong Flash NVS",
+      "Khẳng định tính khả dụng 100% của URL Log: Tất cả các API và URL Log (/api/logs, /api/attendance/logs, /api/attendance/sd/snapshots, /diagnostics...) luôn phục vụ bình thường mọi lúc mọi nơi bất kể hệ thống đang chạy App nào",
+      "Đồng bộ nút quay về Dashboard: Khẳng định tính thông suốt của luồng điều hướng quay về Dashboard (Logo Brand và icon Home) trên tất cả các trang web app con",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.081"
+    ]
+  },
+  {
     "version": "v0.0.080",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.080 - Quản Lý Độc Quyền Ứng Dụng Chạy Ngầm (NVS App Mode Switcher) Bằng Radio Button & Tự Động Phân Bổ Ngoại Vi GPIO An Toàn",

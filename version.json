@@ -1,6 +1,6 @@
 {
-  "version": "0.0.080",
-  "build_number": 80,
+  "version": "0.0.081",
+  "build_number": 81,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.080: Quản Lý Độc Quyền Ứng Dụng Chạy Ngầm (NVS App Mode Switcher) Bằng Radio Button Trên Dashboard, Tự Động Giải Phóng & Cấu Hình Ngoại Vi GPIO An Toàn.",
-    "en": "Release v0.0.080: Exclusive Background App Management (NVS App Mode Switcher) via Dashboard Radio Button, Auto GPIO Reconfiguration & Resource Cleanup."
+    "vi": "Phiên bản v0.0.081: Tách Biệt Hoàn Toàn Giữa Điều Hướng Web Site App Và Chế Độ Chạy Ngầm NVS (Mở Web App Không Tự Kích Hoạt Đè NVS), URL Log Luôn Khả Dụng 100%.",
+    "en": "Release v0.0.081: Strict Separation between Web Site Navigation and NVS Background App Mode (No auto-start on page view), URL Logs Always 100% Accessible."
   }
 }
