@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.080",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.080 - Quản Lý Độc Quyền Ứng Dụng Chạy Ngầm (NVS App Mode Switcher) Bằng Radio Button & Tự Động Phân Bổ Ngoại Vi GPIO An Toàn",
+    "changes": [
+      "Quản lý chế độ App độc quyền qua Radio Button: Mỗi App (kể cả Master OS Dashboard) có Radio Button riêng trên thẻ ứng dụng Dashboard; app được chọn sẽ là ứng dụng DUY NHẤT được kích hoạt chạy ngầm (Active), các app còn lại ở chế độ Chờ (Standby)",
+      "Lưu trạng thái kích hoạt vào Flash NVS vĩnh viễn (app_mode -> mode): Khi khởi động lại hoặc mất nguồn, ESP32-S3 tự động khôi phục đúng chế độ ứng dụng đã được người dùng chọn trước đó mà không cần chọn lại",
+      "Bảo vệ cấu hình NVS khi duyệt Web: Truy cập Dashboard hoặc xem thông tin hệ thống không tự ý ghi đè làm mất chế độ ứng dụng chạy ngầm của người dùng",
+      "Tự động giải phóng (deinit) và cấu hình ngoại vi GPIO động: Khi chuyển đổi app, hệ thống gọi stop() để ngắt tác vụ nền và giải phóng an toàn các tài nguyên ngoại vi/chân GPIO của app cũ trước khi cấp phát cho app mới",
+      "Điều hướng linh hoạt: Tích hợp nút điều hướng quay về Dashboard ngay trên thanh Header của tất cả các Web App con để người dùng dễ dàng chuyển đổi ứng dụng",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.080"
+    ]
+  },
+  {
     "version": "v0.0.079",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.079 - Tối Ưu Triệt Để Stream Dashboard 25-30 FPS, Đồng Bộ Standby Mode Cho App Face AI & Sửa Lỗi Modal Kiosk",
