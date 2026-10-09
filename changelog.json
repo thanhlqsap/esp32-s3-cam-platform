@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.086",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.086 - Chuyển Đổi Hoàn Toàn Sang Cơ Chế Tự Động Lưu Cấu Hình (Auto-Save) & Tối Giản Nút Bấm",
+    "changes": [
+      "Loại bỏ nút 'Lưu Cấu Hình' rườm rà: Thay thế bằng cơ chế Tự động lưu tức thì (Auto-Save on change) khi quản trị viên điều chỉnh thanh trượt hoặc nhập thông số",
+      "Tự động lưu hai thanh trượt AI: Kéo thả Độ Nhạy (Threshold) hoặc Tỉ Lệ Mặt (Min Face Size) sẽ lập tức đồng bộ thẳng vào Core AI Engine và Flash NVS",
+      "Tự động lưu cấu hình Webhook & Hệ thống: Nhập URL Google Sheets, Cooldown, Múi Giờ tự động lưu khi thay đổi",
+      "Hiển thị trạng thái Auto-Save trực quan: Nhấp nháy huy hiệu 'Đã tự động lưu ✓' mượt mà, loại bỏ triệt để các hộp thoại thông báo alert() gây phiền toái",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.086"
+    ]
+  },
+  {
     "version": "v0.0.085",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.085 - Tích Hợp Điều Chỉnh Độ Nhạy (Threshold) & Tỉ Lệ Xuất Hiện Mặt (Min Face Ratio) Trực Tiếp Trên App Chấm Công",

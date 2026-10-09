@@ -1,6 +1,6 @@
 {
-  "version": "0.0.085",
-  "build_number": 85,
+  "version": "0.0.086",
+  "build_number": 86,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.085: Tích Hợp Điều Chỉnh Độ Nhạy Nhận Diện (Threshold) & Tỉ Lệ Xuất Hiện Khuôn Mặt (Min Face Ratio) Trực Tiếp Trên App Chấm Công.",
-    "en": "Release v0.0.085: Integrated Face Recognition Sensitivity (Threshold) & Min Face Ratio Controls in Smart Attendance App."
+    "vi": "Phiên bản v0.0.086: Chuyển Sang Cơ Chế Tự Động Lưu Cấu Hình (Auto-Save) - Tối Giản Nút Bấm & Lưu Tức Thì Vào Flash NVS.",
+    "en": "Release v0.0.086: Auto-Save Configuration on Adjustment - Streamlined UI Buttons & Instant NVS Flash Synchronization."
   }
 }
