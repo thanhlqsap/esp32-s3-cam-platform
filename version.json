@@ -1,6 +1,6 @@
 {
-  "version": "0.0.075",
-  "build_number": 75,
+  "version": "0.0.076",
+  "build_number": 76,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.075: Bổ sung tính năng Sao Lưu & Khôi Phục Dữ Liệu Khuôn Mặt / Điểm Nhận Diện AI vào Thẻ Nhớ MicroSD (/attendance/faces_db.dat). Hỗ trợ cơ chế Hot-Swap thay bo mạch mới cắm thẻ vào tự khôi phục dữ liệu 100% không cần quét mặt lại.",
-    "en": "Release v0.0.075: Added Face Recognition Database Backup & Restore on MicroSD (/attendance/faces_db.dat). Supports seamless Hardware Hot-Swap disaster recovery allowing replacement boards to restore full employee face vectors automatically without re-enrolling."
+    "vi": "Phiên bản v0.0.076: Bổ sung Màn Hình Điểm Danh Kiosk Toàn Màn Hình, Cấu Hình Xuất Tín Hiệu Ra Màn Hình Ngoài Đa Dạng (ST7789, ILI9341, GC9A01, SSD1306, Wireless Kiosk), Đồng bộ Đầy Đủ 10 Ngôn Ngữ theo NVS Flash và Sửa triệt để lỗi Thư Viện Ảnh MicroSD.",
+    "en": "Release v0.0.076: Added Fullscreen Kiosk Check-in Screen, Flexible External Display Output Configuration (ST7789, ILI9341, GC9A01, SSD1306, Wireless Kiosk), Full 10-Language NVS Flash Synchronization, and resolved MicroSD Photo Gallery scanning bug."
   }
 }

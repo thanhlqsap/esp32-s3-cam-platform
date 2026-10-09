@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.076",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.076 - Hỗ Trợ Đầy Đủ 10 Ngôn Ngữ Theo NVS Flash, Màn Hình Điểm Danh Kiosk & Cấu Hình Màn Hình Ngoài Đa Dạng",
+    "changes": [
+      "Hỗ trợ chuẩn hoá Đa Ngôn Ngữ đồng bộ NVS Flash (10 ngôn ngữ, Tiếng Việt đứng đầu): Tự động nạp và lưu ngôn ngữ hệ thống vào NVS Flash bo mạch (att_mgr -> lang); API sự kiện trực tiếp /api/attendance/live_event tự động định dạng và dịch chuỗi chào mừng, trạng thái VÀO/RA và thông báo người lạ theo đúng ngôn ngữ NVS",
+      "Màn Hình Điểm Danh Kiosk Toàn Màn Hình (Kiosk Check-in Screen): Bổ sung chế độ Kiosk chuyên dụng cho nhân viên với đồng hồ số điện tử cực lớn, video stream góc rộng và Banner kết quả điểm danh tự động bật đón nhân viên (xanh lá khi thành công, cam khi người lạ)",
+      "Cấu hình Màn Hình Ngoài linh hoạt (GPIO & Wireless): Bổ sung giao diện và REST API (/api/attendance/display/config) cho phép lựa chọn đa dạng các dòng màn hình SPI/I2C/Wireless (ST7789, ILI9341, GC9A01, ST7735, SSD1306, ESP32 Wireless LAN Kiosk) với chân GPIO an toàn trên ESP32-S3 WROOM-1 N16R8",
+      "Sửa triệt để bug Thư Viện Ảnh MicroSD: Chuẩn hóa đường dẫn thư mục ngày và xử lý quét file, giải quyết dứt điểm lỗi báo 15 ảnh nhưng hiển thị 0 ảnh",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.076"
+    ]
+  },
+  {
     "version": "v0.0.075",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.075 - Sao Lưu & Khôi Phục Dữ Liệu Khuôn Mặt Trên Thẻ Nhớ MicroSD (Disaster Recovery & Hot-Swap Hardware)",

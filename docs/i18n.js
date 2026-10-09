@@ -2856,10 +2856,252 @@
       "ko": "새로고침",
       "ru": "Обновить",
       "ar": "تحديث"
+    },
+    "ext_display_title": {
+      "vi": "Màn Hình Hiển Thị Bên Ngoài (GPIO & Wireless)",
+      "en": "External Display Output (GPIO & Wireless)",
+      "zh": "外接显示屏输出 (GPIO & 无线)",
+      "es": "Pantalla Externa (GPIO y Inalámbrico)",
+      "fr": "Écran Externe (GPIO & Sans Fil)",
+      "de": "Externes Display (GPIO & Drahtlos)",
+      "ja": "外部ディスプレイ出力 (GPIO & ワイヤレス)",
+      "ko": "외부 디스플레이 출력 (GPIO & 무선)",
+      "ru": "Внешний Дисплей (GPIO и Беспроводной)",
+      "ar": "شاشة العرض الخارجية (GPIO ولاسلكي)"
+    },
+    "enable_ext_display": {
+      "vi": "Kích hoạt xuất tín hiệu ra màn hình ngoài",
+      "en": "Enable external display output",
+      "zh": "启用外接显示屏输出",
+      "es": "Habilitar salida a pantalla externa",
+      "fr": "Activer la sortie vers l écran externe",
+      "de": "Ausgabe auf externes Display aktivieren",
+      "ja": "外部ディスプレイ出力を有効化",
+      "ko": "외부 디스플레이 출력 활성화",
+      "ru": "Включить вывод на внешний дисплей",
+      "ar": "تفعيل الإخراج إلى الشاشة الخارجية"
+    },
+    "display_model": {
+      "vi": "Loại Màn Hình",
+      "en": "Display Model",
+      "zh": "屏幕驱动型号",
+      "es": "Modelo de Pantalla",
+      "fr": "Modèle d Écran",
+      "de": "Display-Modell",
+      "ja": "画面モデル",
+      "ko": "디스플레이 모델",
+      "ru": "Модель Дисплея",
+      "ar": "طراز الشاشة"
+    },
+    "pin_mosi": {
+      "vi": "Chân MOSI (SDA)",
+      "en": "MOSI Pin (SDA)",
+      "zh": "MOSI 引脚 (SDA)",
+      "es": "Pin MOSI (SDA)",
+      "fr": "Broche MOSI (SDA)",
+      "de": "MOSI-Pin (SDA)",
+      "ja": "MOSI ピン (SDA)",
+      "ko": "MOSI 핀 (SDA)",
+      "ru": "Пин MOSI (SDA)",
+      "ar": "منفذ MOSI (SDA)"
+    },
+    "pin_sclk": {
+      "vi": "Chân SCLK (SCL)",
+      "en": "SCLK Pin (SCL)",
+      "zh": "SCLK 引脚 (SCL)",
+      "es": "Pin SCLK (SCL)",
+      "fr": "Broche SCLK (SCL)",
+      "de": "SCLK-Pin (SCL)",
+      "ja": "SCLK ピン (SCL)",
+      "ko": "SCLK 핀 (SCL)",
+      "ru": "Пин SCLK (SCL)",
+      "ar": "منفذ SCLK (SCL)"
+    },
+    "pin_cs": {
+      "vi": "Chân CS (Chip Select)",
+      "en": "CS Pin (Chip Select)",
+      "zh": "CS 引脚 (片选)",
+      "es": "Pin CS (Chip Select)",
+      "fr": "Broche CS (Chip Select)",
+      "de": "CS-Pin (Chip Select)",
+      "ja": "CS ピン (チップセレクト)",
+      "ko": "CS 핀 (칩 선택)",
+      "ru": "Пин CS (Chip Select)",
+      "ar": "منفذ CS (اختيار الشريحة)"
+    },
+    "pin_dc": {
+      "vi": "Chân DC (Data/Command)",
+      "en": "DC Pin (Data/Command)",
+      "zh": "DC 引脚 (数据/指令)",
+      "es": "Pin DC (Data/Command)",
+      "fr": "Broche DC (Data/Command)",
+      "de": "DC-Pin (Data/Command)",
+      "ja": "DC ピン (データ/コマンド)",
+      "ko": "DC 핀 (데이터/명령)",
+      "ru": "Пин DC (Data/Command)",
+      "ar": "منفذ DC (البيانات/الأوامر)"
+    },
+    "pin_rst": {
+      "vi": "Chân RST (Reset)",
+      "en": "RST Pin (Reset)",
+      "zh": "RST 引脚 (复位)",
+      "es": "Pin RST (Reinicio)",
+      "fr": "Broche RST (Réinitialisation)",
+      "de": "RST-Pin (Reset)",
+      "ja": "RST ピン (リセット)",
+      "ko": "RST 핀 (리셋)",
+      "ru": "Пин RST (Сброс)",
+      "ar": "منفذ RST (إعادة التعيين)"
+    },
+    "rotation": {
+      "vi": "Góc Xoay Màn Hình",
+      "en": "Screen Rotation",
+      "zh": "屏幕旋转方向",
+      "es": "Rotación de Pantalla",
+      "fr": "Orientation de l Écran",
+      "de": "Bildschirmdrehung",
+      "ja": "画面の回転",
+      "ko": "화면 회전",
+      "ru": "Ориентация Экрана",
+      "ar": "تدوير الشاشة"
+    },
+    "content_mode": {
+      "vi": "Chế Độ Hiển Thị",
+      "en": "Display Mode",
+      "zh": "显示模式",
+      "es": "Modo de Visualización",
+      "fr": "Mode d Affichage",
+      "de": "Anzeigemodus",
+      "ja": "表示モード",
+      "ko": "표시 모드",
+      "ru": "Режим Отображения",
+      "ar": "وضع العرض"
+    },
+    "mode_card": {
+      "vi": "Thẻ Điểm Danh & Avatar (Event Card)",
+      "en": "Attendance Card & Avatar",
+      "zh": "打卡卡片与头像",
+      "es": "Tarjeta de Asistencia y Avatar",
+      "fr": "Carte de Pointage & Avatar",
+      "de": "Anwesenheitskarte & Avatar",
+      "ja": "勤怠カード＆アバター",
+      "ko": "출석 카드 및 아바타",
+      "ru": "Карточка Посещаемости и Аватар",
+      "ar": "بطاقة الحضور والصورة"
+    },
+    "mode_clock": {
+      "vi": "Đồng Hồ Số & Chữ Lớn (Clock & Text)",
+      "en": "Digital Clock & Large Text",
+      "zh": "数字时钟与大字体",
+      "es": "Reloj Digital y Texto Grande",
+      "fr": "Horloge Numérique & Grand Texte",
+      "de": "Digitaluhr & Großer Text",
+      "ja": "デジタル時計＆大きな文字",
+      "ko": "디지털 시계 및 큰 글자",
+      "ru": "Цифровые Часы и Крупный Текст",
+      "ar": "ساعة رقمية ونص كبير"
+    },
+    "save_display_btn": {
+      "vi": "Lưu Cấu Hình Màn Hình",
+      "en": "Save Display Settings",
+      "zh": "保存显示屏配置",
+      "es": "Guardar Configuración de Pantalla",
+      "fr": "Enregistrer la Configuration",
+      "de": "Display-Konfiguration Speichern",
+      "ja": "画面設定を保存",
+      "ko": "디스플레이 설정 저장",
+      "ru": "Сохранить Настройки Экрана",
+      "ar": "حفظ إعدادات الشاشة"
+    },
+    "test_display_btn": {
+      "vi": "Thử Nghiệm Màn Hình",
+      "en": "Test Display Event",
+      "zh": "测试屏幕事件",
+      "es": "Probar Pantalla",
+      "fr": "Tester l Écran",
+      "de": "Display Testen",
+      "ja": "画面テスト",
+      "ko": "디스플레이 테스트",
+      "ru": "Тестировать Экран",
+      "ar": "اختبار الشاشة"
+    },
+    "btn_kiosk_screen": {
+      "vi": "Màn Hình Kiosk",
+      "en": "Kiosk Screen",
+      "zh": "考勤看板",
+      "es": "Pantalla Kiosco",
+      "fr": "Écran Kiosque",
+      "de": "Kiosk-Bildschirm",
+      "ja": "キオスク画面",
+      "ko": "키오스크 화면",
+      "ru": "Экран Киоска",
+      "ar": "شاشة الكشك"
+    },
+    "kiosk_title": {
+      "vi": "Kiosk Điểm Danh Tự Động",
+      "en": "Smart Attendance Kiosk",
+      "zh": "智能人脸考勤看板",
+      "es": "Kiosco de Asistencia Inteligente",
+      "fr": "Kiosque de Pointage Intelligent",
+      "de": "Smartes Zeiterfassungs-Kiosk",
+      "ja": "スマート顔認証キオスク",
+      "ko": "스마트 얼굴 인식 키오스크",
+      "ru": "Умный Киоск Посещаемости",
+      "ar": "كشك الحضور الذكي"
+    },
+    "kiosk_ready": {
+      "vi": "Xin mời nhìn vào camera để điểm danh...",
+      "en": "Please look at the camera to check in...",
+      "zh": "请面向摄像头进行打卡...",
+      "es": "Por favor mire a la cámara para registrarse...",
+      "fr": "Veuillez regarder la caméra pour pointer...",
+      "de": "Bitte in die Kamera blicken zum Einstempeln...",
+      "ja": "カメラを正面から見てください...",
+      "ko": "카메라를 바라보고 출석 체크하세요...",
+      "ru": "Пожалуйста, посмотрите в камеру...",
+      "ar": "يرجى النظر إلى الكاميرا لتسجيل الحضور..."
+    },
+    "kiosk_success": {
+      "vi": "Điểm Danh Thành Công!",
+      "en": "Check-in Successful!",
+      "zh": "打卡成功！",
+      "es": "¡Registro Exitoso!",
+      "fr": "Pointage Réussi !",
+      "de": "Erfolgreich Erfasst!",
+      "ja": "打刻が完了しました！",
+      "ko": "출석 체크 완료!",
+      "ru": "Отметка Успешна!",
+      "ar": "تم تسجيل الحضور بنجاح!"
+    },
+    "kiosk_warning": {
+      "vi": "Cảnh Báo: Khuôn Mặt Chưa Đăng Ký!",
+      "en": "Warning: Unregistered Face!",
+      "zh": "警告：未注册的人脸！",
+      "es": "¡Alerta: Rostro No Registrado!",
+      "fr": "Attention : Visage Non Enregistré !",
+      "de": "Warnung: Unbekanntes Gesicht!",
+      "ja": "警告：未登録の顔です！",
+      "ko": "경고: 미등록 얼굴 감지!",
+      "ru": "Внимание: Неизвестное лицо!",
+      "ar": "تحذير: وجه غير مسجل!"
+    },
+    "kiosk_close": {
+      "vi": "Đóng Kiosk",
+      "en": "Close Kiosk",
+      "zh": "关闭看板",
+      "es": "Cerrar Kiosco",
+      "fr": "Fermer le Kiosque",
+      "de": "Kiosk Schließen",
+      "ja": "閉じる",
+      "ko": "키오스크 닫기",
+      "ru": "Закрыть Киоск",
+      "ar": "إغلاق الكشك"
     }
   }
 };
     // === DICTIONARY_END ===
+
+
 
 
 
