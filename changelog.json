@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.091",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.091 - Khắc Phục Triệt Để Hiện Tượng Treo Đứng Khi Nạp OTA Lúc App Đang Chạy Ngầm",
+    "changes": [
+      "Khắc phục xung đột bus MSPI & Watchdog Camera: Tự động dừng triệt để toàn bộ các ứng dụng con đang chạy ngầm (App Chấm Công, Face AI) và giải phóng sạch sẽ các Task FreeRTOS trước khi bắt đầu ghi Flash",
+      "Ngăn chặn hoàn toàn lỗi Watchdog kích hoạt Camera Recovery: Khi nạp qua Web OTA /update hoặc Cloud OTA, triệt tiêu 100% tình trạng task AI nền gọi liên tục esp_camera_fb_get() làm kích hoạt hàm khôi phục camera giữa chừng gây treo máy ở mốc 288 KB",
+      "Đóng luồng Video Stream tức thì: Bổ sung stopStream() vào chu trình nạp OTA trên Dashboard để ngắt kết nối MJPEG cổng 81, dồn toàn bộ băng thông mạng Wi-Fi và CPU cho việc nhận file nhị phân",
+      "Bảo đảm an toàn tuyệt đối cho bộ nhớ Flash SPI: Chuyển hệ thống về trạng thái Master Dashboard trước khi nạp để bảo vệ toàn vẹn dữ liệu firmware",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.091"
+    ]
+  },
+  {
     "version": "v0.0.090",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.090 - Khắc Phục Lỗi Hiển Thị Ảo 'Unknown (85%)' & Đồng Bộ Trung Thực Tỷ Lệ Nhận Diện",
