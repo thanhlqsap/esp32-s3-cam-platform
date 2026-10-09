@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.084",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.084 - Sửa Triệt Để Lỗi Xóa Ảnh Snapshot & Thêm Nút Format Thẻ Nhớ MicroSD Toàn Diện",
+    "changes": [
+      "Khắc phục triệt để lỗi đường dẫn xóa ảnh snapshot thẻ nhớ: Chuẩn hóa toàn bộ cơ chế tách basename và ghép nối đường dẫn tuyệt đối chuẩn xác (/attendance/snapshots/<ngày>/<file>), giải quyết triệt để lỗi không xóa được file trong Arduino Core ESP32 SD_MMC",
+      "Xóa sạch 100% ảnh snapshot (deleteAllSnapshots): Mở từng thư mục ngày, thu thập danh sách tập tin và xóa sạch mọi ảnh .jpg, sau đó xóa toàn bộ thư mục ngày rỗng và tái tạo lại cây thư mục ban đầu",
+      "Thêm nút Format Thẻ Nhớ MicroSD an toàn: Bổ sung nút 'Format Thẻ Nhớ' trên thanh công cụ thẻ SD với 2 cấp độ cảnh báo xác nhận nguy hiểm, hỗ trợ wipe/xóa sạch toàn diện mọi thư mục và tập tin từ gốc thẻ nhớ mà không làm hỏng cấu trúc FAT32",
+      "Cung cấp REST API /api/attendance/sd/format: Endpoint POST xử lý quét dọn đệ quy, định dạng sạch và tự động tái tạo các thư mục hệ thống /attendance và /attendance/snapshots",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.084"
+    ]
+  },
+  {
     "version": "v0.0.083",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.083 - Khắc Phục Triệt Để Lỗi Chấm Công: Tự Động Kích Hoạt Core Face AI Engine Khi App Chấm Công Hoạt Động (Active)",
