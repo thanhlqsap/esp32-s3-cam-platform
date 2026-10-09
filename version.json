@@ -1,6 +1,6 @@
 {
-  "version": "0.0.071",
-  "build_number": 71,
+  "version": "0.0.073",
+  "build_number": 73,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -10,9 +10,9 @@
   "full_flash_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/Full_Flash.bin",
   "changelog_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/changelog.json",
   "md5": "auto-generated-on-build",
-  "critical_update": false,
+  "critical_update": true,
   "changelog": {
-    "vi": "Phiên bản v0.0.071: Tái cấu trúc chuẩn hóa hệ thống mã nguồn dạng Module theo thư mục apps/ (apps/app_01_face_ai và apps/app_02_attendance) kèm adapter tại thư mục gốc, gom toàn bộ công cụ kiểm thử Python vào tools/, giúp tối ưu tổ chức dự án gọn gàng và tương thích 100% Arduino IDE.",
-    "en": "Release v0.0.071: Modular project architecture restructuring into dedicated app folders (apps/app_01_face_ai and apps/app_02_attendance) with root adapters, and moved internal Python test scripts into tools/ for clean workspace organization and 100% Arduino IDE compatibility."
+    "vi": "Phiên bản v0.0.073: Sửa triệt để lỗi Stack Overflow trong luồng AI và kẹt Bootloop khi chấm công bằng kiến trúc hàng đợi bất đồng bộ (Asynchronous Decoupled Worker Queue) ghim Core 1 (Stack 20KB), tự động phát hiện và xóa dữ liệu NVS queue hỏng để cứu bo mạch, bảo vệ camera frame an toàn tuyệt đối.",
+    "en": "Release v0.0.073: Fixed AI task stack overflow and bootloop crash during face attendance via Asynchronous Decoupled Worker Queue on Core 1 (20KB Stack), auto-clears corrupted NVS queue on boot, and ensures 100% thread-safe camera frame buffer access."
   }
 }

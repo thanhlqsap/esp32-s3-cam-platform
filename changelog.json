@@ -1,5 +1,29 @@
 [
   {
+    "version": "v0.0.073",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.073 - Sửa Triệt Để Lỗi Stack Overflow Luồng AI & Kẹt Bootloop Khi Chấm Công (Asynchronous Decoupled Worker)",
+    "changes": [
+      "Kiến trúc Asynchronous Decoupled Worker Queue: Tách rời 100% các tác vụ I/O nặng (mbedTLS HTTPS Google Sheets, MicroSD CSV, Camera Snapshot) ra khỏi luồng AI (face_ai_task), giúp callback chấm công hoàn tất trong < 50us không bao giờ tràn stack",
+      "Khởi chạy Background Worker chuyên biệt trên Core 1 (Stack 20KB): Đảm bảo đầy đủ không gian bộ nhớ cho quá trình TLS Handshake bảo mật với Google Apps Script và ghi file thẻ nhớ",
+      "Cơ chế tự động dọn sạch NVS Queue hỏng (Safe Bootloop Recovery): Tự động phát hiện cấu trúc bản ghi bất thường hoặc dữ liệu dở dang từ phiên bản cũ và reset phân vùng att_queue lúc boot, giải cứu bo mạch khỏi tình trạng treo reboot liên tục",
+      "Truy cập Camera Frame an toàn qua Thread-Safe Mutex: Sử dụng cơ chế getFrame() và returnFrame() đồng bộ chuẩn để chụp ảnh snapshot bằng chứng mà không gây xung đột đệm hay giật lag luồng video stream",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.073"
+    ]
+  },
+  {
+    "version": "v0.0.072",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.072 - Bổ Sung Hoàn Chỉnh Trung Tâm Quản Lý Thẻ Nhớ MicroSD Cho App Chấm Công",
+    "changes": [
+      "Tích hợp Trung tâm Quản Lý Thẻ Nhớ MicroSD (Storage Hub): Hiển thị thanh tiến trình dung lượng thời gian thực (Đã dùng, Còn trống, Tổng dung lượng và phần trăm sử dụng)",
+      "Tính năng tải file nhật ký điểm danh Excel (.CSV): Tự động phát hiện và hiển thị các file log tháng /attendance/log_YYYY-MM.csv kèm nút tải về mở trực tiếp trên Excel",
+      "Modal Popup xem ảnh Snapshot bằng chứng: Click vào biểu tượng camera ở từng lượt điểm danh để xem ảnh JPEG độ nét cao chụp thực tế từ thẻ nhớ",
+      "Tích hợp các công cụ thao tác thẻ: Bổ sung API và nút bấm Kết nối lại thẻ nhớ (Re-mount) khi cắm thẻ mới và Dọn dẹp dữ liệu cũ quá 30 ngày (Cleanup)",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.072"
+    ]
+  },
+  {
     "version": "v0.0.071",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.071 - Tái Cấu Trúc Hệ Thống Mã Nguồn Dạng Module apps/ Riêng Biệt Cho Từng App & Dọn Dẹp Tools",
