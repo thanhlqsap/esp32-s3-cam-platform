@@ -1,6 +1,6 @@
 {
-  "version": "0.0.081",
-  "build_number": 81,
+  "version": "0.0.082",
+  "build_number": 82,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.081: Tách Biệt Hoàn Toàn Giữa Điều Hướng Web Site App Và Chế Độ Chạy Ngầm NVS (Mở Web App Không Tự Kích Hoạt Đè NVS), URL Log Luôn Khả Dụng 100%.",
-    "en": "Release v0.0.081: Strict Separation between Web Site Navigation and NVS Background App Mode (No auto-start on page view), URL Logs Always 100% Accessible."
+    "vi": "Phiên bản v0.0.082: Tính Năng Xóa Hết Tất Cả Ảnh Thẻ Nhớ MicroSD & Tùy Chọn Thời Gian Tự Động Xóa Ảnh (10-60 Ngày Theo Bước 5 Ngày).",
+    "en": "Release v0.0.082: Delete All MicroSD Snapshots Feature & Configurable Auto Retention Period (10 to 60 Days in 5-day Steps)."
   }
 }

@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.082",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.082 - Tính Năng Xóa Hết Tất Cả Ảnh Thẻ Nhớ MicroSD & Tùy Chọn Thời Gian Tự Động Xóa (10 - 60 Ngày)",
+    "changes": [
+      "Nút chức năng Xóa Hết Tất Cả Ảnh: Nút dọn dẹp trên thanh công cụ quản lý thẻ nhớ MicroSD của App Chấm Công được chuyển đổi thành nút 'Xóa Hết Tất Cả Ảnh' kèm hộp thoại cảnh báo xác nhận, giải phóng 100% dung lượng ảnh snapshot trên thẻ nhớ",
+      "API xóa toàn bộ ảnh snapshot (/api/attendance/sd/delete_all_snapshots): Xóa sạch toàn bộ ảnh snapshot điểm danh và người lạ trong thư mục /attendance/snapshots mà vẫn giữ nguyên file cấu hình và nhật ký .CSV",
+      "Cơ chế tự động dọn dẹp theo ngày linh hoạt: Bổ sung bộ chọn Dropdown cho phép lựa chọn lưu trữ tự động 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, hoặc 60 ngày",
+      "Lưu cấu hình thời gian dọn dẹp vào Flash NVS (att_mgr -> retention): Đồng bộ tức thì và tự động áp dụng trong chu kỳ kiểm tra dọn dẹp hàng ngày của Background Worker",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.082"
+    ]
+  },
+  {
     "version": "v0.0.081",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.081 - Tách Biệt Hoàn Toàn Giữa Điều Hướng Web Site App Và Chế Độ Chạy Ngầm NVS",
