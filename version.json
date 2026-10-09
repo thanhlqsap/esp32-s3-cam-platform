@@ -1,8 +1,8 @@
 {
-  "version": "0.0.067",
-  "build_number": 67,
+  "version": "0.0.068",
+  "build_number": 68,
   "hardware": "ESP32-S3-WROOM-N16R8",
-  "release_date": "2026-10-08",
+  "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
   "url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
   "bin_url": "https://raw.githubusercontent.com/thanhlqsap/esp32-s3-cam-platform/main/build/OTA_Update.bin",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.067: Khắc phục triệt để lỗi đứng board ESP32 khi đăng ký 3 góc khuôn mặt. Tách việc ghi Flash NVS ra ngoài khóa _dataMutex, triệt tiêu 100% Deadlock giữa AI Mutex và Camera Handler, bổ sung nhường CPU FreeRTOS chống Task Watchdog Timer, hạ stack Worker Task xuống 10KB an toàn chống tràn SRAM nội bộ, dọn sạch bộ đệm NVS trên Stack.",
-    "en": "Release v0.0.067: Permanently resolves ESP32 board freezing during 3-angle face enrollment. Decouples Flash NVS writes from _dataMutex, eliminates 100% of Deadlocks between AI Mutex and Camera Handler, adds FreeRTOS CPU yielding against Task Watchdog Timer timeouts, optimizes Worker Task stack to safe 10KB against SRAM overflow, and clears NVS buffers off the execution stack."
+    "vi": "Phiên bản v0.0.068: Sửa triệt để lỗi đứng và treo board ESP32 khi tải ảnh lên lưu khuôn mặt. Thêm cờ _isEnrolling và AutoEnrollingGuard tạm dừng quét live AI để nhường 100% CPU Core 1, loại bỏ gọi ESP-DL không có mutex trong _simulateFeatureFromFrame, chuẩn hóa 5 điểm landmark MNP01. Tối ưu giao diện modal điện thoại di động hiển thị trọn vẹn mọi nút không cần cuộn màn hình.",
+    "en": "Release v0.0.068: Permanently fixes ESP32 board freezing when saving uploaded face photos. Introduces _isEnrolling and AutoEnrollingGuard to pause live AI scan and yield 100% CPU Core 1, removes mutexless ESP-DL calls in _simulateFeatureFromFrame, fixes 5 MNP01 landmarks order. Redesigns mobile modal to fit all buttons on screen without scrolling."
   }
 }

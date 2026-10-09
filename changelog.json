@@ -1,5 +1,19 @@
 [
   {
+    "version": "v0.0.068",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.068 - Khắc Phục Triệt Để Lỗi Đứng & Treo Board Khi Tải Ảnh Lên & Tối Ưu Giao Diện Di Động Fit Màn Hình",
+    "changes": [
+      "Khắc phục triệt để hiện tượng đứng và treo board ESP32-S3 khi nhấn 'Lưu khuôn mặt' ở chế độ Tải ảnh lên (Upload Mode): Loại bỏ hoàn toàn việc gọi mô hình ESP-DL mà không giữ khóa _aiMutex trong _simulateFeatureFromFrame, triệt tiêu 100% tình trạng chạy đồng thời đè bộ nhớ giữa face_ai_task và enrollWorkerTask",
+      "Bổ sung cờ đồng bộ _isEnrolling và RAII AutoEnrollingGuard: Tạm dừng ngay lập tức luồng quét realtime AI trên Core 1 khi có yêu cầu ghi danh khuôn mặt (Live hoặc Upload), dành trọn 100% CPU và băng thông PSRAM cho việc xử lý ảnh",
+      "Chuẩn hóa thứ tự 5 điểm landmarks MNP01: Sửa đúng thứ tự 5 tọa độ mốc sinh trắc học [Mắt trái, Mắt phải, Mũi, Miệng trái, Miệng phải] cho cơ chế Fallback của MobileFaceNet, triệt tiêu lỗi ma trận suy biến gây crash",
+      "Tách bạch rành mạch chế độ Tải ảnh lên và Chụp trực tiếp: Đặt cờ mode=upload từ Web Client, tự động xóa bộ đệm staged samples khi chuyển tab để ngăn chặn xung đột dữ liệu",
+      "Chuẩn hóa kích thước ảnh tải lên từ trình duyệt: Resize ảnh tối đa 320px chuẩn chia hết cho 16 pixel (khối MCU TJpgDec) trước khi gửi lên chip, giúp MSR01 và MNP01 phát hiện khuôn mặt cực kỳ nhạy và giảm 60% dung lượng nén",
+      "Thiết kế lại giao diện Modal đăng ký khuôn mặt trên điện thoại di động: Tối ưu kích thước khung ngắm viewfinder và dropzone gọn gàng, co giãn thông minh theo chiều cao màn hình, hiển thị trọn vẹn cả 2 nút 'Hủy Bỏ' và 'Lưu Khuôn Mặt' trên màn hình mà KHÔNG CẦN KÉO XUỐNG (Zero Vertical Scroll)",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.068"
+    ]
+  },
+  {
     "version": "v0.0.067",
     "date": "2026-10-08",
     "title": "Phiên bản v0.0.067 - Khắc Phục Triệt Để Lỗi Đứng Board ESP32 Khi Đăng Ký 3 Góc Khuôn Mặt & Tối Ưu Mutex FreeRTOS",
