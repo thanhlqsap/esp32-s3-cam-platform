@@ -1,6 +1,6 @@
 {
-  "version": "0.0.084",
-  "build_number": 84,
+  "version": "0.0.085",
+  "build_number": 85,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.084: Sửa Triệt Để Lỗi Xóa Ảnh Snapshot Thẻ Nhớ & Bổ Sung Nút Format Thẻ Nhớ MicroSD.",
-    "en": "Release v0.0.084: Fix Snapshot Image Deletion Logic on MicroSD & Add Format SD Card Button."
+    "vi": "Phiên bản v0.0.085: Tích Hợp Điều Chỉnh Độ Nhạy Nhận Diện (Threshold) & Tỉ Lệ Xuất Hiện Khuôn Mặt (Min Face Ratio) Trực Tiếp Trên App Chấm Công.",
+    "en": "Release v0.0.085: Integrated Face Recognition Sensitivity (Threshold) & Min Face Ratio Controls in Smart Attendance App."
   }
 }

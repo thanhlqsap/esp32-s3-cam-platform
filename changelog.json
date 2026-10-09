@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.085",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.085 - Tích Hợp Điều Chỉnh Độ Nhạy (Threshold) & Tỉ Lệ Xuất Hiện Mặt (Min Face Ratio) Trực Tiếp Trên App Chấm Công",
+    "changes": [
+      "Thanh trượt Độ Nhạy Nhận Diện (Match Threshold 50% - 95%): Cho phép quản trị viên kéo chỉnh độ khắt khe so khớp vector AI trực tiếp ngay trên App Chấm Công, tăng độ nhạy (65-70%) để nhận diện nhanh hoặc tăng cao (75-80%) để chống nhận diện nhầm",
+      "Thanh trượt Tỉ Lệ Xuất Hiện Trong Hình (Min Face Size 3% - 35%): Điều chỉnh khoảng cách và kích thước nhận diện khuôn mặt; đặt 8% để bắt mặt từ xa hoặc 20-30% để chỉ điểm danh khi đứng gần camera",
+      "Đồng bộ hai chiều với Core Face AI Engine & NVS Flash: Mọi thay đổi cấu hình tại App Chấm Công được ghi trực tiếp vào NVS Flash và áp dụng tức thì cho bộ nhận diện camera thời gian thực",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.085"
+    ]
+  },
+  {
     "version": "v0.0.084",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.084 - Sửa Triệt Để Lỗi Xóa Ảnh Snapshot & Thêm Nút Format Thẻ Nhớ MicroSD Toàn Diện",
