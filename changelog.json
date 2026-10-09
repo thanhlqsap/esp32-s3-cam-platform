@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.079",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.079 - Tối Ưu Triệt Để Stream Dashboard 25-30 FPS, Đồng Bộ Standby Mode Cho App Face AI & Sửa Lỗi Modal Kiosk",
+    "changes": [
+      "Tối ưu triệt để Live Stream trên Dashboard đạt 25-30 FPS: Tự động ngắt giải phóng hoàn toàn Core AI Engine và các Background Task khi ở Master Dashboard, triệt tiêu 100% tình trạng tranh chấp Mutex camera và nghẽn Bus Octal PSRAM",
+      "Đồng bộ Chế độ Chờ (Standby Mode) cho App 01 Face AI: App Face AI chỉ kích hoạt AI Engine (MSR01 + MNP01 + MobileFaceNet) khi người dùng truy cập trang Web App Face AI hoặc kích hoạt chế độ qua AppModeManager, không tự ý chạy ngầm lúc boot máy",
+      "Sửa lỗi JavaScript ReferenceError trên Dashboard: Loại bỏ lời gọi hàm syncCameraControls không tồn tại trong dashboard.html, đảm bảo Console sạch lỗi và tải nhanh tức thì",
+      "Sửa lỗi nút [Màn Hình Kiosk] trên App Chấm Công: Bổ sung 3 thẻ đóng </div> bị thiếu của modal xem ảnh, đưa Modal Kiosk ra ngoài lớp bao phủ để hiển thị toàn màn hình chuẩn xác khi bấm nút",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.079"
+    ]
+  },
+  {
     "version": "v0.0.078",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.078 - Phân Trang Thư Viện Ảnh MicroSD (Tối Đa 50 Ảnh, Tùy Chọn Số Lượng Hiển Thị) & Sửa Triệt Để Lỗi Khởi Động Bo Mạch",

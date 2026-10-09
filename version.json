@@ -1,6 +1,6 @@
 {
-  "version": "0.0.078",
-  "build_number": 78,
+  "version": "0.0.079",
+  "build_number": 79,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.078: Phân Trang Thư Viện Ảnh MicroSD (Tối đa 50 ảnh/trang, tùy chọn số lượng hiển thị linh hoạt 12/24/36/50) và Sửa Triệt Để Lỗi Khởi Động Bo Mạch Lúc Nạp Firmware.",
-    "en": "Release v0.0.078: MicroSD Snapshot Gallery Pagination (Max 50 photos/page, flexible page size selector 12/24/36/50) and Boot Loop Crash Fix on Firmware Boot."
+    "vi": "Phiên bản v0.0.079: Tối Ưu Triệt Để Stream Dashboard 25-30 FPS (Giải Phóng AI Task khi ở Dashboard), Đồng Bộ Standby Mode cho App Face AI, Sửa Lỗi Modal Kiosk Điểm Danh.",
+    "en": "Release v0.0.079: Ultra Smooth Dashboard Stream 25-30 FPS (Release Background AI Task when on Dashboard), Standby Mode for App Face AI, Fix Attendance Kiosk Modal."
   }
 }
