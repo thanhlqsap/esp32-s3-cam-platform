@@ -1,5 +1,18 @@
 [
   {
+    "version": "v0.0.075",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.075 - Sao Lưu & Khôi Phục Dữ Liệu Khuôn Mặt Trên Thẻ Nhớ MicroSD (Disaster Recovery & Hot-Swap Hardware)",
+    "changes": [
+      "Sao Lưu & Khôi Phục Database Khuôn Mặt trên MicroSD (/attendance/faces_db.dat): Lưu trữ toàn bộ thông tin nhân viên, ID và vector đặc trưng AI 3 góc mặt vào file nhị phân kèm Magic Header an toàn và Checksum kiểm tra toàn vẹn",
+      "Cơ chế Hot-Swap thay bo mạch mới: Tự động phát hiện khi cắm thẻ nhớ vào bo mạch mới tinh (NVS trống) và nạp phục hồi 100% dữ liệu khuôn mặt ngay lúc khởi động mà không cần đăng ký hay quét mặt lại",
+      "Tự động đồng bộ (Auto-Sync to SD): Background Worker tự động cập nhật bản sao lưu trên thẻ nhớ mỗi khi phát hiện có thay đổi danh sách khuôn mặt nhân viên",
+      "Giao diện Kiosk Web trực quan: Bổ sung thẻ điều khiển Sao Lưu & Khôi Phục trong Trung Tâm Quản Lý Thẻ Nhớ với Badge trạng thái thời gian thực và xác nhận an toàn trước khi khôi phục",
+      "REST API mới: /api/attendance/sd/faces_backup, /api/attendance/sd/faces_restore, /api/attendance/sd/faces_backup_info",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.075"
+    ]
+  },
+  {
     "version": "v0.0.074",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.074 - Chụp Ảnh Người Lạ Lưu MicroSD & Thư Viện Ảnh Bằng Chứng Điểm Danh (Photo Gallery)",

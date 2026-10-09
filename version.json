@@ -1,6 +1,6 @@
 {
-  "version": "0.0.074",
-  "build_number": 74,
+  "version": "0.0.075",
+  "build_number": 75,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.074: Bổ sung tính năng Tự Động Chụp Ảnh Người Lạ / Khách vãng lai lưu thẻ nhớ MicroSD (chống spam 20s/lần) và Thư Viện Ảnh Bằng Chứng Điểm Danh (Photo Gallery Viewer) với bộ lọc Nhân Viên / Người Lạ kèm nút tải ảnh về máy.",
-    "en": "Release v0.0.074: Added Auto-Capture & MicroSD storage for Unknown Visitors (with 20s anti-flood cooldown) and Snapshot Photo Gallery Viewer with Employee/Unknown filters and direct JPG download."
+    "vi": "Phiên bản v0.0.075: Bổ sung tính năng Sao Lưu & Khôi Phục Dữ Liệu Khuôn Mặt / Điểm Nhận Diện AI vào Thẻ Nhớ MicroSD (/attendance/faces_db.dat). Hỗ trợ cơ chế Hot-Swap thay bo mạch mới cắm thẻ vào tự khôi phục dữ liệu 100% không cần quét mặt lại.",
+    "en": "Release v0.0.075: Added Face Recognition Database Backup & Restore on MicroSD (/attendance/faces_db.dat). Supports seamless Hardware Hot-Swap disaster recovery allowing replacement boards to restore full employee face vectors automatically without re-enrolling."
   }
 }
