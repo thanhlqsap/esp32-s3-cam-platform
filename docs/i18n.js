@@ -2250,16 +2250,16 @@
       "ar": "🎯 وجه قريب فقط / واضح (35%)"
     },
     "enroll_btn": {
-      "vi": "📸 Đăng Ký Khuôn Mặt Mới",
-      "en": "📸 Enroll New Face",
-      "zh": "📸 录入新人脸",
-      "es": "📸 Registrar Nuevo Rostro",
-      "fr": "📸 Enregistrer Nouveau Visage",
-      "de": "📸 Neues Gesicht Registrieren",
-      "ja": "📸 新しい顔を登録",
-      "ko": "📸 새 얼굴 등록",
-      "ru": "📸 Зарегистрировать Лицо",
-      "ar": "📸 تسجيل وجه جديد"
+      "vi": "Đăng Ký Khuôn Mặt Mới",
+      "en": "Enroll New Face",
+      "zh": "录入新人脸",
+      "es": "Registrar Nuevo Rostro",
+      "fr": "Enregistrer Nouveau Visage",
+      "de": "Neues Gesicht Registrieren",
+      "ja": "新しい顔を登録",
+      "ko": "새 얼굴 등록",
+      "ru": "Зарегистрировать Лицо",
+      "ar": "تسجيل وجه جديد"
     },
     "faces_list_title": {
       "vi": "Danh Bạ Khuôn Mặt Đã Lưu (NVS Flash)",
@@ -2736,6 +2736,8 @@
   }
 };
     // === DICTIONARY_END ===
+
+
 
 
 

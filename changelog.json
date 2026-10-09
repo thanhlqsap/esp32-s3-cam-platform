@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.069",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.069 - Tối Ưu Giao Diện Di Động App Face AI & Đổi Icon Khuôn Mặt Tinh Tế Cho Nút Đăng Ký",
+    "changes": [
+      "Tối ưu triệt để giao diện App Face AI trên điện thoại di động: Ẩn/thu gọn dòng tiêu đề chữ cồng kềnh trên Header (@media max-width: 640px), giải phóng không gian giúp toàn bộ Header nằm gọn gàng trên 1 hàng duy nhất cùng logo BumBonTechLab và badge phiên bản",
+      "Đổi sang icon khuôn mặt chuẩn (fa-solid fa-user-plus) cho nút 'Đăng ký khuôn mặt mới' ở cả thanh công cụ camera và bảng điều khiển Drawer, thay thế cho icon máy ảnh cũ",
+      "Dọn dẹp và chuẩn hóa từ điển i18n 10 ngôn ngữ: Loại bỏ triệt để emoji máy ảnh thừa ở đầu chuỗi dịch nút đăng ký (enroll_btn) ở cả 10 ngôn ngữ",
+      "Căn chỉnh thanh toolbar trên điện thoại di động: Bố cục nút bấm thông minh co giãn đều (flex: 1), chữ hiển thị sắc nét không bị tràn viền hay xuống dòng",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.069"
+    ]
+  },
+  {
     "version": "v0.0.068",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.068 - Khắc Phục Triệt Để Lỗi Đứng & Treo Board Khi Tải Ảnh Lên & Tối Ưu Giao Diện Di Động Fit Màn Hình",

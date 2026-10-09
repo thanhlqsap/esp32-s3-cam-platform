@@ -1,6 +1,6 @@
 {
-  "version": "0.0.068",
-  "build_number": 68,
+  "version": "0.0.069",
+  "build_number": 69,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.068: Sửa triệt để lỗi đứng và treo board ESP32 khi tải ảnh lên lưu khuôn mặt. Thêm cờ _isEnrolling và AutoEnrollingGuard tạm dừng quét live AI để nhường 100% CPU Core 1, loại bỏ gọi ESP-DL không có mutex trong _simulateFeatureFromFrame, chuẩn hóa 5 điểm landmark MNP01. Tối ưu giao diện modal điện thoại di động hiển thị trọn vẹn mọi nút không cần cuộn màn hình.",
-    "en": "Release v0.0.068: Permanently fixes ESP32 board freezing when saving uploaded face photos. Introduces _isEnrolling and AutoEnrollingGuard to pause live AI scan and yield 100% CPU Core 1, removes mutexless ESP-DL calls in _simulateFeatureFromFrame, fixes 5 MNP01 landmarks order. Redesigns mobile modal to fit all buttons on screen without scrolling."
+    "vi": "Phiên bản v0.0.069: Tối ưu responsive giao diện App Face AI trên điện thoại di động - thu gọn/ẩn nội dung tiêu đề chữ cồng kềnh giúp Header thanh thoát nằm gọn trên 1 hàng, đổi sang icon khuôn mặt (fa-user-plus) tinh tế cho nút 'Đăng ký khuôn mặt mới' và loại bỏ emoji máy ảnh thừa trong toàn bộ từ điển 10 ngôn ngữ.",
+    "en": "Release v0.0.069: Mobile UI optimization for App Face AI - collapses/hides bulky header title text on phones to keep the header on a single sleek line, changes the 'Enroll New Face' button icon to an elegant face icon (fa-user-plus), and removes redundant camera emojis across all 10 dictionary languages."
   }
 }
