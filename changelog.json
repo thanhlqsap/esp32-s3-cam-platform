@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.083",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.083 - Khắc Phục Triệt Để Lỗi Chấm Công: Tự Động Kích Hoạt Core Face AI Engine Khi App Chấm Công Hoạt Động (Active)",
+    "changes": [
+      "Khắc phục triệt để lỗi không nhận diện chấm công: Khi App Chấm Công được kích hoạt (Active qua Radio Button hoặc AppModeManager), hàm AppAttendance::start() tự động kích hoạt đồng thời Core Face AI Engine (FaceAiEngine::start()) để camera liên tục quét và nhận diện khuôn mặt nhân viên",
+      "Giải phóng tài nguyên thông minh khi ngưng ứng dụng: Khi chuyển sang Master Dashboard hoặc các ứng dụng khác, AppAttendance::stop() tự động giải phóng FaceAiEngine::stop() giúp tiết kiệm 100% CPU và duy trì FPS cao",
+      "Bảo đảm tính toàn vẹn sự kiện chấm công: Đảm bảo đầy đủ chuỗi xử lý nhận diện AI -> bíp buzzer -> chụp ảnh snapshot thẻ nhớ -> đồng bộ đám mây Google Sheets",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.083"
+    ]
+  },
+  {
     "version": "v0.0.082",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.082 - Tính Năng Xóa Hết Tất Cả Ảnh Thẻ Nhớ MicroSD & Tùy Chọn Thời Gian Tự Động Xóa (10 - 60 Ngày)",

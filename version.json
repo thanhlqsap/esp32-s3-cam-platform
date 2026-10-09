@@ -1,6 +1,6 @@
 {
-  "version": "0.0.082",
-  "build_number": 82,
+  "version": "0.0.083",
+  "build_number": 83,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.082: Tính Năng Xóa Hết Tất Cả Ảnh Thẻ Nhớ MicroSD & Tùy Chọn Thời Gian Tự Động Xóa Ảnh (10-60 Ngày Theo Bước 5 Ngày).",
-    "en": "Release v0.0.082: Delete All MicroSD Snapshots Feature & Configurable Auto Retention Period (10 to 60 Days in 5-day Steps)."
+    "vi": "Phiên bản v0.0.083: Sửa Triệt Để Lỗi Không Nhận Diện Chấm Công - Tự Động Kích Hoạt Core Face AI Engine Khi App Chấm Công Được Chọn Hoạt Động (Active).",
+    "en": "Release v0.0.083: Fix Face Recognition Not Working in Attendance App - Auto Start Core Face AI Engine when Attendance App is Active."
   }
 }
