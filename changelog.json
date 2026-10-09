@@ -1,5 +1,29 @@
 [
   {
+    "version": "v0.0.090",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.090 - Khắc Phục Lỗi Hiển Thị Ảo 'Unknown (85%)' & Đồng Bộ Trung Thực Tỷ Lệ Nhận Diện",
+    "changes": [
+      "Loại bỏ chuỗi giá trị mặc định hardcode (|| 85): Xóa bỏ hoàn toàn giá trị fallback 85% trong Javascript của cả App Face AI và App Chấm Công khi camera phát hiện người lạ/khách chưa đăng ký",
+      "Hiển thị độ chính xác trung thực 100%: Khi khuôn mặt chưa đăng ký (Người lạ), nhãn hiển thị rõ ràng là 'Unknown' hoặc 'Người Lạ', không còn hiển thị con số 85% ảo gây hiểu nhầm về ngưỡng nhận diện",
+      "Đảm bảo tôn trọng tuyệt đối ngưỡng cấu hình Threshold (50%-95%): Cấu hình độ nhạy nhận diện được lưu chuẩn xác vào NVS Flash bo mạch và áp dụng tức thì cho thuật toán so khớp vector khuôn mặt",
+      "Đồng bộ trên cả màn hình Dashboard chính và Kiosk Fullscreen: Đảm bảo trải nghiệm trực quan nhất quán trên toàn bộ hệ sinh thái ứng dụng",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.090"
+    ]
+  },
+  {
+    "version": "v0.0.089",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.089 - Bổ Sung Tùy Chọn Bật/Tắt Ghi Hình Người Lạ & Tự Động Lưu Trữ NVS Flash",
+    "changes": [
+      "Thêm checkbox 'Ghi hình người lạ' cạnh nút Làm mới: Cho phép quản trị viên chủ động bật hoặc tắt tính năng tự động chụp ảnh người lạ/khách vãng lai trực tiếp trên giao diện",
+      "Bảo vệ dung lượng và hiệu năng thẻ nhớ: Khi tắt tùy chọn, hệ thống bỏ qua việc tạo bản ghi và chụp ảnh thẻ nhớ đối với người lạ, tránh spam ảnh liên tục khi có người đi qua camera",
+      "Cơ chế Tự động lưu tức thì (Auto-Save on change): Trạng thái checkbox được đồng bộ trực tiếp vào Flash NVS (rec_unknown), tự động phục hồi chính xác sau khi khởi động lại bo mạch",
+      "Hỗ trợ đa ngôn ngữ 10 quốc gia: Tích hợp từ khóa chk_record_unknown vào từ điển i18n_dictionary.json",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.089"
+    ]
+  },
+  {
     "version": "v0.0.088",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.088 - Tích Hợp Khung Bounding Box HUD & Điểm Nhận Diện Khuôn Mặt Trực Quan Trên Màn Hình Kiosk Điểm Danh",

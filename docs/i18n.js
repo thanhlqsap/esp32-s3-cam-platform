@@ -2845,6 +2845,18 @@
       "ru": "Google Таблицы",
       "ar": "جداول بيانات جوجل"
     },
+    "chk_record_unknown": {
+      "vi": "Ghi hình người lạ",
+      "en": "Record unknown",
+      "zh": "记录陌生人",
+      "es": "Grabar desconocidos",
+      "fr": "Enregistrer inconnus",
+      "de": "Fremde aufnehmen",
+      "ja": "見知らぬ人を記録",
+      "ko": "낯선 사람 기록",
+      "ru": "Запись незнакомцев",
+      "ar": "تسجيل الغرباء"
+    },
     "refresh": {
       "vi": "Làm mới",
       "en": "Refresh",
@@ -3100,6 +3112,10 @@
   }
 };
     // === DICTIONARY_END ===
+
+
+
+
 
 
 

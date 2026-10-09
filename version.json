@@ -1,6 +1,6 @@
 {
-  "version": "0.0.088",
-  "build_number": 88,
+  "version": "0.0.090",
+  "build_number": 90,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.088: Tích Hợp Khung Bounding Box HUD & Điểm Nhận Diện Khuôn Mặt Trực Quan Trên Màn Hình Kiosk Điểm Danh.",
-    "en": "Release v0.0.088: Integrated Real-Time HUD AI Bounding Box & Facial Landmarks on Fullscreen Kiosk Attendance Display."
+    "vi": "Phiên bản v0.0.090: Khắc Phục Lỗi Hiển Thị Ảo 'Unknown (85%)' & Đồng Bộ Trung Thực Tỷ Lệ Nhận Diện.",
+    "en": "Release v0.0.090: Resolved Hardcoded 'Unknown (85%)' Display & Synced Real Match Score."
   }
 }
