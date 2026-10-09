@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.074",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.074 - Chụp Ảnh Người Lạ Lưu MicroSD & Thư Viện Ảnh Bằng Chứng Điểm Danh (Photo Gallery)",
+    "changes": [
+      "Tự động chụp ảnh Người Lạ / Khách vãng lai: Tận dụng sự kiện onFaceUnknown từ AI Engine để phát hiện và chụp ảnh snapshot lưu vào thẻ nhớ MicroSD (/attendance/snapshots/YYYY-MM-DD/UNKNOWN_HHMMSS.jpg) kèm cơ chế chống spam 20 giây/lần",
+      "Cảnh báo thông minh trên Kiosk Web: Đánh dấu nổi bật dòng Người Lạ màu cam trên bảng điểm danh kèm Popup thông báo cảnh báo xâm nhập thời gian thực",
+      "Thư Viện Ảnh Snapshot (Photo Gallery Viewer): Bổ sung giao diện Album ảnh chuyên nghiệp, xem lưới Thumbnail, phân loại lọc theo tab Nhân Viên / Người Lạ, xem ảnh phóng to chi tiết và nút tải ảnh về máy",
+      "REST API danh sách ảnh (/api/attendance/sd/snapshots): Tự động quét thẻ nhớ và trả về danh sách ảnh mới nhất được sắp xếp theo thời gian thực",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.074"
+    ]
+  },
+  {
     "version": "v0.0.073",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.073 - Sửa Triệt Để Lỗi Stack Overflow Luồng AI & Kẹt Bootloop Khi Chấm Công (Asynchronous Decoupled Worker)",
