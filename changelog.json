@@ -1,5 +1,17 @@
 [
   {
+    "version": "v0.0.077",
+    "date": "2026-10-09",
+    "title": "Phiên bản v0.0.077 - Chuẩn Hoá Vòng Đời Ứng Dụng (App Lifecycle Management & Standby Mode)",
+    "changes": [
+      "Quản lý vòng đời ứng dụng độc lập (App Lifecycle): App Chấm Công và các app con chỉ chạy worker nền, quét camera và ghi thẻ MicroSD khi app được kích hoạt (Active qua AppModeManager hoặc khi người dùng mở Web App Kiosk)",
+      "Chế độ Chờ an toàn (Standby Mode): Khi ở Master Dashboard hoặc các ứng dụng khác, App Chấm Công tự động ở chế độ Standby hoàn toàn, chặn triệt để tình trạng tự động điểm danh hay ghi thẻ ngoài ý muốn",
+      "Tích hợp AppModeManager trung tâm: Đăng ký MODE_ATTENDANCE vào bảng điều phối ứng dụng hệ thống, tự động start() khi chuyển vào app và stop() giải phóng tài nguyên CPU khi chuyển sang app khác",
+      "REST API kiểm soát trạng thái (/api/attendance/active): Cho phép truy vấn và bật/tắt linh hoạt trạng thái kích hoạt của ứng dụng",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.077"
+    ]
+  },
+  {
     "version": "v0.0.076",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.076 - Hỗ Trợ Đầy Đủ 10 Ngôn Ngữ Theo NVS Flash, Màn Hình Điểm Danh Kiosk & Cấu Hình Màn Hình Ngoài Đa Dạng",

@@ -1,6 +1,6 @@
 {
-  "version": "0.0.076",
-  "build_number": 76,
+  "version": "0.0.077",
+  "build_number": 77,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-09",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.076: Bổ sung Màn Hình Điểm Danh Kiosk Toàn Màn Hình, Cấu Hình Xuất Tín Hiệu Ra Màn Hình Ngoài Đa Dạng (ST7789, ILI9341, GC9A01, SSD1306, Wireless Kiosk), Đồng bộ Đầy Đủ 10 Ngôn Ngữ theo NVS Flash và Sửa triệt để lỗi Thư Viện Ảnh MicroSD.",
-    "en": "Release v0.0.076: Added Fullscreen Kiosk Check-in Screen, Flexible External Display Output Configuration (ST7789, ILI9341, GC9A01, SSD1306, Wireless Kiosk), Full 10-Language NVS Flash Synchronization, and resolved MicroSD Photo Gallery scanning bug."
+    "vi": "Phiên bản v0.0.077: Chuẩn hoá Cơ Chế Kích Hoạt Theo Từng Ứng Dụng (App Lifecycle Management & Standby Guard). App Chấm Công chỉ chạy ngầm, điểm danh và ghi thẻ nhớ khi được Active qua AppModeManager hoặc khi người dùng mở App, giải phóng hoàn toàn tài nguyên khi ở Dashboard hoặc chạy App khác.",
+    "en": "Release v0.0.077: Standardized App Lifecycle Management & Standby Guard. Smart Attendance app only executes background routines, logging, and SD writes when explicitly Active, freeing resources when in Dashboard or running other apps."
   }
 }
