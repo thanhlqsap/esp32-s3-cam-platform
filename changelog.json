@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.096",
+    "date": "2026-10-13",
+    "title": "Phiên bản v0.0.096 - Khắc Phục Triệt Để Xung Đột Chân GPIO Giữa App Solar Timelapse & Camera DVP",
+    "changes": [
+      "Khắc phục triệt để xung đột chân Camera: Tái cấu trúc toàn bộ chân ngoại vi của App 08 sang dải chân mở rộng (I2C SDA=GPIO21, SCL=GPIO47; Pin ADC=GPIO1; Đất ADC=GPIO14; PIR=GPIO41; Nút bấm=GPIO0) giúp giải phóng 100% bus SCCB I2C (GPIO4/5) và tín hiệu VSYNC (GPIO6) của Camera",
+      "Khắc phục lỗi vòng đời Standby: Hàm init() của AppSolarTimelapse chỉ nạp cấu hình NVS, tuyệt đối không gọi begin() hoặc chiếm đoạt chân ngoại vi khi thiết bị đang ở Master Dashboard",
+      "Bảo vệ bất biến 100% CameraHandler: Khôi phục tức thì khả năng truyền phát Live Stream MJPEG và chụp ảnh mượt mà cho toàn bộ hệ thống",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.096"
+    ]
+  },
+  {
     "version": "v0.0.095",
     "date": "2026-10-13",
     "title": "Phiên bản v0.0.095 - Nhúng Trực Tiếp Giao Diện Web App Solar Timelapse Vào Bộ Nhớ Flash PROGMEM",
