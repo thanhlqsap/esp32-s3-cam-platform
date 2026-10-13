@@ -1,6 +1,6 @@
 {
-  "version": "0.0.094",
-  "build_number": 94,
+  "version": "0.0.095",
+  "build_number": 95,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-13",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.094: Mở Thẻ App Camera Nông Nghiệp Solar Timelapse Trực Tiếp Trên Dashboard.",
-    "en": "Release v0.0.094: Enabled Solar Timelapse Agriculture App Card Directly on Master Dashboard."
+    "vi": "Phiên bản v0.0.095: Nhúng Trực Tiếp Giao Diện Web App Solar Timelapse Vào Bộ Nhớ Flash PROGMEM.",
+    "en": "Release v0.0.095: Directly Embedded Solar Timelapse Web App UI into PROGMEM Flash."
   }
 }

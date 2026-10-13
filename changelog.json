@@ -1,5 +1,15 @@
 [
   {
+    "version": "v0.0.095",
+    "date": "2026-10-13",
+    "title": "Phiên bản v0.0.095 - Nhúng Trực Tiếp Giao Diện Web App Solar Timelapse Vào Bộ Nhớ Flash PROGMEM",
+    "changes": [
+      "Nhúng toàn bộ giao diện Web App Solar Timelapse vào Flash PROGMEM: Bổ sung app_solar_timelapse.html vào pipeline sync_web_assets.ps1, tự động nén GZIP và nhúng cờ HAS_APP_SOLAR_TIMELAPSE_HTML vào web_assets.h",
+      "Khắc phục triệt để màn hình Fallback: Khi truy cập /app/solar_timelapse, hệ thống lập tức phục vụ giao diện Web App hoàn chỉnh (Interactive Timeline Slider, đồ thị cảm biến vi khí hậu, công tắc Plug & Play, tích hợp Google Sheets Sync) thay vì chuyển hướng về Dashboard",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.095"
+    ]
+  },
+  {
     "version": "v0.0.094",
     "date": "2026-10-13",
     "title": "Phiên bản v0.0.094 - Mở Thẻ App Camera Nông Nghiệp Solar Timelapse Trực Tiếp Trên Dashboard",
