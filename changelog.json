@@ -1,5 +1,28 @@
 [
   {
+    "version": "v0.0.093",
+    "date": "2026-10-13",
+    "title": "Phiên bản v0.0.093 - Bổ Sung Tùy Chọn Plug & Play Từng Cảm Biến & Đẩy Dữ Liệu Lên Google Sheets",
+    "changes": [
+      "Kiến trúc Cảm Biến Plug & Play (Cắm & Chạy): Bổ sung công tắc bật/tắt độc lập cho từng cảm biến phần cứng (Nhiệt ẩm SHT30/AHT20, Pin ADC/INA219, Độ ẩm đất điện dung, Cường độ sáng BH1750), tự động làm mờ và ẩn dữ liệu nếu người dùng chưa gắn module",
+      "Đồng bộ Cloud Google Sheets: Tích hợp khả năng tự động đẩy dữ liệu vi khí hậu và ảnh lên Google Apps Script Web App qua HTTPS (WiFiClientSecure / HTTPClient)",
+      "Nút kiểm thử kết nối Google trực tiếp trên Web UI: Cho phép quản trị viên kiểm tra tức thì URL Apps Script với phản hồi chi tiết từ server",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.093"
+    ]
+  },
+  {
+    "version": "v0.0.092",
+    "date": "2026-10-13",
+    "title": "Phiên bản v0.0.092 - Tích Hợp Toàn Diện App 08 Camera Nông Nghiệp Solar Timelapse",
+    "changes": [
+      "Kiến trúc Solar & Ultra-Low Power Deep Sleep: Hỗ trợ vận hành 24/7 độc lập bằng Pin mặt trời (Li-ion/LiFePO4) kết hợp Deep Sleep ~10µA và RTC Timer / PIR Wakeup",
+      "Quản lý lưu trữ MicroSD thông minh: Tự động tổ chức ảnh chụp theo cây thư mục thời gian /timelapse/YYYY-MM-DD/HH-MM-SS.jpg kèm cơ chế FIFO tự dọn dẹp khi thẻ đầy >90%",
+      "Đo lường vi khí hậu & Sức khỏe cây trồng: Đọc cảm biến nhiệt ẩm SHT30/AHT20, độ ẩm đất điện dung, bức xạ quang năng Lux và tính toán chỉ số xanh thực vật ExG (2G-R-B)",
+      "Giao diện Web App chuyên dụng đa ngôn ngữ: Cung cấp app_solar_timelapse.html với trình chiếu Interactive Timelapse Player, đồ thị vi khí hậu và cấu hình lịch trình",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.092"
+    ]
+  },
+  {
     "version": "v0.0.091",
     "date": "2026-10-09",
     "title": "Phiên bản v0.0.091 - Khắc Phục Triệt Để Hiện Tượng Treo Đứng Khi Nạp OTA Lúc App Đang Chạy Ngầm",
