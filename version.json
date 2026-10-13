@@ -1,6 +1,6 @@
 {
-  "version": "0.0.093",
-  "build_number": 93,
+  "version": "0.0.094",
+  "build_number": 94,
   "hardware": "ESP32-S3-WROOM-N16R8",
   "release_date": "2026-10-13",
   "min_bootloader_version": "0.0.001",
@@ -12,7 +12,7 @@
   "md5": "auto-generated-on-build",
   "critical_update": false,
   "changelog": {
-    "vi": "Phiên bản v0.0.093: Bổ Sung Tùy Chọn Plug & Play Từng Cảm Biến Và Đẩy Dữ Liệu Lên Google Sheets.",
-    "en": "Release v0.0.093: Added Plug & Play Sensor Toggles and Google Sheets Cloud Sync Integration."
+    "vi": "Phiên bản v0.0.094: Mở Thẻ App Camera Nông Nghiệp Solar Timelapse Trực Tiếp Trên Dashboard.",
+    "en": "Release v0.0.094: Enabled Solar Timelapse Agriculture App Card Directly on Master Dashboard."
   }
 }

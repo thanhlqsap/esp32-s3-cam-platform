@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.094",
+    "date": "2026-10-13",
+    "title": "Phiên bản v0.0.094 - Mở Thẻ App Camera Nông Nghiệp Solar Timelapse Trực Tiếp Trên Dashboard",
+    "changes": [
+      "Mở thẻ App Solar Timelapse trên Master Dashboard: Bổ sung định danh app_solar_timelapse vào danh sách DEPLOYED_APP_IDS trong dashboard.html giúp thẻ Card xuất hiện trực tiếp tại mục App Store / Chuyển chế độ",
+      "Đồng bộ REST API Catalog (/api/apps): Bổ sung cờ deployed=true cùng mô tả chi tiết tiếng Việt cho ứng dụng Camera Nông Nghiệp Solar Timelapse",
+      "Nén GZIP và nhúng vào bộ nhớ Flash PROGMEM: Tự động cập nhật web_assets.h với Dashboard SPA đã kích hoạt đầy đủ",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.094"
+    ]
+  },
+  {
     "version": "v0.0.093",
     "date": "2026-10-13",
     "title": "Phiên bản v0.0.093 - Bổ Sung Tùy Chọn Plug & Play Từng Cảm Biến & Đẩy Dữ Liệu Lên Google Sheets",
