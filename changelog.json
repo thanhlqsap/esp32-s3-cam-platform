@@ -1,5 +1,16 @@
 [
   {
+    "version": "v0.0.097",
+    "date": "2026-10-13",
+    "title": "Phiên bản v0.0.097 - Đồng Bộ Toàn Bộ Trạng Thái Switch Cảm Biến Theo NVS Flash, Mặc Định Tắt (OFF)",
+    "changes": [
+      "Quy chuẩn mặc định NVS: Toàn bộ switch tính năng (Đánh thức PIR, Watermark, Cảm biến nhiệt ẩm, Pin, Độ ẩm đất, Lux và Google Sync) nếu chưa từng được lưu trong NVS Flash thì mặc định hoàn toàn ở trạng thái TẮT (OFF)",
+      "Đọc chính xác dữ liệu từ NVS: Khi người dùng cấu hình và lưu thông số, hệ thống sẽ nạp trung thực 100% trạng thái đã lưu trong NVS Flash mỗi lần khởi động hoặc nạp trang",
+      "Đồng bộ giao diện Web App: Loại bỏ thuộc tính checked cứng trong HTML, cập nhật hàm fetchStatus() để ánh xạ chính xác trạng thái từ ESP32-S3 lên Web UI",
+      "Tự động biên dịch và đóng gói bộ nhị phân OTA_Update.bin và Full_Flash.bin v0.0.097"
+    ]
+  },
+  {
     "version": "v0.0.096",
     "date": "2026-10-13",
     "title": "Phiên bản v0.0.096 - Khắc Phục Triệt Để Xung Đột Chân GPIO Giữa App Solar Timelapse & Camera DVP",
